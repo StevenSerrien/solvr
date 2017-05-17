@@ -1,7 +1,16 @@
 const elixir = require('laravel-elixir');
 
 require('laravel-elixir-vue-2');
+require('laravel-elixir-ng-annotate');
 
+
+// var appScripts = [
+//     'angular/configuration/module.js',
+//     'angular/configuration/config.js',
+//     'angular/app/directives/*.js',
+//     'angular/app/services/*.js',
+//     'angular/app/controllers/*.js'
+// ];
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -15,5 +24,7 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('app.scss')
-       .webpack('app.js');
+      //  .annotate(appScripts).webpack('annotated.js','public/assets/js/angular.js', 'public/js/')
+       .webpack('app.js')
+       .version(['css/app.css', 'js/app.js']);
 });
