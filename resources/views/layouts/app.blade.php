@@ -21,6 +21,7 @@
     </script>
 </head>
 <body>
+  @include('includes.navbar')
     <div id="app">
         {{-- <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -63,7 +64,7 @@
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                      z                      Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -82,6 +83,7 @@
     </div>
 
     <!-- Scripts -->
+      <script src="{{ elixir('js/libs.js') }}"></script>
       <script src="{{ elixir('js/app.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,17 @@
 
 // Variables
 @import "variables";
+@import "components/nav";
+@import "components/svg";
+@import "components/hamburger";
+
+
 
 // Bootstrap
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "node_modules/foundation/scss/foundation";
+
+// Foundation //
+@import "node_modules/foundation-sites/scss/foundation";
+@import "settings";
+
+@include foundation-everything;

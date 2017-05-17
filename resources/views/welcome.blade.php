@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+  
+@endsection
+{{-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -93,4 +98,4 @@
         </div>
         <script src="{{ elixir('js/app.js') }}"></script>
       </body>
-</html>
+</html> --}}

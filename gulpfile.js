@@ -2,6 +2,12 @@ const elixir = require('laravel-elixir');
 
 require('laravel-elixir-vue-2');
 require('laravel-elixir-ng-annotate');
+require('laravel-elixir-imagemin');
+
+elixir.config.images = {
+    folder: 'img',
+    outputFolder: 'img'
+};
 
 
 // var appScripts = [
@@ -26,5 +32,12 @@ elixir((mix) => {
     mix.sass('app.scss')
       //  .annotate(appScripts).webpack('annotated.js','public/assets/js/angular.js', 'public/js/')
        .webpack('app.js')
+       .imagemin("./resources/assets/img", "public/img")
+       .scripts(
+        [
+            'libs/ease.js',
+            'libs/segment.js'
+        ],
+        'public/js/libs.js')
        .version(['css/app.css', 'js/app.js']);
 });
