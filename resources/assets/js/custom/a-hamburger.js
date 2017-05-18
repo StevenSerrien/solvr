@@ -67,17 +67,6 @@
 	    });
 	}
 
-	/* Awesome burger default */
-
-	var
-		trigger = document.getElementById('menu-icon-trigger'),
-		toCloseIcon = true,
-		dummy = document.getElementById('dummy'),
-		wrapper = document.getElementById('menu-icon-wrapper');
-
-
-
-
 	/* Scale functions */
 
 	function addScale(m) {
@@ -96,15 +85,15 @@
 		segmentD = new Segment(pathD, beginAC, endAC),
 		segmentE = new Segment(pathE, beginB, endB),
 		segmentF = new Segment(pathF, beginAC, endAC),
-		wrapper2 = document.getElementById('menu-icon-wrapper2'),
-		trigger2 = document.getElementById('menu-icon-trigger2'),
-		toCloseIcon2 = true;
+		wrapper = document.getElementById('menu-icon-wrapper'),
+		trigger = document.getElementById('menu-icon-trigger'),
+		toCloseIcon = true;
 
-	wrapper2.style.visibility = 'visible';
+	wrapper.style.visibility = 'visible';
 
-	trigger2.onclick = function() {
-		addScale(wrapper2);
-		if (toCloseIcon2) {
+	trigger.onclick = function() {
+		addScale(wrapper);
+		if (toCloseIcon) {
 			inAC(segmentD);
 			inB(segmentE);
 			inAC(segmentF);
@@ -117,9 +106,9 @@
 
 
 		}
-		toCloseIcon2 = !toCloseIcon2;
+		toCloseIcon = !toCloseIcon;
 		setTimeout(function() {
-			removeScale(wrapper2)
+			removeScale(wrapper)
 		}, 450);
 	};
 

@@ -12,6 +12,14 @@ img {
 }
 
 /* Menu icon styles */
+.top-bar, .top-bar ul {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.menu-icon-outer-wrapper {
+  overflow: hidden;
+}
+
 .menu-icon-wrapper {
   position: relative;
   display: inline-block;
@@ -38,7 +46,7 @@ img {
 }
 
 .menu-icon-wrapper svg path {
-  stroke: #fff;
+  stroke: black;
   stroke-width: 45px;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -60,6 +68,12 @@ img {
 .menu-icon-wrapper .menu-icon-trigger:hover,
 .menu-icon-wrapper .menu-icon-trigger:focus {
   outline: none;
+}
+
+.p-effect-1 {
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all .5s ease-out;
 }
 
 /**
@@ -5344,6 +5358,34 @@ a.thumbnail image {
 
 .clearfix::after {
   clear: both;
+}
+
+.top-bar {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.p-container {
+  height: calc(100vh - 140px);
+  width: calc(100% - 110px);
+  margin: auto;
+  position: relative;
+  display: block;
+  padding: 0;
+}
+
+.p-container .p-item {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  mix-blend-mode: lighten;
+}
+
+.p-container .p-item--landing {
+  background: url("../../img/l-background.svg") no-repeat;
+  background-size: cover;
 }
 
 /*# sourceMappingURL=app.css.map */

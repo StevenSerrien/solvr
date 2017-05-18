@@ -1,13 +1,25 @@
 /* Menu icon styles */
 
+.top-bar {
+
+	&, ul {
+		background-color: rgba(255, 255, 255, 0) !important;
+	}
+}
+
+.menu-icon-outer-wrapper {
+	overflow: hidden;
+}
+
 .menu-icon-wrapper {
 	position: relative;
 	display: inline-block;
-    width: 34px;
-    height: 34px;
+	width: 34px;
+	height: 34px;
 	margin: 1em;
 	pointer-events: none;
 	transition: 0.1s;
+
 }
 
 .menu-icon-wrapper.scaled {
@@ -29,10 +41,10 @@
 }
 
 .menu-icon-wrapper svg path {
-	stroke: #fff;
+	stroke: black;
 	stroke-width: 45px;
 	stroke-linecap: round;
-    stroke-linejoin: round;
+	stroke-linejoin: round;
 	fill: transparent;
 }
 

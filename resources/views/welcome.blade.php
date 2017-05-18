@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-  
+  <section class="p-container">
+    <div id="p-lax" class="p-item p-item--landing p-effect-1">
+
+    </div>
+  </section>
 @endsection
 {{-- <!DOCTYPE html>
 <html lang="en">

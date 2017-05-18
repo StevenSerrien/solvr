@@ -7,6 +7,7 @@
 @import "components/nav";
 @import "components/svg";
 @import "components/hamburger";
+@import "components/parallax-bg";
 
 
 
@@ -18,3 +19,8 @@
 @import "settings";
 
 @include foundation-everything;
+
+
+
+
+@import 'shame';
