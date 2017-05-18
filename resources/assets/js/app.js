@@ -9,6 +9,7 @@ require('./vendor');
 /* Custom written Javascript */
 require('./custom/a-hamburger.js');
 require('./custom/parallax-mouse.js');
+require('./custom/typed.js');
 
 
 

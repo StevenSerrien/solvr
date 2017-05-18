@@ -3,7 +3,17 @@
 @section('content')
   <section class="p-container">
     <div id="p-lax" class="p-item p-item--landing p-effect-1">
-
+      <div class="row">
+        <div class="p-item__inner large-8 columns small-centered">
+          <div class="p-lax-inner p-item__inner__item p-effect-1">
+            <h1 id='typed' class='p-jumbo' style='color:white;'> </h1>
+            <div id="subtyped-strings">
+              <p><a href="#">Dat oefen je vanaf nu hier.</a></p>
+            </div>
+            <p class="p-smallbo" style='color:white;'><span id='subtyped' class='underlined'></span></p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 @endsection

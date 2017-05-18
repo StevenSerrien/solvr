@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'Mosk Bold 700';
+	src: url('../../fonts/mosk/MoskBold700.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mosk Normal 400';
+	src: url('../../fonts/mosk/MoskNormal400.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mosk Medium 500';
+	src: url('../../fonts/mosk/MoskMedium500.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../../fonts/ssp/SourceSansPro-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../../fonts/ssp/SourceSansPro-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../../fonts/ssp/SourceSansPro-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+
+$jumbotron-font: 'Mosk Bold 700';
+
+$text-font: 'Source Sans Pro';

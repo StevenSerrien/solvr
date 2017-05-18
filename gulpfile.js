@@ -36,7 +36,8 @@ elixir((mix) => {
        .scripts(
         [
             'libs/ease.js',
-            'libs/segment.js'
+            'libs/segment.js',
+            'libs/typed.js'
         ],
         'public/js/libs.js')
        .version(['css/app.css', 'js/app.js']);

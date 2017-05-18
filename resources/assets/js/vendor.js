@@ -10,3 +10,4 @@ require('foundation-sites');
 
 require('./libs/ease.js');
 require('./libs/segment.js');
+require('./libs/typed.js');
