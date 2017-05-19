@@ -1,7 +1,7 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+{{-- <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle></button>
   <div class="title-bar-title">Menu</div>
-</div>
+</div> --}}
 
 <div class="top-bar" id="example-menu">
   <div class="top-bar-left">
@@ -11,19 +11,6 @@
           <img src="img/brand-nav-logo-colored-b.svg" alt="">
         </div>
       </li>
-      {{-- <li class="has-submenu">
-      <a href="#">One</a>
-      <ul class="submenu menu vertical" data-submenu>
-      <li><a href="#">One</a></li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Two</a></li>
-  <li><a href="#">Three</a></li>
-  <li><a href="#">Four</a></li>
-  <li><a href="#">Five</a></li> --}}
-
 </ul>
 </div>
 <div class="top-bar-right">

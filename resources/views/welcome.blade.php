@@ -14,6 +14,7 @@
           </div>
         </div>
       </div>
+      <a class='btn btn--ghst' href="#">lees meer</a>
     </div>
   </section>
 @endsection

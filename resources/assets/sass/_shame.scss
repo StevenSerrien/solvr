@@ -38,6 +38,12 @@
     &--landing {
       background: url('../../img/l-background.svg') no-repeat;
       background-size: cover;
+
+      .btn {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
     }
   }
 }
