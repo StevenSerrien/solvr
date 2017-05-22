@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', ['as' => 'landing', 'uses' => 'HomeController@index']);
+
+// Route::get('media/{media}/download', ['as' => 'media_download', 'uses' => 'Media\MediaController@download']);

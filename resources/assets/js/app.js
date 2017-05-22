@@ -10,6 +10,7 @@ require('./vendor');
 require('./custom/a-hamburger.js');
 require('./custom/parallax-mouse.js');
 require('./custom/typed.js');
+require('./custom/sidemenu.js');
 
 
 

@@ -37,7 +37,9 @@ elixir((mix) => {
         [
             'libs/ease.js',
             'libs/segment.js',
-            'libs/typed.js'
+            'libs/typed.js',
+            'libs/classie.js',
+            'libs/snap.svg-min.js',
         ],
         'public/js/libs.js')
        .version(['css/app.css', 'js/app.js']);

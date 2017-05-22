@@ -24,11 +24,13 @@
 
     <div id="app" class='container'>
       <div class="menu-wrap">
-
+        @include('includes.sidemenu')
       </div>
       <div class="content-wrap">
-        @include('includes.navbar')
-        @yield('content')
+        <div class="content">
+          @include('includes.navbar')
+          @yield('content')
+        </div>
       </div>
     </div>
 

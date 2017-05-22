@@ -64,3 +64,18 @@
 .menu-icon-wrapper .menu-icon-trigger:focus {
 	outline: none;
 }
+
+
+/***  Inverted menu top bar ***/
+
+.top-bar {
+	&.inverted {
+		.menu-icon-wrapper svg path {
+			stroke: black;
+			stroke-width: 45px;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			fill: transparent;
+		}
+	}
+}

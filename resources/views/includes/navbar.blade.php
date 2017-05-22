@@ -3,18 +3,18 @@
   <div class="title-bar-title">Menu</div>
 </div> --}}
 
-<div class="top-bar" id="example-menu">
+<div class="top-bar {{ Route::is('landing') ? 'inverted' : '' }}" id="example-menu">
   <div class="top-bar-left">
     <ul class="dropdown vertical medium-horizontal menu" data-dropdown-menu>
       <li class="menu-text">
         <div class="brand-logo">
-          <img src="img/brand-nav-logo-colored-b.svg" alt="">
+          <img src="img/brand-nav-logo-colored-b.svg" alt="Solvr logo">
         </div>
       </li>
 </ul>
 </div>
 <div class="top-bar-right">
-  <ul class="menu menu-icon-outer-wrapper">
+  <ul class="menu menu-icon-outer-wrapper ">
     <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: hidden">
       <svg width="1000px" height="1000px">
         <path id="pathD" class="st0" d="M300,377h400c200,0,200,373-100,473c-214.2,54.1-431.7-75.8-485.7-289.9
