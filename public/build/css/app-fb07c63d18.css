@@ -42,6 +42,7 @@
   font-style: normal;
 }
 
+/* -- Mixins for transforms -- */
 .brand-logo {
   width: auto;
   height: 50px;
@@ -300,7 +301,26 @@ body,
   background: #f9f9f9;
   width: 100%;
   height: 100%;
-  padding: 1.2em 0em 2em 0em;
+  padding: 1.2em 1em 2em 1em;
+  position: relative;
+}
+
+.sidemenu__footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 0em 1em 0em 1em;
+  margin-bottom: 2em;
+}
+
+.sidemenu__footer span {
+  font-family: "Source Sans Pro";
+  font-weight: 500;
+  text-transform: lowercase;
+  display: inline-block;
+  color: #E5E5E5;
 }
 
 .sidemenu-list {
@@ -313,21 +333,37 @@ body,
 
 .sidemenu-list a::after {
   content: ' ';
-  height: 3px;
-  background-color: red;
+  height: 2px;
+  background-color: #9bffee;
   position: absolute;
-  width: 100%;
-  bottom: 0;
+  width: 0%;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 0;
+  z-index: 4;
+  transition: 0.2s all;
+}
+
+.sidemenu-list a span {
+  color: #494949;
+  z-index: 10;
+  position: relative;
 }
 
 .sidemenu-list a:hover {
   color: red;
 }
 
+.sidemenu-list a:hover::after {
+  width: 100%;
+}
+
 .sidemenu-list a {
   display: block;
   padding: 0.8em;
+  padding-right: 0;
+  margin-right: 2em;
   position: relative;
 }
 
@@ -390,6 +426,18 @@ body,
   height: 75px;
   background: url("../../img/icons/sidemenu-illustration-3.svg") center center no-repeat;
   background-size: contain;
+}
+
+.icon {
+  width: 17.5px;
+  height: 17.5px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon.i-heart {
+  background: url("../../img/icons/di-heart.svg") no-repeat;
 }
 
 /**

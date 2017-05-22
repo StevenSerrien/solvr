@@ -20,3 +20,15 @@
   background: url('../../img/icons/sidemenu-illustration-3.svg') center center no-repeat;
   background-size: contain;
 }
+
+
+.icon {
+  width: 17.5px;
+  height: 17.5px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  &.i-heart {
+    background: url('../../img/icons/di-heart.svg') no-repeat;
+  }
+}

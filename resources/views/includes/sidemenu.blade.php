@@ -2,12 +2,14 @@
   <div class="illustration illustration--header menu c-block">
   </div>
   <div class="sidemenu-list">
-    <a href="#"><i class="fa fa-fw fa-star-o"></i><span>over ons</span></a>
-    <a href="#"><i class="fa fa-fw fa-bell-o"></i><span>logopedisten</span></a>
-    <a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
-    <a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
-    <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
-    <a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+    <a href="#"><span>over ons</span></a>
+    <a href="#"><span>logopedisten</span></a>
+    <a href="#"><span>registreren</span></a>
+    <a href="#"><span>contact</span></a>
+
+  </div>
+  <div class="sidemenu__footer">
+    <span>Made with   <i class='icon i-heart'></i></span>
   </div>
 </nav>
 {{-- <button class="close-button" id="close-button">Close Menu</button> --}}
