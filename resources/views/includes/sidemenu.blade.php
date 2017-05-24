@@ -2,7 +2,7 @@
   <div class="illustration illustration--header menu c-block">
   </div>
   <div class="sidemenu-list">
-    <a href="#"><span>over ons</span></a>
+    <a href="{{ route('about') }}"><span>over ons</span></a>
     <a href="#"><span>logopedisten</span></a>
     <a href="#"><span>registreren</span></a>
     <a href="#"><span>contact</span></a>

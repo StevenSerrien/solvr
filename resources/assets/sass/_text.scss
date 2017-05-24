@@ -43,5 +43,60 @@
 
 $jumbotron-font: 'Mosk Bold 700';
 $sidemenu-font: 'Mosk Normal 400';
+$b-number-font: 'Mosk Bold 700';
 
+$heading-font: 'Mosk Medium 500';
 $text-font: 'Source Sans Pro';
+
+// body {
+//   font-family: $font-main;
+//   font-weight: 500;
+//
+//   /* -- Default font size on designs: 18px; -- */
+//   font-size: 100%;
+// }
+
+// h1, h2, h3, h5, h6, p, span, label {
+//   font-family: $font-main;
+// }
+
+// h1 {
+//   @include breakpoint (medium) {
+//     font-size: rem-calc(24px);
+//   }
+//   @include breakpoint(large) {
+//     font-size: rem-calc(36px);
+//   }
+// }
+
+h2  {
+  font-family: $heading-font;
+  @include breakpoint(small) {
+    font-size: rem-calc(22px);
+  }
+  @include breakpoint(medium) {
+    font-size: rem-calc(26px);
+  }
+  @include breakpoint(large) {
+    font-size: rem-calc(30px);
+  }
+
+}
+
+p {
+  line-height: 1.67;
+}
+
+p, span, li, a, button{
+
+
+  // @include breakpoint(small) {
+  //   font-size: rem-calc(14px);
+  // }
+  // @include breakpoint(medium) {
+  //   font-size: rem-calc(15px);
+  // }
+  // @include breakpoint(large) {
+  //   font-size: rem-calc(18px);
+  // }
+}

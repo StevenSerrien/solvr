@@ -4,16 +4,27 @@
 
 // Variables
 @import "variables";
-@import "text";
+
 @import "mixins";
+@import "utilities";
+
+@import "node_modules/foundation-sites/scss/foundation";
+@import "settings";
+
+@include foundation-everything;
+
+@import "text";
 
 @import "components/nav";
+@import "components/containers";
+@import "components/jumbotron";
 @import "components/svg";
 @import "components/hamburger";
 @import "components/parallax-bg";
 @import "components/button";
 @import "components/sidemenu";
 @import "components/illustrations";
+@import "components/illustration-block";
 
 
 
@@ -21,10 +32,7 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Foundation //
-@import "node_modules/foundation-sites/scss/foundation";
-@import "settings";
 
-@include foundation-everything;
 
 
 
