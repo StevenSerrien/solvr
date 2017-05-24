@@ -85,6 +85,10 @@
   margin-bottom: 150px;
 }
 
+.f-row {
+  max-width: 100% !important;
+}
+
 /**
  * Foundation for Sites by ZURB
  * Version 6.3.1
@@ -5923,6 +5927,62 @@ body,
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
+}
+
+.icon.f-icon {
+  display: block;
+  background-size: contain !important;
+}
+
+.icon.f-icon.facebook {
+  background: url("../../img/icons/di-facebook.svg");
+}
+
+.icon.f-icon.twitter {
+  background: url("../../img/icons/di-twitter.svg");
+}
+
+footer {
+  margin-top: 200px;
+}
+
+footer .footer__left {
+  padding: 25px 0 15px 0;
+  padding-left: 2.5rem !important;
+  background-color: #ededed;
+}
+
+footer.invisible {
+  display: none;
+}
+
+footer .footer__social-media {
+  padding: 15px 0;
+}
+
+footer .footer__social-media i {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s;
+}
+
+footer .footer__social-media i:first-of-type {
+  margin-bottom: 15px;
+}
+
+footer .footer__social-media i:hover {
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+footer .footer__branding {
+  width: auto;
+  height: 35px;
+  margin-left: 16px;
 }
 
 .top-bar {

@@ -1,0 +1,14 @@
+.icon {
+  &.f-icon {
+    // width: 20px;
+    // height: 20px;
+    display: block;
+    background-size: contain !important;
+    &.facebook {
+      background: url('../../img/icons/di-facebook.svg');
+    }
+    &.twitter {
+      background: url('../../img/icons/di-twitter.svg');
+    }
+  }
+}

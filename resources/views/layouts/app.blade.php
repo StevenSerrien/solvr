@@ -31,6 +31,8 @@
           @include('includes.navbar')
           @yield('content')
         </div>
+        
+        @include('includes.footer')
       </div>
     </div>
 
