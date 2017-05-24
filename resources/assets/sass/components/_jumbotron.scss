@@ -1,6 +1,5 @@
 .mixed-jumbo {
   padding: rem-calc(75px 0px);
-
   &__content {
     position: relative;
     z-index: 10;
@@ -16,13 +15,18 @@
     left: 0;
     width: 45%;
     height: 100%;
-    background-color: rgb(252, 170, 149);
     z-index: 5;
+    &--color-1 {
+      background-color: rgb(252, 170, 149);
+    }
+    &--color-2 {
+      background-color: #EDF6FE;
+    }
   }
 
 
   /*** Effects ***/
-  &--shaped {
+  &--shaped-triangle {
       &::after {
         content: ' ';
         position: absolute;
@@ -34,4 +38,27 @@
         background-size: contain;
       }
     }
+    &--shaped-circle {
+        &::after {
+          content: ' ';
+          position: absolute;
+
+          right: 0;
+          height: 75px;
+          width: 75px;
+          background: url('../../img/mixed-jumbo-shape-circle.svg') no-repeat;
+          background-size: contain;
+        }
+        margin-bottom: 325px;
+      }
+}
+
+.img-jumbo {
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  &--cometboi {
+    background: url('../../img/kid-with-comets.png') no-repeat center center;
+    background-size: cover;
+  }
 }

@@ -3,7 +3,7 @@
   </div>
   <div class="sidemenu-list">
     <a href="{{ route('about') }}"><span>over ons</span></a>
-    <a href="#"><span>logopedisten</span></a>
+    <a href="{{ route('therapists') }}"><span>logopedisten</span></a>
     <a href="#"><span>registreren</span></a>
     <a href="#"><span>contact</span></a>
 

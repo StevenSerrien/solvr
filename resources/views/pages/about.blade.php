@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="c-container">
-    <div class="mixed-jumbo mixed-jumbo--shaped m-t-60">
+    <div class="mixed-jumbo mixed-jumbo--shaped-triangle m-t-60">
       <div class="mixed-jumbo__content">
         <div class="row">
           <div class="large-12 columns">
@@ -10,7 +10,7 @@
           </div>
         </div>
       </div>
-      <div class="mixed-jumbo__background">
+      <div class="mixed-jumbo__background mixed-jumbo__background--color-1">
       </div>
     </div>
   </div>
