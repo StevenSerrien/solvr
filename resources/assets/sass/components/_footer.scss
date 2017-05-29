@@ -4,7 +4,8 @@ footer {
   // background-color: rgb(195, 195, 195);
   margin-top: 200px;
   .footer__left {
-    padding: 25px 0 15px 0;
+    position: relative;
+    padding: 15px 0 15px 0;
     padding-left: 2.5rem !important;
     background-color: rgb(237, 237, 237);
   }
@@ -15,6 +16,7 @@ footer {
     display: none;
   }
   .footer {
+
     &__social-media {
       padding: 15px 0;
       i {
@@ -32,6 +34,9 @@ footer {
       }
     }
     &__branding {
+      position: absolute;
+      top: 50%;
+      @include translateY(-50%);
       width: auto;
       height: 35px;
       margin-left: 16px;

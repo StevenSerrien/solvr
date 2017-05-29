@@ -1,74 +1,148 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="c-container">
-    <div class="mixed-jumbo mixed-jumbo--shaped-triangle m-t-60">
-      <div class="mixed-jumbo__content">
+
+  <div class="jumbotron jumbotron--color-1 s-container">
+
+    <div class="row f-row small-collapse">
+      <div class="large-12 columns">
+        <div class="jumbotron__content">
+          <h1>Jij wil <span class='highlight hightlight--color-1'>plezier</span> maken,<br>maar ook</h1>
+
+        </div>
+      </div>
+    </div>
+
+    <span class='jumbotron__big'>bijleren</span>
+  </div>
+
+  <div class="s-container s-container--no-p">
+
+    <div class="section  section--color-1 m-t-120">
+      <div class="section__header section__header--color-1">
         <div class="row">
           <div class="large-12 columns">
-            <h1>Jij wil plezier maken, <br>maar ook bijleren ?</h1>
+            <h1 class='section__headertitle'>Wat als je je oefeningen thuis <br> kon maken?</h1>
           </div>
         </div>
       </div>
-      <div class="mixed-jumbo__background mixed-jumbo__background--color-1">
+      <div class="section__inner up">
+        <div class="row" data-equalizer data-equalize-on="medium">
+          <div class="large-8 columns" data-equalizer-watch>
+            <div class="card--icon card--shdw">
+              <div class="row">
+                <div class="large-7 columns">
+                  <h3 class='card__title'>Weg met websites die dateren van de oertijd.</h3>
+                  <p class='card__text'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                </div>
+                <div class="large-5 columns">
+                  <div class="card__image">
+                    <img src="img/dinosaur-new.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card--icon card--shdw m-t-40">
+              <div class="row">
+                <div class="large-7 columns">
+                  <h3 class='card__title'>Verdien beloningen!</h3>
+                  <p class='card__text'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                </div>
+                <div class="large-5 columns">
+                  <div class="card__image">
+                    <img src="img/achievement-new.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="large-4 columns" data-equalizer-watch>
+            <div class="card--icon card--shdw card--full-height">
+              <div class="row">
+                <div class="large-12 columns">
+                  <div class="card__image">
+                    <img src="img/proud.svg" alt="">
+                  </div>
+                </div>
+                <div class="large-12 columns">
+                  <h3 class='card__title'>Wees trots op jezelf.</h3>
+                  <p class='card__text'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="c-container ">
-    <div class="row illustration-block m-t-80">
-      <div class="large-5 columns">
-        <div class="illustration-block__text">
-          <span class='illustration-block__b-number'>01.</span>
-          <h2 class='illustration-block__title'>Goed nieuws!</h2>
-          <p class='illustration-block__a-text'>
-             Genoeg met websites die nog dateren van voor de dinosaurussen.
-             Wij willen er voor zorgen dat elk kindje thuis beter kan worden aan de hand van op maat
-             gemaakte oefeningendoor zijn/haar logopediste.
-           </p>
-        </div>
+
+    <div class="row medium-collapse" data-equalizer data-equalize-on="medium">
+      <div class="cta-block clearfix m-t-120">
+      <div class="large-6 columns cta-block__content" data-equalizer-watch>
+        <h3 class='cta-block__title'>At vero eos et accusamus</h3>
+        <p class='cta-block__text'>laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit</p>
+        <a class='btn btn--ghst btn--ghst--inv cta-block__button' href="{{ route('about') }}">registreer mij</a>
+        <span class='cta-block__footer'>Bent u een logopediste?</span>
+      </div>
+      <div class="large-6 columns cta-block__illustration" data-equalizer-watch>
 
       </div>
-      <div class="large-7 columns">
-        <div class="illustration-block__illustration">
-          <img src="img/dinosaur-alt.svg" alt="">
-        </div>
-      </div>
     </div>
-    <div class="row illustration-block m-t-80">
-      <div class="large-7 large-push-5 columns">
-        <div class="illustration-block__text">
-          <span class='illustration-block__b-number'>02.</span>
-          <h2 class='illustration-block__title'>Beloningen</h2>
-          <p class='illustration-block__a-text'>
-            Net zoals bij de logopedisten kan je stickers verdienen.
-            Alleen deze keer in digitale vorm! Zo kan je met trots je
-            nieuwste stickers laten zien aan je ouders.
-           </p>
-        </div>
+    </div>
+    {{-- <div class="row f-row illustration-block m-t-80">
+    <div class="large-5 columns">
+    <div class="illustration-block__text">
+    <span class='illustration-block__b-number'>01.</span>
+    <h2 class='illustration-block__title'>Goed nieuws!</h2>
+    <p class='illustration-block__a-text'>
+    Genoeg met websites die nog dateren van voor de dinosaurussen.
+    Wij willen er voor zorgen dat elk kindje thuis beter kan worden aan de hand van op maat
+    gemaakte oefeningendoor zijn/haar logopediste.
+  </p>
+</div>
 
-      </div>
-      <div class="large-5 large-pull-7 columns">
-        <div class="illustration-block__illustration">
-          <img src="img/achievement-4.svg" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="row illustration-block m-t-80">
-      <div class="large-5 columns">
-        <div class="illustration-block__text">
-          <span class='illustration-block__b-number'>03.</span>
-          <h2 class='illustration-block__title'>Wees trots!</h2>
-          <p class='illustration-block__a-text'>
-             Na al dat oefenen is het tijd dat je trots bent. Je hebt misschien spelling en rekenen bijgeschaafd voor vandaag. Wees blij dat je er werk ingestoken hebt en wees klaar voor de volgende uitdaging!
-           </p>
-        </div>
+</div>
+<div class="large-7 columns">
+<div class="illustration-block__illustration">
+<img src="img/dinosaur-alt.svg" alt="">
+</div>
+</div>
+</div>
+<div class="row illustration-block m-t-80">
+<div class="large-7 large-push-5 columns">
+<div class="illustration-block__text">
+<span class='illustration-block__b-number'>02.</span>
+<h2 class='illustration-block__title'>Beloningen</h2>
+<p class='illustration-block__a-text'>
+Net zoals bij de logopedisten kan je stickers verdienen.
+Alleen deze keer in digitale vorm! Zo kan je met trots je
+nieuwste stickers laten zien aan je ouders.
+</p>
+</div>
 
-      </div>
-      <div class="large-7 columns">
-        <div class="illustration-block__illustration">
-          <img src="img/proud.svg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="large-5 large-pull-7 columns">
+<div class="illustration-block__illustration">
+<img src="img/achievement-4.svg" alt="">
+</div>
+</div>
+</div>
+<div class="row illustration-block m-t-80">
+<div class="large-5 columns">
+<div class="illustration-block__text">
+<span class='illustration-block__b-number'>03.</span>
+<h2 class='illustration-block__title'>Wees trots!</h2>
+<p class='illustration-block__a-text'>
+Na al dat oefenen is het tijd dat je trots bent. Je hebt misschien spelling en rekenen bijgeschaafd voor vandaag. Wees blij dat je er werk ingestoken hebt en wees klaar voor de volgende uitdaging!
+</p>
+</div>
+
+</div>
+<div class="large-7 columns">
+<div class="illustration-block__illustration">
+<img src="img/proud.svg" alt="">
+</div>
+</div>
+</div> --}}
+</div>
 @endsection

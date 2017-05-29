@@ -35,5 +35,15 @@
       &:hover {
         background-color: white;
       }
+      &--inv {
+        color: black;
+        border-color: black;
+        &:hover {
+          border-color: #e37774;
+          color: white;
+          background-color: #e37774;
+        }
+      }
     }
+
 }

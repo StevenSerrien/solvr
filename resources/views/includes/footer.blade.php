@@ -2,7 +2,8 @@
     <div class="row f-row small-collapse" data-equalizer data-equalize-on="medium">
       <div class="footer__left large-11 columns" data-equalizer-watch>
         <div class="footer__branding">
-          <img src="img/f-brand-logo-normal.svg" alt="">
+          <span>solvr</span>
+          {{-- <img src="img/f-brand-logo-normal.svg" alt=""> --}}
         </div>
       </div>
       <div class="footer__right footer__social-media large-1 columns" data-equalizer-watch>

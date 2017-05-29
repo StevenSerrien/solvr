@@ -1,0 +1,38 @@
+.cta-block {
+  @include box-shadow( 0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
+  &__content {
+    min-height: 600px;
+    padding: 100px 100px 30px 100px;
+  }
+  &__title {
+    font-family: $secundary-font;
+    color: #404040;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  &__text {
+    color: #a1a7b0;
+    font-family: $secundary-font;
+    font-size: 18px;
+  }
+  &__button {
+    display: block;
+    margin-top: 50px;
+  }
+  &__footer {
+    color: rgb(221, 216, 216);
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(221, 216, 216);
+    font-size: 14px;
+  }
+  &__title, &__text, &__footer {
+    display: block;
+    text-align: center;
+  }
+  &__illustration {
+    background: url('../../img/cta-illustration-kids.svg') no-repeat;
+    background-size: cover;
+  }
+}

@@ -3,12 +3,13 @@
   <div class="title-bar-title">Menu</div>
 </div> --}}
 
-<div class="top-bar {{ Route::is('landing') ? 'inverted' : '' }}" id="example-menu">
+<div class="top-bar " id="example-menu">
   <div class="top-bar-left">
     <ul class="dropdown vertical medium-horizontal menu" data-dropdown-menu>
       <li class="menu-text">
         <div class="brand-logo">
-          <img src="img/brand-nav-logo-colored-b.svg" alt="Solvr logo">
+          <span>solvr</span>
+          {{-- <img src="img/brand-nav-logo-colored-b.svg" alt="Solvr logo"> --}}
         </div>
       </li>
 </ul>
