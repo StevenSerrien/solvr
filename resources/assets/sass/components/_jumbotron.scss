@@ -5,7 +5,7 @@
     z-index: 10;
     @include headings {
       font-size: rem-calc(72);
-      font-family: $jumbotron-font;
+      font-family: $main-font;
     }
   }
   &__background {
@@ -63,8 +63,12 @@
   min-height: 500px;
   margin-right: rem-calc(135px);
   position: relative;
+  &--w-img-1 {
+    background: url('../../img/lego.jpg') no-repeat center center;
+    background-size: cover;
+  }
   &--color-1 {
-    background-color: #3b6ecc;
+    background-color: $brand-color-1;
     &::before {
       right: 0;
       top: 25px;
@@ -86,11 +90,35 @@
       z-index: 5;
     }
   }
+  &--color-2 {
+    background-color: $brand-color-3;
+    &::before {
+      right: 0;
+      top: 25px;
+      content: ' ';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: url('../../img/letters.svg') no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: -100px;
+      left: 0;
+      // background-color: #e37774;
+      z-index: 5;
+    }
+  }
 
   &__content {
     @include headings {
       color: white;
-      font-family: $jumbotron-font;
+      font-family: $main-font;
+      font-weight: 600;
       font-size: rem-calc(48px);
     }
   }
@@ -99,9 +127,10 @@
     display: block;
     line-height: 1;
     text-transform: uppercase;
-    bottom: -25px;
+    bottom: -40px;
     color: white;
-    font-family: $jumbotron-big-font;
+    font-family: $main-font;
+    font-weight: bold;
     font-size: rem-calc(170px);
   }
 }

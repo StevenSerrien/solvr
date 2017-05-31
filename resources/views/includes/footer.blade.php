@@ -4,7 +4,14 @@
         <div class="footer__branding">
           <span>solvr</span>
           {{-- <img src="img/f-brand-logo-normal.svg" alt=""> --}}
+
         </div>
+        <div class="footer__links">
+          <ul class='menu'>
+            <li>privacy</li>
+          </ul>
+        </div>
+
       </div>
       <div class="footer__right footer__social-media large-1 columns" data-equalizer-watch>
         <i class='icon f-icon facebook'></i>

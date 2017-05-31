@@ -1,6 +1,43 @@
 .section {
 
   position: relative;
+
+  &__half {
+    padding-right: 150px;
+    position: relative;
+    &--shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &::after {
+        z-index: -1;
+        display: inline-block;
+        content: ' ';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 20px solid $brand-color-2;
+        top: 0;
+        right: 20px;
+      }
+      &::before {
+        z-index: -1;
+        display: inline-block;
+        content: ' ';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 10px solid $brand-color-3;
+
+        bottom: -10px;
+        left: 0;
+      }
+    }
+  }
   &__inner {
     &.up {
       top: -50px;
@@ -8,10 +45,32 @@
     height: 100%;
     position: relative;
     z-index: 10;
+  }
+  &__inner-inner {
+    position: relative;
 
+    padding: 56px;
+      // @include box-shadow(0 0 100px rgba(0,0,0,.05));
+      // background: white url('../../img/bg-shape-yellow.svg') no-repeat;
+      background-position: center left;
+  }
+  &__expand {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: -8.4375rem;
+    z-index: -1;
+    &--shape-right {
+      background: url('../../img/bg-shape-red.svg') no-repeat;
+      background-position: center right;
+    }
+    &--shape-left {
+      // background: url('../../img/bg-shape-yellow.svg') no-repeat;
+      // background-position: center left;
+    }
   }
   &--color-1 {
-    background-color: rgb(245, 247, 249);
+    // background-color: rgb(245, 247, 249);
     // background-color: #e37774;
   }
   &--diag {
@@ -44,9 +103,65 @@
     }
   }
   &__headertitle {
-    font-family: $main-font--bold;
-    color: #435062;
-    border-left: #e37774 solid 5px;
+    font-family: $main-font;
+    font-weight: 600;
+    color: #201f39;
+    border-left: #fce289 solid 15px;
     padding-left: 30px;
+    margin-bottom: 100px;
+    font-size: 2.3rem;
   }
+
+  &--type-1 {
+
+    @include box-shadow( 0 0 100px rgba(0,0,0,.05));
+  }
+  &--type-2 {
+    background-color: rgba(#f6f7fb, 0.5);
+  }
+}
+
+.section-bimg {
+  position: relative;
+  height: 700px;
+  &--about {
+    &::after {
+      content: ' ';
+      width: 50%;
+      height: 100%;
+      right: 0;
+      position: absolute;
+      background: url('../../img/kid-graffiti-grey.png') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+  &__card {
+    @include box-shadow(0 0 100px rgba(0,0,0,.05));
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    background-color: white;
+    padding: 100px 250px 75px 100px;
+  }
+  &__title {
+    font-family: $main-font;
+    color: #404040;
+    font-weight: 600;
+  }
+  &__subtitle {
+    font-family: $main-font;
+    color: rgb(88, 95, 100);
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  &__text {
+    font-family: $secundary-font;
+    color: rgb(110, 119, 126);
+    span {
+      font-weight: 600;
+
+    }
+  }
+
 }

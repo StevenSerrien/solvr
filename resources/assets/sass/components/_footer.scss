@@ -44,5 +44,13 @@ footer {
         // object-fit: contain;
       }
     }
+    &__links {
+      font-family: $brand-font;
+      letter-spacing: 1px;
+      position: absolute;
+      top: 50%;
+      @include translateY(-50%);
+      right: 40px;
+    }
   }
 }

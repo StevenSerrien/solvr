@@ -1,5 +1,6 @@
 .cta-block {
-  @include box-shadow( 0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
+  @include box-shadow( 0 0 100px rgba(0,0,0,.05));
+  
   &__content {
     min-height: 600px;
     padding: 100px 100px 30px 100px;
@@ -32,7 +33,7 @@
     text-align: center;
   }
   &__illustration {
-    background: url('../../img/cta-illustration-kids.svg') no-repeat;
+    background: url('../../img/cta-illustration-kids-3.svg') no-repeat;
     background-size: cover;
   }
 }

@@ -7,7 +7,7 @@
     <div class="row f-row small-collapse">
       <div class="large-12 columns">
         <div class="jumbotron__content">
-          <h1>Jij wil <span class='highlight hightlight--color-1'>plezier</span> maken,<br>maar ook</h1>
+          <h1>Jij wil <span class='highlight highlight--color-1'>plezier</span> maken,<br>maar ook</h1>
 
         </div>
       </div>
@@ -18,15 +18,97 @@
 
   <div class="s-container s-container--no-p">
 
-    <div class="section  section--color-1 m-t-120">
-      <div class="section__header section__header--color-1">
+
+
+    <div class="section__header section__header--color-1 m-t-100">
+      <div class="row f-row">
+        <div class="large-12 columns">
+          <h1 class='section__headertitle'>Wat als je je oefeningen thuis <br> kon maken?</h1>
+        </div>
+      </div>
+    </div>
+      <div class="section section--type-1 p-t-100 p-b-100">
         <div class="row">
-          <div class="large-12 columns">
-            <h1 class='section__headertitle'>Wat als je je oefeningen thuis <br> kon maken?</h1>
+          <div class="section__half large-6 columns">
+            <div class="section__half--shapes">
+
+            </div>
+            <h2 class='t--semi-bold'>Verken mee met ons</h2>
+            <h3 class='t--normal m-b-60'>Geraak niet verloren zoals <br> astronaut.</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+          </div>
+          <div class="large-6 columns">
+            <img src="img/astronaut.svg" alt="">
           </div>
         </div>
       </div>
-      <div class="section__inner up">
+      <div class="section  section--color-1 m-t-120">
+        <div class="section__header section__header--color-1">
+          <div class="row f-row">
+            <div class="large-12 columns">
+              <h1 class='section__headertitle'>Oke, maar wat bieden nog <br> jullie meer?</h1>
+            </div>
+          </div>
+        </div>
+        <div class="section section--type-2 p-t-100 p-b-100">
+          <div class="row">
+            <div class="large-4 columns">
+              <div class="icon-card">
+              <div class="icon-card__image">
+                  <img src="img/icon-achievement.svg" alt="">
+              </div>
+              <h3 class="icon-card__title">
+                Verdien beloningen
+              </h3>
+              <span class="icon-card__text">
+                Net zoals bij de logopediste, <br> maar dan online.
+              </span>
+            </div>
+
+            </div>
+
+            <div class="large-4 columns">
+
+                <div class="icon-card">
+                <div class="icon-card__image">
+                    <img src="img/icon-kid.svg" alt="">
+                </div>
+                <h3 class="icon-card__title">
+                  Wees trots
+                </h3>
+                <span class="icon-card__text">
+                  Je leer enorm veel bij, <br> dat ziet je logopediste.
+                </span>
+              </div>
+
+              </div>
+
+            <div class="large-4 columns">
+              <div class="icon-card">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {{-- <div class="section-bimg section-bimg--about row f-row">
+          <div class="section-bimg__card large-7 columns">
+            <h2 class='section-bimg__title'><span class='highlight highlight--color-1'>Technologie blijft.</span></h2>
+            <p class='section-bimg__subtitle'>En dit weten wij, logopedisten, maar al te goed.</p>
+            <p class='section-bimg__text'><span>Lorem Ipsum</span> is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak.</p>
+            <p class='section-bimg__text'><span>Lorem Ipsum</span> is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst <span>Lorem Ipsum</span> bedrijfstak.</p>
+            <p class='section-bimg__text'> is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de <span>Lorem Ipsum</span> proeftekst in deze bedrijfstak.</p>
+          </div>
+      </div> --}}
+      {{-- <div class="section__inner up">
+        <div class="section__expand section__expand--shape-left">
+
+        </div>
+        <div class="section__inner-inner">
+
+
         <div class="row" data-equalizer data-equalize-on="medium">
           <div class="large-8 columns" data-equalizer-watch>
             <div class="card--icon card--shdw">
@@ -72,10 +154,14 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+
+      </div> --}}
+
     </div>
 
+    <div class="s-container s-container--no-p">
     <div class="row medium-collapse" data-equalizer data-equalize-on="medium">
       <div class="cta-block clearfix m-t-120">
       <div class="large-6 columns cta-block__content" data-equalizer-watch>
@@ -89,6 +175,7 @@
       </div>
     </div>
     </div>
+  </div>
     {{-- <div class="row f-row illustration-block m-t-80">
     <div class="large-5 columns">
     <div class="illustration-block__text">
@@ -144,5 +231,5 @@ Na al dat oefenen is het tijd dat je trots bent. Je hebt misschien spelling en r
 </div>
 </div>
 </div> --}}
-</div>
+
 @endsection

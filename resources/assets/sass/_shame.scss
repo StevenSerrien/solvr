@@ -31,7 +31,8 @@
         width: 100%;
         h1, h2, h3, h4, h5 {
           font-size: 4.5rem;
-          font-family: $jumbotron-font;
+          font-family: $main-font;
+          font-weight: 600;
         }
       }
     }
@@ -118,16 +119,31 @@ span {
   &.highlight {
     position: relative;
     z-index: 1;
-    &::after {
-      position: absolute;
-      z-index: -1;
-      bottom: -5px;
-      left: -5px;
-      display: block;
-      width: calc(100% + 10px);
-      height: 20px;
-      background: #ffe07a;
-      content: '';
+    &--color-1 {
+      &::after {
+        position: absolute;
+        z-index: -1;
+        bottom: 15px;
+        left: -5px;
+        display: block;
+        width: calc(100% + 10px);
+        height: 20px;
+        background: #ffe07a;
+        content: '';
+      }
+    }
+    &--color-2 {
+      &::after {
+        position: absolute;
+        z-index: -1;
+        bottom: 15px;
+        left: -5px;
+        display: block;
+        width: calc(100% + 10px);
+        height: 20px;
+        background: #3b6ecc;
+        content: '';
+      }
     }
   }
 }
