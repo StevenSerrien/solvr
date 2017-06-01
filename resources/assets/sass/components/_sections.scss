@@ -108,7 +108,7 @@
     color: #201f39;
     border-left: #fce289 solid 15px;
     padding-left: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 25px;
     font-size: 2.3rem;
   }
 
@@ -118,6 +118,12 @@
   }
   &--type-2 {
     background-color: rgba(#f6f7fb, 0.5);
+  }
+  &--type-3 {
+    background-color: #f9f9f9;
+  }
+  &--type-4 {
+    background: url('../../img/playstation-pattern.png');
   }
 }
 

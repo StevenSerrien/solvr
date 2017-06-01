@@ -146,4 +146,24 @@ span {
       }
     }
   }
+
+  &.line-highlight {
+    display: inline-block;
+    position: relative;
+    font-family: $main-font;
+    color: rgb(195, 200, 208);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 300;
+    &::before {
+      display: inline-block;
+      content: ' ';
+      position: relative;
+      width: 50px;
+      height: 2px;
+      background-color: rgb(195, 200, 208);
+      bottom: 5px;
+      margin-right: 15px;
+    }
+  }
 }

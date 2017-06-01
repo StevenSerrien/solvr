@@ -34,9 +34,11 @@
 
             </div>
             <h2 class='t--semi-bold'>Verken mee met ons</h2>
-            <h3 class='t--normal m-b-60'>Geraak niet verloren zoals <br> astronaut.</h3>
+            <h3 class='t--regular t--lightest m-b-60'>Geraak niet verloren zoals <br> astronaut.</h3>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+
+            <span class='line-highlight m-t-40'>rekenen, spelling en taal</span>
           </div>
           <div class="large-6 columns">
             <img src="img/astronaut.svg" alt="">
@@ -53,8 +55,27 @@
         </div>
         <div class="section section--type-2 p-t-100 p-b-100">
           <div class="row">
-            <div class="large-4 columns">
-              <div class="icon-card">
+            <div class="large-12 columns">
+              <h2 class='t--semi-bold text-center'>Doe je ook <span class='highlight highlight--color-1'>mee?</span></h2>
+              <h3 class='t--regular t--lightest text-center'>Dit platform is voor jullie</h3>
+            </div>
+          </div>
+          <div class="row" data-equalizer data-equalize-on="medium">
+            <div class="medium-6 large-4 columns m-t-40" data-equalizer-watch>
+              <div class="icon-card icon-card--bounce-up">
+              <div class="icon-card__image">
+                  <img src="img/icon-laptop.svg" alt="">
+              </div>
+              <h3 class="icon-card__title">
+                Overal, elke moment
+              </h3>
+              <span class="icon-card__text">
+                Beperk je niet tot <br> pen en papier.
+              </span>
+            </div>
+          </div>
+            <div class="medium-6 large-4 columns m-t-40" data-equalizer-watch>
+              <div class="icon-card icon-card--bounce-up">
               <div class="icon-card__image">
                   <img src="img/icon-achievement.svg" alt="">
               </div>
@@ -68,9 +89,9 @@
 
             </div>
 
-            <div class="large-4 columns">
+            <div class="medium-12 large-4 columns m-t-40" data-equalizer-watch>
 
-                <div class="icon-card">
+                <div class="icon-card icon-card--bounce-up">
                 <div class="icon-card__image">
                     <img src="img/icon-kid.svg" alt="">
                 </div>
@@ -83,13 +104,30 @@
               </div>
 
               </div>
-
-            <div class="large-4 columns">
-              <div class="icon-card">
-              </div>
+          </div>
+        </div>
+      </div>
+      <div class="section m-t-120">
+        <div class="section__header section__header--color-1">
+          <div class="row f-row">
+            <div class="large-12 columns">
+              <h1 class='section__headertitle'>Oke, maar wat bieden nog <br> jullie meer?</h1>
             </div>
           </div>
         </div>
+      </div>
+      <div class="row medium-collapse" data-equalizer data-equalize-on="medium">
+        <div class="cta-block clearfix">
+        <div class="large-6 columns cta-block__content" data-equalizer-watch>
+          <h3 class='cta-block__title'>At vero eos et accusamus</h3>
+          <p class='cta-block__text'>laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit</p>
+          <a class='btn btn--ghst btn--ghst--inv cta-block__button' href="{{ route('about') }}">registreer mij</a>
+          <span class='cta-block__footer'>Bent u een logopediste?</span>
+        </div>
+        <div class="large-6 columns cta-block__illustration" data-equalizer-watch>
+
+        </div>
+      </div>
       </div>
 
 
@@ -161,7 +199,7 @@
 
     </div>
 
-    <div class="s-container s-container--no-p">
+    {{-- <div class="s-container s-container--no-p">
     <div class="row medium-collapse" data-equalizer data-equalize-on="medium">
       <div class="cta-block clearfix m-t-120">
       <div class="large-6 columns cta-block__content" data-equalizer-watch>
@@ -175,7 +213,7 @@
       </div>
     </div>
     </div>
-  </div>
+  </div> --}}
     {{-- <div class="row f-row illustration-block m-t-80">
     <div class="large-5 columns">
     <div class="illustration-block__text">

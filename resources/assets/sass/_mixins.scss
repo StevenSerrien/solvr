@@ -19,6 +19,13 @@
    @include transform(translateX($x));
 }
 
+@mixin transition( $transition ) {
+	-webkit-transition: -webkit-$transition;
+  -moz-transition: -moz-$transition;
+  -o-transition: -o-$transition;
+  transition:	$transition;
+}
+
 
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow !important;

@@ -162,6 +162,18 @@ $secundary-font: 'Source Sans Pro';
 	font-weight: normal;
 }
 
+.t--dark {
+
+}
+
+.t--light {
+
+}
+
+.t--lightest {
+		color: rgb(161, 167, 176) !important;
+}
+
 h2  {
 
   @include breakpoint(small) {
@@ -190,6 +202,7 @@ h3 {
 
 p {
   line-height: 1.67;
+	font-family: $secundary-font;
 }
 
 p, span, li, a, button{
