@@ -125,6 +125,7 @@
               <h2 class='t--semi-bold'>Jouw passe, gemakkelijker.</h2>
               <h3 class='t--regular t--lightest'>Blijf verbonden met cliëntjes</h3>
               <p class='m-t-50'>Sed ut perspiciatis unde omnis iste natus error sit <span class='t--semi-bold'>voluptatem</span> accusantium doloremque laudantium, <span class='t--semi-bold'>voluptatem</span> aperiam, eaque ipsa quae ab illo <span class='t--semi-bold'>voluptatem</span>.</p>
+              <a class='btn btn--ghst btn--ghst--inv m-t-40' href="{{ route('contact')}}">vraag account aan</a>
             </div>
           </div>
 

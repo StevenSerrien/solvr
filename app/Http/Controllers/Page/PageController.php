@@ -13,4 +13,8 @@ class PageController extends Controller
   public function viewTherapistsPage() {
     return view('pages.therapist');
   }
+
+  public function viewContactPage() {
+    return view('pages.contact');
+  }
 }

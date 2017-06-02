@@ -16,8 +16,46 @@
   margin-left: rem-calc(56px) !important;
   position: relative;
   &--no-p {
-    
+
     padding-left: 0px !important;
     margin-right: rem-calc(135px);
+  }
+}
+
+
+.full-width-container {
+  width: 100vw;
+  position: relative;
+  overflow: visible;
+  &--w-shapes-1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &::after {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      background: url('../../img/big-yellow-circle.svg') no-repeat center center;
+      background-size: contain;
+      width: 60%;
+      height: 70%;
+      right: -500px;
+      top: 50%;
+      @include translateY(-50%);
+    }
+    &::before {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      background: url('../../img/big-blue-circle.svg') no-repeat center center;
+      background-size: contain;
+      width: 30%;
+      height: 30%;
+      left: -150px;
+      top: 75%;
+      @include translateY(-75%);
+    }
+    div[class*='-container'] {
+      background-color: white;
+    }
   }
 }

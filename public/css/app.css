@@ -6302,6 +6302,49 @@ you can use the generic selector below, but it's slower:
   margin-right: 8.4375rem;
 }
 
+.full-width-container {
+  width: 100vw;
+  position: relative;
+  overflow: visible;
+}
+
+.full-width-container--w-shapes-1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.full-width-container--w-shapes-1::after {
+  content: ' ';
+  position: absolute;
+  z-index: -1;
+  background: url("../../img/big-yellow-circle.svg") no-repeat center center;
+  background-size: contain;
+  width: 60%;
+  height: 70%;
+  right: -500px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.full-width-container--w-shapes-1::before {
+  content: ' ';
+  position: absolute;
+  z-index: -1;
+  background: url("../../img/big-blue-circle.svg") no-repeat center center;
+  background-size: contain;
+  width: 30%;
+  height: 30%;
+  left: -150px;
+  top: 75%;
+  -webkit-transform: translateY(-75%);
+  transform: translateY(-75%);
+}
+
+.full-width-container--w-shapes-1 div[class*='-container'] {
+  background-color: white;
+}
+
 .mixed-jumbo {
   padding: 4.6875rem 0;
   /*** Effects ***/
@@ -6935,7 +6978,6 @@ body,
 }
 
 .section__half--shapes::after {
-  z-index: -1;
   display: inline-block;
   content: ' ';
   position: absolute;
@@ -6948,7 +6990,6 @@ body,
 }
 
 .section__half--shapes::before {
-  z-index: -1;
   display: inline-block;
   content: ' ';
   position: absolute;
@@ -6985,7 +7026,7 @@ body,
 }
 
 .section__expand--shape-right {
-  background: url("../../img/bg-shape-red.svg") no-repeat;
+  background: url("../../img/big-yellow-circle.svg") no-repeat;
   background-position: center right;
 }
 

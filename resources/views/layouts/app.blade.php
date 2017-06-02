@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='sl'>
 <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +32,7 @@
           @include('includes.navbar')
           @yield('content')
         </div>
-        
+
         @include('includes.footer')
       </div>
     </div>
@@ -39,5 +40,6 @@
     <!-- Scripts -->
       <script src="{{ elixir('js/libs.js') }}"></script>
       <script src="{{ elixir('js/app.js') }}"></script>
+      <script src="{{ elixir('js/angular.js') }}"></script>
 </body>
 </html>

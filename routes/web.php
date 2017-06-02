@@ -21,5 +21,6 @@ Auth::routes();
 Route::get('/', ['as' => 'landing', 'uses' => 'HomeController@index']);
 Route::get('/over-ons', ['as' => 'about', 'uses' => 'Page\PageController@viewAboutPage']);
 Route::get('/info-voor-logopedisten', ['as' => 'therapists', 'uses' => 'Page\PageController@viewTherapistsPage']);
+Route::get('/contact', ['as' => 'contact', 'uses' => 'Page\PageController@viewContactPage']);
 
 // Route::get('media/{media}/download', ['as' => 'media_download', 'uses' => 'Media\MediaController@download']);

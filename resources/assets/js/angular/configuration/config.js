@@ -1,4 +1,4 @@
-df.app.config(function($locationProvider, $interpolateProvider) {
+sl.app.config(function($locationProvider, $interpolateProvider) {
   var supports_history_api = function() {
     return !!(window.history && history.pushState);
   };

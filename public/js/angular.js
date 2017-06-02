@@ -61,3 +61,5 @@ sl.services.service('service', ["$http", "$q", function($http, $q){
 sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$location", "service", "$window", function($scope, $rootScope, $location, service, $window) {
 
 }]);
+
+//# sourceMappingURL=angular.js.map

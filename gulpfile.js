@@ -10,13 +10,13 @@ elixir.config.images = {
 };
 
 
-// var appScripts = [
-//     'angular/configuration/module.js',
-//     'angular/configuration/config.js',
-//     'angular/app/directives/*.js',
-//     'angular/app/services/*.js',
-//     'angular/app/controllers/*.js'
-// ];
+var appScripts = [
+    'angular/configuration/module.js',
+    'angular/configuration/config.js',
+    'angular/app/directives/*.js',
+    'angular/app/services/*.js',
+    'angular/app/controllers/*.js'
+];
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -27,6 +27,10 @@ elixir.config.images = {
  | file for your application as well as publishing vendor resources.
  |
  */
+
+ elixir(function(mix) {
+   mix.annotate(appScripts).scripts('annotated.js','public/js/angular.js', 'public/js/');
+ });
 
 elixir((mix) => {
     mix.sass('app.scss')
@@ -40,7 +44,14 @@ elixir((mix) => {
             'libs/typed.js',
             'libs/classie.js',
             'libs/snap.svg-min.js',
+
+            // Angular libs
+            // 'plugins/angular.min.js',
+            // 'plugins/angular-sanitize.js',
+            // 'plugins/angular-route.js',
+            // 'plugins/angular-animate.js',
         ],
         'public/js/libs.js')
+
        .version(['css/app.css', 'js/app.js']);
 });
