@@ -59,3 +59,23 @@
     }
   }
 }
+
+
+.full-screen-container {
+  position: relative;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  height: calc(100vh - 88px);
+  overflow: hidden;
+  transition: background-position .5s ease-in-out;
+  background-size: 176.28111vw 143.24012vw;
+  background: url('../../img/colored-background-supersized.svg') no-repeat 20px;
+
+  &--w-centered-content {
+    padding: 10vh 0;
+  }
+  &.state-1 {
+    background-position: 20vw 40vh;
+  }
+}

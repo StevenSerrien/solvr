@@ -1,1 +1,47 @@
-<h3>goeienavond goeiendag</h3>
+
+<form name='therapistPersonalSignupForm' class='form-block__inner'>
+  <div class="row">
+    <div class="large-12 columns">
+      <!-- ##contact.state.currentTemplate.index + 1## -->
+      <h2 class='t--semi-bold text-center'>Registratie voor <span class='highlight highlight--color-1'>logopediste</span> </h2>
+      <h3 class='t--regular t--lightest m-b-60 text-center'>Uw persoonlijke gegevens </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
+      <label>Voornaam
+        <input type="text" ng-model='contact.user.firstname' placeholder="Voornaam">
+      </label>
+    </div>
+    <div class="medium-6 columns">
+      <label>Achternaam
+        <input type="text" ng-model='contact.user.lastname' placeholder="Achternaam">
+      </label>
+    </div>
+    <div class="medium-6 columns">
+      <label>Heeft u een RISIV nummer?
+        <select>
+          <option value="yes">Husker</option>
+          <option value="no">Starbuck</option>
+        </select>
+      </label>
+    </div>
+    <div class="medium-6 columns">
+      <label>Vul uw RISIV nummer hier in.
+        <input type="text" ng-model='contact.user.risivnumber' placeholder="Risivnummer">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <button type="button" class='btn form-block__button form-block__button--next' data-ng-click='contact.events.updateUserData(1)' name="button">
+        volgende
+      </button>
+    </div>
+  </div>
+
+  <div class="form-block__info">
+    <i class='icon-question'></i>
+  </div>
+</div>
+</form>

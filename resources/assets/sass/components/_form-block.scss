@@ -1,0 +1,70 @@
+.form-block {
+  background-color: white;
+  @include box-shadow( 0 0 100px rgba(0,0,0,.05));
+
+  &--contact-signup {
+
+  }
+  &__left, &__right {
+
+  }
+  &__left {
+    background-color: rgb(241, 241, 241);
+    position: relative;
+
+  }
+  &__right {
+
+  }
+  &__inner {
+    padding: 7.5vh 20vh 12vh 20vh;
+    position: relative;
+  }
+  &__info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    i {
+      font-size: 20px;
+      color: rgb(161, 167, 176) !important;
+    }
+  }
+  &__button {
+
+    color: rgb(38, 38, 38);
+    overflow: hidden;
+    padding: 20px 60px;
+    border-width: 3px;
+    display: inline-block;
+    position: relative;
+    font-family: $secundary-font;
+    font-weight: 600;
+    &--next {
+      &::before {
+        // color: rgb(38, 38, 38) !important;
+        // right: -50%;
+        // top: 53%;
+        // @include translateY(-53%);
+        // font-family: 'Simple-Line-Icons';
+        // position: absolute;
+        //
+        // font-size: 100%;
+        //
+        // color: #fff;
+        // -webkit-transition: all 0.3s;
+        // -moz-transition: all 0.3s;
+        // transition: all 0.3s;
+
+      }
+      &:hover {
+         border-color: black;
+        &::before {
+          // right: 10%;
+        }
+      }
+    }
+    &--previous {
+
+    }
+  }
+}

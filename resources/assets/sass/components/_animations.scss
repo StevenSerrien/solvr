@@ -1,0 +1,18 @@
+
+
+/* Contact Multidimensional Form */
+.in-and-out {
+  &.ng-leave, &.ng-enter {
+    // -webkit-transition: all ease 0.5s;
+    // -moz-transition: all ease 0.5s;
+    // -o-transition: all ease 0.5s;
+    // transition: all ease 0.5s;
+
+  }
+  &.ng-enter {
+    &.active {
+
+    }
+  }
+
+}

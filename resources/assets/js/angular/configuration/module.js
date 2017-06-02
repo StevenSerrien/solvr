@@ -6,6 +6,7 @@ var dependencies = [
   'ngAnimate',
   'ngRoute',
   'ngSanitize',
+  'angular.vertilize'
 ];
 
 var sl = {
