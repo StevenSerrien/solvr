@@ -32,6 +32,12 @@ var appScripts = [
    mix.annotate(appScripts).scripts('annotated.js','public/js/angular.js', 'public/js/');
  });
 
+ elixir(function(mix) {
+   mix.copy(
+     'resources/views/states', 'public/assets/templates'
+   );
+ });
+
 elixir((mix) => {
     mix.sass('app.scss')
       //  .annotate(appScripts).webpack('annotated.js','public/assets/js/angular.js', 'public/js/')
