@@ -1,18 +1,66 @@
 
+.in-and-out-add + .in-and-out {
+  visibility: hidden;
+  display: none;
+}
 
+.in-and-out + .in-and-out {
+  visibility: hidden;
+  display: none;
+}
 /* Contact Multidimensional Form */
 .in-and-out {
+  // -webkit-transition: all 1000ms; /* Safari/Chrome */
+  // transition: all 1000ms;
+  &
   &.ng-leave, &.ng-enter {
-    // -webkit-transition: all ease 0.5s;
-    // -moz-transition: all ease 0.5s;
-    // -o-transition: all ease 0.5s;
-    // transition: all ease 0.5s;
+
 
   }
+  &
+  &.ng-leave, &.ng-leave-prepare {
+    // visibility: hidden;
+  }
+
   &.ng-enter {
-    &.active {
-
-    }
+    // opacity: 0;
+    // &-active {
+    //   opacity: 0;
+    // }
   }
+  // &.ng-leave {
+  //   visibility: hidden;
+  //   &-active {
+  //     visibility: hidden;
+  //   }
+  // }
 
+}
+
+
+
+
+
+
+/* Animation Sequence */
+@keyframes seq1 {
+  from { opacity: 0; }
+  to   {
+    opacity: 1;
+    top: 0;
+  }
+}
+@-moz-keyframes seq1 {
+  from { opacity: 0; }
+  to   {
+    opacity: 1;
+    top: 0;
+  }
+}
+@-webkit-keyframes seq1 {
+  from { opacity: 0; }
+  to   {
+    opacity: 1;
+    top: 0;
+  }
 }

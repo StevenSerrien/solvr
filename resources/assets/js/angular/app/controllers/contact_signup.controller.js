@@ -11,7 +11,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
     },
 
     updateUserData: function(index) {
-      self.events.changeTemplate(index);
+      self.events.changeTemplate(index + 1);
+
     },
   };
 
@@ -36,6 +37,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
     user: {},
     practice: {},
 
+    globalForm: {},
     animationClass: 'in-and-out',
 
     templates: [],

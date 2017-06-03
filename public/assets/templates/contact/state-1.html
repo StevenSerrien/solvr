@@ -1,5 +1,5 @@
 
-<form name='therapistPersonalSignupForm' class='form-block__inner'>
+<form name='therapistPersonalSignupForm' class='form-block__inner' >
   <div class="row">
     <div class="large-12 columns">
       <!-- ##contact.state.currentTemplate.index + 1## -->
@@ -10,12 +10,12 @@
   <div class="row">
     <div class="medium-6 columns">
       <label>Voornaam
-        <input type="text" ng-model='contact.user.firstname' placeholder="Voornaam">
+        <input type="text" ng-model='contact.user.firstname' placeholder="Voornaam" required>
       </label>
     </div>
     <div class="medium-6 columns">
       <label>Achternaam
-        <input type="text" ng-model='contact.user.lastname' placeholder="Achternaam">
+        <input type="text" ng-model='contact.user.lastname' placeholder="Achternaam" required>
       </label>
     </div>
     <div class="medium-6 columns">
@@ -32,16 +32,7 @@
       </label>
     </div>
   </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <button type="button" class='btn form-block__button form-block__button--next' data-ng-click='contact.events.updateUserData(1)' name="button">
-        volgende
-      </button>
-    </div>
-  </div>
 
-  <div class="form-block__info">
-    <i class='icon-question'></i>
-  </div>
+
 </div>
 </form>
