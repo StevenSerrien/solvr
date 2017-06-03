@@ -5,43 +5,29 @@
       <h3 class='t--regular t--lightest m-b-60 text-center'>We zetten hem meteen in het systeem. </h3>
     </div>
   </div>
-  <div class="row">
-    <div id="locationField">
-      <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
+  <div class="row m-b-40">
+    <div class="large-12 columns">
+      <div id="locationField">
+      <input id="autocomplete" class='input--stnrd' placeholder="Enter your address" ng-focus='initAutocomplete()' onFocus="initAutocomplete()" type="text"></input>
+      </div>
     </div>
-
-    <table id="address">
-      <tr>
-        <td class="label">Street address</td>
-        <td class="slimField"><input class="field" id="street_number"
-              disabled="true"></input></td>
-        <td class="wideField" colspan="2"><input class="field" id="route"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">City</td>
-        <!-- Note: Selection of address components in this example is typical.
-             You may need to adjust it for the locations relevant to your app. See
-             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
-        -->
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="slimField"><input class="field"
-              id="administrative_area_level_1" disabled="true"></input></td>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
+  </div>
+  <div id="address" class="row">
+    <div class="medium-5 columns">
+        <input id='name' class='input--stnrd' type="text" ng-model='contact.user.practice.name' placeholder="Praktijknaam" autocomplete="off" required >
+    </div>
+    <div class="medium-5 columns">
+        <input id='route' class='input--stnrd' type="text" ng-model='contact.user.practice.streetname' placeholder="Straatnaam" autocomplete="off" required >
+    </div>
+    <div class="medium-2 columns">
+        <input id='street_number' class='input--stnrd' type="text" ng-model='contact.user.practice.streetnumber' placeholder="Huisnummer" autocomplete="off" required >
+    </div>
+    <div class="medium-6 columns">
+        <input id='locality' class='input--stnrd' type="text" ng-model='contact.user.practice.locality' placeholder="Gemeente" autocomplete="off" required >
+    </div>
+    <div class="medium-6 columns">
+        <input id='postal_code' class='input--stnrd' type="text" ng-model='contact.user.practice.zipcode' placeholder="Zipcode" autocomplete="off" required >
+    </div>
   </div>
   <script>
       // This example displays an address form, using the autocomplete feature
@@ -56,8 +42,6 @@
         street_number: 'short_name',
         route: 'long_name',
         locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
         postal_code: 'short_name'
       };
 
@@ -66,7 +50,10 @@
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+            {
+              types: ['geocode'],
+              componentRestrictions: {country: 'be'}//Belgium only
+          });
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
@@ -111,6 +98,6 @@
         }
       }
     </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE&libraries=places&callback=initAutocomplete"
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE&libraries=places"
        async defer></script>
 </form>

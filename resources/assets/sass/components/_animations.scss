@@ -1,4 +1,6 @@
-
+.in-and-out {
+  transition: height 0.5s ease-in-out;
+}
 .in-and-out-add + .in-and-out {
   visibility: hidden;
   display: none;
