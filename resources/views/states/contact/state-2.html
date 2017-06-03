@@ -1,15 +1,16 @@
-<form name=''class="form-block__inner" action="index.html" method="post" ng-cloak>
+<form name='therapistExistingPracticeSignupForm' class="form-block__inner"  ng-cloak>
   <div class="row">
     <div class="large-12 columns">
-      <h3 class='t--regular t--lightest m-b-60 m-t-60'>Praktijkgegevens</h3>
+      <h2 class='t--semi-bold text-center'>Registratie voor <span class='highlight highlight--color-1'>logopediste</span> </h2>
+      <h3 class='t--regular t--lightest m-b-60 text-center'>Is uw praktijk reeds aangesloten bij ons? </h3>
     </div>
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <input type="radio" name="practiceChoice" value="" id="cu-newpractice" required><label for="cu-newpractice">Nieuwe praktijk registreren</label>
+      <input class='form-block__choice-card' type="radio" name="practiceChoice" value="existing" id="cu-newpractice" ng-model='contact.user.practiceStatus' required><label for="cu-newpractice"><span>Ja hoor!</span></label>
     </div>
     <div class="large-6 columns">
-      <input type="radio" name="practiceChoice" value="Yellow" id="cu-existingpractice"><label for="cu-existingpractice">Mijn praktijk staat al geregistreerd</label>
+      <input class='form-block__choice-card' type="radio" name="practiceChoice" value="new" id="cu-existingpractice" ng-model='contact.user.practiceStatus' required><label for="cu-existingpractice"><span>Nee, nog niet</span></label>
     </div>
   </div>
 </form>

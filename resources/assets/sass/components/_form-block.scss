@@ -68,6 +68,59 @@
         width: 25%;
       }
     }
+    &.step-2 {
+      &::before {
+        width: 50%;
+      }
+    }
+    &.step-3 {
+      &::before {
+        width: 75%;
+      }
+    }
+  }
+  &__choice-card {
+
+    &[type='radio'] {
+      display: none;
+    }
+    & + label {
+      /* Styling of the radiobuttons by their label */
+      position: relative;
+      display: block;
+      margin: auto;
+      height: auto;
+
+      padding: 40px 0;
+
+      cursor: pointer;
+      text-align: center;
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+      background: #fff;
+      box-shadow: 0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08);
+      overflow: hidden;
+      span {
+        font-size: 20px;
+        color: rgba(67,80,98,.5);
+        font-family: $main-font;
+        font-weight: 600;
+      }
+      &:hover {
+        box-shadow: 0 0 0 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08);
+        span {
+          color: $font-color-dark-1;
+        }
+      }
+    }
+    &:checked {
+      & + label {
+        box-shadow: 0 0 0 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08);
+        span {
+          color: $font-color-dark-1;
+        }
+      }
+    }
   }
   &__progress-circle {
     position: absolute;
@@ -83,6 +136,13 @@
     &--1 {
       left: -10px;
     }
+    &--2 {
+      left: 25%;
+    }
+    &--3 {
+      left: 50%;
+    }
+
     &.is-done {
       border-color: #27c79a;
       background: #27c79a;
@@ -93,7 +153,6 @@
     display: inline-block;
     width: auto;
     padding: 12px 18px;
-    padding-top: 18px;
     font-family: $secundary-font;
     font-size: 14px;
     font-weight: 700;
@@ -111,7 +170,6 @@
     display: inline-block;
     width: auto;
     padding: 12px 18px;
-    padding-top: 18px;
     font-family: $secundary-font;
     font-size: 14px;
     font-weight: 700;

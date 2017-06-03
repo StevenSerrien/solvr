@@ -1,0 +1,36 @@
+.input--stnrd {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid #e3e9ec;
+  // border-radius: 5px;
+  padding: 8px 20px;
+  padding-right: 30px;
+  padding-top: 12px;
+  font-family: $secundary-font;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #435062;
+  height: auto;
+  box-shadow: none;
+  overflow: hidden;
+  -webkit-transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+  transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+
+  background: url('../../img/icons/invalid-bullt.svg') no-repeat;
+  background-size: 10px 10px;;
+  background-position: right -10px center;
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: #a1a7b0;
+  }
+
+  &.ng-invalid.ng-dirty {
+    border-color: $brand-color-1--soft;
+    -webkit-transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+    transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+    background-position: right 10px center;
+  }
+}
