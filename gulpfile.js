@@ -58,6 +58,12 @@ elixir((mix) => {
             // 'plugins/angular-animate.js',
         ],
         'public/js/libs.js')
+        // .scripts(
+        //   [
+        //   // Angular Plugins (not via NPM, but manually)
+        //   'plugins/ngMask.min.js',
+        // ],
+        // 'public/js/angular-plugins.js')
 
        .version(['css/app.css', 'js/app.js']);
 });

@@ -15,8 +15,9 @@
   height: auto;
   box-shadow: none;
   overflow: hidden;
-  -webkit-transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
-  transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+  // -webkit-transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+  // transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+
 
   background: url('../../img/icons/invalid-bullt.svg') no-repeat;
   background-size: 10px 10px;;
@@ -26,11 +27,15 @@
     outline: none;
     border-color: #a1a7b0;
   }
-
+  // &.ng-dirty:not(.ng-pristine) {
+  //   @include animation(0s, 0.5s, inputInvalidRemove, cubic-bezier(.87,-.41,.19,1.44) );
+  // }
   &.ng-invalid.ng-dirty {
     border-color: $brand-color-1--soft;
-    -webkit-transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
-    transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
-    background-position: right 10px center;
+    @include animation(0s, 0.5s, inputInvalid, cubic-bezier(.87,-.41,.19,1.44) );
+
+    // -webkit-transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+    // transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
+    // background-position: right 10px center;
   }
 }

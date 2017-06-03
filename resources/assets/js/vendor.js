@@ -3,6 +3,8 @@ require('angular-route');
 require('angular-animate');
 require('angular-sanitize');
 require('angular-vertilize');
+require('angular-vertilize');
+require('ng-mask');
 
 require('what-input');
 

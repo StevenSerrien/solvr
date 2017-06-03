@@ -72,6 +72,31 @@
     animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 		animation-timing-function: linear;
 }
+@mixin animation($delay, $duration, $animation, $timing) {
+		-webkit-animation-delay: $delay;
+		-webkit-animation-duration: $duration;
+		-webkit-animation-name: $animation;
+		-webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+		-webkit-animation-timing-function: linear;
+
+		-moz-animation-delay: $delay;
+		-moz-animation-duration: $duration;
+		-moz-animation-name: $animation;
+		-moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+		-moz-animation-timing-function: $timing;
+
+		-o-animation-delay: $delay;
+		-o-animation-duration: $duration;
+		-o-animation-name: $animation;
+		-o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+		-o-animation-timing-function: $timing;
+
+		animation-delay: $delay;
+		animation-duration: $duration;
+		animation-name: $animation;
+		animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+		animation-timing-function: $timing;
+}
 
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow !important;

@@ -40,7 +40,27 @@
 
 
 
+/* Animation for input validation */
 
+@include keyframes(inputInvalid) {
+
+  0% {
+    background-position: right -10px center;
+  }
+  100% {
+    background-position: right 10px center;
+  }
+}
+@include keyframes(inputInvalidRemove) {
+
+  0% {
+    background-position: right 10px center;
+
+  }
+  100% {
+    background-position: right -10px center;
+  }
+}
 
 /* Animation Sequence */
 @keyframes seq1 {

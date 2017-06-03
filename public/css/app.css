@@ -6289,6 +6289,43 @@ you can use the generic selector below, but it's slower:
 }
 
 /* Contact Multidimensional Form */
+/* Animation for input validation */
+@-webkit-keyframes inputInvalid {
+  0% {
+    background-position: right -10px center;
+  }
+  100% {
+    background-position: right 10px center;
+  }
+}
+
+@keyframes inputInvalid {
+  0% {
+    background-position: right -10px center;
+  }
+  100% {
+    background-position: right 10px center;
+  }
+}
+
+@-webkit-keyframes inputInvalidRemove {
+  0% {
+    background-position: right 10px center;
+  }
+  100% {
+    background-position: right -10px center;
+  }
+}
+
+@keyframes inputInvalidRemove {
+  0% {
+    background-position: right 10px center;
+  }
+  100% {
+    background-position: right -10px center;
+  }
+}
+
 /* Animation Sequence */
 @keyframes seq1 {
   from {
@@ -7438,7 +7475,6 @@ body,
   height: auto;
   box-shadow: none;
   overflow: hidden;
-  transition: 0.5s background-position cubic-bezier(0.87, -0.41, 0.19, 1.44);
   background: url("../../img/icons/invalid-bullt.svg") no-repeat;
   background-size: 10px 10px;
   background-position: right -10px center;
@@ -7452,8 +7488,31 @@ body,
 
 .input--stnrd.ng-invalid.ng-dirty {
   border-color: #ffdee5;
-  transition: 0.5s background-position cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  background-position: right 10px center;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: inputInvalid;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: inputInvalid;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: inputInvalid;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: inputInvalid;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 
 footer .footer__left {
