@@ -6279,7 +6279,7 @@ you can use the generic selector below, but it's slower:
 }
 
 .in-and-out {
-  transition: height 0.5s ease-in-out;
+  min-height: 510px;
 }
 
 .in-and-out-add + .in-and-out {
