@@ -41,5 +41,6 @@
       <script src="{{ elixir('js/libs.js') }}"></script>
       <script src="{{ elixir('js/app.js') }}"></script>
       <script src="{{ elixir('js/angular.js') }}"></script>
+      @yield('scripts')
 </body>
 </html>

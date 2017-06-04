@@ -8,96 +8,37 @@
   <div class="row m-b-40">
     <div class="large-12 columns">
       <div id="locationField">
-      <input id="autocomplete" class='input--stnrd' placeholder="Enter your address" ng-focus='initAutocomplete()' onFocus="initAutocomplete()" type="text"></input>
+      <input id="autocomplete" class='input--stnrd' placeholder="Enter your address" ng-init='contact.googleHandlers.initAutocomplete()' type="text"></input>
       </div>
     </div>
   </div>
-  <div id="address" class="row">
-    <div class="medium-5 columns">
-        <input id='name' class='input--stnrd' type="text" ng-model='contact.user.practice.name' placeholder="Praktijknaam" autocomplete="off" required >
+  <div id="address" class="row  medium-collapse">
+    <div class="large-5 columns">
+      <div class="row">
+        <div class="medium-12 columns">
+            <input id='name' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.name' placeholder="Praktijknaam" autocomplete="off" required >
+        </div>
+        <div class="medium-12 columns">
+            <input id='telephone' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.telephone' placeholder="Telefoonnummer" autocomplete="off" restrict="reject" mask="(99)99 99 99 99" required >
+        </div>
+      </div>
     </div>
-    <div class="medium-5 columns">
-        <input id='route' class='input--stnrd' type="text" ng-model='contact.user.practice.streetname' placeholder="Straatnaam" autocomplete="off" required >
+    <div class="large-7 columns">
+      <div class="medium-8 columns">
+          <input id='route' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.route' placeholder="Straatnaam" autocomplete="off" required >
+      </div>
+      <div class="medium-4 columns">
+          <input id='street_number' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.street_number' placeholder="Nr." autocomplete="off" required >
+      </div>
+      <div class="medium-6 columns">
+          <input id='locality' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.locality' placeholder="Gemeente" autocomplete="off" required >
+      </div>
+      <div class="medium-6 columns">
+          <input id='postal_code' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.postal_code' placeholder="Zipcode" autocomplete="off" required >
+      </div>
     </div>
-    <div class="medium-2 columns">
-        <input id='street_number' class='input--stnrd' type="text" ng-model='contact.user.practice.streetnumber' placeholder="Huisnummer" autocomplete="off" required >
-    </div>
-    <div class="medium-6 columns">
-        <input id='locality' class='input--stnrd' type="text" ng-model='contact.user.practice.locality' placeholder="Gemeente" autocomplete="off" required >
-    </div>
-    <div class="medium-6 columns">
-        <input id='postal_code' class='input--stnrd' type="text" ng-model='contact.user.practice.zipcode' placeholder="Zipcode" autocomplete="off" required >
-    </div>
+
   </div>
-  <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        postal_code: 'short_name'
-      };
-
-      function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {
-              types: ['geocode'],
-              componentRestrictions: {country: 'be'}//Belgium only
-          });
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
-      }
-
-      function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
-
-        for (var component in componentForm) {
-          document.getElementById(component).value = '';
-          document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-          var addressType = place.address_components[i].types[0];
-          if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-          }
-        }
-      }
-
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
-    </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE&libraries=places"
-       async defer></script>
 </form>
