@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+  
   <div class="jumbotron jumbotron--color-1 s-container">
 
     <div class="row f-row small-collapse">

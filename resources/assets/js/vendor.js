@@ -4,6 +4,7 @@ require('angular-animate');
 require('angular-sanitize');
 require('angular-vertilize');
 require('angular-vertilize');
+require('angular-validation-match');
 require('ng-mask');
 
 require('what-input');

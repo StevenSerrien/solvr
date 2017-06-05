@@ -21,7 +21,12 @@
         <input class='input--stnrd' type="text" ng-model='contact.user.risivnumber' mask="+99 99 99999-9999" restrict="reject" placeholder="Risivnummer" autocomplete="off" required>
     </div>
   </div>
-
-
-</div>
+  <div class="row m-t-20">
+    <div class="medium-6 columns">
+        <input class='input--stnrd' name='password'  type="password" ng-model='contact.state.datatosend.user.password' placeholder="Wachtwoord" autocomplete="off" required >
+    </div>
+    <div class="medium-6 columns">
+        <input  class='input--stnrd'  name='confirmPassword' data-match='contact.state.datatosend.user.password' type="password" ng-model='contact.state.datatosend.user.confirmPassword' placeholder="Bevestig wachtwoord" autocomplete="off" required>
+    </div>
+  </div>
 </form>

@@ -7,7 +7,8 @@ var dependencies = [
   'ngRoute',
   'ngSanitize',
   'angular.vertilize',
-  'ngMask'
+  'ngMask',
+  'validation.match'
 ];
 
 var sl = {
