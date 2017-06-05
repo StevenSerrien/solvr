@@ -42,12 +42,8 @@ class RegisterController extends Controller
       return view('auth.practitioner.register');
     }
 
-    public function showRegistrationForm()
-    {
-      return view('auth.practitioner.register');
-    }
 
-    public function checkIfPractitionerExists()
+    public function checkIfPractitionerExists(Request $request)
     {
 
     }

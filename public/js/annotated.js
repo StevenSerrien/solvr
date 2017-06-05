@@ -82,6 +82,26 @@ sl.services.service('service', ["$http", "$q", function($http, $q){
     return _promise.promise;
   };
 
+  // this.afetch = function(method, url, data) {
+  //   var _promise = $q.defer();
+  //   return $http({
+  //     method: method,
+  //     url: url,
+  //     data: data,
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).success(function(response){
+  //
+  //    return response;
+  //
+  //   }).error(function(err){
+  //
+  //     return err;
+  //
+  //   })
+  // };
+
   this.get = function(url) {
     var data = {};
     return this.fetch('GET', url, data);
@@ -90,12 +110,17 @@ sl.services.service('service', ["$http", "$q", function($http, $q){
   this.post = function(url, data) {
     return this.fetch('POST', url, data);
   };
+  // 
+  // this.apost = function(url, data) {
+  //   return this.afetch('POST', url, data);
+  // };
 }]);
 
 sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$location", "service", "$window", function($scope, $rootScope, $location, service, $window) {
   var self = this;
 
   var savePractitioner = '/logopedist/nieuw';
+  var checkIfPractitionerExistsUrl = '/sql';
 
   this.events = {
 
@@ -105,11 +130,23 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
     },
 
     updateUserData: function(index) {
-      self.events.changeTemplate(index + 1);
+      // self.events.changeTemplate(index + 1);
 
+      // User info
+      if (index == 0) {
+        self.state.loading = true;
+        self.handlers.checkExistingUserRecord();
+        if (self.state.response == 'success') {
+          console.log('yolo');
+        }
+        else {
+
+        }
+
+      }
       // Registratiestap
       if (index == 2) {
-        self.handlers.p
+        // self.handlers.p
       }
     },
   };
@@ -125,8 +162,21 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
       self.state.currentTemplate = self.state.templates[0];
     },
     postUserDataToServer: function() {
-      service.post(newPractitionerUrl, self.state.datatosend)
-    }
+      service.post(newPractitionerUrl, self.state.datatosend);
+    },
+    checkExistingUserRecord: function() {
+      service.post(checkIfPractitionerExistsUrl, self.state.datatosend.user).then(function successCallback(response) {
+        console.log(response);
+        self.state.loading = false;
+        self.state.response = response;
+      }, function errorCallback(response) {
+        console.log(response.data);
+        self.state.loading = false;
+        self.state.response = response.data;
+      }
+
+      );
+    },
   };
 
   // listeners
@@ -143,6 +193,8 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
 
       },
     },
+    loading: false,
+    response: {},
 
     globalForm: {},
     animationClass: 'in-and-out',
@@ -194,7 +246,7 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
           self.state.datatosend.practice.lng = place.geometry.location.lng();
 
           $scope.$digest();
-          
+
         // });
 
 

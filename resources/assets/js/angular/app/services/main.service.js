@@ -17,6 +17,26 @@ sl.services.service('service', function($http, $q){
     return _promise.promise;
   };
 
+  // this.afetch = function(method, url, data) {
+  //   var _promise = $q.defer();
+  //   return $http({
+  //     method: method,
+  //     url: url,
+  //     data: data,
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).success(function(response){
+  //
+  //    return response;
+  //
+  //   }).error(function(err){
+  //
+  //     return err;
+  //
+  //   })
+  // };
+
   this.get = function(url) {
     var data = {};
     return this.fetch('GET', url, data);
@@ -25,4 +45,8 @@ sl.services.service('service', function($http, $q){
   this.post = function(url, data) {
     return this.fetch('POST', url, data);
   };
+  // 
+  // this.apost = function(url, data) {
+  //   return this.afetch('POST', url, data);
+  // };
 });

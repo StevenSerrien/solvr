@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Practice\Practice;
+use App\Models\Practitioner\Practitioner;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,38 @@ class HomeController extends Controller
     public function index()
     {
         return view('welcome');
+    }
+
+    public function test(Request $request) {
+
+
+      $postEmail = $request->email;
+      $emailExists = Practitioner::where('email',$postEmail)->first();
+
+      // Check if email is already registered for confirmed account
+      if ($emailExists) {
+        $status = 'error';
+        if ($emailExists->isConfirmed == 1) {
+          $message = 'Dit emailadres is reeds gebruikt.';
+
+        }
+        else {
+          $message = 'Dit emailadres is reeds geregistreerd, maar moet nog bevestigd worden door ons.';
+        }
+        $code = 500;
+      }
+      else {
+          $status = 'success';
+          $message = 'Emailadres is nog beschikbaar.';
+          $code = 200;
+      }
+
+      $returnData = array(
+        'status' => $status,
+        'message' => $message,
+      );
+
+      return response()->json($returnData, $code);
+
     }
 }

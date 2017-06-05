@@ -3,9 +3,10 @@
 namespace App\Models\Practitioner;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Practitioner extends Authenticatable
 {
     use Notifiable;
 
@@ -17,12 +18,11 @@ class User extends Authenticatable
      */
     protected $guarded = [
       'id',
-      'isConfirmed'
+      'isConfirmed',
       'confirmation_code',
       'isAdmin',
       'practice_id'
-
-    ]
+    ];
 
     /**
      * The attributes that should be hidden for arrays.

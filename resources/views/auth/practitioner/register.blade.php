@@ -19,11 +19,7 @@
         </div>
         <div class="row">
           <div class="large-12 columns">
-            {{-- ##contact.state.datatosend.user.firstname##
-            ##contact.state.datatosend.practice.streetnumber##
-            ##contact.user.practiceStatus##
-            ##contact.state.datatosend.practice.route##
-            ##contact.state.datatosend.practice.postal_code## --}}
+            ##contact.state.response##
           </div>
         </div>
         <div class="row small-collapse">
@@ -36,7 +32,7 @@
             </div>
             <button type="button" class='form-block__button form-block__progress-back' ng-show='contact.state.currentTemplate.index !== 0' data-ng-click='contact.events.changeTemplate(contact.state.currentTemplate.index - 1)' name="button">back</button>
 
-            <button type="button" ng-if='contact.state.currentTemplate.index === 0' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistPersonalSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">volgende</button>
+            <button type="button" ng-if='contact.state.currentTemplate.index === 0' class='form-block__button form-block__progress-next' ng-disabled="parentForm.therapistPersonalSignupForm.$invalid || contact.state.loading" data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">volgende</button>
             <button type="button" ng-if='contact.state.currentTemplate.index === 1' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistExistingPracticeSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">volgende</button>
             <button type="button" ng-if='contact.state.currentTemplate.index === 2' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistPracticeInfoNewSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">registreren</button>
 

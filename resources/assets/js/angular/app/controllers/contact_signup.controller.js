@@ -2,6 +2,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
   var self = this;
 
   var savePractitioner = '/logopedist/nieuw';
+  var checkIfPractitionerExistsUrl = '/sql';
 
   this.events = {
 
@@ -11,11 +12,23 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
     },
 
     updateUserData: function(index) {
-      self.events.changeTemplate(index + 1);
+      // self.events.changeTemplate(index + 1);
 
+      // User info
+      if (index == 0) {
+        self.state.loading = true;
+        self.handlers.checkExistingUserRecord();
+        if (self.state.response == 'success') {
+          console.log('yolo');
+        }
+        else {
+
+        }
+
+      }
       // Registratiestap
       if (index == 2) {
-        self.handlers.p
+        // self.handlers.p
       }
     },
   };
@@ -31,8 +44,21 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       self.state.currentTemplate = self.state.templates[0];
     },
     postUserDataToServer: function() {
-      service.post(newPractitionerUrl, self.state.datatosend)
-    }
+      service.post(newPractitionerUrl, self.state.datatosend);
+    },
+    checkExistingUserRecord: function() {
+      service.post(checkIfPractitionerExistsUrl, self.state.datatosend.user).then(function successCallback(response) {
+        console.log(response);
+        self.state.loading = false;
+        self.state.response = response;
+      }, function errorCallback(response) {
+        console.log(response.data);
+        self.state.loading = false;
+        self.state.response = response.data;
+      }
+
+      );
+    },
   };
 
   // listeners
@@ -49,6 +75,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
       },
     },
+    loading: false,
+    response: {},
 
     globalForm: {},
     animationClass: 'in-and-out',
@@ -100,7 +128,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
           self.state.datatosend.practice.lng = place.geometry.location.lng();
 
           $scope.$digest();
-          
+
         // });
 
 
