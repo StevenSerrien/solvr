@@ -211,7 +211,29 @@
         border-bottom: 1px dashed $font-color-light-1;
       }
     }
+    .input-cnf {
+      min-width:50px!important;
+      max-width:99.99%!important;
+      transition: width 0.25s;
+      text-align:center;
+    }
 
+  }
+  &__confirmation-left, &__confirmation-right {
+    padding: 15px 25px;
+    span {
+      display: block;
+      color: #435062;
+      font-weight: 600;
+
+      span {
+        font-weight: lighter;
+        color: #435062;
+      }
+    }
+  }
+  &__confirmation-right {
+    background-color: rgb(242, 242, 242);
   }
   &__button {
     &[disabled*='disabled'] {

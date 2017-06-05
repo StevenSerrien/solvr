@@ -5583,6 +5583,22 @@ h3 {
   }
 }
 
+h4 {
+  font-size: 1.0625rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  h4 {
+    font-size: 1.1875rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  h4 {
+    font-size: 1.3125rem;
+  }
+}
+
 p {
   line-height: 1.67;
   font-family: "Source Sans Pro";
@@ -7792,6 +7808,32 @@ footer .footer__links {
   font-weight: 500;
   color: #3d3d3d;
   border-bottom: 1px dashed #cacaca;
+}
+
+.form-block__confirmation-block .input-cnf {
+  min-width: 50px !important;
+  max-width: 99.99% !important;
+  transition: width 0.25s;
+  text-align: center;
+}
+
+.form-block__confirmation-left, .form-block__confirmation-right {
+  padding: 15px 25px;
+}
+
+.form-block__confirmation-left span, .form-block__confirmation-right span {
+  display: block;
+  color: #435062;
+  font-weight: 600;
+}
+
+.form-block__confirmation-left span span, .form-block__confirmation-right span span {
+  font-weight: lighter;
+  color: #435062;
+}
+
+.form-block__confirmation-right {
+  background-color: #f2f2f2;
 }
 
 .form-block__button[disabled*='disabled'] {

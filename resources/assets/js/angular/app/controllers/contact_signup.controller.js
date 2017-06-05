@@ -1,7 +1,7 @@
 sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $location, service, $window) {
   var self = this;
 
-
+  var savePractitioner = '/logopedist/nieuw';
 
   this.events = {
 
@@ -13,6 +13,10 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
     updateUserData: function(index) {
       self.events.changeTemplate(index + 1);
 
+      // Registratiestap
+      if (index == 2) {
+        self.handlers.p
+      }
     },
   };
 
@@ -25,6 +29,9 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
         { name: 'state-4.html', url: 'assets/templates/contact/state-4.html', index: 3 },
       ]
       self.state.currentTemplate = self.state.templates[0];
+    },
+    postUserDataToServer: function() {
+      service.post(newPractitionerUrl, self.state.datatosend)
     }
   };
 
@@ -42,13 +49,6 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
       },
     },
-    //
-    // user: {},
-    // practice: {
-    //   streetname: '',
-    // },
-    //
-    // test: {},
 
     globalForm: {},
     animationClass: 'in-and-out',
@@ -115,7 +115,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
         //   }
         //
         // }
-        
+
       });
       // autocomplete.addListener('place_changed', function() {
       //   self.googleHandlers.fillInAdress();

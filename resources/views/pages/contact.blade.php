@@ -38,8 +38,8 @@
 
             <button type="button" ng-if='contact.state.currentTemplate.index === 0' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistPersonalSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">volgende</button>
             <button type="button" ng-if='contact.state.currentTemplate.index === 1' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistExistingPracticeSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">volgende</button>
-            <button type="button" ng-if='contact.state.currentTemplate.index === 2' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistPracticeInfoNewSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">volgende</button>
-            <button type="button" ng-if='contact.state.currentTemplate.index === 3' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistPracticeInfoNewSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">registreren</button>
+            <button type="button" ng-if='contact.state.currentTemplate.index === 2' class='form-block__button form-block__progress-next' ng-disabled='parentForm.therapistPracticeInfoNewSignupForm.$invalid' data-ng-click='contact.events.updateUserData(contact.state.currentTemplate.index)' name="button">registreren</button>
+
           </div>
           </div>
         </div>

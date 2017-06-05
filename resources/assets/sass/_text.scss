@@ -202,6 +202,19 @@ h3 {
   }
 }
 
+h4 {
+
+  @include breakpoint(small) {
+    font-size: rem-calc(17px);
+  }
+  @include breakpoint(medium) {
+    font-size: rem-calc(19px);
+  }
+  @include breakpoint(large) {
+    font-size: rem-calc(21px);
+  }
+}
+
 p {
   line-height: 1.67;
 	font-family: $secundary-font;
