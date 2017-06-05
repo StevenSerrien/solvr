@@ -45,16 +45,19 @@ class HomeController extends Controller
           $message = 'Dit emailadres is reeds geregistreerd, maar moet nog bevestigd worden door ons.';
         }
         $code = 500;
+        $error = 'email';
       }
       else {
           $status = 'success';
           $message = 'Emailadres is nog beschikbaar.';
           $code = 200;
+          $error = 'none';
       }
 
       $returnData = array(
         'status' => $status,
         'message' => $message,
+        'error' => $error
       );
 
       return response()->json($returnData, $code);

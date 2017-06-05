@@ -38,7 +38,7 @@
     // transition: 0.5s background-position cubic-bezier(.87,-.41,.19,1.44);
     // background-position: right 10px center;
   }
-  &.invalid {
+  &.invalid, &.error {
     border-color: $brand-color-1--soft;
     @include animation(0s, 0.5s, inputInvalid, cubic-bezier(.87,-.41,.19,1.44) );
   }

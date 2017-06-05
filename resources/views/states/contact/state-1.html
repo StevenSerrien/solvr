@@ -15,7 +15,7 @@
         <input class='input--stnrd' type="text" ng-model='contact.state.datatosend.user.lastname' placeholder="Achternaam" autocomplete="off" required>
     </div>
     <div class="medium-6 columns">
-        <input class='input--stnrd' type="email" ng-model='contact.state.datatosend.user.email' placeholder="E-mail" autocomplete="off" required>
+        <input class='input--stnrd' type="email" ng-focus="contact.state.response.error = ''" ng-class="{'error': contact.state.response.error == 'email'}" ng-model='contact.state.datatosend.user.email' placeholder="E-mail" autocomplete="off" required>
     </div>
     <div class="medium-6 columns">
         <input class='input--stnrd' type="text" ng-model='contact.state.datatosend.user.rizivnumber' mask="9-99999-99-999" restrict="reject" placeholder="Risivnummer" autocomplete="off" required>

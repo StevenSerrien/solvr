@@ -7535,7 +7535,7 @@ body,
   animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 
-.input--stnrd.invalid {
+.input--stnrd.invalid, .input--stnrd.error {
   border-color: #ffdee5;
   -webkit-animation-delay: 0s;
   -webkit-animation-duration: 0.5s;

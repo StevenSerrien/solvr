@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\PractitionerAuth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use App\Models\Practice\Practice;
+use App\Models\Practitioner\Practitioner;
+// use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -18,7 +21,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
     /**
      * Where to redirect users after login.
@@ -45,6 +48,71 @@ class RegisterController extends Controller
 
     public function checkIfPractitionerExists(Request $request)
     {
+      $postEmail = $request->email;
+      $emailExists = Practitioner::where('email',$postEmail)->first();
+
+      // Check if email is already registered for confirmed account
+      if ($emailExists) {
+        $status = 'error';
+        if ($emailExists->isConfirmed == 1) {
+          $message = 'Dit emailadres is reeds gebruikt.';
+
+        }
+        else {
+          $message = 'Dit emailadres is reeds geregistreerd, maar moet nog bevestigd worden door ons.';
+        }
+        $code = 500;
+        $error = 'email';
+      }
+      else {
+          $status = 'success';
+          $message = 'Emailadres is nog beschikbaar.';
+          $code = 200;
+          $error = 'none';
+      }
+
+      $returnData = array(
+        'status' => $status,
+        'message' => $message,
+        'error' => $error
+      );
+
+      return response()->json($returnData, $code);
+    }
+
+    public function test(Request $request) {
+
+
+      $postEmail = $request->email;
+      $emailExists = Practitioner::where('email',$postEmail)->first();
+
+      // Check if email is already registered for confirmed account
+      if ($emailExists) {
+        $status = 'error';
+        if ($emailExists->isConfirmed == 1) {
+          $message = 'Dit emailadres is reeds gebruikt.';
+
+        }
+        else {
+          $message = 'Dit emailadres is reeds geregistreerd, maar moet nog bevestigd worden door ons.';
+        }
+        $code = 500;
+        $error = 'email';
+      }
+      else {
+          $status = 'success';
+          $message = 'Emailadres is nog beschikbaar.';
+          $code = 200;
+          $error = 'none';
+      }
+
+      $returnData = array(
+        'status' => $status,
+        'message' => $message,
+        'error' => $error
+      );
+
+      return response()->json($returnData, $code);
 
     }
 }
