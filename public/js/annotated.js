@@ -176,12 +176,12 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
       google.maps.event.addListener(autocomplete, 'place_changed', function(){
         var place = autocomplete.getPlace();
 
-        // console.log(place);
+
 
 
         // self.state.datatosend.practice.streetname.$apply();
         // $scope.$apply( function() {
-
+        // Location info
           for (var i = 0; i < place.address_components.length; i++) {
             var addressType = place.address_components[i].types[0];
             if (componentForm[addressType]) {
@@ -189,8 +189,12 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
               self.state.datatosend.practice[addressType] = val;
             }
           };
-          // console.log(self.state.datatosend.practice);
+          // Lat and long
+          self.state.datatosend.practice.lat = place.geometry.location.lat();
+          self.state.datatosend.practice.lng = place.geometry.location.lng();
+
           $scope.$digest();
+          
         // });
 
 

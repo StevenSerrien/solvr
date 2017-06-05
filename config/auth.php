@@ -47,13 +47,13 @@ return [
         ],
 
         /* Multi-auth */
-        'user' => [
-          'driver' => 'session',
-          'provider' => 'user',
-        ],
         'practitioner' => [
           'driver' => 'session',
-          'provider' => 'practitioner',
+          'provider' => 'practitioners',
+        ],
+        'practitioner-api' => [
+            'driver' => 'token',
+            'provider' => 'practitioners',
         ],
     ],
 
@@ -80,10 +80,11 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'practitioners' => [
+          'driver' => 'eloquent',
+          'model' => App\Models\Practitioner::class,
+        ]
+
     ],
 
     /*
@@ -102,11 +103,18 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
+      'users' => [
+        'provider' => 'user',
+        // 'email' => 'auth.emails.password',
+        'table' => 'password_resets',
+        'expire' => 60,
+      ],
+      'practitioners' => [
+        'provider' => 'practitioners',
+        // 'email' => 'admin.auth.emails.password',
+        'table' => 'password_resets',
+        'expire' => 60,
+      ],
     ],
 
 ];

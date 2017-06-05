@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+
 class CreatePractitionersTable extends Migration
 {
     /**
@@ -17,9 +18,20 @@ class CreatePractitionersTable extends Migration
           $table->increments('id');
           $table->string('firstname');
           $table->string('lastname');
+          $table->string('rizivnumber');
           $table->string('email')->unique();
           $table->string('password');
-          $table->string('name');
+
+          $table->boolean('isAdmin')->default(0);
+          $table->boolean('isConfirmed')->default(0);
+          $table->string('confirmation_code')->nullable();
+
+          // Foreign key
+          $table->integer('practice_id')->unsigned();
+
+          $table->rememberToken();
+          $table->timestamps();
+
         });
     }
 
@@ -30,6 +42,6 @@ class CreatePractitionersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('practitioners');
     }
 }
