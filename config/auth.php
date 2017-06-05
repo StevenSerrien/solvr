@@ -45,6 +45,16 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        /* Multi-auth */
+        'user' => [
+          'driver' => 'session',
+          'provider' => 'user',
+        ],
+        'practitioner' => [
+          'driver' => 'session',
+          'provider' => 'practitioner',
+        ],
     ],
 
     /*
