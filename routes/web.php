@@ -43,5 +43,6 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/sql', 'HomeController@test');
     Route::post('/logopedist/checkIfExists', 'PractitionerAuth\RegisterController@test');
+    Route::post('/logopedist/nieuw', 'PractitionerAuth\RegisterController@register');
 
 });

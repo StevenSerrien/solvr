@@ -115,6 +115,7 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
 
   var savePractitioner = '/logopedist/nieuw';
   var checkIfPractitionerExistsUrl = '/logopedist/checkIfExists';
+
   this.events = {
 
     changeTemplate: function(index) {
@@ -136,7 +137,7 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
       }
       // Registratiestap
       if (index == 2) {
-        // self.handlers.p
+        self.handlers.postUserDataToServer();
       }
 
 
@@ -154,7 +155,8 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
       self.state.currentTemplate = self.state.templates[0];
     },
     postUserDataToServer: function() {
-      service.post(newPractitionerUrl, self.state.datatosend);
+      service.post(savePractitioner, self.state.datatosend);
+      console.log(self.state.datatosend);
     },
     checkExistingUserRecord: function() {
       service.post(checkIfPractitionerExistsUrl, self.state.datatosend.user).then(function successCallback(response) {

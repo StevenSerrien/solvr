@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Practice\Practice;
 use App\Models\Practitioner\Practitioner;
-// use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -21,7 +22,7 @@ class RegisterController extends Controller
     |
     */
 
-    // use RegistersUsers;
+    use RegistersUsers;
 
     /**
      * Where to redirect users after login.
@@ -78,6 +79,35 @@ class RegisterController extends Controller
       );
 
       return response()->json($returnData, $code);
+    }
+
+    public function register(Request $request) {
+      $practice = $request->get('practice');
+
+      // return $practice['lat'];
+      //
+      $practiceValidator = Validator::make($practice, [
+        'name' => 'required',
+        'lat' => 'required',
+        'lng' => 'required',
+        'route' => 'required',
+        'street_number' => 'required',
+        'locality' => 'required',
+        'postal_code' => 'required',
+        'telephone' => 'required',
+      ]);
+
+      if ($practiceValidator->fails()) {
+        $returnData = array(
+          'status' => 'error',
+          'message' => 'Validation errors!',
+          'status' => $practiceValidator->errors(),
+        );
+        return response()->json($returnData, 200);
+      }
+      else {
+        return  'goeiendag hallo';
+      }
     }
 
     public function test(Request $request) {
