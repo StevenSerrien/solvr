@@ -28,8 +28,15 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       }
       // Registratiestap
       if (index == 2) {
-        self.state.loading = true;
-        self.handlers.checkExistingPracticeRecord();
+        if (self.user.practiceStatus == 'new') {
+          self.state.loading = true;
+          self.handlers.checkExistingPracticeRecord();
+        }
+        else if (self.user.practiceStatus == 'existing') {
+          self.state.registerloading = true;
+          self.handlers.postUserDataToServer();
+        }
+
       }
 
 
@@ -60,10 +67,13 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
         self.state.registerloading = false;
         self.state.loading = false;
         self.state.response = response;
-        if (self.state.response.status = 'success') {
+
+        if (self.state.response.status == 'success') {
           self.handlers.clearCurrentStorage();
           self.events.changeTemplate(self.state.currentTemplate.index + 1);
         }
+
+
       }, function errorCallback(response) {
         self.state.registerloading = false;
         self.state.loading = false;
@@ -116,14 +126,12 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       });
     },
     getPracticeById: function() {
-      console.log('ik probeer praktijk' + self.state.selectedPractice);
+
       service.post(getPracticeById, self.state.selectedPractice).then(function successCallback(response) {
         if (response.length > 0) {
           console.log(response);
           self.state.datatosend.existingPractice = response[0];
         }
-
-
         // $scope.$digest();
       }, function errorCallback(response) {
 

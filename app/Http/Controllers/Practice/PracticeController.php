@@ -17,6 +17,7 @@ class PracticeController extends Controller
     }
 
     public function getPracticeById(Request $request) {
+      
       if ($request) {
         $index = $request->index;
 
