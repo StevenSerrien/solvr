@@ -23,6 +23,7 @@
     "laravel-elixir-webpack-official": "^1.0.2",
     "lodash": "^4.16.2",
     "ng-mask": "^3.1.1",
+    "semantic-ui-dropdown": "^2.2.10",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3",
     "what-input": "^4.1.3"

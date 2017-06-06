@@ -48,4 +48,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/logopedist/nieuw/redirect', 'PractitionerAuth\RegisterController@redirectToLanding');
 
+
+    // practices
+    Route::get('/practices/get/all', 'Practice\PracticeController@getAllExistingPractices');
+    Route::post('/practices/get/with-id', 'Practice\PracticeController@getPracticeById');
+
 });

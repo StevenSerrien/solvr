@@ -16,6 +16,8 @@
 @import "text";
 @import 'icons';
 
+@import "plugins/semantic-dropdown";
+
 @import "components/nav";
 @import "components/animations";
 @import "components/containers";
@@ -34,6 +36,7 @@
 @import "components/masonry";
 @import "components/input";
 @import "components/footer";
+@import "components/dropdown";
 
 @import "components/form-block";
 

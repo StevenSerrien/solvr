@@ -5,9 +5,16 @@
   <div ng-controller='ContactSignupCtrl as contact'>
 
 
-  <div class="full-screen-container full-screen-container--w-centered-content" ng-class='contact.state.currentTemplate.stateClass'>
+  <div class="full-screen-container full-screen-container--w-centered-content"  ng-class='contact.state.currentTemplate.stateClass'>
 
     <div class="row">
+
+
+
+
+
+
+
       <div ng-form="parentForm" class="form-block form-block--contact-signup small-centered large-12 columns">
         <div class="row">
           <div class="large-12 columns" vertilize-container>
@@ -22,7 +29,7 @@
             ##contact.state.response##
           </div>
         </div> --}}
-        
+
         <div class="row small-collapse">
           <div class="large-12 columns form-block__progressbar-container small-centered">
             <div class="form-block__progress-bar" ng-class="{'step-1': contact.state.currentTemplate.index === 1, 'step-2': contact.state.currentTemplate.index === 2, 'step-3': contact.state.currentTemplate.index === 3}">

@@ -90,7 +90,7 @@ class RegisterController extends Controller
 
       $practiceNameExists = Practice::where('name', $practiceName)->first();
       $practiceLocationExists = Practice::where('streetname', $practiceStreet)->where('housenumber', 'LIKE', '%' . $practiceStreetNumber . '%')->first();
-      
+
 
       if ($practiceNameExists || $practiceLocationExists) {
         // Name already in database
@@ -175,7 +175,7 @@ class RegisterController extends Controller
         $newPractice->name = $practice['name'];
         $newPractice->streetname = $practice['route'];
         $newPractice->housenumber = $practice['street_number'];
-        $newPractice->locality = $practice['name'];
+        $newPractice->locality = $practice['locality'];
         $newPractice->postal_code = $practice['postal_code'];
         $newPractice->telephone = $practice['telephone'];
         $newPractice->lat = $practice['lat'];

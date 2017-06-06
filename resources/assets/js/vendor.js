@@ -7,6 +7,8 @@ require('angular-vertilize');
 require('angular-validation-match');
 require('ng-mask');
 
+require('semantic-ui-dropdown');
+
 require('what-input');
 
 require('foundation-sites');
@@ -15,3 +17,5 @@ require('foundation-sites');
 require('./libs/ease.js');
 require('./libs/segment.js');
 require('./libs/typed.js');
+require('./libs/semantic-ui-dropdown.js');
+require('./libs/semantic-ui-transition.js');

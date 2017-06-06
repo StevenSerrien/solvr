@@ -1,4 +1,5 @@
-<form ng-if="contact.user.practiceStatus == 'new'" name='therapistPracticeInfoNewSignupForm' class="form-block__inner"  ng-cloak>
+<!-- View for NEW Practice -->
+<form ng-if="contact.user.practiceStatus == 'new'" name='therapistPracticeInfoNewSignupForm'  class="form-block__inner"  ng-cloak>
 <!-- <form  name='therapistPracticeInfoNewSignupForm' class="form-block__inner"  ng-cloak> -->
   <div class="row">
     <div class="large-12 columns">
@@ -51,4 +52,54 @@
   </div>
 
 
+
+
+<!-- View for EXISTING Practice -->
+</form>
+<form ng-if="contact.user.practiceStatus == 'existing'" ng-init='contact.events.fillDropdownExistingPractices()' name='therapistPracticeInfoExistingSignupForm' ng-init='contact.events.fillDropdownExistingPractices()' class="form-block__inner"  ng-cloak>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class='t--semi-bold text-center'>Kies uw bestaande <span class='highlight highlight--color-1'>praktijk</span> </h2>
+      <h3 class='t--regular t--lightest m-b-60 text-center'>Zo koppelen we hem aan jouw account. </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-10 small-centered columns">
+      <so-dropdown class='cst-dropdown cst-dropdown--full-w'  ng-change="contact.handlers.getPracticeById();" ng-model="contact.state.selectedPractice.index" placeholder='Selecteer de praktijk waar je werkt.' dropdown-items="contact.state.practicesFromDB">
+        <option value='None'>None</option>
+      </so-dropdown>
+    </div>
+  </div>
+  <div class="row  m-t-40">
+    <div class="medium-10 small-centered columns">
+      <div class="row medium-collapse">
+        <div class="large-6 columns">
+          <div class="row">
+            <div class="medium-12 columns">
+                <input class='input--stnrd' type="text" ng-disabled='true' ng-model='contact.state.datatosend.existingPractice.name'  placeholder="Praktijknaam" autocomplete="off" required >
+            </div>
+            <div class="medium-12 columns">
+                <input  class='input--stnrd' type="text" ng-disabled='true' ng-model='contact.state.datatosend.existingPractice.telephone' placeholder="Telefoonnummer" autocomplete="off" required >
+            </div>
+          </div>
+        </div>
+        <div class="large-6 columns">
+          <div class="medium-8 columns">
+              <input  class='input--stnrd' type="text" ng-disabled='true' ng-model='contact.state.datatosend.existingPractice.streetname' placeholder="Straatnaam" autocomplete="off" required >
+          </div>
+          <div class="medium-4 columns">
+              <input  class='input--stnrd' type="text" ng-disabled='true' ng-model='contact.state.datatosend.existingPractice.housenumber' placeholder="Nr." autocomplete="off" required >
+          </div>
+          <div class="medium-6 columns">
+              <input class='input--stnrd' type="text" ng-disabled='true' ng-model='contact.state.datatosend.existingPractice.locality' placeholder="Gemeente" autocomplete="off" required >
+          </div>
+          <div class="medium-6 columns">
+              <input  class='input--stnrd' type="text" ng-disabled='true' ng-model='contact.state.datatosend.existingPractice.postal_code' placeholder="Zipcode" autocomplete="off" required >
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </form>

@@ -4,6 +4,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
   var savePractitioner = '/logopedist/nieuw';
   var checkIfPractitionerExistsUrl = '/logopedist/checkIfExists';
   var checkIfPracticeExistsUrl = '/logopedist/praktijk/checkIfExists';
+  var allPracticesUrl = '/practices/get/all';
+  var getPracticeById = '/practices/get/with-id';
 
   this.events = {
 
@@ -32,6 +34,9 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
 
     },
+    fillDropdownExistingPractices: function() {
+      self.handlers.getAllExistingPractices();
+    }
   };
 
   this.handlers = {
@@ -98,7 +103,33 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
         self.state.response = response.data;
       }
     );
-    }
+    },
+    getAllExistingPractices: function() {
+      console.log(self.state.practicesFromDB);
+      service.get(allPracticesUrl).then(function successCallback(response) {
+        self.state.practicesFromDB = response;
+
+        console.log(self.state.practicesFromDB);
+        // $scope.$digest();
+      }, function errorCallback(response) {
+
+      });
+    },
+    getPracticeById: function() {
+      console.log('ik probeer praktijk' + self.state.selectedPractice);
+      service.post(getPracticeById, self.state.selectedPractice).then(function successCallback(response) {
+        if (response.length > 0) {
+          console.log(response);
+          self.state.datatosend.existingPractice = response[0];
+        }
+
+
+        // $scope.$digest();
+      }, function errorCallback(response) {
+
+      });
+    },
+
   };
 
 
@@ -117,6 +148,11 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
       },
     },
+    practicesFromDB:  [],
+    selectedPractice: {
+      index: ''
+    },
+    // selectedId = 2,
     registerloading: false,
     loading: false,
     response: {},

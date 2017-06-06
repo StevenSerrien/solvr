@@ -63,6 +63,46 @@ sl.directives.directive('slPwCheck', function(){
     }
 });
 
+sl.directives.directive('soDropdown', ['$timeout', function($timeout) {
+    return {
+        restrict: 'E',
+        require: 'ngModel',
+        replace: true,
+        transclude: true,
+        template: function (el, atts) {
+            var itemName = 'dropdownItem';
+            var valueField = itemName + '.' + (atts.valueField || 'id');
+            var textField = itemName + '.' + (atts.textField || 'name');
+            var localityField = itemName + '.' + (atts.textField || 'locality')
+            return "<select class='ui search dropdown'>" +
+                "<div ng-transclude></div>" +
+                "   <option value='{{" + valueField + "}}' ng-repeat='" + itemName + " in " + atts.dropdownItems + " track by " + valueField + "'>" +
+                "       {{" + textField + "}}" +
+                "  ( " + "{{" + localityField + "}}" + " )"  +
+                "   </option>" +
+                "</select>";
+        },
+        link: function (scope, el, atts, ngModel) {
+            $(el).dropdown({
+                onChange: function (value, text, choice) {
+                    scope.$apply(function () {
+                        ngModel.$setViewValue(value);
+                        
+                    });
+                },
+                placeholder: atts.placeholder,
+            });
+            ngModel.$render = function () {
+                console.log('set value', el, ngModel, ngModel.$viewValue);
+                $timeout(function () {
+                    $(el).dropdown('set value', ngModel.$viewValue);
+                });
+                //$(el).dropdown('set value', ngModel.$viewValue);
+            };
+        }
+    };
+}]);
+
 sl.services.service('service', ["$http", "$q", function($http, $q){
   this.fetch = function(method, url, data) {
     var _promise = $q.defer();
@@ -116,6 +156,8 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
   var savePractitioner = '/logopedist/nieuw';
   var checkIfPractitionerExistsUrl = '/logopedist/checkIfExists';
   var checkIfPracticeExistsUrl = '/logopedist/praktijk/checkIfExists';
+  var allPracticesUrl = '/practices/get/all';
+  var getPracticeById = '/practices/get/with-id';
 
   this.events = {
 
@@ -144,6 +186,9 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
 
 
     },
+    fillDropdownExistingPractices: function() {
+      self.handlers.getAllExistingPractices();
+    }
   };
 
   this.handlers = {
@@ -210,7 +255,33 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
         self.state.response = response.data;
       }
     );
-    }
+    },
+    getAllExistingPractices: function() {
+      console.log(self.state.practicesFromDB);
+      service.get(allPracticesUrl).then(function successCallback(response) {
+        self.state.practicesFromDB = response;
+
+        console.log(self.state.practicesFromDB);
+        // $scope.$digest();
+      }, function errorCallback(response) {
+
+      });
+    },
+    getPracticeById: function() {
+      console.log('ik probeer praktijk' + self.state.selectedPractice);
+      service.post(getPracticeById, self.state.selectedPractice).then(function successCallback(response) {
+        if (response.length > 0) {
+          console.log(response);
+          self.state.datatosend.existingPractice = response[0];
+        }
+
+
+        // $scope.$digest();
+      }, function errorCallback(response) {
+
+      });
+    },
+
   };
 
 
@@ -229,6 +300,11 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
 
       },
     },
+    practicesFromDB:  [],
+    selectedPractice: {
+      index: ''
+    },
+    // selectedId = 2,
     registerloading: false,
     loading: false,
     response: {},

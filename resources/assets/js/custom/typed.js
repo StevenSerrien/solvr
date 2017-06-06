@@ -1,5 +1,5 @@
 $(function(){
-  console.log('typerke');
+  console.log('typerkooe');
   $("#typed").css("display", "inline-block");
 
   Typed.new("#typed", {
