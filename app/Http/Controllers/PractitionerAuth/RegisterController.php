@@ -81,9 +81,51 @@ class RegisterController extends Controller
       return response()->json($returnData, $code);
     }
 
+    public function checkIfPracticeExists(Request $request)
+    {
+      // return $request->all();
+      $practiceName = $request->name;
+      $practiceStreet = $request->route;
+      $practiceStreetNumber = $request->street_number;
+
+      $practiceNameExists = Practice::where('name', $practiceName)->first();
+      $practiceLocationExists = Practice::where('streetname', $practiceStreet)->where('housenumber', 'LIKE', '%' . $practiceStreetNumber . '%')->first();
+      
+
+      if ($practiceNameExists || $practiceLocationExists) {
+        // Name already in database
+        if ($practiceNameExists) {
+          $status = 'error';
+          $error = 'practicename';
+          $message = 'Woops! Er is al een praktijk met die naam bij ons.';
+        }
+        // Practice already registered on that address
+        if ($practiceLocationExists) {
+          $status = 'error';
+          $error = 'practicelocation';
+          $message = 'Er is al een praktijk geregistreerd op dat adres.';
+        }
+        $code = 500;
+      }
+      else {
+        $status = 'success';
+        $error = 'none';
+        $message = 'Adres en naam nog beschikbaar.';
+        $code = 200;
+      }
+
+      $returnData = array(
+        'status' => $status,
+        'message' => $message,
+        'error' => $error
+      );
+
+      return response()->json($returnData, $code);
+    }
+
     public function register(Request $request) {
       $practice = $request->get('practice');
-
+      $practitioner = $request->get('user');
       // return $practice['lat'];
       //
       $practiceValidator = Validator::make($practice, [
@@ -97,17 +139,88 @@ class RegisterController extends Controller
         'telephone' => 'required',
       ]);
 
-      if ($practiceValidator->fails()) {
-        $returnData = array(
-          'status' => 'error',
-          'message' => 'Validation errors!',
-          'status' => $practiceValidator->errors(),
-        );
-        return response()->json($returnData, 200);
+      $practitionerValidator = Validator::make($practitioner, [
+        'firstname' => 'required',
+        'lastname' => 'required',
+        'email' => 'required|email',
+        'rizivnumber' => 'required',
+        'password' => 'required',
+      ]);
+
+      // BACKEND ERRORS ON REQUESTED DATA - Validators fails
+      if ($practitionerValidator->fails() || $practiceValidator->fails()) {
+        if ($practiceValidator->fails()) {
+          $returnData = array(
+            'status' => 'error',
+            'message' => 'Validation errors!',
+            'error' => $practiceValidator->errors(),
+          );
+          return response()->json($returnData, 500);
+        }
+        if ($practitionerValidator->fails()) {
+          $returnData = array(
+            'status' => 'error',
+            'message' => 'Validation errors!',
+            'error' => $practiceValidator->errors(),
+          );
+          return response()->json($returnData, 500);
+        }
       }
+
+      // BACKEND SUCCESS ON REQUESTED DATA - Validators passed
       else {
-        return  'goeiendag hallo';
+        // First making new practice
+        $newPractice = new Practice();
+
+        $newPractice->name = $practice['name'];
+        $newPractice->streetname = $practice['route'];
+        $newPractice->housenumber = $practice['street_number'];
+        $newPractice->locality = $practice['name'];
+        $newPractice->postal_code = $practice['postal_code'];
+        $newPractice->telephone = $practice['telephone'];
+        $newPractice->lat = $practice['lat'];
+        $newPractice->lng = $practice['lng'];
+
+        $practiceSaved = $newPractice->save();
+
+        $newPractitioner = new Practitioner();
+
+        $newPractitioner->firstname = $practitioner['firstname'];
+        $newPractitioner->lastname = $practitioner['lastname'];
+        $newPractitioner->rizivnumber = $practitioner['rizivnumber'];
+        $newPractitioner->email = $practitioner['email'];
+        $newPractitioner->password = bcrypt($practitioner['password']);
+        $newPractitioner->practice_id = $newPractice->id;
+
+        $newPractitioner->confirmation_code = str_random(30);
+        $newPractitioner->IsConfirmed = 0;
+        $newPractitioner->IsAdmin = 0;
+
+        $practitionerSaved = $newPractitioner->save();
+
+        if ($practitionerSaved && $practiceSaved) {
+          $returnData = array(
+            'status' => 'success',
+            'message' => 'Logopedist en praktijk aangemaakt!',
+          );
+          return response()->json($returnData, 200);
+        }
+
       }
+
+
+
+      // if ($practiceValidator->fails()) {
+      //   $returnData = array(
+      //     'status' => 'error',
+      //     'message' => 'Validation errors!',
+      //     'status' => $practiceValidator->errors(),
+      //   );
+      //   return response()->json($returnData, 200);
+      // }
+      // else {
+      //   return  'goeiendag hallo';
+      // }
     }
 
     public function test(Request $request) {

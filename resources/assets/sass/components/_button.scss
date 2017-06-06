@@ -45,5 +45,25 @@
         }
       }
     }
+    &--frm {
+      display: inline-block;;
+      width: auto;
+      text-align: center;
+      padding: 12px 25px;
+      font-family: $secundary-font;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 22px;
+      color: #fff;
+      border-radius: 2px;
+      background: #27c79a;
+      cursor: pointer;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      &:hover {
+        color: #fff;
+      }
+    }
 
 }

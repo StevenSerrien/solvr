@@ -1,4 +1,5 @@
 <form ng-if="contact.user.practiceStatus == 'new'" name='therapistPracticeInfoNewSignupForm' class="form-block__inner"  ng-cloak>
+<!-- <form  name='therapistPracticeInfoNewSignupForm' class="form-block__inner"  ng-cloak> -->
   <div class="row">
     <div class="large-12 columns">
       <h2 class='t--semi-bold text-center'>Registratie van uw <span class='highlight highlight--color-1'>praktijk</span> </h2>
@@ -16,7 +17,7 @@
     <div class="large-5 columns">
       <div class="row">
         <div class="medium-12 columns">
-            <input id='name' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.name' placeholder="Praktijknaam" autocomplete="off" required >
+            <input id='name' class='input--stnrd' type="text" ng-focus="contact.state.response.error == 'practicename'? contact.state.response = '':false" ng-model='contact.state.datatosend.practice.name' ng-class="{'error': contact.state.response.error == 'practicename'}" placeholder="Praktijknaam" autocomplete="off" required >
         </div>
         <div class="medium-12 columns">
             <input id='telephone' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.telephone' placeholder="Telefoonnummer" autocomplete="off" restrict="reject" mask="(99)99 99 99 99" required >
@@ -25,10 +26,10 @@
     </div>
     <div class="large-7 columns">
       <div class="medium-8 columns">
-          <input id='route' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.route' placeholder="Straatnaam" autocomplete="off" required >
+          <input id='route' class='input--stnrd' type="text" ng-focus="contact.state.response.error == 'practicelocation'? contact.state.response = '':false"ng-model='contact.state.datatosend.practice.route' ng-class="{'error': contact.state.response.error == 'practicelocation'}" placeholder="Straatnaam" autocomplete="off" required >
       </div>
       <div class="medium-4 columns">
-          <input id='street_number' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.street_number' placeholder="Nr." autocomplete="off" required >
+          <input id='street_number' class='input--stnrd' type="text" ng-focus="contact.state.response.error == 'practicelocation'? contact.state.response = '':false" ng-model='contact.state.datatosend.practice.street_number' ng-class="{'error': contact.state.response.error == 'practicelocation'}" placeholder="Nr." autocomplete="off" required >
       </div>
       <div class="medium-6 columns">
           <input id='locality' class='input--stnrd' type="text" ng-model='contact.state.datatosend.practice.locality' placeholder="Gemeente" autocomplete="off" required >
@@ -38,6 +39,15 @@
       </div>
     </div>
 
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="response-container">
+        <div class="error-block callout" data-closable ng-class="{'error-block--slide-in': contact.state.response.status == 'error'}">
+          <span class="error-block__message">##contact.state.response.message##</span>
+        </div>
+      </div>
+    </div>
   </div>
 
 

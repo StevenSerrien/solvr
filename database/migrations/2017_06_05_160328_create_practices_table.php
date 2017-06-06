@@ -26,6 +26,7 @@ class CreatePracticesTable extends Migration
             $table->decimal('lat', 10, 7);
 
             $table->boolean('isConfirmed')->default(0);
+            $table->timestamps();
 
         });
     }

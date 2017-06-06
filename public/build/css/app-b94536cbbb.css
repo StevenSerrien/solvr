@@ -6480,6 +6480,14 @@ you can use the generic selector below, but it's slower:
   background-position: 20vw 40vh;
 }
 
+.full-screen-container.state-2 {
+  background-position: -30vw -30vh;
+}
+
+.full-screen-container.state-3 {
+  background-position: center center;
+}
+
 .mixed-jumbo {
   padding: 4.6875rem 0;
   /*** Effects ***/
@@ -6772,6 +6780,28 @@ img {
   border-color: #e37774;
   color: white;
   background-color: #e37774;
+}
+
+.btn--frm {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  padding: 12px 25px;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #fff;
+  border-radius: 2px;
+  background: #27c79a;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn--frm:hover {
+  color: #fff;
 }
 
 html,
@@ -7763,18 +7793,14 @@ footer .footer__links {
 }
 
 .form-block__progress-bar.step-1::before {
-  width: 25%;
+  width: 33.33%;
 }
 
 .form-block__progress-bar.step-2::before {
-  width: 50%;
+  width: 66.66%;
 }
 
 .form-block__progress-bar.step-3::before {
-  width: 75%;
-}
-
-.form-block__progress-bar.step-4::before {
   width: 100%;
 }
 
@@ -7839,15 +7865,15 @@ footer .footer__links {
 }
 
 .form-block__progress-circle--2 {
-  left: 25%;
+  left: 33.33%;
 }
 
 .form-block__progress-circle--3 {
-  left: 50%;
+  left: 66.66%;
 }
 
 .form-block__progress-circle--4 {
-  left: 75%;
+  left: 100%;
 }
 
 .form-block__progress-circle.is-done {
@@ -7893,11 +7919,6 @@ footer .footer__links {
 .form-block__confirmation-block {
   padding: 20px 30px;
   border-left: 10px solid #fce289;
-}
-
-.form-block__confirmation-block p {
-  color: #cacaca;
-  font-size: 20px;
 }
 
 .form-block__confirmation-block p input {

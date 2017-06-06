@@ -3,6 +3,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
   var savePractitioner = '/logopedist/nieuw';
   var checkIfPractitionerExistsUrl = '/logopedist/checkIfExists';
+  var checkIfPracticeExistsUrl = '/logopedist/praktijk/checkIfExists';
 
   this.events = {
 
@@ -25,7 +26,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       }
       // Registratiestap
       if (index == 2) {
-        self.handlers.postUserDataToServer();
+        self.state.loading = true;
+        self.handlers.checkExistingPracticeRecord();
       }
 
 
@@ -37,14 +39,33 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       self.state.templates = [
         { name: 'state-1.html', url: 'assets/templates/contact/state-1.html', index: 0, stateClass: 'state-0'},
         { name: 'state-2.html', url: 'assets/templates/contact/state-2.html', index: 1, stateClass: 'state-1'},
-        { name: 'state-3.html', url: 'assets/templates/contact/state-3.html', index: 2 },
-        { name: 'state-4.html', url: 'assets/templates/contact/state-4.html', index: 3 },
+        { name: 'state-3.html', url: 'assets/templates/contact/state-3.html', index: 2, stateClass: 'state-2'},
+        { name: 'state-4.html', url: 'assets/templates/contact/state-4.html', index: 3, stateClass: 'state-3'},
       ]
       self.state.currentTemplate = self.state.templates[0];
     },
+    clearCurrentStorage: function() {
+      self.state.datatosend = '';
+      self.state.response = '';
+    },
     postUserDataToServer: function() {
-      service.post(savePractitioner, self.state.datatosend);
+      self.state.registerloading = false;
       console.log(self.state.datatosend);
+      service.post(savePractitioner, self.state.datatosend).then(function successCallback(response) {
+        self.state.registerloading = false;
+        self.state.loading = false;
+        self.state.response = response;
+        if (self.state.response.status = 'success') {
+          self.handlers.clearCurrentStorage();
+          self.events.changeTemplate(self.state.currentTemplate.index + 1);
+        }
+      }, function errorCallback(response) {
+        self.state.registerloading = false;
+        self.state.loading = false;
+        self.state.response = response.data;
+      }
+      );
+
     },
     checkExistingUserRecord: function() {
       service.post(checkIfPractitionerExistsUrl, self.state.datatosend.user).then(function successCallback(response) {
@@ -58,9 +79,26 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
         self.state.loading = false;
         self.state.response = response.data;
       }
-
       );
     },
+    checkExistingPracticeRecord: function() {
+      service.post(checkIfPracticeExistsUrl, self.state.datatosend.practice).then(function successCallback(response) {
+        self.state.loading = false;
+        self.state.response = response;
+
+        if (self.state.response.status == 'success') {
+          // Send all data to register Practitioner and practice
+          self.state.registerloading = true;
+          self.handlers.postUserDataToServer();
+        }
+
+      }, function errorCallback(response) {
+        console.log(response.data);
+        self.state.loading = false;
+        self.state.response = response.data;
+      }
+    );
+    }
   };
 
 
@@ -79,6 +117,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
       },
     },
+    registerloading: false,
     loading: false,
     response: {},
 
