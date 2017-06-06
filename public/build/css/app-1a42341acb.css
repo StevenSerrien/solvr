@@ -6309,6 +6309,32 @@ you can use the generic selector below, but it's slower:
 }
 
 /* Contact Multidimensional Form */
+@-webkit-keyframes slideInFromRightWBounce {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromRightWBounce {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
 /* Animation for input validation */
 @-webkit-keyframes inputInvalid {
   0% {
@@ -7513,7 +7539,7 @@ body,
   -webkit-animation-name: inputInvalid;
   -webkit-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
   -moz-animation-delay: 0s;
   -moz-animation-duration: 0.5s;
   -moz-animation-name: inputInvalid;
@@ -7531,7 +7557,6 @@ body,
   animation-name: inputInvalid;
   animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
   animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 
@@ -7542,7 +7567,7 @@ body,
   -webkit-animation-name: inputInvalid;
   -webkit-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
   -moz-animation-delay: 0s;
   -moz-animation-duration: 0.5s;
   -moz-animation-name: inputInvalid;
@@ -7560,7 +7585,59 @@ body,
   animation-name: inputInvalid;
   animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.response-container {
+  position: relative;
+  min-height: 75px;
+}
+
+.error-block {
+  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+  padding: 25px 15px 25px 25px;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.error-block__message {
+  border-left: 4px solid #e37774;
+  padding-left: 25px;
+  display: block;
+  color: #e37774;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+.error-block--slide-in {
+  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slideInFromRightWBounce;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
   -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slideInFromRightWBounce;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 1s;
+  -o-animation-name: slideInFromRightWBounce;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-name: slideInFromRightWBounce;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
   animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 

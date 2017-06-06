@@ -56,7 +56,7 @@ class RegisterController extends Controller
       if ($emailExists) {
         $status = 'error';
         if ($emailExists->isConfirmed == 1) {
-          $message = 'Dit emailadres is reeds gebruikt.';
+          $message = 'Oopsie! Dit emailadres is reeds gebruikt.';
 
         }
         else {

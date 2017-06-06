@@ -43,3 +43,33 @@
     @include animation(0s, 0.5s, inputInvalid, cubic-bezier(.87,-.41,.19,1.44) );
   }
 }
+
+
+.response-container {
+  position: relative;
+  min-height: 75px;
+}
+.error-block {
+  transition: 0.5s all cubic-bezier(.87,-.41,.19,1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+
+  // background-color: $brand-color-2--soft;
+  padding: 25px 15px 25px 25px;
+
+  &__message {
+    border-left: 4px solid $brand-color-2;
+    padding-left: 25px;
+    display: block;
+    color: $brand-color-2;
+    font-family: $secundary-font;
+    font-weight: 600;
+  }
+  opacity: 0;
+  @include translateX(50%);
+  &--slide-in {
+    transition: 4s all cubic-bezier(.87,-.41,.19,1.44);
+    @include animation(0s, 1s, slideInFromRightWBounce, cubic-bezier(.87,-.41,.19,1.44));
+  }
+}

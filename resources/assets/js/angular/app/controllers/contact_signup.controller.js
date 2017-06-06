@@ -63,6 +63,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
     },
   };
 
+
+
   // listeners
   $rootScope.$on('$locationChangeSuccess', function() {
     self.handlers.fillTemplates();

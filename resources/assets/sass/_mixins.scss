@@ -77,7 +77,7 @@
 		-webkit-animation-duration: $duration;
 		-webkit-animation-name: $animation;
 		-webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-		-webkit-animation-timing-function: linear;
+		-webkit-animation-timing-function: $timing;
 
 		-moz-animation-delay: $delay;
 		-moz-animation-duration: $duration;

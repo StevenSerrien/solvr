@@ -40,6 +40,18 @@
 }
 
 
+@include keyframes(slideInFromRightWBounce) {
+  0% {
+    opacity: 0;
+    @include translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    @include translateX(0%);
+  }
+}
+
+
 
 
 /* Animation for input validation */
