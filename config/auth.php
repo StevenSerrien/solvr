@@ -82,7 +82,7 @@ return [
 
         'practitioners' => [
           'driver' => 'eloquent',
-          'model' => App\Models\Practitioner::class,
+          'model' => App\Models\Practitioner\Practitioner::class,
         ]
 
     ],
@@ -104,7 +104,7 @@ return [
 
     'passwords' => [
       'users' => [
-        'provider' => 'user',
+        'provider' => 'users',
         // 'email' => 'auth.emails.password',
         'table' => 'password_resets',
         'expire' => 60,

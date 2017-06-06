@@ -11173,6 +11173,10 @@ body,
   animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 
+footer {
+  margin-top: 200px;
+}
+
 footer .footer__left {
   position: relative;
   padding: 15px 0 15px 0;

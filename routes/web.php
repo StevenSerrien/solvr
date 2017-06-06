@@ -54,3 +54,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/practices/get/with-id', 'Practice\PracticeController@getPracticeById');
 
 });
+
+
+
+// ADMIN ROUTES
+Route::get('/dashboard', 'Practitioner\PractitionerController@index');
