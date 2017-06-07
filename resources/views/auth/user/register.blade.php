@@ -46,7 +46,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="row m-t-20">
             <div class="medium-12 columns">
             <button class='btn btn--frm btn--block' ng-disabled='userSignupForm.$invalid' type="submit" >registreer mij</button>
@@ -63,6 +63,11 @@
 
 </div>
 <div class="bg bg--signup-clients ">
+</div>
+<div class="bottom-right-button">
+ <a class='btn-help' href="{{route('user.login.show')}}" target="_self">Heb je al een account?</a>
+</div>
+<div class="bottom-left-button">
 
 </div>
 {{-- <div class="container">

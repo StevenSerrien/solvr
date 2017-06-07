@@ -70,13 +70,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('logopedist/register', ['as' => 'practitioner.register.show', 'uses' => 'Auth\PractitionerRegisterController@showRegistrationForm']);
     Route::post('logopedist/register', 'Auth\PractitionerRegisterController@register');
 
+    // User login
+    Route::get('/login', ['as' => 'user.login.show', 'uses' => 'Auth\LoginController@showLoginForm']);
+    Route::get('/register', ['as' => 'user.register.show', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    Route::get('/logout', 'Auth\LoginController@logout');
+    Route::post('/register', 'Auth\RegisterController@register');
 
+
+    Route::get('/dashboard', 'User\UserController@index');
 });
-
-// User login
-Route::get('/register', ['as' => 'user.register.show', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-Route::get('/logout', 'Auth\LoginController@logout');
-Route::post('/register', 'Auth\RegisterController@register');
-
-
-Route::get('/dashboard', 'User\UserController@index');
