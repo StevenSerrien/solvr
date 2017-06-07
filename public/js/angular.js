@@ -372,4 +372,29 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
   }
 }]);
 
+sl.controllers.controller('UserAuthCtrl', ["$scope", "$rootScope", "$location", "service", "$window", function($scope, $rootScope, $location, service, $window) {
+  var self = this;
+
+
+  this.events = {
+
+  };
+
+  this.handlers = {
+
+  };
+
+
+
+  // listeners
+  $rootScope.$on('$locationChangeSuccess', function() {
+    
+  });
+
+  this.state = {
+    userRegister: {},
+  };
+
+}]);
+
 //# sourceMappingURL=angular.js.map

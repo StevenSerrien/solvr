@@ -9990,6 +9990,32 @@ select.ui.dropdown {
   background-position: center center;
 }
 
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg--signup-clients {
+  background: url("../../img/user-signup-bg.svg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container--signup-clients {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  top: 50px;
+}
+
+.container--signup-clients .form-block__inner {
+  padding: 7.5vh 10vh 5vh 10vh !important;
+}
+
 .mixed-jumbo {
   padding: 4.6875rem 0;
   /*** Effects ***/
@@ -10304,6 +10330,17 @@ img {
 
 .btn--frm:hover {
   color: #fff;
+}
+
+.btn--frm[disabled*='disabled'] {
+  color: #e3e9ec;
+  background-color: #f7f9fa;
+  pointer-events: none;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
 }
 
 html,

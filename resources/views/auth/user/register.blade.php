@@ -7,7 +7,7 @@
     <div class="row">
       <div class="large-12 columns" >
 
-        <form name='userSignupForm' method='POST' action="{{ url('user/registreren') }}" class='form-block__inner' >
+        <form name='userSignupForm' method='POST' action="{{ url('/register') }}" class='form-block__inner' >
           <div class="row">
             <div class="large-12 columns">
 

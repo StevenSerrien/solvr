@@ -27,26 +27,16 @@ Route::get('/contact', ['as' => 'contact', 'uses' => 'Page\PageController@viewCo
 
 Route::group(['middleware' => 'web'], function () {
     //Practitioner Auth Routes
-    //Login Routes...
-    Route::get('/logopedist/login','Practitioner\PractitionerAuth\LoginController@showLoginForm');
-    Route::post('/logopedist/login','Practitioner\PractitionerAuth\LoginController@login');
-    Route::get('/logopedist/logout','Practitioner\PractitionerAuth\LoginController@logout');
 
-    // Registration Routes...
-    Route::get('logopedist/register', ['as' => 'practitioner.register.show', 'uses' => 'Practitioner\PractitionerAuth\RegisterController@showRegistrationForm']);
-    Route::post('logopedist/register', 'Practitioner\PractitionerAuth\RegisterController@register');
 
-    Route::post('logopedist/password/email', 'Practitioner\PractitionerAuth\ForgotPasswordController@sendResetLinkEmail');
-    Route::post('logopedist/password/reset', 'Practitioner\PractitionerAuth\ResetPasswordController@reset');
+
+
+
+
 
     Route::get('/admin', 'AdminController@index');
 
-    Route::post('/sql', 'HomeController@test');
-    Route::post('/logopedist/checkIfExists', 'Practitioner\PractitionerAuth\RegisterController@test');
-    Route::post('/logopedist/praktijk/checkIfExists', 'Practitioner\PractitionerAuth\RegisterController@checkIfPracticeExists');
-    Route::post('/logopedist/nieuw', 'Practitioner\PractitionerAuth\RegisterController@register');
 
-    Route::get('/logopedist/nieuw/redirect', 'Practitioner\PractitionerAuth\RegisterController@redirectToLanding');
 
 
     // practices
@@ -58,8 +48,29 @@ Route::group(['middleware' => 'web'], function () {
     // USER ROUTES
 
     // User login
-    Route::get('registreren', ['as' => 'user.register.show', 'uses' => 'User\UserAuth\RegisterController@showRegistrationForm']);
-    Route::get('user/logout', 'User\UserAuth\LoginController@logout');
-    Route::post('user/register', 'User\UserAuth\RegisterController@register');
+    Route::get('register', ['as' => 'user.register.show', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    Route::get('/logout', 'Auth\LoginController@logout');
+    Route::post('/register', 'Auth\RegisterController@register');
+
+    //Login Routes...
+
+
+
+    // ADMIN Routes
+    // Registration Routes...
+
+    Route::post('/logopedist/checkIfExists', 'Auth\PractitionerRegisterController@test');
+    Route::post('/logopedist/praktijk/checkIfExists', 'Auth\PractitionerRegisterController@checkIfPracticeExists');
+    Route::post('/logopedist/nieuw', 'Auth\PractitionerRegisterController@register');
+
+    Route::get('/logopedist/nieuw/redirect', 'Auth\PractitionerRegisterController@redirectToLanding');
+
+    Route::get('/logopedist/login','Auth\PractitionerLoginController@showLoginForm');
+    Route::post('/logopedist/login','Auth\PractitionerLoginController@login');
+    Route::get('/logopedist/logout','Auth\PractitionerLoginController@logout');
+
+    Route::get('logopedist/register', ['as' => 'practitioner.register.show', 'uses' => 'Auth\PractitionerRegisterController@showRegistrationForm']);
+    Route::post('logopedist/register', 'Auth\PractitionerRegisterController@register');
+
 
 });
