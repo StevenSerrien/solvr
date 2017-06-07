@@ -47,10 +47,7 @@ Route::group(['middleware' => 'web'], function () {
 
     // USER ROUTES
 
-    // User login
-    Route::get('register', ['as' => 'user.register.show', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-    Route::get('/logout', 'Auth\LoginController@logout');
-    Route::post('/register', 'Auth\RegisterController@register');
+
 
     //Login Routes...
 
@@ -58,6 +55,7 @@ Route::group(['middleware' => 'web'], function () {
 
     // ADMIN Routes
     // Registration Routes...
+    Route::get('/logopedist/dashboard', 'Practitioner\PractitionerController@index');
 
     Route::post('/logopedist/checkIfExists', 'Auth\PractitionerRegisterController@test');
     Route::post('/logopedist/praktijk/checkIfExists', 'Auth\PractitionerRegisterController@checkIfPracticeExists');
@@ -74,3 +72,11 @@ Route::group(['middleware' => 'web'], function () {
 
 
 });
+
+// User login
+Route::get('/register', ['as' => 'user.register.show', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+Route::get('/logout', 'Auth\LoginController@logout');
+Route::post('/register', 'Auth\RegisterController@register');
+
+
+Route::get('/dashboard', 'User\UserController@index');

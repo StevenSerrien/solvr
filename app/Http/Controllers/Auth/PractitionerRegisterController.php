@@ -22,7 +22,7 @@ class PractitionerRegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
     /**
      * Where to redirect users after login.

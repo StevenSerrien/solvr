@@ -4,7 +4,7 @@
   <div class="sidemenu-list">
     <a href="{{ route('about') }}" target="_self"><span>over ons</span></a>
     <a href="{{ route('therapists') }}" target="_self"><span>logopedisten</span></a>
-    <a href="#"><span>registreren</span></a>
+    <a href="{{ route('user.register.show') }}" target="_self"><span>registreren</span></a>
     <a href="#"><span>contact</span></a>
 
   </div>
