@@ -64,6 +64,15 @@
       &:hover {
         color: #fff;
       }
+      &[disabled*='disabled'] {
+        color: #e3e9ec;
+        background-color: #f7f9fa;
+        pointer-events: none;
+      }
+    }
+    &--block {
+      display: block;
+      width: 100%;
     }
 
 }

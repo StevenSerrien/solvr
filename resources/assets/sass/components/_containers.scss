@@ -85,3 +85,33 @@
     background-position: center center;
   }
 }
+
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  &--signup-clients {
+    background: url('../../img/user-signup-bg.svg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+.container {
+  &--signup-clients {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    top: 50px;
+    .form-block {
+      &__inner {
+        padding: 7.5vh 10vh 5vh 10vh !important;
+      }
+    }
+  }
+
+
+}

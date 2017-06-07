@@ -12,6 +12,7 @@ require('./custom/parallax-mouse.js');
 require('./custom/typed.js');
 require('./custom/sidemenu.js');
 require('./custom/cst-dropdown.js');
+require('./custom/height.js');
 
 
 
