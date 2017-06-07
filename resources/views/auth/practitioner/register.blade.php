@@ -8,13 +8,6 @@
   <div class="full-screen-container full-screen-container--w-centered-content"  ng-class='contact.state.currentTemplate.stateClass'>
 
     <div class="row">
-
-
-
-
-
-
-
       <div ng-form="parentForm" class="form-block form-block--contact-signup small-centered large-12 columns">
         <div class="row">
           <div class="large-12 columns" vertilize-container>

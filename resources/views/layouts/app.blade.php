@@ -31,6 +31,7 @@
         <div class="content">
           @include('includes.navbar')
           @yield('content')
+          @yield('footer')
         </div>
 
         {{-- @include('includes.footer') --}}

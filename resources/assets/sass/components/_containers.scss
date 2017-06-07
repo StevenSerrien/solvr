@@ -100,9 +100,14 @@
     background-size: cover;
     background-position: center center;
   }
+  &--login-practitioners {
+    background: url('../../img/colored-background-supersized.svg') no-repeat;
+    background-size: 100vw 90vh;
+    background-position: center center;
+  }
 }
 .container {
-  &--signup-clients {
+  &--signup-clients, &--login-practitioners {
     position: relative;
     z-index: 2;
     padding: 40px;

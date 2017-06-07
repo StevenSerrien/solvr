@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  
+
   <div class="jumbotron jumbotron--color-1 s-container">
 
     <div class="row f-row small-collapse">
@@ -280,4 +280,7 @@ Na al dat oefenen is het tijd dat je trots bent. Je hebt misschien spelling en r
 </div>
 </div> --}}
 
+@endsection
+@section('footer')
+  @include('includes.footer')
 @endsection

@@ -6,11 +6,11 @@
           {{-- <img src="img/f-brand-logo-normal.svg" alt=""> --}}
 
         </div>
-        <div class="footer__links">
+        {{-- <div class="footer__links">
           <ul class='menu'>
             <li>privacy</li>
           </ul>
-        </div>
+        </div> --}}
 
       </div>
       <div class="footer__right footer__social-media large-1 columns" data-equalizer-watch>

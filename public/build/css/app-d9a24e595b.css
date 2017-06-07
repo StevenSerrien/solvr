@@ -10006,14 +10006,20 @@ select.ui.dropdown {
   background-position: center center;
 }
 
-.container--signup-clients {
+.bg--login-practitioners {
+  background: url("../../img/colored-background-supersized.svg") no-repeat;
+  background-size: 100vw 90vh;
+  background-position: center center;
+}
+
+.container--signup-clients, .container--login-practitioners {
   position: relative;
   z-index: 2;
   padding: 40px;
   top: 50px;
 }
 
-.container--signup-clients .form-block__inner {
+.container--signup-clients .form-block__inner, .container--login-practitioners .form-block__inner {
   padding: 7.5vh 10vh 5vh 10vh !important;
 }
 
@@ -11247,7 +11253,7 @@ footer .footer__left {
   position: relative;
   padding: 15px 0 15px 0;
   padding-left: 2.5rem !important;
-  background-color: #ededed;
+  background-color: #fbfbfb;
 }
 
 footer.invisible {
