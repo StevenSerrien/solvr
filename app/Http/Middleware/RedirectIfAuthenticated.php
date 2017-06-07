@@ -17,10 +17,19 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/dashboard');
-        }
+        switch ($guard) {
+          case 'practitioner':
+            if (Auth::guard($guard)->check()) {
+              return redirect()->route('practitioner.dashboard');
+            }
+            break;
 
+          default:
+          if (Auth::guard($guard)->check()) {
+            return redirect()->route('user.dashboard');
+          }
+            break;
+        }
         return $next($request);
     }
 }

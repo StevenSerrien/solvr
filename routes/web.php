@@ -90,5 +90,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/register', 'Auth\RegisterController@register');
 
 
-    Route::get('/dashboard', 'User\UserController@index');
+    Route::get('/dashboard', ['as' => 'user.dashboard', 'uses' => 'User\UserController@index']);
 });
