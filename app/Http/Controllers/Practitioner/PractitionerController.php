@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Practitioner;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PractitionerController extends Controller
 {
@@ -25,5 +26,9 @@ class PractitionerController extends Controller
   public function index()
   {
       return view('practitioner.dashboard');
+  }
+
+  public function test() {
+    return Auth::guard('practitioner')->user()->practice->name;
   }
 }

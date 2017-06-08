@@ -28,7 +28,7 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap  {
     background-color: white;
     height: 100%;
     width: 100%;
-
+    padding: 87px 20px 50px 20px;
   }
 }
 
@@ -47,8 +47,8 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap  {
   color: rgb(224, 224, 224);
   font-weight: 600;
   font-size: 1.4rem;
-  &:hover {
-    color: darken(rgb(224, 224, 224), 10%);
+  &:hover, &:focus {
+    color: darken(rgb(224, 224, 224), 10%) !important;
   }
   &--close {
     top: 35px;

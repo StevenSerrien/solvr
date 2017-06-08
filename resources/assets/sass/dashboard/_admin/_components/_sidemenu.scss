@@ -1,0 +1,112 @@
+.profile-card {
+  display: block;
+  padding: 20px 30px;
+  @include box-shadow(0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
+  background: white;
+  font-size: 18px;
+  .profile-card__avatar  {
+    display: block;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    position: relative;
+
+    margin: auto;
+      img {
+        border-radius: 50%;
+        position: absolute;
+        width: auto;
+        height: 100%;
+        transform: translateX(-50%);
+        left: 50%;
+        object-fit: contain;
+      }
+    .status {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 5px solid $confirmation-color;
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__name, &__function {
+    font-family: $secundary-font;
+    display: block;
+    text-align: center;
+  }
+  &__name {
+    margin-top: 25px;
+    font-weight: 600;
+    color: #96989b;
+  }
+  &__function {
+    margin-top: 5px;;
+    color: #b8bdc1;
+  }
+  &__edit-profile {
+    display: block;
+    font-family: $secundary-font;
+    color: #b8bdc1;
+    text-align: center;
+    i {
+      margin-bottom: 15px;
+      display: block;
+
+
+    }
+    margin-top: 25px;
+    &:hover {
+      color: #4886ff;
+    }
+  }
+}
+
+.d-sidemenu {
+  &__title {
+    margin-top: 30px;
+    display: block;
+    font-family: $main-font;
+    font-size: 1em;
+    color: #96989b;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    &::after {
+      display: block;
+      content: '';
+      left: 0;
+      bottom: -5px;
+      width: 30px;
+      height: 3px;
+      background-color: $brand-color-3;
+    }
+  }
+
+  &__stackedmnu {
+    margin-top: 40px;
+    a {
+      border-radius: 3px;
+      font-size: 17px;
+      padding: 30px 15px 30px 5px;
+      font-family: $secundary-font;
+      color: #cdcfd4;
+      text-transform: capitalize;
+      font-weight: 800;
+      i {
+        font-size: 22px;
+        color: #e1e2e6;
+        margin-right: 25px !important;
+        font-weight: 800;
+      }
+      &:hover {
+        background-color: #f6f7fb;
+        color: #cdcfd4;
+      }
+    }
+  }
+}

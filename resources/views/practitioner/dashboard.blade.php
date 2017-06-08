@@ -22,9 +22,9 @@
             <div class="top-bar__item-b">
               <div class="top-bar__img-item">
                 <div class="img-wrap">
-                  <img data-name="Tim" class="da-profile">
+                  <img data-name="{{ Auth::guard('practitioner')->user()->firstname }}" class="da-profile">
                 </div>
-                <span>Hallo, Sofie!</span>
+                <span>Hallo, {{ Auth::guard('practitioner')->user()->firstname }}!</span>
               </div>
             </div>
           </li>

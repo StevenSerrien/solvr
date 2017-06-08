@@ -9820,6 +9820,7 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   background-color: white;
   height: 100%;
   width: 100%;
+  padding: 87px 20px 50px 20px;
 }
 
 .d-container.show-menu .sidemenu-wrap {
@@ -9836,8 +9837,8 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   font-size: 1.4rem;
 }
 
-.d-sidemenu__btn:hover {
-  color: #c7c7c7;
+.d-sidemenu__btn:hover, .d-sidemenu__btn:focus {
+  color: #c7c7c7 !important;
 }
 
 .d-sidemenu__btn--close {
@@ -9926,6 +9927,128 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   font-family: "Source Sans Pro";
   font-size: 1em;
   font-weight: 600;
+}
+
+.profile-card {
+  display: block;
+  padding: 20px 30px;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08) !important;
+  background: white;
+  font-size: 18px;
+}
+
+.profile-card .profile-card__avatar {
+  display: block;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.profile-card .profile-card__avatar img {
+  border-radius: 50%;
+  position: absolute;
+  width: auto;
+  height: 100%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.profile-card .profile-card__avatar .status {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 5px solid #ddf2bb;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.profile-card__name, .profile-card__function {
+  font-family: "Source Sans Pro";
+  display: block;
+  text-align: center;
+}
+
+.profile-card__name {
+  margin-top: 25px;
+  font-weight: 600;
+  color: #96989b;
+}
+
+.profile-card__function {
+  margin-top: 5px;
+  color: #b8bdc1;
+}
+
+.profile-card__edit-profile {
+  display: block;
+  font-family: "Source Sans Pro";
+  color: #b8bdc1;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.profile-card__edit-profile i {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.profile-card__edit-profile:hover {
+  color: #4886ff;
+}
+
+.d-sidemenu__title {
+  margin-top: 30px;
+  display: block;
+  font-family: "Poppins";
+  font-size: 1em;
+  color: #96989b;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.d-sidemenu__title::after {
+  display: block;
+  content: '';
+  left: 0;
+  bottom: -5px;
+  width: 30px;
+  height: 3px;
+  background-color: #fce289;
+}
+
+.d-sidemenu__stackedmnu {
+  margin-top: 40px;
+}
+
+.d-sidemenu__stackedmnu a {
+  border-radius: 3px;
+  font-size: 17px;
+  padding: 30px 15px 30px 5px;
+  font-family: "Source Sans Pro";
+  color: #cdcfd4;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.d-sidemenu__stackedmnu a i {
+  font-size: 22px;
+  color: #e1e2e6;
+  margin-right: 25px !important;
+  font-weight: 800;
+}
+
+.d-sidemenu__stackedmnu a:hover {
+  background-color: #f6f7fb;
+  color: #cdcfd4;
 }
 
 /*# sourceMappingURL=admin-app.css.map */
