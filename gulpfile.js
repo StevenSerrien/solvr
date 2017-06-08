@@ -51,6 +51,7 @@ elixir((mix) => {
             'libs/classie.js',
             'libs/snap.svg-min.js',
 
+
             // Angular libs
             // 'plugins/angular.min.js',
             // 'plugins/angular-sanitize.js',
@@ -58,6 +59,12 @@ elixir((mix) => {
             // 'plugins/angular-animate.js',
         ],
         'public/js/libs.js')
+        .scripts(
+         [
+             'libs/initial.min.js',
+
+         ],
+         'public/js/backend-libs.js')
         // .scripts(
         //   [
         //   // Angular Plugins (not via NPM, but manually)
@@ -66,4 +73,10 @@ elixir((mix) => {
         // 'public/js/angular-plugins.js')
 
        .version(['css/app.css', 'js/app.js']);
+});
+
+elixir((mix) => {
+    mix.sass('admin-app.scss')
+        .webpack('d-app.js');
+      //  .version(['css/admin-app.css', 'js/d-app.js']);
 });

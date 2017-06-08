@@ -1,0 +1,84 @@
+.d-button {
+  cursor: pointer;
+
+  &:hover {
+    i, span {
+      color: darken($d-font-color--1, 15%);
+    }
+  }
+}
+.d-top-bar {
+
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 50px rgba(0,0,0,0.05);
+
+  .menu {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.top-bar {
+  padding: 0px;
+  max-height: 87px;
+  i, span {
+    // transition: 0.2s all ease-in-out;
+    color: $d-font-color--1;
+  }
+
+  &__item {
+    padding: 30px 40px;
+    max-height: 87px;
+    &--border-left {
+      border-left: 1px solid rgb(217, 225, 230);
+    }
+  }
+  &__item-b {
+    padding: 27px 40px;
+    max-height: 87px;
+  }
+  &__i-item {
+    font-size: 17px;
+    i {
+      margin-right: 25px;
+      vertical-align: middle;
+      font-size: 1.1em;
+    }
+    span  {
+      vertical-align: middle;
+      font-family: $secundary-font;
+      font-size: 1em;
+      font-weight: 600;
+    }
+    &--2x {
+      i {
+        margin-right: 25px;
+        vertical-align: middle;
+        font-size: 1.5em;
+      }
+    }
+
+  }
+  &__img-item {
+    .img-wrap {
+      width: 100%;
+      max-width: 35px;
+      display: inline-block;
+      margin-right: 15px;
+
+    }
+    img {
+      height: auto;
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    span {
+      vertical-align: middle;
+      font-family: $secundary-font;
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+  &__img-item, &__i-item {
+
+  }
+}

@@ -1,4 +1,8 @@
 (function() {
+
+	if (document.getElementById('menu-icon-wrapper')) {
+
+
 	/* In animations (to close icon) */
 
 	var beginAC = 80,
@@ -111,5 +115,6 @@
 			removeScale(wrapper)
 		}, 450);
 	};
+	}
 
 })();

@@ -18,4 +18,3 @@ require('./custom/height.js');
 
 
 $(document).foundation();
-console.log('jorisrrrrdddesn');
