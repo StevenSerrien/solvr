@@ -8,7 +8,8 @@ var dependencies = [
   'ngSanitize',
   'angular.vertilize',
   'ngMask',
-  'validation.match'
+  'validation.match',
+  'ngLetterAvatar'
 ];
 
 var sl = {

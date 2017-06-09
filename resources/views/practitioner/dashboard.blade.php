@@ -22,29 +22,53 @@
         <div class="dashboard__board ">
           <h2 class='d--title'>Uw praktijk ##practitioner.state.practice.name##</h2>
           <h3 class='d--subtitle'>U bent bevestigd door deze praktijk.</h3>
-          <div class="dashboard__divider dashboard__divider--small">
+          <div class="dashboard__divider dashboard__divider--small m-b-20">
           </div>
-          <div ng-repeat="lPractitioners in practitioner.state.unconfirmedPractitioners" ng-init="$last ? practitioner.handlers.test() : angular.noop()" ng-cloak>
-            <div class="dashboard__person m-b-10">
-              <div class="avatar">
-                <img data-name="##lPractitioners.firstname##" class="p-profile" alt="">
-                ##lPractitioners.firstname##
+          <div  ng-repeat="lPractitioners in practitioner.state.linkedPractitioners | orderBy:'created_at'" ng-init="$last ? practitioner.handlers.test() : angular.noop()" ng-cloak>
+            <div class="dashboard__person m-b-10 clearfix">
+              <div class="float-left">
+                <div class="avatar">
+                 <ng-letter-avatar data="##lPractitioners.firstname##"></ng-letter-avatar>
+                </div>
+                <div class="content">
+                  <span class='content__name d--text d-block'>##lPractitioners.firstname## ##lPractitioners.lastname##</span>
+                  <span class='content__riziv d--text d--block'>##lPractitioners.rizivnumber##</span>
+                </div>
               </div>
-              <div class="content">
-                <span class='content__name d--text d-block'>##lPractitioners.firstname## ##lPractitioners.lastname##</span>
-                <span class='content__riziv d--text d--block'>Rizivnumber</span>
-              </div>
+
             </div>
           </div>
-          {{-- <div ng-repeat="lPractitioner in practitioner.state.linkedPractitioners" ng-cloak>
-            gelinkt hoor
-          </div> --}}
-
         </div>
 
       </div>
-      <div class="dashboard__board large-6 columns">
+      <div class=" large-6 columns">
+        <div class="dashboard__board">
+          <h2 class='d--title'>Aanvragen van registraties</h2>
+          <h3 class='d--subtitle'>Deze personen willen zich bij uw praktijk voegen.</h3>
 
+        <div class="dashboard__divider dashboard__divider--small m-b-20">
+        </div>
+        <div  ng-repeat="lPractitioners in practitioner.state.unconfirmedPractitioners | orderBy:'created_at'" ng-init="$last ? practitioner.handlers.test() : angular.noop()" ng-cloak>
+
+          <div class="dashboard__person m-b-10 clearfix">
+            <div class="float-left">
+            <div class="avatar">
+             <ng-letter-avatar data="##lPractitioners.firstname##"></ng-letter-avatar>
+            </div>
+            <div class="content">
+              <span class='content__name d--text d-block'>##lPractitioners.firstname## ##lPractitioners.lastname##</span>
+              <span class='content__riziv d--text d--block'>##lPractitioners.rizivnumber##</span>
+            </div>
+          </div>
+          <div class="float-right">
+            <div class="buttons">
+              <a class='confirm' href="#"><i class='icon-check'></i></a>
+              <a class='deny' href="#"><i class='icon-ban'></i></a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>

@@ -2,7 +2,8 @@ $main-d-color: rgb(66, 72, 89);
 $main-d-subcolor: #a1a7b0;
 
 
-
+$confirm-color--soft: rgb(238, 246, 225);
+$deny-color--soft: rgb(254, 223, 229);
 .d {
   &--title {
     font-family: $main-font;
@@ -82,6 +83,7 @@ $main-d-subcolor: #a1a7b0;
     @include box-shadow(0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
   }
   &__person {
+    position: relative;
     .avatar, .content {
       display: inline-block;
       vertical-align: middle;
@@ -115,10 +117,35 @@ $main-d-subcolor: #a1a7b0;
       }
     }
 
+    .buttons {
+      position: relative;
+      top: 50%;
+      a {
+        color: rgb(177, 179, 183);
+        font-size: 1.2em;
+        margin-right: 10px;
+        font-weight: 700;
+        &.confirm {
+          &:hover {
+            color: $confirm-color--soft;
+          }
+        }
+        &.deny {
+          &:hover {
+            color: $deny-color--soft;
+          }
+
+        }
+      }
+      i {
+
+
+      }
+    }
+
   }
   &__divider {
-    margin-top: 5px;
-    margin-bottom: 5px;
+
     display: block;
     height: 3px;
     background-color: rgb(244, 244, 244);

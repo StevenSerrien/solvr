@@ -6,6 +6,7 @@ require('angular-vertilize');
 require('angular-vertilize');
 require('angular-validation-match');
 require('ng-mask');
+require('ngletteravatar');
 
 require('semantic-ui-dropdown');
 
