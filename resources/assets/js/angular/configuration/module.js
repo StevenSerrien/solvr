@@ -9,7 +9,9 @@ var dependencies = [
   'angular.vertilize',
   'ngMask',
   'validation.match',
-  'ngLetterAvatar'
+  'ngLetterAvatar',
+  'mm.foundation',
+  'ngTouch'
 ];
 
 var sl = {

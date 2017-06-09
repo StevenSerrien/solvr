@@ -7,6 +7,9 @@ require('angular-vertilize');
 require('angular-validation-match');
 require('ng-mask');
 require('ngletteravatar');
+require('angular-touch');
+
+require('./plugins/angular-foundation.min.js');
 
 require('semantic-ui-dropdown');
 

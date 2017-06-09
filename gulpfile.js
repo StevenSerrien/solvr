@@ -53,7 +53,7 @@ elixir((mix) => {
 
 
             // Angular libs
-            // 'plugins/angular.min.js',
+            // 'plugins/angular-foundation.min.js',
             // 'plugins/angular-sanitize.js',
             // 'plugins/angular-route.js',
             // 'plugins/angular-animate.js',

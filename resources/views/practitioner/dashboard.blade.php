@@ -63,10 +63,10 @@
           </div>
           <div class="float-right">
             <div class="buttons">
-              <a class='confirm' href ng-click='practitioner.handlers.modal(lPractitioners);' data-open="exampleModal1"><i class='icon-check'></i></a>
+              <a class='confirm' href ng-click='practitioner.modalHandlers.acceptPractitioner(lPractitioners);' data-open="exampleModal1"><i class='icon-check'></i></a>
               <a class='deny' href="#"><i class='icon-ban'></i></a>
             </div>
-            ##practitioner.state.selectedPractitioner.firstname##
+
           </div>
         </div>
         </div>
@@ -79,17 +79,34 @@
 
 
 
+
   <!-- Modals -->
 
-  <div class="reveal" id="exampleModal1" data-reveal>
-    ##practitioner.state.selectedPractitioner.firstname##
-  <h1>Awesome. I Have It.</h1>
-  <p ng-controller='practitionerDashboardController as practitioner' class="lead">practitioner.state.selectedPractitioner.firstname ##practitioner.state.selectedPractitioner.firstname##</p>
-  <p>##practitioner.state.selectedPractitioner.firstname## I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
+  <script type="text/ng-template" id="myModalContent.html">
+  <h1>Zeker dat je ##practitioner.firstname##</h1>
+  <!-- <h2>##practitioner.state.selectedPractitioner##</h2> -->
+
+  <button class="button" ng-click="ok()">OK</button>
+  <button ng-click="cancel()" class="close-button" aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
-</div>
+  </script>
+
+  {{-- <div class="reveal" id="exampleModal1" data-reveal>
+    <div class="" ng-controller='TestCtrl as test'>
+      ##test.state.test##
+      ja goeiendadg
+      ##modal.state.selectedPractitioner##
+      ##$parent.state.selectedPractitioner##
+      <input type="text" ng-model='modal.state.selectedPractitioner.firstname' name="" value="">
+    <h1>Awesome. I Have It.</h1>
+    <p>##$parent.state.selectedPractitioner.firstname## I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+
+</div> --}}
 
     {{-- <div class="row">
         <div class="col-md-8 col-md-offset-2">
