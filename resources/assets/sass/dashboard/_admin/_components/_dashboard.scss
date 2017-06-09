@@ -1,0 +1,132 @@
+$main-d-color: rgb(66, 72, 89);
+$main-d-subcolor: #a1a7b0;
+
+
+
+.d {
+  &--title {
+    font-family: $main-font;
+    color: $main-d-color;
+
+    font-size: 20px !important;
+    margin-bottom: 5px !important;
+  }
+  &--subtitle {
+    font-family: $secundary-font;
+    color: $main-d-subcolor;
+    font-weight: 600;
+    font-size: 18px !important;
+  }
+  &--text {
+    font-family: $secundary-font;
+    color: $main-d-subcolor;
+    font-size: 17px !important;
+  }
+  &--thick {
+    font-weight: 700;
+  }
+  &--block {
+    display: block;
+  }
+}
+
+.dashboard {
+  &__headtag {
+    .badge, .content {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .badge {
+      width: 65px;
+      height: 65px;
+      border-radius: 3px;
+      position: relative;
+      margin-right: 35px;
+      &--brand-color-1 {
+        background-color: $brand-color-3;
+        i {
+          position: absolute;
+          top: 50%; left: 50%;
+          @include translate(-50%, -50%);
+          font-size: 30px;
+          color: white;
+          font-weight: 800;
+        }
+      }
+    }
+    .content {
+
+      &__title {
+        font-family: $main-font;
+        font-weight: 700;
+        color: rgb(66, 72, 89);
+        font-size: 20px;
+        display: block;
+        margin-bottom: 5px;
+      }
+      &__subtitle {
+        display: block;
+        font-size: 18px !important;
+        font-family: $secundary-font;
+        font-weight: 600;
+        color: rgb(177, 179, 183);
+      }
+    }
+
+  }
+
+  &__board {
+    position: relative;
+    padding: 30px;
+    background: #fff;
+    @include box-shadow(0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
+  }
+  &__person {
+    .avatar, .content {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .avatar {
+      width: 100%;
+      max-width: 35px;
+      display: inline-block;
+      margin-right: 15px;
+      img {
+        height: auto;
+        max-width: 100%;
+        border-radius: 5px;
+      }
+    }
+    .content {
+
+      &__name {
+        font-family: $secundary-font;
+        font-weight: 700;
+        color: rgb(89, 95, 111);
+        font-size: 1px;
+        display: block;
+        margin-bottom: 0px;
+      }
+      &__riziv {
+        display: block;
+        font-family: $secundary-font;
+        font-weight: 300;
+        color: rgb(177, 179, 183);
+      }
+    }
+
+  }
+  &__divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    height: 3px;
+    background-color: rgb(244, 244, 244);
+    &--small {
+      width: 25%;
+    }
+    &--full {
+      width: 100%;
+    }
+  }
+}

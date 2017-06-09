@@ -31,4 +31,8 @@ class PractitionerController extends Controller
   public function test() {
     return Auth::guard('practitioner')->user()->practice->name;
   }
+
+  public function getAllPractitioners() {
+    return Auth::guard('practitioner')->user()->practice->name;
+  }
 }

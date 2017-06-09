@@ -72,10 +72,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('logopedist/register', ['as' => 'practitioner.register.show', 'uses' => 'Auth\PractitionerRegisterController@showRegistrationForm']);
     Route::post('logopedist/register', 'Auth\PractitionerRegisterController@register');
 
-    Route::get('logopedist/test', 'Practitioner\PractitionerController@test');
+    Route::post('logopedist/test', 'Practitioner\PractitionerController@test');
 
 
-
+    Route::get('/practice/getallpractitioners', 'Practice\PracticeController@getAllPractitionersForLoggedUser');
 
 
 

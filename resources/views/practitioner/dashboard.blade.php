@@ -2,47 +2,54 @@
 
 @section('content')
 
-  <div class="top-bar d-top-bar">
-    <div class='top-bar-inner'>
-      <div class="top-bar-left">
-        <ul class='menu'>
-          <li>
-            <div class="top-bar__item">
-              <a id='side-menu-trigger' class="top-bar__i-item d-button">
-                <i class='icon-grid'></i><span>Navigatie</span>
-              </a>
-            </div>
-          </li>
-        </ul>
 
+  <div class="dashboard dashboard--practice m-t-60" ng-init="practitioner.handlers.initPracticeView()" >
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="dashboard__headtag">
+          <div class="badge badge--brand-color-1">
+            <i class='icon-star'></i>
+          </div>
+          <div class="content">
+            <h1 class='content__title'>Uw praktijk board</h1>
+            <span class='content__subtitle'>Hier vindt je alles over je praktijk en collega's</span>
+          </div>
+        </div>
       </div>
-      <div class="top-bar-right">
-        <ul class='menu'>
-          <li>
-            <div class="top-bar__item-b">
-              <div class="top-bar__img-item">
-                <div class="img-wrap">
-                  <img data-name="{{ Auth::guard('practitioner')->user()->firstname }}" class="da-profile">
-                </div>
-                <span>Hallo, {{ Auth::guard('practitioner')->user()->firstname }}!</span>
+    </div>
+    <div class="row m-t-80">
+      <div class="large-6 columns">
+        <div class="dashboard__board ">
+          <h2 class='d--title'>Uw praktijk ##practitioner.state.practice.name##</h2>
+          <h3 class='d--subtitle'>U bent bevestigd door deze praktijk.</h3>
+          <div class="dashboard__divider dashboard__divider--small">
+          </div>
+          <div ng-repeat="lPractitioners in practitioner.state.unconfirmedPractitioners" ng-init="$last ? practitioner.handlers.test() : angular.noop()" ng-cloak>
+            <div class="dashboard__person m-b-10">
+              <div class="avatar">
+                <img data-name="##lPractitioners.firstname##" class="p-profile" alt="">
+                ##lPractitioners.firstname##
+              </div>
+              <div class="content">
+                <span class='content__name d--text d-block'>##lPractitioners.firstname## ##lPractitioners.lastname##</span>
+                <span class='content__riziv d--text d--block'>Rizivnumber</span>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="top-bar__item top-bar__item--border-left">
+          </div>
+          {{-- <div ng-repeat="lPractitioner in practitioner.state.linkedPractitioners" ng-cloak>
+            gelinkt hoor
+          </div> --}}
 
-                <i class='icon-bell 2x'></i>
+        </div>
 
-
-            </div>
-          </li>
-
-        </ul>
-
+      </div>
+      <div class="dashboard__board large-6 columns">
 
       </div>
     </div>
   </div>
+
+
     {{-- <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

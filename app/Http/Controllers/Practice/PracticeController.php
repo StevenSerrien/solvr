@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Practice\Practice;
 use App\Models\Practitioner\Practitioner;
+use Illuminate\Support\Facades\Auth;
 
 class PracticeController extends Controller
 {
@@ -17,7 +18,7 @@ class PracticeController extends Controller
     }
 
     public function getPracticeById(Request $request) {
-      
+
       if ($request) {
         $index = $request->index;
 
@@ -27,7 +28,11 @@ class PracticeController extends Controller
           return $practice;
         }
       }
+    }
 
-
+    public function getAllPractitionersForLoggedUser() {
+      $loggedPractitioner = Auth::guard('practitioner')->user();
+      $practiceId =  $loggedPractitioner->practice->id;
+      return Practice::where('id', $practiceId)->with('practitioners')->get();
     }
 }

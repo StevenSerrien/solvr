@@ -25,13 +25,14 @@
   </script>
 </head>
 <body>
-  <div class="d-container">
+  <div class="d-container" ng-controller='practitionerDashboardController as practitioner'>
 
     <div id='side-menu-wrap' class="sidemenu-wrap">
       <a id='d-sidemenu-close' class='d-sidemenu__btn d-sidemenu__btn--close icon-close'></a>
       @include('practitioner.includes.sidemenu')
     </div>
     <div class="content-wrap">
+      @include('practitioner.includes.topbar')
       @yield('content')
     </div>
 
