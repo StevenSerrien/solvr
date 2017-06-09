@@ -15,6 +15,10 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $r
     test: function() {
       $('.p-profile').initial();
     },
+    modal: function(practitioner) {
+      self.state.selectedPractitioner = practitioner;
+      $scope.$digest;
+    },
 
     getAllPractitionersByPractice: function() {
       service.get(getAllPractitioners).then(function successCallback(response) {
@@ -69,6 +73,9 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $r
     unconfirmedPractitioners: [
 
     ],
+    selectedPractitioner: {
+
+    },
 
   };
 

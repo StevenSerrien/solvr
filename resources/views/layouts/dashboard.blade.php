@@ -36,7 +36,7 @@
       @yield('content')
     </div>
 
-
+    
   </div>
   <!-- end d-container -->
   <!-- Scripts -->

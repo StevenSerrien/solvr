@@ -16,6 +16,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <div class="row m-t-80">
       <div class="large-6 columns">
@@ -62,9 +63,10 @@
           </div>
           <div class="float-right">
             <div class="buttons">
-              <a class='confirm' href="#"><i class='icon-check'></i></a>
+              <a class='confirm' href ng-click='practitioner.handlers.modal(lPractitioners);' data-open="exampleModal1"><i class='icon-check'></i></a>
               <a class='deny' href="#"><i class='icon-ban'></i></a>
             </div>
+            ##practitioner.state.selectedPractitioner.firstname##
           </div>
         </div>
         </div>
@@ -73,6 +75,21 @@
     </div>
   </div>
 
+
+
+
+
+  <!-- Modals -->
+
+  <div class="reveal" id="exampleModal1" data-reveal>
+    ##practitioner.state.selectedPractitioner.firstname##
+  <h1>Awesome. I Have It.</h1>
+  <p ng-controller='practitionerDashboardController as practitioner' class="lead">practitioner.state.selectedPractitioner.firstname ##practitioner.state.selectedPractitioner.firstname##</p>
+  <p>##practitioner.state.selectedPractitioner.firstname## I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
     {{-- <div class="row">
         <div class="col-md-8 col-md-offset-2">
