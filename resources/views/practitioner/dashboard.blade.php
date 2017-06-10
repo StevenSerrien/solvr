@@ -83,10 +83,24 @@
   <!-- Modals -->
 
   <script type="text/ng-template" id="myModalContent.html">
-  <h1>Zeker dat je ##practitioner.firstname##</h1>
+    <!-- <div class="modal reveal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out"> -->
+      <div class="modal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out">
+      <div class="modal__header modal__header--practitioner">
+        <h1 class='title text-center'>Ben je zeker?</h1>
+      </div>
+      <div class="modal__content">
+        <p class='text-center'>Je staat op het punt om <span>##practitioner.firstname## ##practitioner.lastname##</span> bij je praktijk toe te voegen.</p>
+
+        <div class="modal__buttons m-t-60">
+          <button class='button confirm' ng-click="ok()">Ja hoor!</button>
+          <!-- <button class="button" ng-click="ok()">OK</button> -->
+        </div>
+      </div>
+    </div>
+  <!-- <h1>Zeker dat je ##practitioner.firstname##</h1> -->
   <!-- <h2>##practitioner.state.selectedPractitioner##</h2> -->
 
-  <button class="button" ng-click="ok()">OK</button>
+
   <button ng-click="cancel()" class="close-button" aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>

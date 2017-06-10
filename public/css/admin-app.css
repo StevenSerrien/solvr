@@ -10203,4 +10203,65 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   width: 100%;
 }
 
+.reveal {
+  padding: 0px !important;
+}
+
+.modal__header {
+  background: url("../../img/modal-bg.svg") no-repeat;
+  background-size: cover;
+  padding: 45px 10px;
+  color: #424859;
+}
+
+.modal__header .title {
+  font-size: 25px;
+  font-weight: 800;
+  position: relative;
+}
+
+.modal__header .title::after {
+  content: ' ';
+  position: absolute;
+  height: 5px;
+  width: 25px;
+  background-color: #3b6ecc;
+  left: 50%;
+  bottom: -10px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.modal__content {
+  padding: 40px;
+}
+
+.modal__content p {
+  font-family: "Poppins";
+  color: #bec4c7;
+}
+
+.modal__content p span {
+  color: #424859;
+  font-weight: bolder;
+}
+
+.modal__buttons {
+  display: block;
+  width: auto;
+}
+
+.modal__buttons button {
+  font-family: "Poppins";
+  color: #FFFFFF;
+  font-weight: 800;
+  padding: 20px 30px;
+  display: block;
+  margin: auto;
+}
+
+.modal__buttons button.confirm {
+  background-color: #3b6ecc;
+}
+
 /*# sourceMappingURL=admin-app.css.map */

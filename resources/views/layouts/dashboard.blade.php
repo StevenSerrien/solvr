@@ -16,6 +16,7 @@
 
   <!-- Dashboard Admin styles only -->
   <link href="{{ elixir('css/admin-app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />
 
   <!-- Scripts -->
   <script>
@@ -36,7 +37,7 @@
       @yield('content')
     </div>
 
-    
+
   </div>
   <!-- end d-container -->
   <!-- Scripts -->

@@ -2,6 +2,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
   var self = this;
   var testRoute = '/logopedist/test';
   var getAllPractitioners = '/practice/getallpractitioners';
+  var acceptPractitionerUrl = '/practitioner/acceptnew';
 
   this.events = {
 
@@ -18,6 +19,11 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
     modal: function(practitioner) {
       self.state.selectedPractitioner = practitioner;
       $scope.$digest;
+    },
+    refreshData: function() {
+      self.state.linkedPractitioners.length = 0;
+      self.state.unconfirmedPractitioners.length = 0;
+      self.handlers.getAllPractitionersByPractice();
     },
 
     getAllPractitionersByPractice: function() {
@@ -45,6 +51,14 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
       }, function errorCallback(response) {
 
       });
+    },
+    acceptPractitioner: function(practitioner) {
+      service.post(acceptPractitionerUrl, practitioner).then(function successCallback(response) {
+        console.log(response);
+        self.handlers.refreshData();
+      }, function errorCallBack(response) {
+
+      })
     }
     // submit: function() {
     //   service.post(testRoute, self.state.selectedPractice).then(function successCallback(response) {
@@ -109,8 +123,9 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
       var modalInstance = $modal.open(params);
 
       modalInstance.result.then(function(practitioner) {
-            console.log('correct gesloten' + practitioner.firstname);
-            $log.info(practitioner.firstname);
+            self.handlers.acceptPractitioner(practitioner);
+            // console.log('correct gesloten' + practitioner.firstname);
+            // $log.info(practitioner.firstname);
         }, function() {
             $log.info('Modal dismissed at: ' + new Date());
       });

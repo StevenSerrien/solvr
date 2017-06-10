@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Practitioner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Practitioner\Practitioner;
+use App\Models\Practice\Practice;
 
 class PractitionerController extends Controller
 {
@@ -34,5 +36,35 @@ class PractitionerController extends Controller
 
   public function getAllPractitioners() {
     return Auth::guard('practitioner')->user()->practice->name;
+  }
+
+  public function acceptPractitioner(Request $request) {
+
+    $requesterIsAdmin = Auth::guard('practitioner')->user()->isAdmin;
+    if ($requesterIsAdmin == 1) {
+
+      // Practitioner that should be accepted with linked practice
+      $practitioner = Practitioner::where('id', $request->id)->with('practice')->first();
+      // Confirm practitioner
+      $practitioner->isConfirmed = 1;
+      $practitioner->save();
+      // Send email to practitioner that got accepted that he can now log in.
+
+      // Fill in response data
+      $status = 'success';
+      $message = $practitioner->firstname . ' is nu verbonden met jouw praktijk.';
+      $error = 'none';
+      $code = 200;
+    }
+
+    $returnData = array(
+      'status' => $status,
+      'message' => $message,
+      'error' => $error
+    );
+
+    return response()->json($returnData, $code);
+
+
   }
 }
