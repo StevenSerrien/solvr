@@ -67,4 +67,33 @@ class PractitionerController extends Controller
 
 
   }
+  public function denyPractitioner(Request $request) {
+
+    $requesterIsAdmin = Auth::guard('practitioner')->user()->isAdmin;
+    if ($requesterIsAdmin == 1) {
+
+      // Practitioner that should be accepted with linked practice
+      $practitioner = Practitioner::where('id', $request->id)->with('practice')->first();
+      // Delete practitioner
+
+      $practitioner->delete();
+      // Send email to practitioner that got accepted that he can now log in.
+
+      // Fill in response data
+      $status = 'success';
+      $message = $practitioner->firstname . ' is nu geweigerd voor jouw praktijk.';
+      $error = 'none';
+      $code = 200;
+    }
+
+    $returnData = array(
+      'status' => $status,
+      'message' => $message,
+      'error' => $error
+    );
+
+    return response()->json($returnData, $code);
+
+
+  }
 }

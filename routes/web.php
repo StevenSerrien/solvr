@@ -79,6 +79,7 @@ Route::group(['middleware' => 'web'], function () {
 
     // Route to accept practitioner to join practice. Only Practice admin can do this
     Route::post('/practitioner/acceptnew', 'Practitioner\PractitionerController@acceptPractitioner');
+    Route::post('/practitioner/denynew', 'Practitioner\PractitionerController@denyPractitioner');
 
 
 

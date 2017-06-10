@@ -394,6 +394,7 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
   var testRoute = '/logopedist/test';
   var getAllPractitioners = '/practice/getallpractitioners';
   var acceptPractitionerUrl = '/practitioner/acceptnew';
+  var denyPractitionerUrl = '/practitioner/denynew';
 
   this.events = {
 
@@ -450,7 +451,15 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
       }, function errorCallBack(response) {
 
       })
-    }
+    },
+    denyPractitioner: function(practitioner) {
+      service.post(denyPractitionerUrl, practitioner).then(function successCallback(response) {
+        console.log(response);
+        self.handlers.refreshData();
+      }, function errorCallBack(response) {
+
+      })
+    },
     // submit: function() {
     //   service.post(testRoute, self.state.selectedPractice).then(function successCallback(response) {
     //
@@ -468,7 +477,7 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
       // console.log(self.state.selectedPractitioner);
       // console.log(practitioner);
       var params = {
-        templateUrl: 'myModalContent.html',
+        templateUrl: 'acceptPractitioner.html',
         resolve: {
           practitioner: function() {
             return self.state.selectedPractitioner;
@@ -520,7 +529,51 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
         }, function() {
             $log.info('Modal dismissed at: ' + new Date());
       });
-    }
+    },
+    denyPractitioner: function(practitioner, size, backdrop, itemCount, closeOnClick) {
+      self.state.selectedPractitioner = practitioner;
+
+      var params = {
+        templateUrl: 'denyPractitioner.html',
+        resolve: {
+          practitioner: function() {
+            return self.state.selectedPractitioner;
+          },
+        },
+        controller: function($scope, $modalInstance, practitioner) {
+          var modal = this;
+          $scope.practitioner = practitioner;
+
+
+
+          $scope.reposition = function() {
+            $modalInstance.reposition();
+          };
+
+          $scope.ok = function() {
+            $modalInstance.close($scope.practitioner);
+          };
+
+          $scope.cancel = function() {
+            $modalInstance.dismiss('cancel');
+          };
+
+          $scope.openNested = function() {
+            open();
+          };
+        }
+      };
+
+      var modalInstance = $modal.open(params);
+
+      modalInstance.result.then(function(practitioner) {
+            self.handlers.denyPractitioner(practitioner);
+            // console.log('correct gesloten' + practitioner.firstname);
+            // $log.info(practitioner.firstname);
+        }, function() {
+            $log.info('Modal dismissed at: ' + new Date());
+      });
+    },
   }
 
 

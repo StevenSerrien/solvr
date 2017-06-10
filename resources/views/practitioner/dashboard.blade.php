@@ -63,8 +63,8 @@
           </div>
           <div class="float-right">
             <div class="buttons">
-              <a class='confirm' href ng-click='practitioner.modalHandlers.acceptPractitioner(lPractitioners);' data-open="exampleModal1"><i class='icon-check'></i></a>
-              <a class='deny' href="#"><i class='icon-ban'></i></a>
+              <a class='confirm' href ng-click='practitioner.modalHandlers.acceptPractitioner(lPractitioners);'><i class='icon-check'></i></a>
+              <a class='deny' href ng-click='practitioner.modalHandlers.denyPractitioner(lPractitioners);'><i class='icon-ban'></i></a>
             </div>
 
           </div>
@@ -82,7 +82,7 @@
 
   <!-- Modals -->
 
-  <script type="text/ng-template" id="myModalContent.html">
+  <script type="text/ng-template" id="acceptPractitioner.html">
     <!-- <div class="modal reveal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out"> -->
       <div class="modal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out">
       <div class="modal__header modal__header--practitioner">
@@ -93,6 +93,30 @@
 
         <div class="modal__buttons m-t-60">
           <button class='button confirm' ng-click="ok()">Ja hoor!</button>
+          <!-- <button class="button" ng-click="ok()">OK</button> -->
+        </div>
+      </div>
+    </div>
+  <!-- <h1>Zeker dat je ##practitioner.firstname##</h1> -->
+  <!-- <h2>##practitioner.state.selectedPractitioner##</h2> -->
+
+
+  <button ng-click="cancel()" class="close-button" aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </script>
+
+  <script type="text/ng-template" id="denyPractitioner.html">
+    <!-- <div class="modal reveal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out"> -->
+      <div class="modal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out">
+      <div class="modal__header modal__header--practitioner">
+        <h1 class='title text-center'>Ben je zeker?</h1>
+      </div>
+      <div class="modal__content">
+        <p class='text-center'>Je staat op het punt om <span>##practitioner.firstname## ##practitioner.lastname##</span> te weigeren.</p>
+
+        <div class="modal__buttons m-t-60">
+          <button class='button confirm' ng-click="ok()">Begrepen</button>
           <!-- <button class="button" ng-click="ok()">OK</button> -->
         </div>
       </div>
