@@ -8,6 +8,7 @@ require('angular-validation-match');
 require('ng-mask');
 require('ngletteravatar');
 require('angular-touch');
+require('angular-loading-bar');
 
 require('./plugins/angular-foundation.min.js');
 

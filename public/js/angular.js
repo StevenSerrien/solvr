@@ -3,6 +3,7 @@ var dependencies = [
   'sl.directives',
   'sl.controllers',
 
+  'angular-loading-bar',
   'ngAnimate',
   'ngRoute',
   'ngSanitize',

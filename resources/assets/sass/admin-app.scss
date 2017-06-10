@@ -5,6 +5,7 @@
 @import "utilities";
 
 @import "node_modules/foundation-sites/scss/foundation";
+@import "node_modules/angular-loading-bar/src/loading-bar";
 @import "settings";
 
 @include foundation-everything;
