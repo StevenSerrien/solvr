@@ -10427,6 +10427,31 @@ select.ui.dropdown {
   z-index: 5;
 }
 
+.jumbotron--color-3 {
+  background-color: #e37774;
+}
+
+.jumbotron--color-3::before {
+  right: 0;
+  top: 25px;
+  content: ' ';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: url("../../img/letters.svg") no-repeat;
+  background-size: contain;
+}
+
+.jumbotron--color-3::after {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: -100px;
+  left: 0;
+  z-index: 5;
+}
+
 .jumbotron__content h1, .jumbotron__content h2, .jumbotron__content h3,
 .jumbotron__content h4, .jumbotron__content h5, .jumbotron__content h6 {
   color: white;
@@ -11593,6 +11618,59 @@ footer .footer__links {
 
 .cst-dropdown.ui.selection.active.dropdown {
   border: 1px solid #e3e9ec;
+}
+
+.search {
+  font-size: 1.5rem;
+}
+
+.search__search-block {
+  background: white;
+  position: relative;
+  box-shadow: 0 9px 20px 0 rgba(153, 170, 181, 0.1) !important;
+  padding: 50px 35px 35px 35px;
+  margin: auto;
+  display: block;
+  min-height: 400px;
+  font-size: 20px;
+}
+
+.search__search-block label.main-label {
+  font-family: "Poppins";
+  color: #0a0a0a;
+  font-size: 1em;
+}
+
+.search__search-block label.main-label span {
+  position: relative;
+}
+
+.search__search-block label.main-label span.highlight::after {
+  z-index: -1;
+  position: absolute;
+  bottom: 7px;
+  left: -5px;
+  display: block;
+  width: calc(100% + 10px);
+  height: 15px;
+  background: #ffe07a;
+  content: '';
+}
+
+.search__search-block label.sub-label {
+  font-size: 0.8em;
+}
+
+.search__input-label {
+  font-size: 1em !important;
+}
+
+.search__input-label span {
+  position: relative;
+}
+
+.search__input-sublabel {
+  font-size: 0.5em !important;
 }
 
 .form-block {

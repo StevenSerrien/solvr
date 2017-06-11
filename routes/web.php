@@ -54,7 +54,7 @@ Route::group(['middleware' => 'web'], function () {
 
     //Login Routes...
 
-
+    Route::get('/ik-zoek-een-logopedist', ['as' => 'search.practitioner.show', 'uses' => 'Search\SearchController@index']);
 
     // ADMIN Routes
     // Registration Routes...
