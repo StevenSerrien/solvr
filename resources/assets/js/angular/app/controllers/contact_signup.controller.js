@@ -30,7 +30,9 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       if (index == 2) {
         if (self.user.practiceStatus == 'new') {
           self.state.loading = true;
+          self.state.datatosend.existingPractice = '';
           self.handlers.checkExistingPracticeRecord();
+
         }
         else if (self.user.practiceStatus == 'existing') {
           self.state.registerloading = true;
@@ -69,6 +71,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
         self.state.response = response;
 
         if (self.state.response.status == 'success') {
+
           self.handlers.clearCurrentStorage();
           self.events.changeTemplate(self.state.currentTemplate.index + 1);
         }
@@ -115,11 +118,11 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
     );
     },
     getAllExistingPractices: function() {
-      console.log(self.state.practicesFromDB);
+
       service.get(allPracticesUrl).then(function successCallback(response) {
         self.state.practicesFromDB = response;
+        console.log('Alle bestaande praktijken' + self.state.practicesFromDB);
 
-        console.log(self.state.practicesFromDB);
         // $scope.$digest();
       }, function errorCallback(response) {
 

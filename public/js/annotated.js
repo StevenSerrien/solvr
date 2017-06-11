@@ -120,6 +120,46 @@ sl.directives.directive('soDropdown', ['$timeout', function($timeout) {
     };
 }]);
 
+sl.directives.directive('soDropdownMultiple', ['$timeout', function($timeout) {
+    return {
+        restrict: 'E',
+        require: 'ngModel',
+        replace: true,
+        transclude: true,
+        template: function (el, atts) {
+            var itemName = 'dropdownItem';
+            var valueField = itemName + '.' + (atts.valueField || 'id');
+            var textField = itemName + '.' + (atts.textField || 'name');
+            var localityField = itemName + '.' + (atts.textField || 'locality')
+            return "<select class='ui search dropdown' multiple=''>" +
+                "<div ng-transclude></div>" +
+                "   <option value='{{" + valueField + "}}' ng-repeat='" + itemName + " in " + atts.dropdownItems + " track by " + valueField + "'>" +
+                "       {{" + textField + "}}" +
+                "  ( " + "{{" + localityField + "}}" + " )"  +
+                "   </option>" +
+                "</select>";
+        },
+        link: function (scope, el, atts, ngModel) {
+            $(el).dropdown({
+                onChange: function (value, text, choice) {
+                    scope.$apply(function () {
+                        ngModel.$setViewValue(value);
+
+                    });
+                },
+                placeholder: atts.placeholder,
+            });
+            ngModel.$render = function () {
+                console.log('set value', el, ngModel, ngModel.$viewValue);
+                $timeout(function () {
+                    $(el).dropdown('set value', ngModel.$viewValue);
+                });
+                //$(el).dropdown('set value', ngModel.$viewValue);
+            };
+        }
+    };
+}]);
+
 sl.services.service('service', ["$http", "$q", function($http, $q){
   this.fetch = function(method, url, data) {
     var _promise = $q.defer();
@@ -199,7 +239,9 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
       if (index == 2) {
         if (self.user.practiceStatus == 'new') {
           self.state.loading = true;
+          self.state.datatosend.existingPractice = '';
           self.handlers.checkExistingPracticeRecord();
+
         }
         else if (self.user.practiceStatus == 'existing') {
           self.state.registerloading = true;
@@ -238,6 +280,7 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
         self.state.response = response;
 
         if (self.state.response.status == 'success') {
+
           self.handlers.clearCurrentStorage();
           self.events.changeTemplate(self.state.currentTemplate.index + 1);
         }
@@ -284,11 +327,11 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
     );
     },
     getAllExistingPractices: function() {
-      console.log(self.state.practicesFromDB);
+
       service.get(allPracticesUrl).then(function successCallback(response) {
         self.state.practicesFromDB = response;
+        console.log('Alle bestaande praktijken' + self.state.practicesFromDB);
 
-        console.log(self.state.practicesFromDB);
         // $scope.$digest();
       }, function errorCallback(response) {
 
@@ -395,6 +438,7 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
   var getAllPractitioners = '/practice/getallpractitioners';
   var acceptPractitionerUrl = '/practitioner/acceptnew';
   var denyPractitionerUrl = '/practitioner/denynew';
+  var getAllSpecialities = '/specialities/getall'
 
   this.events = {
 
@@ -408,14 +452,21 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
     test: function() {
       $('.p-profile').initial();
     },
-    modal: function(practitioner) {
-      self.state.selectedPractitioner = practitioner;
-      $scope.$digest;
+
+    init: function(practitioner) {
+      self.handlers.getAllSpecialities();
     },
     refreshData: function() {
       self.state.linkedPractitioners.length = 0;
       self.state.unconfirmedPractitioners.length = 0;
       self.handlers.getAllPractitionersByPractice();
+    },
+    getAllSpecialities: function() {
+      service.get(getAllSpecialities).then(function successCallback(response) {
+        console.log(response);
+      }, function errorCallback(response) {
+
+      });
     },
 
     getAllPractitionersByPractice: function() {
@@ -423,7 +474,7 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
         // console.log(response);
         self.state.practice = response[0];
 
-        console.log(self.state.practice);
+        // console.log(self.state.practice);
 
         angular.forEach(response[0].practitioners, function(value, index){
 
@@ -436,8 +487,8 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
 
           // console.log(response[0].practitioners[index]);
         });
-        console.log(self.state.linkedPractitioners);
-        console.log(self.state.unconfirmedPractitioners);
+        // console.log(self.state.linkedPractitioners);
+        // console.log(self.state.unconfirmedPractitioners);
 
 
       }, function errorCallback(response) {
@@ -582,6 +633,8 @@ sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", 
   $rootScope.$on('$locationChangeSuccess', function() {
 
   });
+
+  self.handlers.init();
 
   this.state = {
     practice: {

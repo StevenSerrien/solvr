@@ -215,6 +215,7 @@ class PractitionerRegisterController extends Controller
 
         // BACKEND SUCCESS ON REQUESTED DATA - Validators passed
         else {
+
           // First making new practice
           $newPractice = new Practice();
 
@@ -228,6 +229,7 @@ class PractitionerRegisterController extends Controller
           $newPractice->lng = $practice['lng'];
 
           $practiceSaved = $newPractice->save();
+          // return $newPractice;
 
           $newPractitioner = new Practitioner();
 

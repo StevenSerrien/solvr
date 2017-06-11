@@ -30,4 +30,8 @@ class Practice extends Model
   public function practitioners() {
     return $this->hasMany('App\Models\Practitioner\Practitioner');
   }
+
+  public function specialities() {
+    return $this->belongsToMany('App\Models\Speciality\Speciality');
+  }
 }

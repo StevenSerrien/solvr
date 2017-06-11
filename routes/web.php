@@ -96,4 +96,14 @@ Route::group(['middleware' => 'web'], function () {
 
 
     Route::get('/dashboard', ['as' => 'user.dashboard', 'uses' => 'User\UserController@index']);
+
+
+
+
+
+
+
+
+    // specialities
+    Route::get('/specialities/getall', 'Speciality\SpecialityController@getAllSpecialities');
 });

@@ -38,7 +38,16 @@
   // }
 
 }
-
+@include keyframes(slideInFromBottom) {
+  0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 150, 0, 1); visibility: visible;}
+  5.41% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.004, 0, 1); }
+  10.71% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 45.472, 0, 1); }
+  16.12% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 22.062, 0, 1); }
+  21.42% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 9.577, 0, 1); }
+  32.13% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.353, 0, 1); }
+  42.84% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.935, 0, 1); visibility: visible;}
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); visibility: visible;}
+}
 
 @include keyframes(slideInFromRightWBounce) {
   0% {
@@ -96,5 +105,27 @@
   to   {
     opacity: 1;
     top: 0;
+  }
+}
+
+
+
+/* Animations for dashboard */
+.dashboard-item-animated {
+  visibility: hidden;
+  &--1 {
+    &.slide-in-from-bottom {
+      @include animation(0.5s, 2s, slideInFromBottom, linear);
+    }
+  }
+  &--2 {
+    &.slide-in-from-bottom {
+      @include animation(0.7s, 2s, slideInFromBottom, linear);
+    }
+  }
+  &--3 {
+    &.slide-in-from-bottom {
+      @include animation(1s, 2s, slideInFromBottom, linear);
+    }
   }
 }

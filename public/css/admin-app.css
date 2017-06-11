@@ -9880,6 +9880,308 @@ select.ui.dropdown {
 /*******************************
          Site Overrides
 *******************************/
+.in-and-out {
+  min-height: 510px;
+}
+
+.in-and-out-add + .in-and-out {
+  visibility: hidden;
+  display: none;
+}
+
+.in-and-out + .in-and-out {
+  visibility: hidden;
+  display: none;
+}
+
+/* Contact Multidimensional Form */
+@-webkit-keyframes slideInFromBottom {
+  0% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 150, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 150, 0, 1);
+    visibility: visible;
+  }
+  5.41% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.004, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.004, 0, 1);
+  }
+  10.71% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 45.472, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 45.472, 0, 1);
+  }
+  16.12% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 22.062, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 22.062, 0, 1);
+  }
+  21.42% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 9.577, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 9.577, 0, 1);
+  }
+  32.13% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.353, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.353, 0, 1);
+  }
+  42.84% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.935, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.935, 0, 1);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    visibility: visible;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 150, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 150, 0, 1);
+    visibility: visible;
+  }
+  5.41% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.004, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.004, 0, 1);
+  }
+  10.71% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 45.472, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 45.472, 0, 1);
+  }
+  16.12% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 22.062, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 22.062, 0, 1);
+  }
+  21.42% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 9.577, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 9.577, 0, 1);
+  }
+  32.13% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.353, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.353, 0, 1);
+  }
+  42.84% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.935, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.935, 0, 1);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes slideInFromRightWBounce {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromRightWBounce {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+/* Animation for input validation */
+@-webkit-keyframes inputInvalid {
+  0% {
+    background-position: right -10px center;
+  }
+  100% {
+    background-position: right 10px center;
+  }
+}
+
+@keyframes inputInvalid {
+  0% {
+    background-position: right -10px center;
+  }
+  100% {
+    background-position: right 10px center;
+  }
+}
+
+@-webkit-keyframes inputInvalidRemove {
+  0% {
+    background-position: right 10px center;
+  }
+  100% {
+    background-position: right -10px center;
+  }
+}
+
+@keyframes inputInvalidRemove {
+  0% {
+    background-position: right 10px center;
+  }
+  100% {
+    background-position: right -10px center;
+  }
+}
+
+/* Animation Sequence */
+@keyframes seq1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@-webkit-keyframes seq1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Animations for dashboard */
+.dashboard-item-animated {
+  visibility: hidden;
+}
+
+.dashboard-item-animated--1.slide-in-from-bottom {
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0.5s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 0.5s;
+  -o-animation-duration: 2s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.dashboard-item-animated--2.slide-in-from-bottom {
+  -webkit-animation-delay: 0.7s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0.7s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 0.7s;
+  -o-animation-duration: 2s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 0.7s;
+  animation-duration: 2s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.dashboard-item-animated--3.slide-in-from-bottom {
+  -webkit-animation-delay: 1s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 1s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 1s;
+  -o-animation-duration: 2s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.cst-dropdown {
+  padding: 8px 20px;
+  padding-left: 18px;
+  border: 1px solid #e3e9ec;
+  border-radius: 0px !important;
+}
+
+.cst-dropdown--full-w {
+  display: block;
+  width: 100%;
+}
+
+.cst-dropdown .default.text {
+  color: #a1a7b0 !important;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+}
+
+.cst-dropdown.ui.dropdown .menu {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 200px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+  top: 50px;
+}
+
+.cst-dropdown.ui.dropdown .menu .item {
+  color: #435062;
+  border-radius: 3px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.cst-dropdown.ui.selection.active.dropdown {
+  border: 1px solid #e3e9ec;
+}
+
 html, body, .d-container, .content-wrap, .sidemenu-wrap {
   height: 100%;
 }

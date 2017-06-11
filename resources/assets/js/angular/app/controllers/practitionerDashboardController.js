@@ -4,6 +4,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
   var getAllPractitioners = '/practice/getallpractitioners';
   var acceptPractitionerUrl = '/practitioner/acceptnew';
   var denyPractitionerUrl = '/practitioner/denynew';
+  var getAllSpecialities = '/specialities/getall'
 
   this.events = {
 
@@ -17,14 +18,21 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
     test: function() {
       $('.p-profile').initial();
     },
-    modal: function(practitioner) {
-      self.state.selectedPractitioner = practitioner;
-      $scope.$digest;
+
+    init: function(practitioner) {
+      self.handlers.getAllSpecialities();
     },
     refreshData: function() {
       self.state.linkedPractitioners.length = 0;
       self.state.unconfirmedPractitioners.length = 0;
       self.handlers.getAllPractitionersByPractice();
+    },
+    getAllSpecialities: function() {
+      service.get(getAllSpecialities).then(function successCallback(response) {
+        console.log(response);
+      }, function errorCallback(response) {
+
+      });
     },
 
     getAllPractitionersByPractice: function() {
@@ -32,7 +40,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
         // console.log(response);
         self.state.practice = response[0];
 
-        console.log(self.state.practice);
+        // console.log(self.state.practice);
 
         angular.forEach(response[0].practitioners, function(value, index){
 
@@ -45,8 +53,8 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
 
           // console.log(response[0].practitioners[index]);
         });
-        console.log(self.state.linkedPractitioners);
-        console.log(self.state.unconfirmedPractitioners);
+        // console.log(self.state.linkedPractitioners);
+        // console.log(self.state.unconfirmedPractitioners);
 
 
       }, function errorCallback(response) {
@@ -191,6 +199,8 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
   $rootScope.$on('$locationChangeSuccess', function() {
 
   });
+
+  self.handlers.init();
 
   this.state = {
     practice: {

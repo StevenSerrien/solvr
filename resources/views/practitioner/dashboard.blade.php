@@ -20,7 +20,7 @@
     </div>
     <div class="row m-t-80">
       <div class="large-6 columns">
-        <div class="dashboard__board ">
+        <div class="dashboard__board dashboard-item-animated dashboard-item-animated--1 slide-in-from-bottom">
           <h2 class='d--title'>Uw praktijk ##practitioner.state.practice.name##</h2>
           <h3 class='d--subtitle'>U bent bevestigd door deze praktijk.</h3>
           <div class="dashboard__divider dashboard__divider--small m-b-20">
@@ -43,7 +43,7 @@
 
       </div>
       <div class=" large-6 columns">
-        <div class="dashboard__board">
+        <div class="dashboard__board dashboard-item-animated dashboard-item-animated--2 slide-in-from-bottom">
           <h2 class='d--title'>Aanvragen van registraties</h2>
           <h3 class='d--subtitle'>Deze personen willen zich bij uw praktijk voegen.</h3>
 
@@ -70,6 +70,22 @@
           </div>
         </div>
         </div>
+      </div>
+      </div>
+    </div>
+    <div class="row m-t-40">
+      <div class=" large-12 columns">
+        <div class="dashboard__board dashboard-item-animated dashboard-item-animated--3 slide-in-from-bottom">
+          <h2 class='d--title'>Beheer de specialiteiten van jouw praktijk</h2>
+          <h3 class='d--subtitle'>Zo vinden clienten jou op specifieke manier.</h3>
+
+        <div class="dashboard__divider dashboard__divider--small m-b-20">
+        </div>
+        {{-- <so-dropdown-multiple class='cst-dropdown'  ng-change="" ng-model="" placeholder='Voeg specialiteiten toe' dropdown-items="">
+          <option value='None'>None</option>
+          <option value='dd'>Nonde</option>
+          <option value='ye'>None</option>
+        </so-dropdown-multiple> --}}
       </div>
       </div>
     </div>
