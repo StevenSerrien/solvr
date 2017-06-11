@@ -9,6 +9,9 @@ require('ng-mask');
 require('ngletteravatar');
 require('angular-touch');
 require('angular-loading-bar');
+require('angular-simple-logger');
+require('angular-google-maps');
+
 
 require('./plugins/angular-foundation.min.js');
 

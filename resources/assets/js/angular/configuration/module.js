@@ -5,6 +5,8 @@ var dependencies = [
 
   'angular-loading-bar',
   'ngAnimate',
+  'uiGmapgoogle-maps',
+  'nemLogging',
   'ngRoute',
   'ngSanitize',
   'angular.vertilize',
@@ -12,7 +14,8 @@ var dependencies = [
   'validation.match',
   'ngLetterAvatar',
   'mm.foundation',
-  'ngTouch'
+  'ngTouch',
+
 ];
 
 var sl = {

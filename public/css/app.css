@@ -10170,6 +10170,10 @@ select.ui.dropdown {
   margin-right: 8.4375rem;
 }
 
+.s-container--no-bg-color {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
 .full-width-container {
   width: 100vw;
   position: relative;
@@ -10490,8 +10494,8 @@ select.ui.dropdown {
 
 img {
   display: inline-block;
-  width: auto !important;
-  height: 100% !important;
+  width: auto;
+  height: 100%;
 }
 
 /* Menu icon styles */
@@ -11671,6 +11675,21 @@ footer .footer__links {
 
 .search__input-sublabel {
   font-size: 0.5em !important;
+}
+
+.angular-google-map-container {
+  height: 400px;
+}
+
+.angular-google-map-container img {
+  max-width: none !important;
+}
+
+#map-canvas {
+  height: 600px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .form-block {

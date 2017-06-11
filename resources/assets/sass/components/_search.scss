@@ -52,3 +52,20 @@
     font-size: 0.5em !important;
   }
 }
+
+.angular-google-map-container {
+  height: 400px;
+  img {
+    max-width: none !important;
+  }
+}
+
+  #map-canvas {
+    height: 600px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  #map-canvas img {
+
+  }
