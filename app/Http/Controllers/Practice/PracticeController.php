@@ -35,4 +35,29 @@ class PracticeController extends Controller
       $practiceId =  $loggedPractitioner->practice->id;
       return Practice::where('id', $practiceId)->with('practitioners')->get();
     }
+
+    public function updateSpecialities(Request $request) {
+      $specialities =  $request->all();
+      $practice =   Auth::guard('practitioner')->user()->practice;
+
+      // return $practice->specialities()->get();
+      $practice->specialities()->detach();
+      foreach ($specialities as $speciality) {
+          if(!$practice->specialities->contains($speciality))
+          {
+            $practice->specialities()->attach($speciality);
+          }
+      }
+
+        return $practice->specialities()->get();
+      }
+
+    public function getSpecialities(Request $request) {
+      $practice =  $request;
+
+      $practice = Practice::where('id', $practice->id)->with('specialities')->first();
+
+      return $practice->specialities;
+    }
+
 }

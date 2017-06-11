@@ -5692,6 +5692,47 @@ p {
   font-family: "Source Sans Pro";
 }
 
+.cst-dropdown {
+  padding: 8px 20px;
+  padding-left: 18px;
+  border: 1px solid #e3e9ec;
+  border-radius: 0px !important;
+}
+
+.cst-dropdown--full-w {
+  display: block;
+  width: 100%;
+}
+
+.cst-dropdown .default.text {
+  color: #a1a7b0 !important;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+}
+
+.cst-dropdown.ui.dropdown .menu {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 200px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+  top: 50px;
+}
+
+.cst-dropdown.ui.dropdown .menu .item {
+  color: #435062;
+  border-radius: 3px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.cst-dropdown.ui.selection.active.dropdown {
+  border: 1px solid #e3e9ec;
+}
+
 @font-face {
   font-family: 'Simple-Line-Icons';
   src: url("../../fonts/simplelineicons/Simple-Line-Icons.eot");
@@ -10139,47 +10180,6 @@ select.ui.dropdown {
   animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
   animation-timing-function: linear;
-}
-
-.cst-dropdown {
-  padding: 8px 20px;
-  padding-left: 18px;
-  border: 1px solid #e3e9ec;
-  border-radius: 0px !important;
-}
-
-.cst-dropdown--full-w {
-  display: block;
-  width: 100%;
-}
-
-.cst-dropdown .default.text {
-  color: #a1a7b0 !important;
-  font-family: "Source Sans Pro";
-  font-size: 18px;
-}
-
-.cst-dropdown.ui.dropdown .menu {
-  overflow: hidden;
-  overflow-y: auto;
-  max-height: 200px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
-  top: 50px;
-}
-
-.cst-dropdown.ui.dropdown .menu .item {
-  color: #435062;
-  border-radius: 3px;
-  font-family: "Source Sans Pro";
-  font-weight: normal;
-  font-size: 18px;
-}
-
-.cst-dropdown.ui.selection.active.dropdown {
-  border: 1px solid #e3e9ec;
 }
 
 html, body, .d-container, .content-wrap, .sidemenu-wrap {

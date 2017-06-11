@@ -10,10 +10,14 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>{{ config('app.name', 'Laravel') }}</title>
+  <script src="https://use.fontawesome.com/eb7ecb27dd.js"></script>
 
   <!-- Styles -->
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/css/semantic.min.css'>
 
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
   <!-- Dashboard Admin styles only -->
   <link href="{{ elixir('css/admin-app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />

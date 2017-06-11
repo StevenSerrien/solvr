@@ -4,7 +4,9 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
   var getAllPractitioners = '/practice/getallpractitioners';
   var acceptPractitionerUrl = '/practitioner/acceptnew';
   var denyPractitionerUrl = '/practitioner/denynew';
-  var getAllSpecialities = '/specialities/getall'
+  var getAllSpecialities = '/specialities/getall';
+  var getAllSpecialitiesForPractice = '/practice/getcurrentspecialities';
+  var updateSpecialitiesUrl = '/practice/updatespecialities';
 
   this.events = {
 
@@ -21,6 +23,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
 
     init: function(practitioner) {
       self.handlers.getAllSpecialities();
+
     },
     refreshData: function() {
       self.state.linkedPractitioners.length = 0;
@@ -29,7 +32,8 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
     },
     getAllSpecialities: function() {
       service.get(getAllSpecialities).then(function successCallback(response) {
-        console.log(response);
+        // console.log(response);
+        self.state.specialities = response;
       }, function errorCallback(response) {
 
       });
@@ -41,7 +45,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
         self.state.practice = response[0];
 
         // console.log(self.state.practice);
-
+        self.handlers.getSpecialitiesOfPractice();
         angular.forEach(response[0].practitioners, function(value, index){
 
           if (response[0].practitioners[index].isConfirmed == 0) {
@@ -75,8 +79,42 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
         self.handlers.refreshData();
       }, function errorCallBack(response) {
 
-      })
+      });
     },
+    updateSpecialities: function() {
+      service.post(updateSpecialitiesUrl, self.state.selectedSpecialities).then(function successCallback(response) {
+        // console.log(response);
+        console.log(self.state.selectedSpecialities);
+        // self.handlers.refreshData();
+      }, function errorCallBack(response) {
+
+      });
+      // console.log(self.state.selectedSpecialities);
+    },
+    getSpecialitiesOfPractice: function() {
+      service.post(getAllSpecialitiesForPractice, self.state.practice).then(function successCallback(response) {
+        // console.log('hallo');
+        // console.log(response);
+        angular.forEach(response, function(value, index){
+
+          self.state.selectedSpecialities.push(response[index].id);
+          // if (response[0].practitioners[index].isConfirmed == 0) {
+          //   self.state.unconfirmedPractitioners.push(response[0].practitioners[index]);
+          // }
+          // else {
+          //   self.state.linkedPractitioners.push(response[0].practitioners[index]);
+          // }
+
+          // console.log(response[0].practitioners[index]);
+        });
+        console.log('hier is em dan');
+        console.log(self.state.selectedSpecialities);
+
+        // self.handlers.refreshData();
+      }, function errorCallBack(response) {
+
+      });
+    }
     // submit: function() {
     //   service.post(testRoute, self.state.selectedPractice).then(function successCallback(response) {
     //
@@ -202,6 +240,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
 
   self.handlers.init();
 
+
   this.state = {
     practice: {
 
@@ -215,6 +254,8 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
     selectedPractitioner: {
 
     },
+    specialities: [],
+    selectedSpecialities: [],
 
   };
 

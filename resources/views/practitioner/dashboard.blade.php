@@ -81,11 +81,9 @@
 
         <div class="dashboard__divider dashboard__divider--small m-b-20">
         </div>
-        {{-- <so-dropdown-multiple class='cst-dropdown'  ng-change="" ng-model="" placeholder='Voeg specialiteiten toe' dropdown-items="">
+        <so-dropdown-multiple class='cst-dropdown'  ng-change='practitioner.handlers.updateSpecialities()' ng-model="practitioner.state.selectedSpecialities" placeholder='Voeg specialiteiten toe' dropdown-items="practitioner.state.specialities">
           <option value='None'>None</option>
-          <option value='dd'>Nonde</option>
-          <option value='ye'>None</option>
-        </so-dropdown-multiple> --}}
+        </so-dropdown-multiple>
       </div>
       </div>
     </div>

@@ -42,6 +42,9 @@ Route::group(['middleware' => 'web'], function () {
     // practices
     Route::get('/practices/get/all', 'Practice\PracticeController@getAllExistingPractices');
     Route::post('/practices/get/with-id', 'Practice\PracticeController@getPracticeById');
+    Route::post('/practice/updatespecialities', 'Practice\PracticeController@updateSpecialities');
+    Route::post('/practice/getcurrentspecialities', 'Practice\PracticeController@getSpecialities');
+
 
 
 

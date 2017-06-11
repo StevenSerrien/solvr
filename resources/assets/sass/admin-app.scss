@@ -11,14 +11,18 @@
 @include foundation-everything;
 
 @import "text";
+@import "components/dropdown";
 @import 'icons';
 
 @import "plugins/semantic-dropdown";
 
 
+
+// Libs
+// @import "plugins/semanticui";
 // Dashboard
 @import "components/animations";
-@import "components/dropdown";
+
 
 @import "dashboard/_admin/main-layout";
 @import "dashboard/_admin/variables";

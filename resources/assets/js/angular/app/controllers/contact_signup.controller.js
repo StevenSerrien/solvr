@@ -121,7 +121,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
       service.get(allPracticesUrl).then(function successCallback(response) {
         self.state.practicesFromDB = response;
-        console.log('Alle bestaande praktijken' + self.state.practicesFromDB);
+        // console.log("alles bestaand");
+        // console.log(response);
 
         // $scope.$digest();
       }, function errorCallback(response) {
