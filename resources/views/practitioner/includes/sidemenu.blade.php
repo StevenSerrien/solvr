@@ -1,8 +1,8 @@
 <nav class='d-sidemenu'>
   <div class="profile-card">
     <div class="profile-card__avatar">
-
-        <img data-name="{{ Auth::guard('practitioner')->user()->firstname }}" class="da-profile">
+      <ng-letter-avatar data="{{ Auth::guard('practitioner')->user()->firstname }}"></ng-letter-avatar>
+        {{-- <img data-name="{{ Auth::guard('practitioner')->user()->firstname }}" class="da-profile"> --}}
     <span class='status'></span>
     </div>
     <span class='profile-card__name'>{{ Auth::guard('practitioner')->user()->firstname }}</span>

@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="row m-t-40">
-      <div class=" large-12 columns">
+      <div class=" large-7 columns">
         <div class="dashboard__board dashboard-item-animated dashboard-item-animated--3 slide-in-from-bottom">
           <h2 class='d--title'>Beheer de specialiteiten van jouw praktijk</h2>
           <h3 class='d--subtitle'>Zo vinden clienten jou op specifieke manier.</h3>
@@ -84,6 +84,18 @@
         <so-dropdown-multiple class='cst-dropdown'  ng-change='practitioner.handlers.updateSpecialities()' ng-model="practitioner.state.selectedSpecialities" placeholder='Voeg specialiteiten toe' dropdown-items="practitioner.state.specialities">
           <option value='None'>None</option>
         </so-dropdown-multiple>
+      </div>
+      </div>
+      <div class="large-5 columns">
+
+        <div class="dashboard__board dashboard-item-animated dashboard-item-animated--3 slide-in-from-bottom">
+          <h2 class='d--title'>Dit is jouw praktijk</h2>
+          <h3 class='d--subtitle'>Alle info over jouw praktijk.</h3>
+          <div class="dashboard__l-border dashboard__l-border--color-1">
+          <span class='d--text main-color block heavy'>##practitioner.state.practice.name##</span>
+          <span class='d--text main-color block'>##practitioner.state.practice.streetname## ##practitioner.state.practice.housenumber##</span>
+          <span class='d--text main-color block'>##practitioner.state.practice.locality##, ##practitioner.state.practice.postal_code##</span>
+        </div>
       </div>
       </div>
     </div>

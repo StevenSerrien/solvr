@@ -18,7 +18,8 @@
           <div class="top-bar__item-b">
             <div class="top-bar__img-item">
               <div class="img-wrap">
-                <img data-name="{{ Auth::guard('practitioner')->user()->firstname }}" class="da-profile">
+                <ng-letter-avatar data="{{ Auth::guard('practitioner')->user()->firstname }}"></ng-letter-avatar>
+
               </div>
               <span>Hallo, {{ Auth::guard('practitioner')->user()->firstname }}!</span>
             </div>

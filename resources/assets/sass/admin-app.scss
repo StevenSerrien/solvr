@@ -32,3 +32,16 @@
 
 @import "dashboard/_admin/_components/dashboard";
 @import "dashboard/_admin/_components/modals";
+
+
+span {
+  &.block {
+    display: block;
+  }
+  &.heavy {
+    font-weight: 800;
+  }
+  &.main-color {
+    color: rgb(89, 95, 111);
+  }
+}

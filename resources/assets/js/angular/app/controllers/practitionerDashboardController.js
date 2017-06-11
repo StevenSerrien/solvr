@@ -43,6 +43,7 @@ sl.controllers.controller('practitionerDashboardController', function($scope, $l
       service.get(getAllPractitioners).then(function successCallback(response) {
         // console.log(response);
         self.state.practice = response[0];
+        console.log(self.state.practice);
 
         // console.log(self.state.practice);
         self.handlers.getSpecialitiesOfPractice();

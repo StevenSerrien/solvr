@@ -156,4 +156,11 @@ $deny-color--soft: rgb(254, 223, 229);
       width: 100%;
     }
   }
+
+  &__l-border {
+    padding-left: 20px;
+    &--color-1 {
+      border-left: 5px solid $brand-color-3;
+    }
+  }
 }

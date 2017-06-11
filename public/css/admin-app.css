@@ -10594,6 +10594,14 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   width: 100%;
 }
 
+.dashboard__l-border {
+  padding-left: 20px;
+}
+
+.dashboard__l-border--color-1 {
+  border-left: 5px solid #fce289;
+}
+
 .reveal {
   padding: 0px !important;
 }
@@ -10653,6 +10661,18 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
 
 .modal__buttons button.confirm {
   background-color: #3b6ecc;
+}
+
+span.block {
+  display: block;
+}
+
+span.heavy {
+  font-weight: 800;
+}
+
+span.main-color {
+  color: #595f6f;
 }
 
 /*# sourceMappingURL=admin-app.css.map */
