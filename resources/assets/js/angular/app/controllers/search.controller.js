@@ -70,6 +70,11 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
           self.state.practices.length = 0;
           angular.forEach(self.state.practicesFromDBWS, function(value, index){
             console.log('joski');
+
+            if (self.state.practicesFromDBWS[index].distance) {
+              self.state.practicesFromDBWS[index].distance = Math.round(self.state.practicesFromDBWS[index].distance / 100) / 10;
+            }
+
             self.state.practices.push(self.state.practicesFromDBWS[index]);
 
             if (index == 0) {

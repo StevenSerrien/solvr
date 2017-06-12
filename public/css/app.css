@@ -11704,6 +11704,29 @@ footer .footer__links {
   padding: 0px;
 }
 
+.cst-map-window {
+  margin-left: 20px;
+}
+
+.cst-map-window__name {
+  display: block;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 16px;
+  color: #454545;
+}
+
+.cst-map-window__distance {
+  display: block;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 14px;
+  margin-top: 15px;
+  color: #dadada;
+}
+
 .form-block {
   background-color: white;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05) !important;

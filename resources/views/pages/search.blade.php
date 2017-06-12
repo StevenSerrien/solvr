@@ -63,7 +63,11 @@
             <ui-gmap-google-map events='search.state.map.events' center="search.state.map.center" options='search.state.map.options' zoom="search.state.map.zoom">
                 <ui-gmap-markers models="search.state.practices" options="search.state.marker.options" coords="'self'" click="search.markerhandlers.onClick">
                   <ui-gmap-windows show="show">
-                    <div ng-non-bindable>##name##</div>
+                    <div class='cst-map-window' ng-non-bindable>
+                        <span class='cst-map-window__name'>##name##</span>
+                        <span class='cst-map-window__distance'>##distance## km</span>
+                        <button type="button" class='btn btn--frm btn--block m-t-20' name="button">contacteren</button>
+                    </div>
                   </ui-gmap-windows>
                 </ui-gmap-markers>
             </ui-gmap-google-map>
