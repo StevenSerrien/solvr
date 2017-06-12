@@ -57,6 +57,10 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/ik-zoek-een-logopedist', ['as' => 'search.practitioner.show', 'uses' => 'Search\SearchController@index']);
 
+
+    // Contact your practitioner page
+    Route::get('/contacteer-een-praktijk/{id}/{slug?}', ['as' => 'contact.practice', 'uses' => 'Contact\ContactController@index']);
+
     // ADMIN Routes
     // Registration Routes...
 

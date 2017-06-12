@@ -65,8 +65,9 @@
                   <ui-gmap-windows show="show">
                     <div class='cst-map-window' ng-non-bindable>
                         <span class='cst-map-window__name'>##name##</span>
+                        <span class='cst-map-window__distance'>##streetname## ##housenumber## <br> ##locality## ##postal_code##</span>
                         <span class='cst-map-window__distance'>##distance## km</span>
-                        <button type="button" class='btn btn--frm btn--block m-t-20' name="button">contacteren</button>
+                        <a href="{{ route('contact.practice', ['id' => '##id##'])}}" target="_self"><button type="button" class='btn btn--frm btn--block m-t-20' name="button">contacteren</button></a>
                     </div>
                   </ui-gmap-windows>
                 </ui-gmap-markers>

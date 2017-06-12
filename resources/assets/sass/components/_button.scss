@@ -61,6 +61,12 @@
       text-align: center;
       letter-spacing: 1px;
       text-transform: uppercase;
+      &--color-2 {
+        background-color: $brand-color-1;
+        &:hover {
+          background-color: darken($brand-color-1, 5%);
+        }
+      }
       &:hover {
         color: #fff;
       }

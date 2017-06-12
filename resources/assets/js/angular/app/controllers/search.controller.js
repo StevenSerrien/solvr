@@ -36,6 +36,8 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
 
           self.state.practiceFromDB[index].show = false;
 
+          self.state.practiceFromDB[index].templateUrl = 'markerWindow.html';
+
           // Push into readable array for Google Angular maps
           self.state.practices.push(self.state.practiceFromDB[index]);
 
@@ -75,6 +77,8 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
               self.state.practicesFromDBWS[index].distance = Math.round(self.state.practicesFromDBWS[index].distance / 100) / 10;
             }
 
+            self.state.practicesFromDBWS[index].templateUrl = 'markerWindow.html';
+
             self.state.practices.push(self.state.practicesFromDBWS[index]);
 
             if (index == 0) {
@@ -101,8 +105,14 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
 
   this.markerhandlers = {
     onClick: function(marker, eventName, model) {
-      // console.log(model);
+    
       model.show = !model.show;
+
+      console.log(model);
+      console.log('ons mdoemoe');
+    },
+    contact: function() {
+      console.log(self.state.practices);
     },
   };
 
