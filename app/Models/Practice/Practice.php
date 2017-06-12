@@ -3,10 +3,11 @@
 namespace App\Models\Practice;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Practice extends Model
 {
-
+  use Notifiable;
 
 
   /**

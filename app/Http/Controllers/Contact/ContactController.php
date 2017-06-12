@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Models\Practice\Practice;
 use App\Models\Practitioner\Practitioner;
+use App\Notifications\newContactRequest;
 
 
 class ContactController extends Controller
@@ -31,7 +32,24 @@ class ContactController extends Controller
       $practice = $request->get('practice');
       $requester = $request->get('user');
 
-      return $requester;
-      return $request->all();
+
+
+      $practice = Practice::where('id', $practice['id'])->first();
+
+      $practitioners = $practice['practitioners'];
+
+      // Only send notification to confirmed practitioners
+      $practitioners = $practitioners->where('isConfirmed', 1);
+      
+
+
+      // Send notifications to practitioners on new contact request
+      foreach ($practitioners as $practitioner) {
+
+        $practitioner->notify(new newContactRequest($practitioner, $requester));
+      }
+      // return $practitioners;
+      // return $requester;
+      // return $request->all();
     }
 }
