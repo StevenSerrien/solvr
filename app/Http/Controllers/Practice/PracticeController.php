@@ -8,6 +8,10 @@ use App\Models\Practice\Practice;
 use App\Models\Practitioner\Practitioner;
 use Illuminate\Support\Facades\Auth;
 
+// For distance calculation ;)
+use Location\Coordinate;
+use Location\Distance\Vincenty;
+
 class PracticeController extends Controller
 {
     public function getAllExistingPractices() {
@@ -61,26 +65,38 @@ class PracticeController extends Controller
     }
 
     public function getPracticesBySpecialities(Request $request) {
-      $address = $request->address;
-      // return $address['route'];
+      // Package to calulcate distance between two points
+      $calculator = new Vincenty();
+
+      // Get data from request
       $specialitiesIDArray =  $request->get('selectedSpecialities');
-      
       $practices = Practice::with('specialities');
 
-      if (!$specialitiesIDArray) {
-        return $practices;
-      }
-      else {
 
+      $address = $request->address;
 
+      if ($specialitiesIDArray) {
         foreach ($specialitiesIDArray as $specialityID) {
           $practices = $practices->whereHas('specialities', function($query) use ($specialityID) {
             $query = $query->where('id', $specialityID);
           });
         }
         $practices = $practices->get();
-        return $practices;
       }
+      else {
+        $practices = $practices->get();
+      }
+
+      if ($address) {
+        // Add distance field to $practices
+        $addressCoordinates =  new Coordinate($address['lat'], $address['lng']);
+        // Add distance to practices based upon given address and practice coordinates
+        foreach ($practices as $practice) {
+          $practiceCoordinates = new Coordinate($practice['lat'], $practice['lng']);
+          $practice->distance = $calculator->getDistance($addressCoordinates, $practiceCoordinates);
+        }
+      }
+      return $practices;
 
     }
 
