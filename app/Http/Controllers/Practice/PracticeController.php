@@ -94,7 +94,22 @@ class PracticeController extends Controller
         foreach ($practices as $practice) {
           $practiceCoordinates = new Coordinate($practice['lat'], $practice['lng']);
           $practice->distance = $calculator->getDistance($addressCoordinates, $practiceCoordinates);
+
         }
+      }
+
+      foreach ($practices as $practice) {
+        // $practice->coords["latitude"] = $practice['lat'];
+        // Define coords this way for Angular Google Maps
+        $practice->coords = array(
+          'latitude' => $practice['lat'],
+          'longitude' => $practice['lng']
+        );
+
+        // Define coords this way for Angular Google Maps markerhandlers
+        $practice->latitude = $practice['lat'];
+        $practice->longitude = $practice['lng'];
+
       }
       return $practices;
 

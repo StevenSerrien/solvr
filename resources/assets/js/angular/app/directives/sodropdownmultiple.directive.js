@@ -27,7 +27,7 @@ sl.directives.directive('soDropdownMultiple', ['$timeout', function($timeout) {
                 placeholder: atts.placeholder,
             });
             ngModel.$render = function () {
-                console.log('set value', el, ngModel, ngModel.$viewValue);
+                // console.log('set value', el, ngModel, ngModel.$viewValue);
                 $timeout(function () {
                     $(el).dropdown('set value', ngModel.$viewValue);
                 });

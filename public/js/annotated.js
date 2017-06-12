@@ -152,7 +152,7 @@ sl.directives.directive('soDropdownMultiple', ['$timeout', function($timeout) {
                 placeholder: atts.placeholder,
             });
             ngModel.$render = function () {
-                console.log('set value', el, ngModel, ngModel.$viewValue);
+                // console.log('set value', el, ngModel, ngModel.$viewValue);
                 $timeout(function () {
                     $(el).dropdown('set value', ngModel.$viewValue);
                 });
@@ -765,7 +765,9 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
       service.get(allPracticesUrl).then(function successCallback(response) {
 
         self.state.practiceFromDB = response;
+        console.log(self.state.practiceFromDB);
         angular.forEach(self.state.practiceFromDB, function(value, index){
+
           self.state.practiceFromDB[index].coords = {};
           self.state.practiceFromDB[index].coords.latitude = self.state.practiceFromDB[index].lat;
           self.state.practiceFromDB[index].coords.longitude = self.state.practiceFromDB[index].lng;
@@ -781,9 +783,10 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
           if (index == 0) {
             self.state.map.center = self.state.practiceFromDB[index].coords;
           }
+
         });
 
-        console.log(self.state.practices);
+        // console.log(self.state.practices);
 
         // angular.forEach(self.state.practices, function(value, index){
         //
@@ -803,7 +806,20 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
     },
     getAllPracticesBySpecialities: function() {
       service.post(allPracticesWithSelectedpecialitiesUrl, self.state.datatosend).then(function successCallback(response) {
-        console.log(response);
+          self.state.practicesFromDBWS = response;
+          console.log(self.state.practicesFromDBWS);
+          self.state.practices.length = 0;
+          angular.forEach(self.state.practicesFromDBWS, function(value, index){
+            console.log('joski');
+            self.state.practices.push(self.state.practicesFromDBWS[index]);
+
+            if (index == 0) {
+              self.state.map.center = self.state.practicesFromDBWS[index].coords;
+            }
+
+          });
+          // console.log(self.state.practices);
+
       }, function errorCallBack(response) {
 
       })
@@ -812,7 +828,7 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
       service.get(getAllSpecialities).then(function successCallback(response) {
         // console.log(response);
         self.state.specialities = response;
-        console.log(self.state.specialities);
+        // console.log(self.state.specialities);
       }, function errorCallback(response) {
 
       });
@@ -821,7 +837,7 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
 
   this.markerhandlers = {
     onClick: function(marker, eventName, model) {
-      console.log(model);
+      // console.log(model);
       model.show = !model.show;
     },
   };
@@ -1000,6 +1016,7 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
     },
     practices: [],
     practiceFromDB: {},
+    practicesFromDBWS: {},
     marker: {
       options: {
         animation: google.maps.Animation.DROP,
