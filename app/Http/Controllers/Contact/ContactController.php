@@ -26,4 +26,12 @@ class ContactController extends Controller
       return $id;
       return 'yolo';
     }
+
+    public function contactPractice(Request $request) {
+      $practice = $request->get('practice');
+      $requester = $request->get('user');
+
+      return $requester;
+      return $request->all();
+    }
 }

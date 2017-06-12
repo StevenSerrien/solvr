@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div ng-controller='practiceContactController as pcontact'>
+
+
 <div class="p-container p-container--bg-contact">
   {{-- <div class="p-item p-item--landing"> --}}
 
@@ -50,30 +53,36 @@
         <h2 class='t--semi-bold text-center'>Vul het contactformulier <span class='highlight highlight--color-1'>in</span></h2>
         <h3 class='t--regular t--lightest text-center m-b-40'>Probeer zo volledig mogelijk te zijn</h3>
         <div class="row">
+          <form name='practiceContactForm'>
+
+
           <div class="medium-6 columns">
-              <input class='input--stnrd' type="text" ng-model='contact.state.datatosend.user.firstname' placeholder="Uw voornaam" autocomplete="off" required >
+              <input class='input--stnrd' type="text" ng-model='pcontact.state.datatosend.user.firstname' placeholder="Jouw voornaam" autocomplete="off" required >
           </div>
           <div class="medium-6 columns">
-              <input class='input--stnrd' type="text" ng-model='contact.state.datatosend.user.lastname' placeholder="Uw Achternaam" autocomplete="off" required>
+              <input class='input--stnrd' type="text" ng-model='pcontact.state.datatosend.user.lastname' placeholder="Jouw achternaam" autocomplete="off" required>
           </div>
           <div class="medium-6 columns">
-              <input class='input--stnrd' type="text" ng-model='contact.state.datatosend.user.lastname' placeholder="Telefoon (niet verplicht)" autocomplete="off" required>
+              <input class='input--stnrd' type="text" ng-model='pcontact.state.datatosend.user.telephone' placeholder="Telefoon (niet verplicht)" autocomplete="off" required>
           </div>
           <div class="medium-6 columns">
-              <input class='input--stnrd' type="text" ng-model='contact.state.datatosend.user.lastname' placeholder="E-mailadres" autocomplete="off" required>
+              <input class='input--stnrd' type="email" ng-model='pcontact.state.datatosend.user.email' placeholder="E-mailadres" autocomplete="off" required>
           </div>
           <div class="large-12 columns">
-              <textarea class='input--stnrd' name="name" rows="6" placeholder='Uw bericht aan deze praktijk' cols="80"></textarea>
+              <textarea class='input--stnrd' ng-model='pcontact.state.datatosend.user.message' style="overflow:auto;resize:none" name="name" rows="6" placeholder='Uw bericht aan deze praktijk' cols="80"></textarea>
           </div>
           <div class="large-12 columns">
-            <button type="button" class='btn btn--frm btn--frm--color-2 btn--block m-t-20' ng-click='search.handlers.getAllPracticesBySpecialities()' name="button">verzenden</button>
+            <button type="button" class='btn btn--frm btn--frm--color-2 btn--block m-t-20'  ng-click='pcontact.handlers.sendContactForm({{ $practiceSelected }})' name="button">verzenden</button>
           </div>
+          </form>
         </div>
+
       </div>
     </div>
   </div>
 
 
+</div>
 </div>
 
 @endsection

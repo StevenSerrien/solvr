@@ -475,6 +475,85 @@ sl.controllers.controller('ContactSignupCtrl', ["$scope", "$rootScope", "$locati
   }
 }]);
 
+sl.controllers.controller('practiceContactController', ["$scope", "$log", "$modal", "$rootScope", "$location", "service", "$window", function($scope, $log, $modal, $rootScope, $location, service, $window) {
+  var self = this;
+  var contactPracticeUrl = '/practice/contact';
+
+  this.events = {
+    init: function() {
+
+    },
+  };
+
+  this.handlers = {
+    sendContactForm: function(practice) {
+      // Fill in practice in self.state
+
+      self.state.loading = true;
+      self.state.datatosend.practice = practice;
+      service.post(contactPracticeUrl, self.state.datatosend).then(function successCallback(response) {
+
+        self.state.loading = false;
+        self.state.response = response;
+        console.log(response);
+        if (self.state.response.status == 'success') {
+
+
+
+        }
+
+
+      }, function errorCallback(response) {
+
+        self.state.loading = false;
+        self.state.response = response.data;
+      }
+      );
+    },
+  };
+
+  this.modalHandlers = {
+  };
+
+
+
+  // listeners
+  $rootScope.$on('$locationChangeSuccess', function() {
+
+  });
+
+  self.events.init();
+
+
+  this.state = {
+    datatosend: {
+      user: {
+
+      },
+      practice: {
+
+      },
+    },
+    loading: false,
+    practice: {
+
+    },
+    linkedPractitioners: [
+
+    ],
+    unconfirmedPractitioners: [
+
+    ],
+    selectedPractitioner: {
+
+    },
+    specialities: [],
+    selectedSpecialities: [],
+
+  };
+
+}]);
+
 sl.controllers.controller('practitionerDashboardController', ["$scope", "$log", "$modal", "$rootScope", "$location", "service", "$window", function($scope, $log, $modal, $rootScope, $location, service, $window) {
   var self = this;
   var testRoute = '/logopedist/test';

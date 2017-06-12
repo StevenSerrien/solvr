@@ -48,6 +48,10 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
+    Route::post('/practice/contact', 'Contact\ContactController@contactPractice');
+
+
+
 
     // USER ROUTES
 
