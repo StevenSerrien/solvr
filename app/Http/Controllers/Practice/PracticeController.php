@@ -60,4 +60,28 @@ class PracticeController extends Controller
       return $practice->specialities;
     }
 
+    public function getPracticesBySpecialities(Request $request) {
+      $address = $request->address;
+      // return $address['route'];
+      $specialitiesIDArray =  $request->get('selectedSpecialities');
+      
+      $practices = Practice::with('specialities');
+
+      if (!$specialitiesIDArray) {
+        return $practices;
+      }
+      else {
+
+
+        foreach ($specialitiesIDArray as $specialityID) {
+          $practices = $practices->whereHas('specialities', function($query) use ($specialityID) {
+            $query = $query->where('id', $specialityID);
+          });
+        }
+        $practices = $practices->get();
+        return $practices;
+      }
+
+    }
+
 }

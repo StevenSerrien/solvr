@@ -35,26 +35,36 @@
   </div>
   <div class="full-width-container full-width-container--w-shapes-1">
     <div class="s-container s-container--no-p s-container--no-bg-color">
-      <div class="row f-row search">
-        <div class="large-4 columns">
+      <div class="row f-row search" data-equalizer data-equalize-on="medium">
+        <div class="large-4 columns" data-equalizer-watch>
+          <form name='searchLogoForm'>
+
+
           <div class="search__search-block">
             <div class="input-grp">
               <label class='main-label t--semi-bold ' for="">Vul jouw <span class='highlight'>adres</span> in</label>
               <label class='sub-label t--lightest m-b-30' for="">Wij doen de rest</label>
-              <input class='input--stnrd' type="text" placeholder="Voornaam" autocomplete="off" required >
+              <input id="autocomplete2" name='address' class='input--stnrd' type="text" ng-model='search.state.selectedAddress' placeholder="Vul je adres in" ng-init='search.googleHandlers.initAutocomplete()' autocomplete="off" required >
 
             </div>
             <div class="input-grp m-t-60">
               <label class='main-label t--semi-bold ' for="">Zoek je ook <span class='highlight'>specialisaties</span></label>
               <label class='sub-label t--lightest m-b-30' for="">Wij doen de rest</label>
-              <input class='input--stnrd' type="text" placeholder="Voornaam" autocomplete="off" required >
+              <so-dropdown-multiple class='cst-dropdown' name='specialities' ng-change='' ng-model="search.state.datatosend.selectedSpecialities" placeholder='Voeg specialiteiten toe' dropdown-items="search.state.specialities" required>
+                <option value='None'>None</option>
+              </so-dropdown-multiple>
             </div>
+            <button type="button" class='btn btn--frm btn--block m-t-60' ng-click='search.handlers.getAllPracticesBySpecialities()' name="button">zoeken</button>
+            </form>
           </div>
         </div>
-        <div class="large-8 columns">
+        <div class="large-8 columns p-rel" data-equalizer-watch>
           <div id="map_canvas">
             <ui-gmap-google-map events='search.state.map.events' center="search.state.map.center" options='search.state.map.options' zoom="search.state.map.zoom">
                 <ui-gmap-markers models="search.state.practices" options="search.state.marker.options" coords="'self'" click="search.markerhandlers.onClick">
+                  <ui-gmap-windows show="show">
+                    <div ng-non-bindable>##name##</div>
+                  </ui-gmap-windows>
                 </ui-gmap-markers>
             </ui-gmap-google-map>
           </div>

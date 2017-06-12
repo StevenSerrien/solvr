@@ -5692,47 +5692,6 @@ p {
   font-family: "Source Sans Pro";
 }
 
-.cst-dropdown {
-  padding: 8px 20px;
-  padding-left: 18px;
-  border: 1px solid #e3e9ec;
-  border-radius: 0px !important;
-}
-
-.cst-dropdown--full-w {
-  display: block;
-  width: 100%;
-}
-
-.cst-dropdown .default.text {
-  color: #a1a7b0 !important;
-  font-family: "Source Sans Pro";
-  font-size: 18px;
-}
-
-.cst-dropdown.ui.dropdown .menu {
-  overflow: hidden;
-  overflow-y: auto;
-  max-height: 200px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
-  top: 50px;
-}
-
-.cst-dropdown.ui.dropdown .menu .item {
-  color: #435062;
-  border-radius: 3px;
-  font-family: "Source Sans Pro";
-  font-weight: normal;
-  font-size: 18px;
-}
-
-.cst-dropdown.ui.selection.active.dropdown {
-  border: 1px solid #e3e9ec;
-}
-
 @font-face {
   font-family: 'Simple-Line-Icons';
   src: url("../../fonts/simplelineicons/Simple-Line-Icons.eot");
@@ -6753,9 +6712,9 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   padding: 0.78571429em 2.1em 0.78571429em 1em;
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: none;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
+  box-shadow: none !important;
+  border: 1px solid #e3e9ec;
+  border-radius: 1px !important;
   transition: box-shadow 0.1s ease, width 0.1s ease;
 }
 
@@ -6962,6 +6921,7 @@ select.ui.dropdown {
   position: relative;
   left: 1px;
   z-index: 3;
+  font-size: 18px !important;
 }
 
 /* Search Selection */
@@ -7059,7 +7019,7 @@ select.ui.dropdown {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  font-size: 1em;
+  font-size: 0.85rem;
   padding: 0.35714286em 0.78571429em;
   margin: 0.14285714rem 0.28571429rem 0.14285714rem 0em;
   box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
@@ -9921,6 +9881,47 @@ select.ui.dropdown {
 /*******************************
          Site Overrides
 *******************************/
+.cst-dropdown {
+  padding: 8px 20px;
+  padding-left: 18px;
+  border: 1px solid #e3e9ec;
+  border-radius: 0px !important;
+}
+
+.cst-dropdown--full-w {
+  display: block;
+  width: 100%;
+}
+
+.cst-dropdown .default.text {
+  color: #a1a7b0 !important;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+}
+
+.cst-dropdown.ui.dropdown .menu {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 200px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+  top: 50px;
+}
+
+.cst-dropdown.ui.dropdown .menu .item {
+  color: #435062;
+  border-radius: 3px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.cst-dropdown.ui.selection.active.dropdown {
+  border: 1px solid #e3e9ec;
+}
+
 .in-and-out {
   min-height: 510px;
 }

@@ -6713,9 +6713,9 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   padding: 0.78571429em 2.1em 0.78571429em 1em;
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: none;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
+  box-shadow: none !important;
+  border: 1px solid #e3e9ec;
+  border-radius: 1px !important;
   transition: box-shadow 0.1s ease, width 0.1s ease;
 }
 
@@ -6922,6 +6922,7 @@ select.ui.dropdown {
   position: relative;
   left: 1px;
   z-index: 3;
+  font-size: 18px !important;
 }
 
 /* Search Selection */
@@ -7019,7 +7020,7 @@ select.ui.dropdown {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  font-size: 1em;
+  font-size: 0.85rem;
   padding: 0.35714286em 0.78571429em;
   margin: 0.14285714rem 0.28571429rem 0.14285714rem 0em;
   box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
@@ -11678,7 +11679,18 @@ footer .footer__links {
 }
 
 .angular-google-map-container {
-  height: 400px;
+  min-height: 400px;
+  box-shadow: 0 9px 20px 0 rgba(153, 170, 181, 0.1) !important;
+}
+
+@media print, screen and (min-width: 64em) {
+  .angular-google-map-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
 }
 
 .angular-google-map-container img {

@@ -11,12 +11,12 @@
 @include foundation-everything;
 
 @import "text";
-@import "components/dropdown";
+
 @import 'icons';
 
 @import "plugins/semantic-dropdown";
 
-
+@import "components/dropdown";
 
 // Libs
 // @import "plugins/semanticui";

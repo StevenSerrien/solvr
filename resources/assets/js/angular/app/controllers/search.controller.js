@@ -2,6 +2,9 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
   var self = this;
 
   var allPracticesUrl = '/practices/get/all';
+  var getAllSpecialities = '/specialities/getall';
+  var allPracticesWithSelectedpecialitiesUrl = '/practices/get/all-w-specialities';
+
   $scope.$watch(function() {
 
   }, function(nv, ov) {
@@ -11,6 +14,7 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
   this.events = {
     init: function() {
       // self.handlers.getAllExistingPractices();
+      self.handlers.getAllSpecialities();
     },
   };
 
@@ -27,6 +31,8 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
 
           self.state.practiceFromDB[index].latitude = self.state.practiceFromDB[index].lat;
           self.state.practiceFromDB[index].longitude = self.state.practiceFromDB[index].lng;
+
+          self.state.practiceFromDB[index].show = false;
 
           // Push into readable array for Google Angular maps
           self.state.practices.push(self.state.practiceFromDB[index]);
@@ -54,11 +60,28 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
 
       });
     },
+    getAllPracticesBySpecialities: function() {
+      service.post(allPracticesWithSelectedpecialitiesUrl, self.state.datatosend).then(function successCallback(response) {
+        console.log(response);
+      }, function errorCallBack(response) {
+
+      })
+    },
+    getAllSpecialities: function() {
+      service.get(getAllSpecialities).then(function successCallback(response) {
+        // console.log(response);
+        self.state.specialities = response;
+        console.log(self.state.specialities);
+      }, function errorCallback(response) {
+
+      });
+    },
   };
 
   this.markerhandlers = {
     onClick: function(marker, eventName, model) {
       console.log(model);
+      model.show = !model.show;
     },
   };
 
@@ -247,6 +270,12 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
         },
       },
     },
+    specialities: [],
+    selectedSpecialities: [],
+    datatosend: {
+      address: {},
+      selectedSpecialities: [],
+    }
   };
 
   var placeSearch, autocomplete;
@@ -263,7 +292,7 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
       // Create the autocomplete object, restricting the search to geographical
       // location types.
       autocomplete = new google.maps.places.Autocomplete(
-        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete2')),
         {
           types: ['geocode'],
           componentRestrictions: {country: 'be'}//Belgium only
@@ -284,12 +313,12 @@ sl.controllers.controller('SearchCtrl', function($scope, $rootScope, $location, 
             var addressType = place.address_components[i].types[0];
             if (componentForm[addressType]) {
               var val = place.address_components[i][componentForm[addressType]];
-              self.state.datatosend.practice[addressType] = val;
+              self.state.datatosend.address[addressType] = val;
             }
           };
           // Lat and long
-          self.state.datatosend.practice.lat = place.geometry.location.lat();
-          self.state.datatosend.practice.lng = place.geometry.location.lng();
+          self.state.datatosend.address.lat = place.geometry.location.lat();
+          self.state.datatosend.address.lng = place.geometry.location.lng();
 
           $scope.$digest();
         });

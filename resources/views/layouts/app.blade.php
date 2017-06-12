@@ -12,6 +12,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+
+
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/css/semantic.min.css'>
+
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
+
     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
@@ -40,7 +47,7 @@
 
     <!-- Scripts -->
     <script async defer
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE">
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE&libraries=places">
    </script>
       <script src="{{ elixir('js/libs.js') }}"></script>
       <script src="{{ elixir('js/app.js') }}"></script>

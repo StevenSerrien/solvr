@@ -51,6 +51,6 @@
 
 @endsection
 @section('scripts')
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE&libraries=places"
-  async defer></script>
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TtmcARObbsZdvdfKkXlYuGVvmnDadfE&libraries=places"
+  async defer></script> --}}
 @endsection

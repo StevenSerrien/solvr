@@ -162,6 +162,46 @@ sl.directives.directive('soDropdownMultiple', ['$timeout', function($timeout) {
     };
 }]);
 
+sl.directives.directive('soDropdownMultipleNolabel', ['$timeout', function($timeout) {
+    return {
+        restrict: 'E',
+        require: 'ngModel',
+        replace: true,
+        transclude: true,
+        template: function (el, atts) {
+            var itemName = 'dropdownItem';
+            var valueField = itemName + '.' + (atts.valueField || 'id');
+            var textField = itemName + '.' + (atts.textField || 'name');
+            var localityField = itemName + '.' + (atts.textField || 'locality')
+            return "<select class='ui fluid normal dropdown selection multiple' multiple=''>" +
+                "<div ng-transclude></div>" +
+                "   <option value='{{" + valueField + "}}' ng-repeat='" + itemName + " in " + atts.dropdownItems + " track by " + valueField + "'>" +
+                "       {{" + textField + "}}" +
+                "   </option>" +
+                "</select>";
+        },
+        link: function (scope, el, atts, ngModel) {
+            $(el).dropdown({
+                // onChange: function (value, text, choice) {
+                //     scope.$apply(function () {
+                //         ngModel.$setViewValue(value);
+                //
+                //     });cst-dropdown ui fluid normal dropdown selection multiple
+                // },
+                placeholder: atts.placeholder,
+                useLabels: false,
+            });
+            ngModel.$render = function () {
+                console.log('set value', el, ngModel, ngModel.$viewValue);
+                $timeout(function () {
+                    $(el).dropdown('set value', ngModel.$viewValue);
+                });
+                // $(el).dropdown('set value', ngModel.$viewValue);
+            };
+        }
+    };
+}]);
+
 sl.services.service('service', ["$http", "$q", function($http, $q){
   this.fetch = function(method, url, data) {
     var _promise = $q.defer();
@@ -703,6 +743,9 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
   var self = this;
 
   var allPracticesUrl = '/practices/get/all';
+  var getAllSpecialities = '/specialities/getall';
+  var allPracticesWithSelectedpecialitiesUrl = '/practices/get/all-w-specialities';
+
   $scope.$watch(function() {
 
   }, function(nv, ov) {
@@ -712,6 +755,7 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
   this.events = {
     init: function() {
       // self.handlers.getAllExistingPractices();
+      self.handlers.getAllSpecialities();
     },
   };
 
@@ -728,6 +772,8 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
 
           self.state.practiceFromDB[index].latitude = self.state.practiceFromDB[index].lat;
           self.state.practiceFromDB[index].longitude = self.state.practiceFromDB[index].lng;
+
+          self.state.practiceFromDB[index].show = false;
 
           // Push into readable array for Google Angular maps
           self.state.practices.push(self.state.practiceFromDB[index]);
@@ -755,11 +801,28 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
 
       });
     },
+    getAllPracticesBySpecialities: function() {
+      service.post(allPracticesWithSelectedpecialitiesUrl, self.state.datatosend).then(function successCallback(response) {
+        console.log(response);
+      }, function errorCallBack(response) {
+
+      })
+    },
+    getAllSpecialities: function() {
+      service.get(getAllSpecialities).then(function successCallback(response) {
+        // console.log(response);
+        self.state.specialities = response;
+        console.log(self.state.specialities);
+      }, function errorCallback(response) {
+
+      });
+    },
   };
 
   this.markerhandlers = {
     onClick: function(marker, eventName, model) {
       console.log(model);
+      model.show = !model.show;
     },
   };
 
@@ -948,6 +1011,12 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
         },
       },
     },
+    specialities: [],
+    selectedSpecialities: [],
+    datatosend: {
+      address: {},
+      selectedSpecialities: [],
+    }
   };
 
   var placeSearch, autocomplete;
@@ -964,7 +1033,7 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
       // Create the autocomplete object, restricting the search to geographical
       // location types.
       autocomplete = new google.maps.places.Autocomplete(
-        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete2')),
         {
           types: ['geocode'],
           componentRestrictions: {country: 'be'}//Belgium only
@@ -985,12 +1054,12 @@ sl.controllers.controller('SearchCtrl', ["$scope", "$rootScope", "$location", "s
             var addressType = place.address_components[i].types[0];
             if (componentForm[addressType]) {
               var val = place.address_components[i][componentForm[addressType]];
-              self.state.datatosend.practice[addressType] = val;
+              self.state.datatosend.address[addressType] = val;
             }
           };
           // Lat and long
-          self.state.datatosend.practice.lat = place.geometry.location.lat();
-          self.state.datatosend.practice.lng = place.geometry.location.lng();
+          self.state.datatosend.address.lat = place.geometry.location.lat();
+          self.state.datatosend.address.lng = place.geometry.location.lng();
 
           $scope.$digest();
         });
