@@ -24,7 +24,7 @@
 
         <div class="dashboard__divider dashboard__divider--small m-b-20">
         </div>
-      @if (isset($notifications))
+      @if (isset($notifications) && count($notifications) > 0)
         @foreach ($notifications as $notification)
             <div class="dashboard__item m-b-10 clearfix">
               <div class="float-left">
@@ -47,6 +47,7 @@
             </div>
           </div>
         @endforeach
+        <a href="{{ route('practitioner.notifications.read.all') }}" target="_self" ><button class='btn btn--frm btn--frm--color-2  m-t-60' type="button" name="button">alle meldingen lezen</button></a>
       @endif
 
       </div>

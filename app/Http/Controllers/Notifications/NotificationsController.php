@@ -22,4 +22,13 @@ class NotificationsController extends Controller
 
       return redirect()->route('practitioner.notifications.show')->with('message', 'Melding werd gemarkeerd als gelezen.');
     }
+
+    public function markAllNotificationsAsRead() {
+      $notifications = Auth::guard('practitioner')->user()->unreadNotifications;
+
+      foreach ($notifications as $notification) {
+        $notification->markAsRead();
+      }
+      return redirect()->route('practitioner.notifications.show')->with('message', 'Alle meldingen werden gemarkeerd als gelezen.');
+    }
 }

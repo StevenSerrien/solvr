@@ -95,7 +95,9 @@ Route::group(['middleware' => 'web'], function () {
 
     // Notificaties voor logopedist
     Route::get('/logopedist/notificaties', ['as' => 'practitioner.notifications.show', 'uses' => 'Notifications\NotificationsController@showNotificationsForPractitioner']);
+    Route::get('/logopedist/notificaties/read/all', ['as' => 'practitioner.notifications.read.all', 'uses' => 'Notifications\NotificationsController@markAllNotificationsAsRead']);
     Route::get('/logopedist/notificaties/read/{id}', ['as' => 'practitioner.notifications.read', 'uses' => 'Notifications\NotificationsController@markNotificationAsRead']);
+
 
 
 
