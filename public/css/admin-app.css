@@ -10664,6 +10664,49 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   background-color: #3b6ecc;
 }
 
+.notification_bell {
+  position: relative;
+}
+
+.notification_bell__amount {
+  color: white;
+  font-family: "Poppins";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.notification-bell {
+  position: relative;
+}
+
+.notification-bell::after {
+  content: attr(data-count);
+  display: block;
+  position: absolute;
+  font-family: "Poppins";
+  color: #FFFFFF;
+  top: -5px;
+  right: -20px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  background-color: #e37774;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.notification-bell:hover::after {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 span.block {
   display: block;
 }

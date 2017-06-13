@@ -27,9 +27,15 @@
         </li>
         <li>
           <div class="top-bar__item top-bar__item--border-left">
-
+            <a class='notification-bell' href="#" data-count='{{ count(Auth::guard('practitioner')->user()->unreadNotifications)}}'>
               <i class='icon-bell 2x'></i>
+            </a>
 
+
+
+              @foreach ( Auth::guard('practitioner')->user()->unreadNotifications as $notification)
+
+              @endforeach
 
           </div>
         </li>
