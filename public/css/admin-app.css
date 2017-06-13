@@ -10537,6 +10537,12 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   color: #cdcfd4;
 }
 
+.d-sidemenu__stackedmnu a.active {
+  border-left: 4px solid #fce289;
+  background-color: #f6f7fb;
+  color: #cdcfd4;
+}
+
 .d--title {
   font-family: "Poppins";
   color: #424859;
