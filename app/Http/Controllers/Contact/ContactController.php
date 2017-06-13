@@ -40,14 +40,20 @@ class ContactController extends Controller
 
       // Only send notification to confirmed practitioners
       $practitioners = $practitioners->where('isConfirmed', 1);
-      
+
 
 
       // Send notifications to practitioners on new contact request
       foreach ($practitioners as $practitioner) {
-
-        $practitioner->notify(new newContactRequest($practitioner, $requester));
+        $practitioner->notify(new newContactRequest($practitioner, $practice, $requester));
       }
+
+      $returnData = array(
+        'status' => 'success',
+        'message' => 'Uw bericht werd goed ontvangen. Wij nemen zo snel mogelijk contact met u op.',
+      );
+
+      return response()->json($returnData, 200);
       // return $practitioners;
       // return $requester;
       // return $request->all();

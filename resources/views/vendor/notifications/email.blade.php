@@ -148,7 +148,7 @@ $style = [
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ config('app.name') }}
+                                            Groeten,<br>Steven van {{ config('app.name') }}
                                         </p>
 
                                         <!-- Sub Copy -->

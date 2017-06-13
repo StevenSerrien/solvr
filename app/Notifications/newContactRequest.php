@@ -16,9 +16,10 @@ class newContactRequest extends Notification
      *
      * @return void
      */
-    public function __construct($practitioner, $requester)
+    public function __construct($practitioner, $practice, $requester)
     {
         $this->practitioner = $practitioner;
+        $this->practice = $practice;
         $this->requester = $requester;
     }
 
@@ -41,10 +42,27 @@ class newContactRequest extends Notification
      */
     public function toMail($notifiable)
     {
+      if (isset($this->requester['telephone'])) {
         return (new MailMessage)
-                    ->line('Er is een nieuwe contact aanvraag van je nigguh: ' . $this->requester['firstname'])
-                    ->action('Notification Action', 'https://laravel.com')
-                    ->line('Thank you for using our application!');
+                    ->subject('Nieuwe contactaanvraag van' . $this->requester['firstname'])
+                    ->greeting('Hallo, ' . $this->practitioner['firstname'])
+                    ->line('Er is een nieuwe contact aanvraag van ' . $this->requester['firstname'] . ' ' . $this->requester['lastname'])
+                    ->line('Zijn/haar bericht:')
+                    ->line($this->requester['message'])
+                    ->line('U kan deze persoon bereiken op emailadres:' . $this->requester['email'] . ' of op telefoonnummer: ' . $this->requester['telephone'])
+                    ->line('Wij danken u voor het gebruik van Solvr!');
+      }
+      else {
+        return (new MailMessage)
+                    ->subject('Nieuwe contactaanvraag van' . $this->requester['firstname'])
+                    ->greeting('Hallo, ' . $this->practitioner['firstname'])
+                    ->line('Er is een nieuwe contact aanvraag van ' . $this->requester['firstname'] . ' ' . $this->requester['lastname'])
+                    ->line('Zijn/haar bericht:')
+                    ->line($this->requester['message'])
+                    ->line('U kan deze persoon bereiken op emailadres:' . $this->requester['email'] . '.')
+                    ->line('Wij danken u voor het gebruik van Solvr!');
+      }
+
     }
 
     /**
@@ -58,6 +76,7 @@ class newContactRequest extends Notification
         return [
           'message' => 'Er is een nieuwe contactaanvraag van ' . $this->requester['firstname'] . ' ' . $this->requester['lastname'],
           'action' => 'Kijk uw opgegeven email na.',
+          'type' => 'contact'
         ];
     }
 }

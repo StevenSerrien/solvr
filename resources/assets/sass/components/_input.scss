@@ -73,3 +73,28 @@
     @include animation(0s, 1s, slideInFromRightWBounce, cubic-bezier(.87,-.41,.19,1.44));
   }
 }
+
+.success-block {
+  transition: 0.5s all cubic-bezier(.87,-.41,.19,1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+
+  // background-color: $brand-color-2--soft;
+  padding: 25px 15px 25px 0px;
+
+  &__message {
+    border-left: 4px solid rgb(27, 188, 155);
+    padding-left: 25px;
+    display: block;
+    color: rgb(27, 188, 155);
+    font-family: $secundary-font;
+    font-weight: 600;
+  }
+  opacity: 0;
+  @include translateX(50%);
+  &--slide-in {
+    transition: 4s all cubic-bezier(.87,-.41,.19,1.44);
+    @include animation(0s, 1s, slideInFromRightWBounce, cubic-bezier(.87,-.41,.19,1.44));
+  }
+}

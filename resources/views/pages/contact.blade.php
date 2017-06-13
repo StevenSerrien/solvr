@@ -44,6 +44,11 @@
             <span class='text'>{{ $practiceSelected->telephone }}</span>
 
         </div>
+        <div class="response-container">
+          <div class="success-block callout" data-closable ng-class="{'error-block--slide-in': pcontact.state.response.status == 'success'}">
+            <span class="success-block__message">##pcontact.state.response.message##</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -63,7 +68,7 @@
               <input class='input--stnrd' type="text" ng-model='pcontact.state.datatosend.user.lastname' placeholder="Jouw achternaam" autocomplete="off" required>
           </div>
           <div class="medium-6 columns">
-              <input class='input--stnrd' type="text" ng-model='pcontact.state.datatosend.user.telephone' placeholder="Telefoon (niet verplicht)" autocomplete="off">
+              <input class='input--stnrd' type="text" ng-model='pcontact.state.datatosend.user.telephone' placeholder="Telefoon (niet verplicht)" restrict="reject" mask="(99)99 99 99 99" autocomplete="off">
           </div>
           <div class="medium-6 columns">
               <input class='input--stnrd' type="email" ng-model='pcontact.state.datatosend.user.email' placeholder="E-mailadres" autocomplete="off" required>

@@ -495,13 +495,9 @@ sl.controllers.controller('practiceContactController', ["$scope", "$log", "$moda
 
         self.state.loading = false;
         self.state.response = response;
-        console.log(response);
         if (self.state.response.status == 'success') {
-
-
-
+            self.state.datatosend = '';
         }
-
 
       }, function errorCallback(response) {
 

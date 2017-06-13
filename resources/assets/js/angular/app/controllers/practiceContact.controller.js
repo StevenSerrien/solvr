@@ -18,13 +18,9 @@ sl.controllers.controller('practiceContactController', function($scope, $log, $m
 
         self.state.loading = false;
         self.state.response = response;
-        console.log(response);
         if (self.state.response.status == 'success') {
-
-
-
+            self.state.datatosend = '';
         }
-
 
       }, function errorCallback(response) {
 

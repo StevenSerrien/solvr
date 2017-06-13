@@ -11534,6 +11534,54 @@ body,
   animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 
+.success-block {
+  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+  padding: 25px 15px 25px 0px;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.success-block__message {
+  border-left: 4px solid #1bbc9b;
+  padding-left: 25px;
+  display: block;
+  color: #1bbc9b;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+.success-block--slide-in {
+  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slideInFromRightWBounce;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slideInFromRightWBounce;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 1s;
+  -o-animation-name: slideInFromRightWBounce;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-name: slideInFromRightWBounce;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
 footer {
   margin-top: 200px;
 }
