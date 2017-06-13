@@ -14,5 +14,11 @@ class DatabaseSeeder extends Seeder
         $this->call('PracticesTableSeeder');
         $this->call('PractitionerTableSeeder');
         $this->call('SpecialitiesTableSeeder');
+        $this->call('ColorsTableSeeder');
+        $this->call('AgesTableSeeder');
+
+        $this->call('CategoriesTableSeeder');
+        $this->call('SubCategoriesTableSeeder');
+
     }
 }

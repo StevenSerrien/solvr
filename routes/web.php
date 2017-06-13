@@ -99,6 +99,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/logopedist/notificaties/read/{id}', ['as' => 'practitioner.notifications.read', 'uses' => 'Notifications\NotificationsController@markNotificationAsRead']);
 
 
+    Route::get('/logopedist/oefeningen', ['as' => 'practitioners.exercises.show', 'uses' => 'Exercise\ExerciseController@index']);
+
+
 
 
 

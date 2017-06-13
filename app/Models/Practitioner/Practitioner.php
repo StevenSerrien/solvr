@@ -37,4 +37,7 @@ class Practitioner extends Authenticatable
     public function practice() {
       return $this->belongsTo('App\Models\Practice\Practice');
     }
+    public function exercises() {
+      return $this->hasMany('App\Models\Exercise\Exercise');
+    }
 }
