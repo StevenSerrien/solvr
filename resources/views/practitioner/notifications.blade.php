@@ -32,6 +32,9 @@
                 @if ($notification->data['type'] == 'contact')
                   <i class='icon-envelope-letter'></i>
                 @endif
+                @if ($notification->data['type'] == 'join-request')
+                  <i class='icon-user-follow'></i>
+                @endif
 
               </div>
               <div class="content">

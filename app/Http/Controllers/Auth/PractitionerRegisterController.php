@@ -8,6 +8,7 @@ use App\Models\Practice\Practice;
 use App\Models\Practitioner\Practitioner;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
+use App\Notifications\newPractitionerRequest;
 
 class PractitionerRegisterController extends Controller
 {
@@ -130,6 +131,10 @@ class PractitionerRegisterController extends Controller
       $practice = $request->get('practice');
       $practitioner = $request->get('user');
 
+      // For notification -> Send practitioner notifiable
+      $notifiableAdminPractitioner = Practitioner::where('isAdmin', 1)->with('practice')->where('id', $existingPractice['id'])->first();
+      
+
       // If user has selected an existing practice to link with
       if ($existingPractice) {
         $practitionerValidator = Validator::make($practitioner, [
@@ -169,6 +174,11 @@ class PractitionerRegisterController extends Controller
             'status' => 'success',
             'message' => 'Logopedist aangemaakt en gelinkt aan bestaande praktijk!',
           );
+
+
+          // Notify adminPractitioner
+          $requester = $practitioner;
+          $notifiableAdminPractitioner->notify(new newPractitionerRequest($notifiableAdminPractitioner, $requester));
           return response()->json($returnData, 200);
         }
       }
