@@ -4,6 +4,7 @@ $main-d-subcolor: #a1a7b0;
 
 $confirm-color--soft: rgb(238, 246, 225);
 $deny-color--soft: rgb(254, 223, 229);
+$default-color--soft: red;
 .d {
   &--title {
     font-family: $main-font;
@@ -82,9 +83,9 @@ $deny-color--soft: rgb(254, 223, 229);
     background: #fff;
     @include box-shadow(0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
   }
-  &__person {
+  &__person, &__item {
     position: relative;
-    .avatar, .content {
+    .avatar, .content, .badge {
       display: inline-block;
       vertical-align: middle;
     }
@@ -99,6 +100,23 @@ $deny-color--soft: rgb(254, 223, 229);
         border-radius: 5px;
       }
     }
+    .badge {
+      width: 49px;
+      height: 40px;
+      border-radius: 3px;
+      position: relative;
+      margin-right: 35px;
+      background-color: rgba(255, 255, 255, 0);
+        i {
+          position: absolute;
+          top: 50%; left: 50%;
+          @include translate(-50%, -50%);
+          font-size: 35px;
+          color: rgb(221, 221, 221);
+
+        }
+
+    }
     .content {
 
       &__name {
@@ -109,7 +127,7 @@ $deny-color--soft: rgb(254, 223, 229);
         display: block;
         margin-bottom: 0px;
       }
-      &__riziv {
+      &__riziv, &__text {
         display: block;
         font-family: $secundary-font;
         font-weight: 300;
@@ -134,7 +152,11 @@ $deny-color--soft: rgb(254, 223, 229);
           &:hover {
             color: $deny-color--soft;
           }
-
+        &.default {
+          &:hover {
+            color: $deny-color--soft;
+          }
+        }
         }
       }
       i {

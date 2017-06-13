@@ -27,7 +27,7 @@
         </li>
         <li>
           <div class="top-bar__item top-bar__item--border-left">
-            <a class='notification-bell' href="#" data-count='{{ count(Auth::guard('practitioner')->user()->unreadNotifications)}}'>
+            <a class="notification-bell {{ count(Auth::guard('practitioner')->user()->unreadNotifications) > 0 ? 'got-notifications' : '' }}" href="{{ route('practitioner.notifications.show') }}" target="_self" data-count='{{ count(Auth::guard('practitioner')->user()->unreadNotifications)}}'>
               <i class='icon-bell 2x'></i>
             </a>
 

@@ -5719,7 +5719,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-user-female, .icon-user-follow, .icon-user-following, .icon-user-unfollow, .icon-trophy, .icon-screen-smartphone, .icon-screen-desktop, .icon-plane, .icon-notebook, .icon-moustache, .icon-mouse, .icon-magnet, .icon-energy, .icon-emoticon-smile, .icon-disc, .icon-cursor-move, .icon-crop, .icon-credit-card, .icon-chemistry, .icon-user, .icon-speedometer, .icon-social-youtube, .icon-social-twitter, .icon-social-tumblr, .icon-social-facebook, .icon-social-dropbox, .icon-social-dribbble, .icon-shield, .icon-screen-tablet, .icon-magic-wand, .icon-hourglass, .icon-graduation, .icon-ghost, .icon-game-controller, .icon-fire, .icon-eyeglasses, .icon-envelope-open, .icon-envelope-letter, .icon-bell, .icon-badge, .icon-anchor, .icon-wallet, .icon-vector, .icon-speech, .icon-puzzle, .icon-printer, .icon-present, .icon-playlist, .icon-pin, .icon-picture, .icon-map, .icon-layers, .icon-handbag, .icon-globe-alt, .icon-globe, .icon-frame, .icon-folder-alt, .icon-film, .icon-feed, .icon-earphones-alt, .icon-earphones, .icon-drop, .icon-drawer, .icon-docs, .icon-directions, .icon-direction, .icon-diamond, .icon-cup, .icon-compass, .icon-call-out, .icon-call-in, .icon-call-end, .icon-calculator, .icon-bubbles, .icon-briefcase, .icon-book-open, .icon-basket-loaded, .icon-basket, .icon-bag, .icon-action-undo, .icon-action-redo, .icon-wrench, .icon-umbrella, .icon-trash, .icon-tag, .icon-support, .icon-size-fullscreen, .icon-size-actual, .icon-shuffle, .icon-share-alt, .icon-share, .icon-rocket, .icon-question, .icon-pie-chart, .icon-pencil, .icon-note, .icon-music-tone-alt, .icon-music-tone, .icon-microphone, .icon-loop, .icon-logout, .icon-login, .icon-list, .icon-like, .icon-home, .icon-grid, .icon-graph, .icon-equalizer, .icon-dislike, .icon-cursor, .icon-control-start, .icon-control-rewind, .icon-control-play, .icon-control-pause, .icon-control-forward, .icon-control-end, .icon-calendar, .icon-bulb, .icon-bar-chart, .icon-arrow-up, .icon-arrow-right, .icon-arrow-left, .icon-arrow-down, .icon-ban, .icon-bubble, .icon-camcorder, .icon-camera, .icon-check, .icon-clock, .icon-close, .icon-cloud-download, .icon-cloud-upload, .icon-doc, .icon-envelope, .icon-eye, .icon-flag, .icon-folder, .icon-heart, .icon-info, .icon-key, .icon-link, .icon-lock, .icon-lock-open, .icon-magnifier, .icon-magnifier-add, .icon-magnifier-remove, .icon-paper-clip, .icon-paper-plane, .icon-plus, .icon-pointer, .icon-power, .icon-refresh, .icon-reload, .icon-settings, .icon-star, .icon-symbol-female, .icon-symbol-male, .icon-target, .icon-volume-1, .icon-volume-2, .icon-volume-off, .icon-users {
+.icon-user-female, .icon-user-follow, .icon-user-following, .icon-user-unfollow, .icon-trophy, .icon-screen-smartphone, .icon-screen-desktop, .icon-plane, .icon-notebook, .icon-moustache, .icon-mouse, .icon-magnet, .icon-energy, .icon-emoticon-smile, .icon-disc, .icon-cursor-move, .icon-crop, .icon-credit-card, .icon-chemistry, .icon-user, .icon-speedometer, .icon-social-youtube, .icon-social-twitter, .icon-social-tumblr, .icon-social-facebook, .icon-social-dropbox, .icon-social-dribbble, .icon-shield, .icon-screen-tablet, .icon-magic-wand, .icon-hourglass, .icon-graduation, .icon-ghost, .icon-game-controller, .icon-fire, .icon-eyeglasses, .icon-envelope-letter, .icon-envelope-letter, .icon-bell, .icon-badge, .icon-anchor, .icon-wallet, .icon-vector, .icon-speech, .icon-puzzle, .icon-printer, .icon-present, .icon-playlist, .icon-pin, .icon-picture, .icon-map, .icon-layers, .icon-handbag, .icon-globe-alt, .icon-globe, .icon-frame, .icon-folder-alt, .icon-film, .icon-feed, .icon-earphones-alt, .icon-earphones, .icon-drop, .icon-drawer, .icon-docs, .icon-directions, .icon-direction, .icon-diamond, .icon-cup, .icon-compass, .icon-call-out, .icon-call-in, .icon-call-end, .icon-calculator, .icon-bubbles, .icon-briefcase, .icon-book-open, .icon-basket-loaded, .icon-basket, .icon-bag, .icon-action-undo, .icon-action-redo, .icon-wrench, .icon-umbrella, .icon-trash, .icon-tag, .icon-support, .icon-size-fullscreen, .icon-size-actual, .icon-shuffle, .icon-share-alt, .icon-share, .icon-rocket, .icon-question, .icon-pie-chart, .icon-pencil, .icon-note, .icon-music-tone-alt, .icon-music-tone, .icon-microphone, .icon-loop, .icon-logout, .icon-login, .icon-list, .icon-like, .icon-home, .icon-grid, .icon-graph, .icon-equalizer, .icon-dislike, .icon-cursor, .icon-control-start, .icon-control-rewind, .icon-control-play, .icon-control-pause, .icon-control-forward, .icon-control-end, .icon-calendar, .icon-bulb, .icon-bar-chart, .icon-arrow-up, .icon-arrow-right, .icon-arrow-left, .icon-arrow-down, .icon-ban, .icon-bubble, .icon-camcorder, .icon-camera, .icon-check, .icon-clock, .icon-close, .icon-cloud-download, .icon-cloud-upload, .icon-doc, .icon-envelope, .icon-eye, .icon-flag, .icon-folder, .icon-heart, .icon-info, .icon-key, .icon-link, .icon-lock, .icon-lock-open, .icon-magnifier, .icon-magnifier-add, .icon-magnifier-remove, .icon-paper-clip, .icon-paper-plane, .icon-plus, .icon-pointer, .icon-power, .icon-refresh, .icon-reload, .icon-settings, .icon-star, .icon-symbol-female, .icon-symbol-male, .icon-target, .icon-volume-1, .icon-volume-2, .icon-volume-off, .icon-users {
   font-family: 'Simple-Line-Icons';
   speak: none;
   font-style: normal;
@@ -10523,29 +10523,48 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08) !important;
 }
 
-.dashboard__person {
+.dashboard__person, .dashboard__item {
   position: relative;
 }
 
-.dashboard__person .avatar, .dashboard__person .content {
+.dashboard__person .avatar, .dashboard__person .content, .dashboard__person .badge, .dashboard__item .avatar, .dashboard__item .content, .dashboard__item .badge {
   display: inline-block;
   vertical-align: middle;
 }
 
-.dashboard__person .avatar {
+.dashboard__person .avatar, .dashboard__item .avatar {
   width: 100%;
   max-width: 35px;
   display: inline-block;
   margin-right: 15px;
 }
 
-.dashboard__person .avatar img {
+.dashboard__person .avatar img, .dashboard__item .avatar img {
   height: auto;
   max-width: 100%;
   border-radius: 5px;
 }
 
-.dashboard__person .content__name {
+.dashboard__person .badge, .dashboard__item .badge {
+  width: 49px;
+  height: 40px;
+  border-radius: 3px;
+  position: relative;
+  margin-right: 35px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.dashboard__person .badge i, .dashboard__item .badge i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  color: #dddddd;
+}
+
+.dashboard__person .content__name, .dashboard__item .content__name {
   font-family: "Source Sans Pro";
   font-weight: 700;
   color: #595f6f;
@@ -10554,30 +10573,34 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   margin-bottom: 0px;
 }
 
-.dashboard__person .content__riziv {
+.dashboard__person .content__riziv, .dashboard__person .content__text, .dashboard__item .content__riziv, .dashboard__item .content__text {
   display: block;
   font-family: "Source Sans Pro";
   font-weight: 300;
   color: #b1b3b7;
 }
 
-.dashboard__person .buttons {
+.dashboard__person .buttons, .dashboard__item .buttons {
   position: relative;
   top: 50%;
 }
 
-.dashboard__person .buttons a {
+.dashboard__person .buttons a, .dashboard__item .buttons a {
   color: #b1b3b7;
   font-size: 1.2em;
   margin-right: 10px;
   font-weight: 700;
 }
 
-.dashboard__person .buttons a.confirm:hover {
+.dashboard__person .buttons a.confirm:hover, .dashboard__item .buttons a.confirm:hover {
   color: #eef6e1;
 }
 
-.dashboard__person .buttons a.deny:hover {
+.dashboard__person .buttons a.deny:hover, .dashboard__item .buttons a.deny:hover {
+  color: #fedfe5;
+}
+
+.dashboard__person .buttons a.deny.default:hover, .dashboard__item .buttons a.deny.default:hover {
   color: #fedfe5;
 }
 
@@ -10677,11 +10700,11 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   border-radius: 50%;
 }
 
-.notification-bell {
+.notification-bell.got-notifications {
   position: relative;
 }
 
-.notification-bell::after {
+.notification-bell.got-notifications::after {
   content: attr(data-count);
   display: block;
   position: absolute;
@@ -10702,9 +10725,11 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   transition: all 0.2s ease-in-out;
 }
 
-.notification-bell:hover::after {
+.notification-bell.got-notifications:hover::after {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
 }
 
 span.block {

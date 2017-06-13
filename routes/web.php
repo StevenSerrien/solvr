@@ -93,6 +93,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/practitioner/acceptnew', 'Practitioner\PractitionerController@acceptPractitioner');
     Route::post('/practitioner/denynew', 'Practitioner\PractitionerController@denyPractitioner');
 
+    // Notificaties voor logopedist
+    Route::get('/logopedist/notificaties', ['as' => 'practitioner.notifications.show', 'uses' => 'Notifications\NotificationsController@showNotificationsForPractitioner']);
+    Route::get('/logopedist/notificaties/read/{id}', ['as' => 'practitioner.notifications.read', 'uses' => 'Notifications\NotificationsController@markNotificationAsRead']);
+
+
 
 
 
