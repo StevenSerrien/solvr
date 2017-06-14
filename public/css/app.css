@@ -11266,6 +11266,50 @@ body,
   transform: translateY(-10px);
 }
 
+.choice-card[type='radio'] {
+  display: none;
+}
+
+.choice-card + label {
+  /* Styling of the radiobuttons by their label */
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  height: auto;
+  padding: 30px 0;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s ease;
+  background: #fff;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+  overflow: hidden;
+}
+
+.choice-card + label span {
+  font-size: 20px;
+  color: rgba(67, 80, 98, 0.5);
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.choice-card + label:hover {
+  box-shadow: 0 0 0 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+}
+
+.choice-card + label:hover span {
+  color: #435062;
+}
+
+.choice-card:checked + label {
+  box-shadow: 0 0 0 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+}
+
+.choice-card:checked + label span {
+  color: #435062;
+}
+
 .cta-block {
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05) !important;
 }

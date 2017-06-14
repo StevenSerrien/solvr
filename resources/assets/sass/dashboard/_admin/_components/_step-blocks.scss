@@ -1,0 +1,62 @@
+.step-block {
+  position: relative;
+  padding: 30px 20px;
+  &__b-number {
+    font-family: $main-font;
+    font-size: rem-calc(40);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    color: rgb(244, 244, 244);
+    display: block;
+    line-height: 2rem;
+    left: 0;
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+  &__title {
+    font-family: $main-font;
+    font-weight: normal;
+    position: relative;
+    z-index: 10;
+    font-size: rem-calc(20);
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  &--border-right {
+    border-right: 2px solid rgb(246, 242, 242);
+  }
+  &--border-left {
+    border-left: 2px solid rgb(246, 242, 242);
+  }
+}
+.illustration-block {
+
+
+  &__a-text {
+    margin-top: rem-calc(30);
+    font-family: $text-font;
+    font-weight: 500;
+    color: #636363;
+  }
+  &__text {
+    position: relative;
+    padding: rem-calc(35 0 35 0);
+  }
+  &__illustration {
+    display: block;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

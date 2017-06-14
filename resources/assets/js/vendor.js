@@ -11,6 +11,7 @@ require('angular-touch');
 require('angular-loading-bar');
 require('angular-simple-logger');
 require('angular-google-maps');
+require('./plugins/ngjs-color-picker/ngjs-color-picker.js');
 
 
 require('./plugins/angular-foundation.min.js');

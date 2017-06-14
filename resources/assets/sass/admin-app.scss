@@ -23,6 +23,7 @@
 // Dashboard
 @import "components/animations";
 @import "components/button";
+@import "components/cards";
 
 
 @import "dashboard/_admin/main-layout";
@@ -31,9 +32,12 @@
 @import "dashboard/_admin/_components/top-bar";
 @import "dashboard/_admin/_components/sidemenu";
 
+@import "dashboard/_admin/_components/step-blocks";
+
 @import "dashboard/_admin/_components/dashboard";
 @import "dashboard/_admin/_components/modals";
 @import "dashboard/_admin/_components/notifications";
+@import "dashboard/_admin/_components/color-picker";
 
 
 span {

@@ -24,8 +24,6 @@ class ContactController extends Controller
       }
       return view('pages.contact')->with('practiceSelected', $practiceSelected);
 
-      return $id;
-      return 'yolo';
     }
 
     public function contactPractice(Request $request) {

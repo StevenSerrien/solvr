@@ -51,12 +51,6 @@ elixir((mix) => {
             'libs/classie.js',
             'libs/snap.svg-min.js',
 
-
-            // Angular libs
-            // 'plugins/angular-foundation.min.js',
-            // 'plugins/angular-sanitize.js',
-            // 'plugins/angular-route.js',
-            // 'plugins/angular-animate.js',
         ],
         'public/js/libs.js')
         .scripts(

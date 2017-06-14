@@ -1,0 +1,18 @@
+.color-picker {
+  ul {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
+  ngjs-color-picker {
+    li {
+      cursor: pointer;
+      transition: 0.1s all ease-in-out;
+      &.selectedColor {
+        border: none;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+}

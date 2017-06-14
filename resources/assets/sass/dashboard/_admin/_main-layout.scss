@@ -4,8 +4,9 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap  {
 
 .d-container {
   position: relative;
-  min-height: 300px;
+  min-height: 100%;
   background-color: rgba(#f7f9fa, 0.72);
+  height: auto !important;
 }
 
 

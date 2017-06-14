@@ -10277,14 +10277,154 @@ select.ui.dropdown {
   width: 100%;
 }
 
+.card--icon {
+  min-height: 300px;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  padding: 40px;
+}
+
+.card--full-height {
+  height: 100%;
+}
+
+.card--shdw {
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.05) !important;
+}
+
+.card__title {
+  color: #404040;
+  font-size: 20px;
+  font-family: "Source Sans Pro";
+  margin-bottom: 20px;
+  display: block;
+  font-weight: 500;
+}
+
+.card__text {
+  color: #a1a7b0;
+  font-family: "Source Sans Pro";
+  letter-spacing: .15px;
+  font-size: 18px;
+  display: block;
+}
+
+.card__image img {
+  display: block;
+  width: 75% !important;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+.icon-card {
+  background: white;
+  position: relative;
+  height: 100%;
+  box-shadow: 0 9px 20px 0 rgba(153, 170, 181, 0.1) !important;
+  padding: 50px 35px 35px 35px;
+  max-width: 345px;
+  margin: auto;
+  display: block;
+}
+
+.icon-card__image {
+  padding: 0px 50px;
+  width: 100%;
+  height: 100px;
+}
+
+.icon-card__image img {
+  height: auto;
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.icon-card__title, .icon-card__text {
+  font-family: "Poppins";
+  display: block;
+  text-align: center;
+}
+
+.icon-card__title {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #65696c;
+  font-weight: 600;
+}
+
+.icon-card__text {
+  font-weight: normal;
+  font-size: 16px;
+  color: #65696c;
+}
+
+.icon-card--bounce-up {
+  transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-card--bounce-up:hover {
+  box-shadow: 0 12px 30px 0 rgba(153, 170, 181, 0.1) !important;
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.choice-card[type='radio'] {
+  display: none;
+}
+
+.choice-card + label {
+  /* Styling of the radiobuttons by their label */
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  height: auto;
+  padding: 30px 0;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s ease;
+  background: #fff;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+  overflow: hidden;
+}
+
+.choice-card + label span {
+  font-size: 20px;
+  color: rgba(67, 80, 98, 0.5);
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.choice-card + label:hover {
+  box-shadow: 0 0 0 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+}
+
+.choice-card + label:hover span {
+  color: #435062;
+}
+
+.choice-card:checked + label {
+  box-shadow: 0 0 0 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08);
+}
+
+.choice-card:checked + label span {
+  color: #435062;
+}
+
 html, body, .d-container, .content-wrap, .sidemenu-wrap {
   height: 100%;
 }
 
 .d-container {
   position: relative;
-  min-height: 300px;
+  min-height: 100%;
   background-color: rgba(247, 249, 250, 0.72);
+  height: auto !important;
 }
 
 .sidemenu-wrap {
@@ -10541,6 +10681,75 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   border-left: 4px solid #fce289;
   background-color: #f6f7fb;
   color: #cdcfd4;
+}
+
+.step-block {
+  position: relative;
+  padding: 30px 20px;
+}
+
+.step-block__b-number {
+  font-family: "Poppins";
+  font-size: 2.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  color: #f4f4f4;
+  display: block;
+  line-height: 2rem;
+  left: 0;
+}
+
+.step-block__b-number--left {
+  left: 0;
+}
+
+.step-block__b-number--right {
+  right: 0;
+}
+
+.step-block__title {
+  font-family: "Poppins";
+  font-weight: normal;
+  position: relative;
+  z-index: 10;
+  font-size: 1.25rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.step-block--border-right {
+  border-right: 2px solid #f6f2f2;
+}
+
+.step-block--border-left {
+  border-left: 2px solid #f6f2f2;
+}
+
+.illustration-block__a-text {
+  margin-top: 1.875rem;
+  font-family: "Source Sans Pro";
+  font-weight: 500;
+  color: #636363;
+}
+
+.illustration-block__text {
+  position: relative;
+  padding: 2.1875rem 0 2.1875rem 0;
+}
+
+.illustration-block__illustration {
+  display: block;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+}
+
+.illustration-block__illustration img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .d--title {
@@ -10830,6 +11039,22 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   transform: scale(1.1);
   -webkit-transform-origin: top right;
   transform-origin: top right;
+}
+
+.color-picker ul {
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.color-picker ngjs-color-picker li {
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+}
+
+.color-picker ngjs-color-picker li.selectedColor {
+  border: none;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 span.block {

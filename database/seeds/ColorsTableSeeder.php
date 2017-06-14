@@ -13,7 +13,7 @@ class ColorsTableSeeder extends Seeder
     {
 
       $colors = [
-           ['name' => 'Aarbei Rood', 'code' => '#e3777'],
+           ['name' => 'Aarbei Rood', 'code' => '#e37774'],
            ['name' => 'Zonnebloem Geel', 'code' => '#fce289'],
            ['name' => 'Blauwe Oceaan', 'code' => '#3b6ecc'],
            ['name' => 'Orange Wortel', 'code' => '#e67e22'],

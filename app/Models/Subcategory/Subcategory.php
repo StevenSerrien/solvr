@@ -10,5 +10,8 @@ class Subcategory extends Model
     'id',
   ];
 
-    return $this->hasOne('App\Models\Category\Category');
+  public function subcategories() {
+    return $this->belongsTo('App\Models\Category\Category');
+  }
+
 }
