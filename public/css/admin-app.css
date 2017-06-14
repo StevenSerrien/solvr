@@ -9922,6 +9922,182 @@ select.ui.dropdown {
   border: 1px solid #e3e9ec;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.top-bar {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.p-container {
+  height: calc(100vh - 140px);
+  width: calc(100% - 110px);
+  margin: auto;
+  position: relative;
+  display: block;
+  padding: 0;
+}
+
+.p-container--bg-contact {
+  background: url("../../img/contact_bg.svg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.p-container .p-item {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.p-container .p-item .row {
+  height: 100%;
+}
+
+.p-container .p-item__inner {
+  text-align: center;
+  cursor: default;
+  height: 100%;
+  position: relative;
+}
+
+.p-container .p-item__inner__item {
+  position: absolute;
+  width: 100%;
+}
+
+.p-container .p-item__inner__item h1, .p-container .p-item__inner__item h2, .p-container .p-item__inner__item h3, .p-container .p-item__inner__item h4, .p-container .p-item__inner__item h5 {
+  font-size: 4.5rem;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.p-container .p-item--landing {
+  background: url("../../img/l-background-10.svg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.p-container .p-item--landing::after {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  height: 200px;
+  width: 300px;
+  background: url("../../img/home-shapes.svg") no-repeat;
+  background-size: cover;
+}
+
+.p-container .p-item--landing .btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.p-jumbo, .p-smallbo {
+  transition: all 0.2s;
+}
+
+.p-smallbo {
+  font-family: "Source Sans Pro";
+}
+
+.typed-cursor {
+  display: none;
+}
+
+#typed {
+  min-height: 200px;
+}
+
+.underlined {
+  position: relative;
+}
+
+.underlined::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  font-style: normal !important;
+}
+
+a, a:focus, a:active, a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-logo span {
+  font-family: "Quantify";
+  font-size: 3.2rem;
+}
+
+.footer__branding span {
+  font-family: "Quantify";
+  font-size: 2rem;
+  color: #373737;
+  line-height: 1;
+}
+
+span.highlight {
+  position: relative;
+  z-index: 1;
+}
+
+span.highlight--color-1::after {
+  position: absolute;
+  z-index: -1;
+  bottom: 15px;
+  left: -5px;
+  display: block;
+  width: calc(100% + 10px);
+  height: 20px;
+  background: #ffe07a;
+  content: '';
+}
+
+span.highlight--color-2::after {
+  position: absolute;
+  z-index: -1;
+  bottom: 15px;
+  left: -5px;
+  display: block;
+  width: calc(100% + 10px);
+  height: 20px;
+  background: #3b6ecc;
+  content: '';
+}
+
+span.line-highlight {
+  display: inline-block;
+  position: relative;
+  font-family: "Poppins";
+  color: #c3c8d0;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+span.line-highlight::before {
+  display: inline-block;
+  content: ' ';
+  position: relative;
+  width: 50px;
+  height: 2px;
+  background-color: #c3c8d0;
+  bottom: 5px;
+  margin-right: 15px;
+}
+
 .in-and-out {
   min-height: 510px;
 }
@@ -10277,6 +10453,39 @@ select.ui.dropdown {
   width: 100%;
 }
 
+.icon-btn {
+  display: block;
+  background-color: #f7f7f7;
+  color: #ffffff;
+  font-weight: 800;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 50px;
+}
+
+.icon-btn i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.icon-btn--color-1 {
+  background-color: #3b6ecc;
+  color: #0a0a0a;
+}
+
+.icon-btn--color-1:hover {
+  background-color: #4f7dd1;
+  color: #1e1e1e;
+}
+
 .card--icon {
   min-height: 300px;
   background-color: white;
@@ -10414,6 +10623,190 @@ select.ui.dropdown {
 
 .choice-card:checked + label span {
   color: #435062;
+}
+
+.input--stnrd {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid #e3e9ec;
+  padding: 8px 20px;
+  padding-right: 30px;
+  padding-top: 12px;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #435062;
+  height: auto;
+  box-shadow: none;
+  overflow: hidden;
+  background: url("../../img/icons/invalid-bullt.svg") no-repeat;
+  background-size: 10px 10px;
+  background-position: right -10px center;
+}
+
+.input--stnrd:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: #a1a7b0;
+}
+
+.input--stnrd.ng-invalid.ng-dirty {
+  border-color: #ffdee5;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: inputInvalid;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: inputInvalid;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: inputInvalid;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: inputInvalid;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.input--stnrd.invalid, .input--stnrd.error {
+  border-color: #ffdee5;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: inputInvalid;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: inputInvalid;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: inputInvalid;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: inputInvalid;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.response-container {
+  position: relative;
+  min-height: 75px;
+}
+
+.error-block {
+  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+  padding: 25px 15px 25px 0px;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.error-block__message {
+  border-left: 4px solid #e37774;
+  padding-left: 25px;
+  display: block;
+  color: #e37774;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+.error-block--slide-in {
+  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slideInFromRightWBounce;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slideInFromRightWBounce;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 1s;
+  -o-animation-name: slideInFromRightWBounce;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-name: slideInFromRightWBounce;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.success-block {
+  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+  padding: 25px 15px 25px 0px;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.success-block__message {
+  border-left: 4px solid #1bbc9b;
+  padding-left: 25px;
+  display: block;
+  color: #1bbc9b;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+.success-block--slide-in {
+  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slideInFromRightWBounce;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slideInFromRightWBounce;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 1s;
+  -o-animation-name: slideInFromRightWBounce;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-name: slideInFromRightWBounce;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
 
 html, body, .d-container, .content-wrap, .sidemenu-wrap {
@@ -10718,6 +11111,18 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   margin-bottom: 15px;
 }
 
+.step-block__subtitle {
+  min-height: 42px;
+  font-family: "Poppins";
+  font-weight: normal;
+  position: relative;
+  z-index: 10;
+  color: #cdcdcd;
+  font-size: 0.9375rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .step-block--border-right {
   border-right: 2px solid #f6f2f2;
 }
@@ -10750,6 +11155,45 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
+}
+
+.d-button {
+  font-size: 18px;
+  text-transform: lowercase;
+  font-family: "Poppins";
+  font-weight: 800;
+  border-radius: 3px;
+  padding: 30px 10px;
+}
+
+.d-button--greyed-out {
+  background: #e7edf0;
+  color: #435062;
+}
+
+.d-button--greyed-out:hover {
+  background: #dee6ea;
+  color: #435062;
+}
+
+.d-button--default {
+  background-color: #3b6ecc;
+  color: white;
+}
+
+.d-button--default:hover {
+  background: #2c58a8;
+}
+
+.d-button--block {
+  display: block;
+  width: 100%;
+}
+
+.d-button[disabled*='disabled'] {
+  color: #e3e9ec;
+  background-color: #f7f9fa;
+  pointer-events: none;
 }
 
 .d--title {

@@ -28,6 +28,17 @@
     margin-top: 20px;
     margin-bottom: 15px;
   }
+  &__subtitle {
+    min-height: 42px;
+    font-family: $main-font;
+    font-weight: normal;
+    position: relative;
+    z-index: 10;
+    color: rgb(205, 205, 205);
+    font-size: rem-calc(15);
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
   &--border-right {
     border-right: 2px solid rgb(246, 242, 242);
   }

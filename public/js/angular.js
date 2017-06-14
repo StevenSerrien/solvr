@@ -847,8 +847,9 @@ sl.controllers.controller('ExercisePractitionerCtrl', ["$scope", "$rootScope", "
       self.handlers.getSubCategories(category);
       self.handlers.getAllColors();
       self.state.ageRanges = ageRanges;
-      
+      self.handlers.addNewQuestion();
     },
+
   };
 
   this.handlers = {
@@ -872,7 +873,18 @@ sl.controllers.controller('ExercisePractitionerCtrl', ["$scope", "$rootScope", "
       }, function errorCallback(response) {
 
       })
-    }
+    },
+    checkIfFirstStepsAreChosen: function() {
+      console.log(self.state.datatosend);
+    },
+    addNewQuestion: function() {
+      console.log('hallo');
+      self.state.datatosend.exercise.questions.push('');
+    },
+    removeQuestion: function(index) {
+      console.log(index);
+      self.state.datatosend.exercise.questions.splice(index,1);
+    },
   };
 
 
@@ -889,6 +901,10 @@ sl.controllers.controller('ExercisePractitionerCtrl', ["$scope", "$rootScope", "
     datatosend: {
       selectedSubCategoryID: '',
       selectedAgeRange: '',
+      selectedColor: '',
+      exercise: {
+        questions: [],
+      },
     },
     datatosave: {
       selectedColor: '',

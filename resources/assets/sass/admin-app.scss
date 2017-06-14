@@ -21,9 +21,12 @@
 // Libs
 // @import "plugins/semanticui";
 // Dashboard
+@import "shame";
 @import "components/animations";
 @import "components/button";
 @import "components/cards";
+@import "components/input";
+
 
 
 @import "dashboard/_admin/main-layout";
@@ -33,6 +36,7 @@
 @import "dashboard/_admin/_components/sidemenu";
 
 @import "dashboard/_admin/_components/step-blocks";
+@import "dashboard/_admin/_components/buttons";
 
 @import "dashboard/_admin/_components/dashboard";
 @import "dashboard/_admin/_components/modals";

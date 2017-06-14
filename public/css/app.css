@@ -10667,6 +10667,39 @@ img {
   width: 100%;
 }
 
+.icon-btn {
+  display: block;
+  background-color: #f7f7f7;
+  color: #ffffff;
+  font-weight: 800;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 50px;
+}
+
+.icon-btn i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.icon-btn--color-1 {
+  background-color: #3b6ecc;
+  color: #0a0a0a;
+}
+
+.icon-btn--color-1:hover {
+  background-color: #4f7dd1;
+  color: #1e1e1e;
+}
+
 html,
 body,
 .container,
