@@ -29,4 +29,8 @@ class Exercise extends Model
   public function questions() {
     return $this->hasMany('App\Models\Question\Question');
   }
+
+  public function practice() {
+    return $this->belongsTo('App\Models\Practice\Practice');
+  }
 }

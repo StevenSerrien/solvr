@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Age\Age;
 use App\Models\Exercise\Exercise;
 use App\Models\Color\Color;
+use App\Models\Subcategory\Subcategory;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Question\Question;
@@ -18,7 +19,24 @@ class ExerciseController extends Controller
 {
   public function index() {
     $categories = Category::all();
-    return view('practitioner.exercises.main')->with('categories', $categories);;
+    $practitionerID = Auth::guard('practitioner')->user()->id;
+
+
+    // $users = App\User::with(['posts' => function ($query) { $query->where('title', 'like', '%first%'); }])->get();
+    $exercisesByPractitioner = Exercise::where('practitioner_id', $practitionerID)->with('practitioner')->with(['subcategory' => function ($query) { $query->with('category'); }])->with('questions')->with('color')->get();
+  
+
+    // return $exercises->get();
+    return view('practitioner.exercises.main')->with('categories', $categories)->with('exercisesByPractitioner', $exercisesByPractitioner);
+
+    // $users = App\User::whereHas(
+    //     'posts', function ($query) {
+    //         $query->where('title', 'like', '%first%');
+    //     }
+    // )
+    // ->with('posts')
+    // ->get();
+
   }
 
   public function showMake($category_id, $slug=null) {
@@ -40,6 +58,7 @@ class ExerciseController extends Controller
 
     // Get ID from practitioner that wants to make excercise
     $practitionerID = Auth::guard('practitioner')->user()->id;
+    $practiceID = Auth::guard('practitioner')->user()->practice->id;
     // Find ID for Color code given
     $color = Color::where('code', 'like', '%' . $request->selectedColor . '%')->first();
     $exercise = $request->exercise;
@@ -71,7 +90,9 @@ class ExerciseController extends Controller
       $newExercise->title = $exercise['title'];
       $newExercise->description = $exercise['description'];
       $newExercise->practitioner_id = $practitionerID;
+      $newExercise->practice_id = $practiceID;
       $newExercise->age_id = $selectedAgeRangeID;
+      $newExercise->color_id = $selectedColorID;
       $newExercise->subcategory_id = $selectedSubCategoryID;
 
       $newExercise->save();

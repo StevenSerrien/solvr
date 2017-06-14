@@ -44,6 +44,27 @@
           <h3 class='d--subtitle'>Wijzig ze of raad ze aan.</h3>
           <div class="dashboard__divider dashboard__divider--small m-b-20">
           </div>
+          @if (isset($exercisesByPractitioner) && count($exercisesByPractitioner) > 0)
+            @foreach ($exercisesByPractitioner as $exercise)
+              <div class="dashboard__item m-b-10 clearfix">
+                <div class="float-left">
+                <div class="badge__img" style='background-color: {{$exercise->color->code}}'>
+                  <img src="{{ asset('img/badge-shapes.svg')}}" alt="">
+                </div>
+                <div class="content">
+                  <span class='content__name d--text d-block'>{{ $exercise->title }}</span>
+                  <span class='content__content d--text d--block'>{{ $exercise->description }}</span>
+                </div>
+              </div>
+              <div class="float-right">
+                <div class="buttons">
+
+                </div>
+
+              </div>
+            </div>
+            @endforeach
+          @endif
 
 
         </div>

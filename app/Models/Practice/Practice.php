@@ -35,4 +35,8 @@ class Practice extends Model
   public function specialities() {
     return $this->belongsToMany('App\Models\Speciality\Speciality');
   }
+
+  public function exercises() {
+    return $this->hasMany('App\Models\Exercise\Exercise');
+  }
 }
