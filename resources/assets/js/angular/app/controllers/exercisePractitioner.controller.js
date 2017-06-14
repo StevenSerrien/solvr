@@ -1,7 +1,9 @@
-sl.controllers.controller('ExercisePractitionerCtrl', function($scope, $rootScope, $location, service, $window) {
+sl.controllers.controller('ExercisePractitionerCtrl', function($scope, $rootScope, $route, $location, service, $window) {
   var self = this;
   var getSubCategoriesUrl = '/subcatorgies/get/with-id';
   var getAllColors = '/colors/get-all';
+
+  var createExerciseUrl = '/logopedist/oefeningen/opstellen/opslaan';
 
   this.events = {
     init: function(category, ageRanges) {
@@ -41,11 +43,23 @@ sl.controllers.controller('ExercisePractitionerCtrl', function($scope, $rootScop
     },
     addNewQuestion: function() {
       console.log('hallo');
-      self.state.datatosend.exercise.questions.push('');
+      self.state.datatosend.questions.push('');
     },
     removeQuestion: function(index) {
       console.log(index);
-      self.state.datatosend.exercise.questions.splice(index,1);
+      self.state.datatosend.questions.splice(index,1);
+    },
+    createExercise: function() {
+      service.post(createExerciseUrl, self.state.datatosend).then(function successCallback(response) {
+
+        if (response.status == 'success') {
+          console.log('leven over');
+          window.location.href = '/logopedist/oefeningen';
+        }
+      }, function errorCallback(response) {
+
+      }
+      );
     },
   };
 
@@ -65,8 +79,8 @@ sl.controllers.controller('ExercisePractitionerCtrl', function($scope, $rootScop
       selectedAgeRange: '',
       selectedColor: '',
       exercise: {
-        questions: [],
       },
+      questions: [],
     },
     datatosave: {
       selectedColor: '',

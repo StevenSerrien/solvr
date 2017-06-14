@@ -22,8 +22,8 @@ class Exercise extends Model
     return $this->belongsTo('App\Models\Color\Color');
   }
 
-  public function category() {
-    return $this->belongsTo('App\Models\Category\Category');
+  public function subcategory() {
+    return $this->belongsTo('App\Models\Subcategory\Subcategory');
   }
 
   public function questions() {

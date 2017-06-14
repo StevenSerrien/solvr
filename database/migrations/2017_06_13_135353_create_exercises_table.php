@@ -21,7 +21,7 @@ class CreateExercisesTable extends Migration
             // Foreign key
             $table->integer('practitioner_id')->unsigned();
             $table->integer('age_id')->unsigned();
-            $table->integer('category_id')->unsigned();
+            $table->integer('subcategory_id')->unsigned();
             $table->timestamps();
         });
     }

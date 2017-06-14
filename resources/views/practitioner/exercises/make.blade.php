@@ -80,7 +80,7 @@
                   <h4 class='step-block__subtitle'>Zoals: 'Zoek de persoonsvorm'</h4>
                 @endif
 
-                <input class='input--stnrd' name='name'  type="text" ng-model='pexercise.state.datatosend.exercise.name' placeholder="Oefening naam" autocomplete="off" ng-minlength="3" required >
+                <input class='input--stnrd' name='name'  type="text" ng-model='pexercise.state.datatosend.exercise.title' placeholder="Oefening naam" autocomplete="off" ng-minlength="3" required >
               </div>
             </div>
             <div class="large-8 columns">
@@ -97,7 +97,7 @@
     </div>
     <!-- Step 3 -->
     <div class="row m-t-80">
-      <div class="large-12 columns" ng-if="pexercise.state.datatosend.exercise.name !== undefined && pexercise.state.datatosend.exercise.description !== undefined">
+      <div class="large-12 columns" ng-if="pexercise.state.datatosend.exercise.title !== undefined && pexercise.state.datatosend.exercise.description !== undefined">
             <div class="large-12 columns" >
         <div class="dashboard__board dashboard-item-animated dashboard-item-animated--1 slide-in-from-bottom">
           <div class="row">
@@ -105,7 +105,7 @@
               <h3 class='t--regular text-center m-b-40'>Vul nu je <span class='highlight highlight--color-1'>vragen en antwoorden</span> in</h3>
             </div>
           </div>
-          <div class="row" ng-repeat="field in pexercise.state.datatosend.exercise.questions track by $index">
+          <div class="row" ng-repeat="field in pexercise.state.datatosend.questions track by $index">
             <div class="step-block">
             <div class="large-12 columns">
               <h3 class='step-block__title'>Stel vraag ##$index + 1## op.</h3>
@@ -114,11 +114,11 @@
               <div class="large-11 columns" verilize>
                 <div class="row">
                   <div class="large-8 columns">
-                      <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.exercise.questions[$index].question" placeholder="Formuleer je vraag" ng-minlength="3" autocomplete="off" required >
+                      <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.questions[$index].question" placeholder="Formuleer je vraag" ng-minlength="3" autocomplete="off" required >
                     </div>
 
                   <div class="large-4 columns">
-                    <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.exercise.questions[$index].answer" placeholder="Geef het correcte antwoord" ng-minlength="3" autocomplete="off" required >
+                    <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.questions[$index].answer" placeholder="Geef het correcte antwoord"  autocomplete="off" required >
                   </div>
                 </div>
               </div>
@@ -145,10 +145,10 @@
       <a href="{{ URL::previous() }}" target='_self' ><button class='d-button d-button--greyed-out d-button--block' type="button" name="button">Annuleer</button></a>
     </div>
     <div class="large-4 columns">
-      <button ng-disabled='exerciseCreateForm.$invalid || pexercise.state.datatosend.selectedColor == undefined' class='d-button d-button--default d-button--block' type="button" name="button">bewaar</button>
+      <button ng-click='pexercise.handlers.createExercise()' ng-disabled='exerciseCreateForm.$invalid || pexercise.state.datatosend.selectedColor == undefined' class='d-button d-button--default d-button--block' type="button" name="button">bewaar</button>
     </div>
     <div class="large-4 columns">
-      <button ng-disabled='exerciseCreateForm.$invalid || pexercise.state.datatosend.selectedColor == undefined' class='d-button d-button--default d-button--block' type="button" name="button">publiceer</button>
+      <button ng-click='pexercise.handlers.createExercise()' ng-disabled='exerciseCreateForm.$invalid || pexercise.state.datatosend.selectedColor == undefined' class='d-button d-button--default d-button--block' type="button" name="button">publiceer</button>
     </div>
   </div>
 </div>

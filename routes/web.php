@@ -103,7 +103,11 @@ Route::group(['middleware' => 'web'], function () {
 
 
     Route::get('/logopedist/oefeningen', ['as' => 'practitioners.exercises.show', 'uses' => 'Exercise\ExerciseController@index']);
+    Route::post('/logopedist/oefeningen/opstellen/opslaan', 'Exercise\ExerciseController@createNew');
     Route::get('/logopedist/oefeningen/opstellen/{category_id}/{slug?}', ['as' => 'practitioners.exercises.make.show', 'uses' => 'Exercise\ExerciseController@showMake']);
+
+
+
     Route::get('/contacteer-een-praktijk/{id}/{slug?}', ['as' => 'contact.practice', 'uses' => 'Contact\ContactController@index']);
 
 

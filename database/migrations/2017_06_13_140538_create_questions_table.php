@@ -19,7 +19,7 @@ class CreateQuestionsTable extends Migration
             $table->string('instruction')->nullable();
             $table->string('hint')->nullable();
 
-            $table->integer('excercise_id')->unsigned();
+            $table->integer('exercise_id')->unsigned();
             $table->timestamps();
         });
     }
