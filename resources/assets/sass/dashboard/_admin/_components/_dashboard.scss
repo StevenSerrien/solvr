@@ -149,6 +149,13 @@ $default-color--soft: red;
         font-weight: 300;
         color: rgb(177, 179, 183);
       }
+      &__little {
+        display: block;
+        font-family: $secundary-font;
+        font-weight: 800;
+        font-size: 80%;
+        color: rgb(177, 179, 183);
+      }
     }
 
     .buttons {

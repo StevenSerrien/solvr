@@ -5,7 +5,8 @@
   padding-left: 2.5rem; padding-right: 2.5rem;
 }
 .p-container {
-  height: calc(100vh - 140px);
+  min-height: calc(100vh - 140px);
+  height: auto;
   width: calc(100% - 110px);
   margin: auto;
   position: relative;

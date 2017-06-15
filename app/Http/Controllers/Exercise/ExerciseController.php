@@ -22,14 +22,16 @@ class ExerciseController extends Controller
   public function index() {
     $categories = Category::all();
     $practitionerID = Auth::guard('practitioner')->user()->id;
+    $practiceID = Auth::guard('practitioner')->user()->practice->id;
 
 
     // $users = App\User::with(['posts' => function ($query) { $query->where('title', 'like', '%first%'); }])->get();
     $exercisesByPractitioner = Exercise::where('practitioner_id', $practitionerID)->with('practitioner')->with(['subcategory' => function ($query) { $query->with('category'); }])->with('questions')->with('color')->get();
-
+    $exercisesByColleagues = Exercise::where('practitioner_id', '!=', $practitionerID)->with('practitioner')->with(['practice' => function ($query) use ($practiceID) {$query->where('id', $practiceID); }])->get();
+    
 
     // return $exercises->get();
-    return view('practitioner.exercises.main')->with('categories', $categories)->with('exercisesByPractitioner', $exercisesByPractitioner);
+    return view('practitioner.exercises.main')->with('categories', $categories)->with('exercisesByPractitioner', $exercisesByPractitioner)->with('exercisesByColleagues', $exercisesByColleagues);
 
     // $users = App\User::whereHas(
     //     'posts', function ($query) {
@@ -111,7 +113,7 @@ class ExerciseController extends Controller
 
 
       foreach ($otherPracticePractitioners as $practitioner) {
-        
+
         $practitioner->notify(new newExerciseCreatedForColleagues($exerciseSaved));
       }
       // Notification

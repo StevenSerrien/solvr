@@ -9932,7 +9932,8 @@ select.ui.dropdown {
 }
 
 .p-container {
-  height: calc(100vh - 140px);
+  min-height: calc(100vh - 140px);
+  height: auto;
   width: calc(100% - 110px);
   margin: auto;
   position: relative;
@@ -11347,6 +11348,14 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
   display: block;
   font-family: "Source Sans Pro";
   font-weight: 300;
+  color: #b1b3b7;
+}
+
+.dashboard__person .content__little, .dashboard__item .content__little {
+  display: block;
+  font-family: "Source Sans Pro";
+  font-weight: 800;
+  font-size: 80%;
   color: #b1b3b7;
 }
 
