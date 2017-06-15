@@ -49,7 +49,13 @@
               <div class="dashboard__item m-b-10 clearfix">
                 <div class="float-left">
                 <div class="badge__img" style='background-color: {{$exercise->color->code}}'>
-                  <img src="{{ asset('img/badge-shapes.svg')}}" alt="">
+                  @if ($exercise->subcategory->category->name == 'Rekenen')
+                    <img src="{{ asset('img/badge-numbers.svg')}}" alt="">
+                  @elseif ($exercise->subcategory->category->name == 'Spelling')
+                    <img src="{{ asset('img/badge-letters.svg')}}" alt="">
+                  @elseif ($exercise->subcategory->category->name == 'Taal')
+                    <img src="{{ asset('img/badge-shapes.svg')}}" alt="">
+                  @endif
                 </div>
                 <div class="content">
                   <span class='content__name d--text d-block'>{{ $exercise->title }}</span>

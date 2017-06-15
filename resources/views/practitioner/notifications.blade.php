@@ -35,6 +35,9 @@
                 @if ($notification->data['type'] == 'join-request')
                   <i class='icon-user-follow'></i>
                 @endif
+                @if ($notification->data['type'] == 'newExercise')
+                  <i class='icon-puzzle'></i>
+                @endif
 
               </div>
               <div class="content">

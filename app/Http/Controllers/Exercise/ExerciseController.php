@@ -8,12 +8,14 @@ use App\Models\Category\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Age\Age;
 use App\Models\Exercise\Exercise;
+use App\Models\Practitioner\Practitioner;
 use App\Models\Color\Color;
 use App\Models\Subcategory\Subcategory;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Question\Question;
 use App\Models\Answer\Answer;
+use App\Notifications\newExerciseCreatedForColleagues;
 
 class ExerciseController extends Controller
 {
@@ -59,6 +61,11 @@ class ExerciseController extends Controller
     // Get ID from practitioner that wants to make excercise
     $practitionerID = Auth::guard('practitioner')->user()->id;
     $practiceID = Auth::guard('practitioner')->user()->practice->id;
+
+    // Get other practitioners that are linked to the practitioner trying to make an exercise
+
+
+    // return $practicePractitioners;
     // Find ID for Color code given
     $color = Color::where('code', 'like', '%' . $request->selectedColor . '%')->first();
     $exercise = $request->exercise;
@@ -96,7 +103,19 @@ class ExerciseController extends Controller
       $newExercise->subcategory_id = $selectedSubCategoryID;
 
       $newExercise->save();
-      // return $newExercise->id;
+
+
+      // Notification
+      $otherPracticePractitioners = Practitioner::where('id', '!=', $practitionerID)->with(['practice' => function($query) use($practiceID) { $query->where('id', $practiceID); }])->get();
+      $exerciseSaved = Exercise::where('id', $newExercise->id)->with(['subcategory' => function ($query) { $query->with('category'); }])->with('practitioner')->first();
+
+
+      foreach ($otherPracticePractitioners as $practitioner) {
+        
+        $practitioner->notify(new newExerciseCreatedForColleagues($exerciseSaved));
+      }
+      // Notification
+
 
       $valid = false;
       foreach ($questions as $question) {
