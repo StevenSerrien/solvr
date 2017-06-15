@@ -24,7 +24,7 @@ class ExerciseController extends Controller
 
     // $users = App\User::with(['posts' => function ($query) { $query->where('title', 'like', '%first%'); }])->get();
     $exercisesByPractitioner = Exercise::where('practitioner_id', $practitionerID)->with('practitioner')->with(['subcategory' => function ($query) { $query->with('category'); }])->with('questions')->with('color')->get();
-  
+
 
     // return $exercises->get();
     return view('practitioner.exercises.main')->with('categories', $categories)->with('exercisesByPractitioner', $exercisesByPractitioner);
@@ -107,16 +107,36 @@ class ExerciseController extends Controller
         $newQuestion->exercise_id = $newExercise->id;
         $newQuestion->save();
 
-        $answer = new Answer();
-        $answer->answer = $question['answer'];
-        $answer->isCorrect = true;
-        $answer->question_id = $newQuestion->id;
-        $answer->save();
 
-        if ($answer && $question) {
+
+
+        foreach ($question['answers'] as $key => $value) {
+
+          $valid = false;
+
+          $answer = new Answer();
+          $answer->answer = $value;
+          $answer->question_id = $newQuestion->id;
+
+          if ($key == 'correct') {
+            $answer->isCorrect = true;
+          }
+          else if ($key == 'false') {
+            $answer->isCorrect = false;
+          }
+
+          $answer->save();
+
+          if ($answer) {
+            $valid = true;
+          }
+        }
+
+
+        if ($answer && $newQuestion) {
           $valid = true;
         }
-      }
+        }
 
 
 

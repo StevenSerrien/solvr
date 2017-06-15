@@ -50,6 +50,7 @@ sl.controllers.controller('ExercisePractitionerCtrl', function($scope, $rootScop
       self.state.datatosend.questions.splice(index,1);
     },
     createExercise: function() {
+      console.log(self.state.datatosend);
       service.post(createExerciseUrl, self.state.datatosend).then(function successCallback(response) {
 
         if (response.status == 'success') {

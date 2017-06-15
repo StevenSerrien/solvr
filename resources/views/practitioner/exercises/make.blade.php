@@ -98,11 +98,14 @@
     <!-- Step 3 -->
     <div class="row m-t-80">
       <div class="large-12 columns" ng-if="pexercise.state.datatosend.exercise.title !== undefined && pexercise.state.datatosend.exercise.description !== undefined">
-            <div class="large-12 columns" >
+      {{-- <div class="large-12 columns" > --}}
+
+        <div class="large-12 columns" >
         <div class="dashboard__board dashboard-item-animated dashboard-item-animated--1 slide-in-from-bottom">
           <div class="row">
             <div class="large-12 columns">
-              <h3 class='t--regular text-center m-b-40'>Vul nu je <span class='highlight highlight--color-1'>vragen en antwoorden</span> in</h3>
+              <h3 class='t--regular text-center '>Vul nu je <span class='highlight highlight--color-1'>vragen en antwoorden</span> in</h3>
+              <h4 class='t--lightest t--regular text-center m-b-40'>Geef telkens een goed antwoord en een fout antwoord.</span></h4>
             </div>
           </div>
           <div class="row" ng-repeat="field in pexercise.state.datatosend.questions track by $index">
@@ -113,13 +116,20 @@
             <div class="row" vertilize-container>
               <div class="large-11 columns" verilize>
                 <div class="row">
-                  <div class="large-8 columns">
+                  <div class="large-6 columns">
                       <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.questions[$index].question" placeholder="Formuleer je vraag" ng-minlength="3" autocomplete="off" required >
                     </div>
-
-                  <div class="large-4 columns">
-                    <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.questions[$index].answer" placeholder="Geef het correcte antwoord"  autocomplete="off" required >
-                  </div>
+                  @for ($i=0; $i < 2 ; $i++)
+                    @if ($i == 0)
+                      <div class="large-3 columns">
+                        <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.questions[$index].answers.correct" placeholder="Correcte keuze"  autocomplete="off" required >
+                      </div>
+                    @elseif ($i == 1)
+                      <div class="large-3 columns">
+                        <input class='input--stnrd' name='description'  type="text" ng-model="pexercise.state.datatosend.questions[$index].answers.false" placeholder="Andere keuze"  autocomplete="off" required >
+                      </div>
+                    @endif
+                  @endfor
                 </div>
               </div>
               <div class="large-1 columns" vertilize>
