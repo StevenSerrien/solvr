@@ -48,9 +48,7 @@
 .response-container {
   position: relative;
   min-height: 75px;
-  &--no-m-h {
-    min-height: 0px;
-  }
+
 }
 .error-block {
   transition: 0.5s all cubic-bezier(.87,-.41,.19,1.44);

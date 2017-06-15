@@ -200,6 +200,10 @@ $default-color--soft: red;
     &--full {
       width: 100%;
     }
+    &--middle {
+      left: 50%;
+      @include translateX(-50%);
+    }
   }
 
   &__l-border {

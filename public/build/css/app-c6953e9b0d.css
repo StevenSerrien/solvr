@@ -10493,6 +10493,10 @@ select.ui.dropdown {
   height: 50px;
 }
 
+.brand-logo span {
+  color: #0a0a0a;
+}
+
 img {
   display: inline-block;
   width: auto;
@@ -11580,10 +11584,6 @@ body,
   min-height: 75px;
 }
 
-.response-container--no-m-h {
-  min-height: 0px;
-}
-
 .error-block {
   transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
   position: absolute;
@@ -12251,6 +12251,123 @@ footer .footer__links {
   border-color: black;
 }
 
+.u-avatar-wrap {
+  margin: auto;
+  display: block;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 200px;
+  border: 9px solid whitesmoke;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.08), 0 2px 4px 0 rgba(67, 80, 98, 0.08) !important;
+  overflow: hidden;
+}
+
+.u-avatar-wrap:before {
+  content: " ";
+  display: block;
+  padding-top: 100%;
+}
+
+.u-avatar-wrap img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.u-profile-card .u-color-picker {
+  margin-top: 30px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.u-profile-card .u-color-picker ngjs-color-picker ul {
+  display: inline-block;
+  margin: 0;
+}
+
+.u-profile-card .u-color-picker ngjs-color-picker li.selectedColor {
+  border: none;
+}
+
+.u-d-t--color-1 {
+  color: #435062;
+}
+
+.u-d-t--color-2 {
+  color: #a1a7b0;
+}
+
+.u-d-t--color-2 {
+  color: #a1a7b0;
+}
+
+.block {
+  display: block;
+}
+
+.u-d-t--main {
+  font-family: "Poppins";
+}
+
+.u-d-t--secundary {
+  font-family: "Source Sans Pro";
+}
+
+.u-d-t--bold {
+  font-weight: 700;
+}
+
+.u-d-title {
+  font-size: 24px;
+}
+
+.u-d-title h1, .u-d-title h2, .u-d-title h3,
+.u-d-title h4, .u-d-title h5, .u-d-title h6 {
+  font-size: 24px;
+}
+
+.u-d-subtitle {
+  font-size: 21px;
+}
+
+.u-d-subtitle h1, .u-d-subtitle h2, .u-d-subtitle h3,
+.u-d-subtitle h4, .u-d-subtitle h5, .u-d-subtitle h6 {
+  font-size: 21px;
+}
+
+.u-d-board-title {
+  font-size: 20px;
+}
+
+.u-d-board-title h1, .u-d-board-title h2, .u-d-board-title h3,
+.u-d-board-title h4, .u-d-board-title h5, .u-d-board-title h6 {
+  font-size: 20px;
+}
+
+.u-d-board-subtitle {
+  font-size: 18px;
+}
+
+.u-d-board-subtitle h1, .u-d-board-subtitle h2, .u-d-board-subtitle h3,
+.u-d-board-subtitle h4, .u-d-board-subtitle h5, .u-d-board-subtitle h6 {
+  font-size: 18px;
+}
+
+.u-d-board-text {
+  font-size: 18px;
+}
+
+.u-d-board-text h1, .u-d-board-text h2, .u-d-board-text h3,
+.u-d-board-text h4, .u-d-board-text h5, .u-d-board-text h6 {
+  font-size: 18px;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
@@ -12278,6 +12395,12 @@ footer .footer__links {
 
 .p-container--bg-userauth {
   background: url("../../img/user-signup-bg.svg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.p-container--bg-default-user {
+  transition: background-color 0.5s ease-in-out;
   background-size: cover;
   overflow: hidden;
 }

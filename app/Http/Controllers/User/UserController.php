@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Colorscheme\Colorscheme;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,8 +16,25 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    
+
     public function index() {
       return view('user.dashboard');
     }
+
+    public function changeColorscheme(Request $request) {
+
+      $colorhexcode = $request[0];
+
+      $solorscheme = Colorscheme::where('hex', 'like', '%' . $colorhexcode . '%')->first();
+      // return $solorscheme->id;
+
+      $loggedUser = Auth::guard('web')->user();
+      $loggedUser->colorscheme_id = $solorscheme->id;
+      $loggedUser->save();
+
+      
+      // return $solorscheme;
+    }
+
+
 }

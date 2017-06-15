@@ -27,6 +27,7 @@ class ContactController extends Controller
     }
 
     public function contactPractice(Request $request) {
+
       $practice = $request->get('practice');
       $requester = $request->get('user');
 
@@ -38,7 +39,7 @@ class ContactController extends Controller
 
       // Only send notification to confirmed practitioners
       $practitioners = $practitioners->where('isConfirmed', 1);
-
+      
 
 
       // Send notifications to practitioners on new contact request

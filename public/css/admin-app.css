@@ -9953,6 +9953,12 @@ select.ui.dropdown {
   overflow: hidden;
 }
 
+.p-container--bg-default-user {
+  transition: background-color 0.5s ease-in-out;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .p-container .p-item {
   position: absolute;
   top: 0;
@@ -10735,10 +10741,6 @@ span.line-highlight::before {
   min-height: 75px;
 }
 
-.response-container--no-m-h {
-  min-height: 0px;
-}
-
 .error-block {
   transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
   position: absolute;
@@ -11420,6 +11422,12 @@ html, body, .d-container, .content-wrap, .sidemenu-wrap {
 
 .dashboard__divider--full {
   width: 100%;
+}
+
+.dashboard__divider--middle {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .dashboard__l-border {
