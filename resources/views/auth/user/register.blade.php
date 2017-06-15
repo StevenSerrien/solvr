@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container container--signup-clients" ng-controller='UserAuthCtrl as auth'>
+<div class="p-container p-container--bg-userauth" ng-controller='UserAuthCtrl as auth'>
   <div class="row">
-  <div class="form-block form-block--contact-signup small-centered large-8 columns">
+  <div class="form-block form-block--contact-signup small-centered large-8 m-t-40 columns">
     <div class="row">
       <div class="large-12 columns" >
 
@@ -39,7 +39,7 @@
           </div>
           <div class="row">
             <div class="large-12 columns">
-              <div class="response-container">
+              <div class="response-container response-container--no-m-h">
                 <div class="error-block callout {{ $errors ? 'error-block--slide-in' : '' }}" ng-class="{'error-block--slide-in': contact.state.response.status == 'error'}">
                   <span class="error-block__message">{{ $errors->first() }}</span>
                 </div>
@@ -49,9 +49,11 @@
 
           <div class="row m-t-20">
             <div class="medium-12 columns">
-            <button class='btn btn--frm btn--block' ng-disabled='userSignupForm.$invalid' type="submit" >registreer mij</button>
+            <button class='btn btn--frm btn--frm--color-2 btn--block' ng-disabled='userSignupForm.$invalid' type="submit">registreer mij</button>
           </div>
           </div>
+
+          <a class='other-auth-link'href="{{route('user.login.show')}}" target="_self" >Heb je al een account?</a>
 
         </form>
       </div>
@@ -62,14 +64,13 @@
 
 
 </div>
-<div class="bg bg--signup-clients ">
-</div>
-<div class="bottom-right-button">
+
+{{-- <div class="bottom-right-button">
  <a class='btn-help' href="{{route('user.login.show')}}" target="_self">Heb je al een account?</a>
 </div>
 <div class="bottom-left-button">
 
-</div>
+</div> --}}
 {{-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

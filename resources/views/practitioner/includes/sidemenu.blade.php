@@ -15,5 +15,8 @@
   <li><a class='item {{ active_route('practitioners.exercises.show') }}' href="{{ route('practitioners.exercises.show') }}" target="_self"><i class='icon-puzzle'></i>Oefeningen</a></li>
   <li><a href="#"><i class='icon-users'></i>Clienten</a></li>
   <li><a class='item {{ active_route('practitioner.notifications.show') }}' href="{{ route('practitioner.notifications.show') }}" target="_self"><i class='icon-bell'></i>Meldingen</a></li>
+
+  <li class='m-t-40'><a class='' href="{{  url('/logout') }}" target="_self"><i class='icon-logout'></i>Uitloggen</a></li>
+
   </ul>
 </nav>

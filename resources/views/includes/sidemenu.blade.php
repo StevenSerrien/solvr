@@ -1,11 +1,38 @@
 <nav class="sidemenu">
   <div class="illustration illustration--header menu c-block">
   </div>
-  <div class="sidemenu-list">
+  @if (Auth::guard('practitioner')->user())
+    <div class="sidemenu-cat">
+      <span>hallo, {{Auth::guard('practitioner')->user()->firstname}}</span>
+    </div>
+    <div class="sidemenu-list m-b-20">
+      <a href="{{ route('practitioner.dashboard') }}" target="_self"><span>mijn dashboard</span></a>
+      <a href="{{ url('/logout') }}" target="_self"><span>uitloggen</span></a>
+    </div>
+    <div class="sidemenu-cat">
+      <span>Waar wil je heen?</span>
+    </div>
+  @elseif (Auth::guard()->user())
+    <div class="sidemenu-cat">
+      <span>hoi, {{Auth::guard('user')->user()->firstname}}</span>
+    </div>
+    <div class="sidemenu-list m-b-20">
+      <a href="{{ route('user.dashboard') }}" target="_self"><span>mijn dashboard</span></a>
+      <a href="{{ url('/logout') }}" target="_self"><span>uitloggen</span></a>
+    </div>
+    <div class="sidemenu-cat">
+      <span>Waar wil je heen?</span>
+    </div>
+  @endif
+  <div class="sidemenu-list m-b-20">
     <a href="{{ route('about') }}" target="_self"><span>over ons</span></a>
     <a href="{{ route('therapists') }}" target="_self"><span>logopedisten</span></a>
     <a href="{{ route('search.practitioner.show') }}"  target="_self"><span>zoeken</span></a>
-    <a href="{{ route('user.register.show') }}" target="_self"><span>registreren</span></a>
+    
+    @if (!Auth::guard('practitioner')->user())
+      <a href="{{ route('user.register.show') }}" target="_self"><span>registreren</span></a>
+    @endif
+
 
 
   </div>

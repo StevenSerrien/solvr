@@ -6,7 +6,7 @@
     position: relative;
     opacity: 0;
     top: 20px;
-    -webkit-animation: seq1 cubic-bezier(0.22, 0.61, 0.36, 1) 1s 0.5s;
+    -webkit-animation: seq1 cubic-bezier(0.22, 0.61, 0.36, 1) 1s 0.8s;
     -webkit-animation-fill-mode: forwards;
   }
   &__left, &__right {
@@ -195,7 +195,7 @@
     border-left: 10px solid $brand-color-3;
     p {
 
-      
+
       input {
         position: absolute;
         max-width: 500px;

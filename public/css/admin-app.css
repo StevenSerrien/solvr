@@ -9947,6 +9947,12 @@ select.ui.dropdown {
   overflow: hidden;
 }
 
+.p-container--bg-userauth {
+  background: url("../../img/user-signup-bg.svg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .p-container .p-item {
   position: absolute;
   top: 0;
@@ -10097,6 +10103,21 @@ span.line-highlight::before {
   background-color: #c3c8d0;
   bottom: 5px;
   margin-right: 15px;
+}
+
+.other-auth-link {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  color: #e4e4e4;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.other-auth-link:hover {
+  color: #d7d7d7;
 }
 
 .in-and-out {
@@ -10712,6 +10733,10 @@ span.line-highlight::before {
 .response-container {
   position: relative;
   min-height: 75px;
+}
+
+.response-container--no-m-h {
+  min-height: 0px;
 }
 
 .error-block {
