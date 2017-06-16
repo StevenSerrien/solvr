@@ -1,0 +1,28 @@
+.choice-card-href {
+  /* Styling of the radiobuttons by their label */
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  height: auto;
+
+  padding: 30px 0;
+
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  background: #fff;
+  box-shadow: 0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08);
+  overflow: hidden;
+  font-size: 20px;
+  color: rgba(67,80,98,.5);
+  font-family: $main-font;
+  font-weight: 600;
+  &:hover {
+    box-shadow: 0 0 0 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08);
+    color: $font-color-dark-1;
+
+  }
+}

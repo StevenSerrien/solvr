@@ -63,5 +63,7 @@
       <script src="{{ elixir('js/angular.js') }}"></script>
       @yield('scripts')
 
+
+
 </body>
 </html>

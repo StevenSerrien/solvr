@@ -17,11 +17,10 @@ class ColorschemeController extends Controller
 
     public function getCurrentUserColorscheme() {
 
-      $loggedUser = Auth::guard('web')->user()->with('colorscheme')->first();
+      $loggedUserColorscheme = Auth::guard('web')->user()->colorscheme->hex;
 
-      return $loggedUser;
-      $colorschemes = Colorscheme::all();
-      return $colorschemes;
+      return Auth::guard('web')->user();
+
     }
 
     public function changeColorscheme(Request $request) {

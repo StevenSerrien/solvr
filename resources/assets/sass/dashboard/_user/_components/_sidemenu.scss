@@ -1,0 +1,14 @@
+.u-d-sidemenu__stackedmnu {
+  a {
+    padding: 10px 0px !important;
+    font-size: 18px;
+    color: $u-d-secundary-color;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    &:hover {
+      color: $u-d-tertiary-color !important;
+      background-color: rgb(252, 252, 252);
+    }
+  }
+}

@@ -115,17 +115,17 @@
   visibility: hidden;
   &--1 {
     &.slide-in-from-bottom {
-      @include animation(0.5s, 2s, slideInFromBottom, linear);
+      @include animation(0.7s, 2s, slideInFromBottom, linear);
     }
   }
   &--2 {
     &.slide-in-from-bottom {
-      @include animation(0.7s, 2s, slideInFromBottom, linear);
+      @include animation(0.9s, 2s, slideInFromBottom, linear);
     }
   }
   &--3 {
     &.slide-in-from-bottom {
-      @include animation(1s, 2s, slideInFromBottom, linear);
+      @include animation(1.1s, 2s, slideInFromBottom, linear);
     }
   }
 }

@@ -24,16 +24,28 @@ class UserController extends Controller
     public function changeColorscheme(Request $request) {
 
       $colorhexcode = $request[0];
+      // return $request[0];
 
       $solorscheme = Colorscheme::where('hex', 'like', '%' . $colorhexcode . '%')->first();
       // return $solorscheme->id;
 
       $loggedUser = Auth::guard('web')->user();
+      
       $loggedUser->colorscheme_id = $solorscheme->id;
       $loggedUser->save();
+      return $loggedUser;
 
-      
+
       // return $solorscheme;
+    }
+
+    public function getCurrentUserColorscheme() {
+
+      $loggedUser = Auth::guard('web')->user()->with('colorscheme')->first();
+
+      return $loggedUser;
+      $colorschemes = Colorscheme::all();
+      return $colorschemes;
     }
 
 

@@ -31,7 +31,7 @@ sl.controllers.controller('UserDashboardCtrl', function($scope, $rootScope, $loc
       console.log(self.state.colortosend);
 
       service.post(changeColorscheme, self.state.colortosend).then(function successCallback(response) {
-        // console.log(response);
+        console.log(response);
 
       }, function errorCallBack(response) {
 
@@ -39,6 +39,7 @@ sl.controllers.controller('UserDashboardCtrl', function($scope, $rootScope, $loc
     },
     getCurrentColorscheme: function() {
       service.get(getUserColorschemeUrl).then(function successCallback(response) {
+        // console.log(response);
         self.state.selectedColor = response.colorscheme.hex;
       }, function errorCallback(response) {
 

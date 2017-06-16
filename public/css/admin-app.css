@@ -10307,33 +10307,6 @@ span.line-highlight::before {
 }
 
 .dashboard-item-animated--1.slide-in-from-bottom {
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-name: slideInFromBottom;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-delay: 0.5s;
-  -moz-animation-duration: 2s;
-  -moz-animation-name: slideInFromBottom;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-timing-function: linear;
-  -o-animation-delay: 0.5s;
-  -o-animation-duration: 2s;
-  -o-animation-name: slideInFromBottom;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-timing-function: linear;
-  animation-delay: 0.5s;
-  animation-duration: 2s;
-  animation-name: slideInFromBottom;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-timing-function: linear;
-}
-
-.dashboard-item-animated--2.slide-in-from-bottom {
   -webkit-animation-delay: 0.7s;
   -webkit-animation-duration: 2s;
   -webkit-animation-name: slideInFromBottom;
@@ -10360,26 +10333,53 @@ span.line-highlight::before {
   animation-timing-function: linear;
 }
 
-.dashboard-item-animated--3.slide-in-from-bottom {
-  -webkit-animation-delay: 1s;
+.dashboard-item-animated--2.slide-in-from-bottom {
+  -webkit-animation-delay: 0.9s;
   -webkit-animation-duration: 2s;
   -webkit-animation-name: slideInFromBottom;
   -webkit-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
   -webkit-animation-timing-function: linear;
-  -moz-animation-delay: 1s;
+  -moz-animation-delay: 0.9s;
   -moz-animation-duration: 2s;
   -moz-animation-name: slideInFromBottom;
   -moz-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
   -moz-animation-timing-function: linear;
-  -o-animation-delay: 1s;
+  -o-animation-delay: 0.9s;
   -o-animation-duration: 2s;
   -o-animation-name: slideInFromBottom;
   -o-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
   -o-animation-timing-function: linear;
-  animation-delay: 1s;
+  animation-delay: 0.9s;
+  animation-duration: 2s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.dashboard-item-animated--3.slide-in-from-bottom {
+  -webkit-animation-delay: 1.1s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 1.1s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 1.1s;
+  -o-animation-duration: 2s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 1.1s;
   animation-duration: 2s;
   animation-name: slideInFromBottom;
   animation-fill-mode: forwards;

@@ -40,13 +40,18 @@
 @import "components/dropdown";
 @import "components/search";
 @import "components/blockz";
+@import "components/progression-circle";
 
 @import "components/form-block";
 
 
 // User Dashboard styles
-@import "dashboard/_user/_components/avatar";
 @import "dashboard/_user/variables";
+@import "dashboard/_user/_components/avatar";
+@import "dashboard/_user/_components/choice-cards";
+@import "dashboard/_user/_components/sidemenu";
+
+
 
 // Bootstrap
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
