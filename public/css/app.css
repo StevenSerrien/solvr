@@ -12116,6 +12116,35 @@ footer .footer__links {
   border-color: black;
 }
 
+.achievement .achievement-wrapper {
+  margin: auto;
+  display: block;
+  width: 70%;
+  overflow: hidden;
+  position: relative;
+}
+
+.achievement .achievement-wrapper:before {
+  content: " ";
+  display: block;
+  padding-top: 100%;
+}
+
+.achievement .achievement-wrapper img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.achievement .achievement-title.locked {
+  text-decoration: line-through;
+  color: #e8e8e8;
+}
+
 .u-profile-card .u-color-picker {
   margin-top: 30px;
   display: block;

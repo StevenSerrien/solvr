@@ -1,0 +1,31 @@
+
+
+.achievement {
+  .achievement-wrapper {
+      margin: auto;
+      display: block;
+      width: 70%;
+      overflow: hidden;
+      position: relative;
+      &:before {
+        content: " ";
+        display: block;
+        padding-top: 100%;
+      }
+      img {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        @include translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
+  }
+
+  .achievement-title {
+    &.locked {
+      text-decoration: line-through;
+      color: rgb(232, 232, 232);
+    }
+  }
+}

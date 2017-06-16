@@ -18,7 +18,7 @@
     <ul class="u-d-sidemenu__stackedmnu vertical menu">
     <li><a class='{{ active_route('user.dashboard') }}' href='{{ route('user.dashboard')}}' target='_self'><i class='icon-home'></i></a></li>
     <li><a ><i class='icon-puzzle'></i></a></li>
-    <li><a class='{{ active_route('user.trophies') }}' href='{{ route('user.dashboard')}}' target='_self'><i class='icon-trophy'></i></a></li>
+    <li><a class='{{ active_route('user.achievements') }}' href='{{ route('user.achievements')}}' target='_self'><i class='icon-trophy'></i></a></li>
 
 
 

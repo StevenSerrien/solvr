@@ -21,6 +21,10 @@ class UserController extends Controller
       return view('user.dashboard');
     }
 
+    public function showAchievementsPage() {
+      return view('user.achievements');
+    }
+
     public function changeColorscheme(Request $request) {
 
       $colorhexcode = $request[0];
@@ -30,7 +34,7 @@ class UserController extends Controller
       // return $solorscheme->id;
 
       $loggedUser = Auth::guard('web')->user();
-      
+
       $loggedUser->colorscheme_id = $solorscheme->id;
       $loggedUser->save();
       return $loggedUser;

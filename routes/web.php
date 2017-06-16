@@ -128,6 +128,9 @@ Route::group(['middleware' => 'web'], function () {
 
 
     Route::get('/dashboard', ['as' => 'user.dashboard', 'uses' => 'User\UserController@index']);
+    Route::get('/dashboard/achievements', ['as' => 'user.achievements', 'uses' => 'User\UserController@showAchievementsPage']);
+
+
 
 
 
