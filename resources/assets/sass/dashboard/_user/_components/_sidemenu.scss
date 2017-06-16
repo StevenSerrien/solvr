@@ -10,5 +10,8 @@
       color: $u-d-tertiary-color !important;
       background-color: rgb(252, 252, 252);
     }
+    &.active {
+      background-color: rgb(242, 242, 242);
+    }
   }
 }

@@ -13,6 +13,7 @@ require('./custom/typed.js');
 require('./custom/sidemenu.js');
 require('./custom/cst-dropdown.js');
 require('./custom/height.js');
+require('./custom/dashboard/search-bar.js');
 
 
 

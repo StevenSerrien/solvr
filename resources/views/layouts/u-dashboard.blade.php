@@ -43,8 +43,12 @@
           @include('includes.navbar')
 
           <div class="p-container p-container--bg-default-user" style='background-color: ##user.state.selectedColor##;'>
-
+          <div class="dashboard m-t-60" >
+          <div class="f-row row" data-equalizer data-equalize-on="medium">
+          @include('user.includes.sidemenu')
           @yield('content')
+          </div>
+          </div>
           </div>
 
           @yield('footer')

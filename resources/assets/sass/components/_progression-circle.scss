@@ -18,10 +18,10 @@
   text-anchor: middle;
 }
 .progression-circle {
-
+  margin-bottom: 30px;
   width: 33%;
   display: block;
-  margin: 10px auto;
+  margin-left: auto; margin-right: auto;
   max-width: 80%;
   max-height: 250px;
   .circle {

@@ -11496,190 +11496,6 @@ body,
   color: #201f39;
 }
 
-.input--stnrd {
-  position: relative;
-  display: block;
-  width: 100%;
-  border: 1px solid #e3e9ec;
-  padding: 8px 20px;
-  padding-right: 30px;
-  padding-top: 12px;
-  font-family: "Source Sans Pro";
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 24px;
-  color: #435062;
-  height: auto;
-  box-shadow: none;
-  overflow: hidden;
-  background: url("../../img/icons/invalid-bullt.svg") no-repeat;
-  background-size: 10px 10px;
-  background-position: right -10px center;
-}
-
-.input--stnrd:focus {
-  box-shadow: none;
-  outline: none;
-  border-color: #a1a7b0;
-}
-
-.input--stnrd.ng-invalid.ng-dirty {
-  border-color: #ffdee5;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-name: inputInvalid;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 0.5s;
-  -moz-animation-name: inputInvalid;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -o-animation-delay: 0s;
-  -o-animation-duration: 0.5s;
-  -o-animation-name: inputInvalid;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  animation-delay: 0s;
-  animation-duration: 0.5s;
-  animation-name: inputInvalid;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-}
-
-.input--stnrd.invalid, .input--stnrd.error {
-  border-color: #ffdee5;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-name: inputInvalid;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 0.5s;
-  -moz-animation-name: inputInvalid;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -o-animation-delay: 0s;
-  -o-animation-duration: 0.5s;
-  -o-animation-name: inputInvalid;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  animation-delay: 0s;
-  animation-duration: 0.5s;
-  animation-name: inputInvalid;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-}
-
-.response-container {
-  position: relative;
-  min-height: 75px;
-}
-
-.error-block {
-  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  position: absolute;
-  width: 100%;
-  border: none;
-  padding: 25px 15px 25px 0px;
-  opacity: 0;
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%);
-}
-
-.error-block__message {
-  border-left: 4px solid #e37774;
-  padding-left: 25px;
-  display: block;
-  color: #e37774;
-  font-family: "Source Sans Pro";
-  font-weight: 600;
-}
-
-.error-block--slide-in {
-  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-name: slideInFromRightWBounce;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 1s;
-  -moz-animation-name: slideInFromRightWBounce;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -o-animation-delay: 0s;
-  -o-animation-duration: 1s;
-  -o-animation-name: slideInFromRightWBounce;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  animation-delay: 0s;
-  animation-duration: 1s;
-  animation-name: slideInFromRightWBounce;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-}
-
-.success-block {
-  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  position: absolute;
-  width: 100%;
-  border: none;
-  padding: 25px 15px 25px 0px;
-  opacity: 0;
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%);
-}
-
-.success-block__message {
-  border-left: 4px solid #1bbc9b;
-  padding-left: 25px;
-  display: block;
-  color: #1bbc9b;
-  font-family: "Source Sans Pro";
-  font-weight: 600;
-}
-
-.success-block--slide-in {
-  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-name: slideInFromRightWBounce;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 1s;
-  -moz-animation-name: slideInFromRightWBounce;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  -o-animation-delay: 0s;
-  -o-animation-duration: 1s;
-  -o-animation-name: slideInFromRightWBounce;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-  animation-delay: 0s;
-  animation-duration: 1s;
-  animation-name: slideInFromRightWBounce;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
-}
-
 footer {
   margin-top: 200px;
 }
@@ -12024,9 +11840,11 @@ footer .footer__links {
 }
 
 .progression-circle {
+  margin-bottom: 30px;
   width: 33%;
   display: block;
-  margin: 10px auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 80%;
   max-height: 250px;
 }
@@ -12452,6 +12270,348 @@ footer .footer__links {
 .u-d-sidemenu__stackedmnu a:hover {
   color: #c9cbd0 !important;
   background-color: #fcfcfc;
+}
+
+.u-d-sidemenu__stackedmnu a.active {
+  background-color: #f2f2f2;
+}
+
+.u-block {
+  border-left: 4px solid #dbe7fe;
+  padding-left: 10px;
+}
+
+.u-block-wrapper .buttons a {
+  color: #e7e7e7;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.u-block-wrapper .buttons a:hover {
+  color: #dbe7fe;
+}
+
+.input--stnrd {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid #e3e9ec;
+  padding: 8px 20px;
+  padding-right: 30px;
+  padding-top: 12px;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #435062;
+  height: auto;
+  box-shadow: none;
+  overflow: hidden;
+  background: url("../../img/icons/invalid-bullt.svg") no-repeat;
+  background-size: 10px 10px;
+  background-position: right -10px center;
+}
+
+.input--stnrd:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: #a1a7b0;
+}
+
+.input--stnrd.ng-invalid.ng-dirty {
+  border-color: #ffdee5;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: inputInvalid;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: inputInvalid;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: inputInvalid;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: inputInvalid;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.input--stnrd.invalid, .input--stnrd.error {
+  border-color: #ffdee5;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: inputInvalid;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: inputInvalid;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: inputInvalid;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: inputInvalid;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.input-wrap i {
+  position: relative;
+  right: 0;
+}
+
+.response-container {
+  position: relative;
+  min-height: 75px;
+}
+
+.error-block {
+  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+  padding: 25px 15px 25px 0px;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.error-block__message {
+  border-left: 4px solid #e37774;
+  padding-left: 25px;
+  display: block;
+  color: #e37774;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+.error-block--slide-in {
+  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slideInFromRightWBounce;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slideInFromRightWBounce;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 1s;
+  -o-animation-name: slideInFromRightWBounce;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-name: slideInFromRightWBounce;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.success-block {
+  transition: 0.5s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  position: absolute;
+  width: 100%;
+  border: none;
+  padding: 25px 15px 25px 0px;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.success-block__message {
+  border-left: 4px solid #1bbc9b;
+  padding-left: 25px;
+  display: block;
+  color: #1bbc9b;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+.success-block--slide-in {
+  transition: 4s all cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slideInFromRightWBounce;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slideInFromRightWBounce;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -o-animation-delay: 0s;
+  -o-animation-duration: 1s;
+  -o-animation-name: slideInFromRightWBounce;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-name: slideInFromRightWBounce;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes color-1 {
+  0% {
+    background-color: #EB73B9;
+  }
+  100% {
+    background-color: #17EAD9;
+  }
+}
+
+@keyframes color-1 {
+  0% {
+    background-color: #EB73B9;
+  }
+  100% {
+    background-color: #17EAD9;
+  }
+}
+
+::-moz-selection {
+  background: #6078EA;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: #6078EA;
+  color: white;
+  text-shadow: none;
+}
+
+::-webkit-selection {
+  background: #6078EA;
+  color: white;
+  text-shadow: none;
+}
+
+.field-container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.icons-container {
+  position: absolute;
+  top: 5px;
+  right: -1px;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.icon-search {
+  position: relative;
+  top: 5px;
+  left: 8px;
+  width: 50%;
+  height: 50%;
+  opacity: 1;
+  border-radius: 50%;
+  border: 3px solid #c7d0f8;
+  transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+
+.icon-search:after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  right: -2px;
+  width: 4px;
+  border-radius: 3px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: 10px;
+  background-color: #c7d0f8;
+}
+
+.field {
+  font-family: "Poppins";
+  color: #435062;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 8px 15px rgba(75, 72, 72, 0.1);
+  transition: all 0.4s ease;
+}
+
+.field:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0px 9px 20px rgba(75, 72, 72, 0.3);
+}
+
+.field:focus + .icons-container .icon-close {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.field:focus + .icons-container .icon-search {
+  opacity: 0;
+  -webkit-transform: translateX(200%);
+  transform: translateX(200%);
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

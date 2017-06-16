@@ -84,6 +84,9 @@ $default-color--soft: red;
     background: #fff;
     @include box-shadow(0 10px 30px 0 rgba(67,80,98,.08), 0 2px 4px 0 rgba(67,80,98,.08));
   }
+  &--full-h {
+    height: 100%;
+  }
   &__person, &__item {
     position: relative;
     .avatar, .content, .badge {
