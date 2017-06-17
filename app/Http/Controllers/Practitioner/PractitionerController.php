@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Practitioner\Practitioner;
 use App\Models\Practice\Practice;
+use App\User;
 
 class PractitionerController extends Controller
 {
@@ -29,6 +30,40 @@ class PractitionerController extends Controller
   {
       return view('practitioner.dashboard');
   }
+
+  public function showClientsPage() {
+      $practitioner_id = Auth::guard('practitioner')->user()->id;
+      $practitioner = Practitioner::where('id', $practitioner_id)->first();
+      $userswithoutPractitioner = User::where('practitioner_id', null)->get();
+
+      $linkedUsers = $practitioner->users()->get();
+      return view('practitioner.clients')->with('linkedUsers', $linkedUsers)->with('users', $userswithoutPractitioner);
+  }
+
+  public function addClients($id) {
+      $user = User::where('id', $id)->first();
+      $practitionerid = Auth::guard('practitioner')->user()->id;
+      $user->practitioner_id = $practitionerid;
+      $user->save();
+
+
+      if ($user->practitioner_id == $practitionerid) {
+        return redirect()->back();
+      }
+  }
+
+  public function removeClients($id) {
+      $user = User::where('id', $id)->first();
+      $practitionerid = Auth::guard('practitioner')->user()->id;
+      $user->practitioner_id = null;
+      $user->save();
+
+
+      if ($user->practitioner_id == null) {
+        return redirect()->back();
+      }
+  }
+
 
   public function test() {
     return Auth::guard('practitioner')->user()->practice->name;

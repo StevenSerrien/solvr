@@ -40,4 +40,8 @@ class Practitioner extends Authenticatable
     public function exercises() {
       return $this->hasMany('App\Models\Exercise\Exercise');
     }
+
+    public function users() {
+      return $this->hasMany('App\User');
+    }
 }

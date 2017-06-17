@@ -34,4 +34,8 @@ class User extends Authenticatable
     public function exercises() {
       return $this->belongsToMany('App\Models\Exercise\Exercise');
     }
+
+    public function practitioner() {
+      return $this->belongsTo('App\Models\Practitioner\Practitioner');
+    }
 }

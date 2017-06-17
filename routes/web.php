@@ -110,6 +110,11 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/contacteer-een-praktijk/{id}/{slug?}', ['as' => 'contact.practice', 'uses' => 'Contact\ContactController@index']);
 
+    Route::get('/logopedist/clienten', ['as' => 'practitioner.clients.show', 'uses' => 'Practitioner\PractitionerController@showClientsPage']);
+    Route::get('/logopedist/clienten/add/{id}', ['as' => 'practitioner.clients.add', 'uses' => 'Practitioner\PractitionerController@addClients']);
+    Route::get('/logopedist/clienten/remove/{id}', ['as' => 'practitioner.clients.remove', 'uses' => 'Practitioner\PractitionerController@removeClients']);
+
+
 
 
 
