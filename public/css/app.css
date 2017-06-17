@@ -10730,6 +10730,12 @@ img {
   color: #435062;
 }
 
+.u-btn[disabled*='disabled'] {
+  color: #e3e9ec;
+  background-color: #f7f9fa;
+  pointer-events: none;
+}
+
 html,
 body,
 .container,
@@ -12348,9 +12354,10 @@ footer .footer__links {
 }
 
 .ac-list ol li label {
-  font-size: 1em;
+  font-size: 0.8em;
   text-indent: 0;
   padding-left: 30px;
+  font-family: "Poppins";
 }
 
 .ac-list label::before {

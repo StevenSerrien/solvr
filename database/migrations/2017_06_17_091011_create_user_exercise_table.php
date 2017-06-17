@@ -13,7 +13,7 @@ class CreateUserExerciseTable extends Migration
      */
     public function up()
     {
-      Schema::create('user_exercise', function (Blueprint $table) {
+      Schema::create('exercise_user', function (Blueprint $table) {
         $table->integer('user_id')->unsigned()->nullable();
         $table->foreign('user_id')->references('id')
         ->on('users')->onDelete('cascade');
@@ -33,6 +33,6 @@ class CreateUserExerciseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_exercise');
+        Schema::dropIfExists('exercise_user');
     }
 }

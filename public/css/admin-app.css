@@ -10541,6 +10541,12 @@ span.line-highlight::before {
   color: #435062;
 }
 
+.u-btn[disabled*='disabled'] {
+  color: #e3e9ec;
+  background-color: #f7f9fa;
+  pointer-events: none;
+}
+
 .card--icon {
   min-height: 300px;
   background-color: white;

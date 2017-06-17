@@ -15,7 +15,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Question\Question;
 use App\Models\Answer\Answer;
+use App\User;
 use App\Notifications\newExerciseCreatedForColleagues;
+use App\Notifications\ExerciseMadeByUser;
 
 
 class ExerciseController extends Controller
@@ -217,6 +219,46 @@ class ExerciseController extends Controller
 
 
     }
+
+  }
+
+  public function submitExerciseForm(Request $request) {
+
+
+    $exerciseid = $request->exerciseid;
+    $answers = $request->answers;
+
+    $client = Auth::guard('web')->user();
+    $practitionerToNotify = Auth::guard('web')->user()->practitioner;
+
+
+
+
+
+    $exercise = Exercise::where('id', $exerciseid)->with(['subcategory' => function ($query) { $query->with('category'); }])->with(['questions' => function ($query) { $query->with('answers'); }])->first();
+
+
+    foreach ($exercise->questions as $key => $question) {
+      $question->answerGiven = $answers[$key];
+    }
+
+    // return $exercise;
+
+    // Check if user already solved the exercise
+    $relationshipExists = $exercise->users()->where('user_id', $client->id)->exists();
+    if (!$relationshipExists) {
+      // Attach to many to many with exercisestable to check how many exercises user has done
+      $exercise->users()->attach($client->id);
+
+      // Notify linked practitioner that user made the exercise
+      $practitionerToNotify->notify(new ExerciseMadeByUser($exercise, $practitionerToNotify, $client));
+
+
+    }
+
+
+
+
 
   }
 }

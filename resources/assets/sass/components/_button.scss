@@ -135,4 +135,9 @@
     background: #e7edf0;
     color: #435062;
   }
+  &[disabled*='disabled'] {
+    color: #e3e9ec;
+    background-color: #f7f9fa;
+    pointer-events: none;
+  }
 }

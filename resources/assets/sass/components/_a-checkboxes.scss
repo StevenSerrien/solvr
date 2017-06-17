@@ -162,9 +162,10 @@
 }
 
 .ac-list ol li label {
-	font-size: 1em;
+	font-size: 0.8em;
 	text-indent: 0;
 	padding-left: 30px;
+  font-family: $main-font;
 }
 
 .ac-list label::before {

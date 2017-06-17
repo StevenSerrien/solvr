@@ -9,7 +9,9 @@
       {{-- <div class="dashboard__divider dashboard__divider--small  m-b-20 m-t-20"></div> --}}
 
       <div class="row m-t-40">
-        <form class="" action="index.html" method="post">
+        <form name='exerciseUserForm' class='ac-custom ac-radio ac-fill' action="{{route('user.exercise.make.submit')}}" method="post">
+          {{ csrf_field() }}
+        <input id="invisible_id" name="exerciseid" type="hidden" value="{{$exercise->id}}">
         <div class="large-8 large-centered columns">
           @foreach ($questions as $qkey => $question)
             <div class="dashboard__item u-block-wrapper clearfix m-t-20">
@@ -20,17 +22,16 @@
                 </div>
               </div>
               <div class="float-right">
-                <form class="ac-custom ac-radio ac-fill">
                   <ul>
                     @foreach ($question->answers->shuffle() as $akey => $answer)
-                      <li><input id="r1" value='{{$answer->answer}}' name="question-{{$qkey}}" type="radio"><label class='u-d-t--color-2 u-d-board-subtitle' for="r1">{{$answer->answer}}</label></li>
+                      <li><input ng-model='user.state.answerstosend[{{$qkey}}].answer' id="radio-{{$qkey}}-{{$akey}}" value='{{$answer->answer}}' name="answers[{{$qkey}}]" type="radio" required><label class='u-d-t--color-2 u-d-board-subtitle' for="radio-{{$qkey}}-{{$akey}}">{{$answer->answer}}</label></li>
                     @endforeach
                   </ul>
-                </form>
+
               </div>
             </div>
           @endforeach
-          {{-- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M34.745,7.183C25.078,12.703,13.516,26.359,8.797,37.13 c-13.652,31.134,9.219,54.785,34.77,55.99c15.826,0.742,31.804-2.607,42.207-17.52c6.641-9.52,12.918-27.789,7.396-39.713 C85.873,20.155,69.828-5.347,41.802,13.379" style="stroke-dasharray: 275.003, 275.003; stroke-dashoffset: 0; transition: stroke-dashoffset 0.2s ease-in-out 0s;"></path></svg> --}}
+          <button class='u-btn m-t-40' ng-disabled='exerciseUserForm.$invalid' type="submit" name="button">bevestig mijn antwoorden</button>
         </div>
 
       </form>
