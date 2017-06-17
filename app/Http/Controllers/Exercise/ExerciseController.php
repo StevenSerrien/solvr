@@ -246,15 +246,17 @@ class ExerciseController extends Controller
 
     // Check if user already solved the exercise
     $relationshipExists = $exercise->users()->where('user_id', $client->id)->exists();
-    if (!$relationshipExists) {
+    // if (!$relationshipExists) {
       // Attach to many to many with exercisestable to check how many exercises user has done
-      $exercise->users()->attach($client->id);
+      // $exercise->users()->attach($client->id);
 
       // Notify linked practitioner that user made the exercise
       $practitionerToNotify->notify(new ExerciseMadeByUser($exercise, $practitionerToNotify, $client));
 
+      return redirect()->back()->with('successMessage', 'Goed gedaan!');
+    // }
 
-    }
+
 
 
 

@@ -1,48 +1,84 @@
 @extends('layouts.u-dashboard')
 
 @section('content')
-  <div class="medium-8 large-10 xlarge-10 columns p-rel" data-equalizer-watch>
-    <div class="dashboard--full-h dashboard__board dashboard-item-animated dashboard-item-animated--2 slide-in-from-bottom">
-      <h1 class='text-center u-d-title u-d-t--main'>Oefening maken op <span class='u-d-t--bold u-d-t--lowercase'>{{$exercise->subcategory->name}}</span></h1>
-      <h2 class='text-center u-d-subtitle u-d-t--main u-d-t--color-2'>{{$exercise->description}}</h2>
+  @if (empty(session('successMessage')))
+    <div class="medium-8 large-10 xlarge-10 columns p-rel" data-equalizer-watch>
+      <div class="dashboard--full-h dashboard__board dashboard-item-animated dashboard-item-animated--2 slide-in-from-bottom">
+        <h1 class='text-center u-d-title u-d-t--main'>Oefening maken op <span class='u-d-t--bold u-d-t--lowercase'>{{$exercise->subcategory->name}}</span></h1>
+        <h2 class='text-center u-d-subtitle u-d-t--main u-d-t--color-2'>{{$exercise->description}}</h2>
 
-      {{-- <div class="dashboard__divider dashboard__divider--small  m-b-20 m-t-20"></div> --}}
+        {{-- <div class="dashboard__divider dashboard__divider--small  m-b-20 m-t-20"></div> --}}
 
-      <div class="row m-t-40">
-        <form name='exerciseUserForm' class='ac-custom ac-radio ac-fill' action="{{route('user.exercise.make.submit')}}" method="post">
-          {{ csrf_field() }}
-        <input id="invisible_id" name="exerciseid" type="hidden" value="{{$exercise->id}}">
-        <div class="large-8 large-centered columns">
-          @foreach ($questions as $qkey => $question)
-            <div class="dashboard__item u-block-wrapper clearfix m-t-20">
-              <div class="float-left">
-                <div class="u-block" style='border-color: ##user.state.selectedColor##;'>
-                  <span class='block u-d-t--color-1 u-d-t--main u-d-board-title'>Vraag {{$qkey + 1}}</span>
-                  <span class='block u-d-t--color-2 u-d-t--main u-d-board-subtitle'><span class='u-d-t--bold'>{{$question->question}}</span>
+        <div class="row m-t-40">
+          <form name='exerciseUserForm' class='ac-custom ac-radio ac-fill' action="{{route('user.exercise.make.submit')}}" method="post">
+            {{ csrf_field() }}
+          <input id="invisible_id" name="exerciseid" type="hidden" value="{{$exercise->id}}">
+          <div class="large-8 large-centered columns">
+            @foreach ($questions as $qkey => $question)
+              <div class="dashboard__item u-block-wrapper clearfix m-t-20">
+                <div class="float-left">
+                  <div class="u-block" style='border-color: ##user.state.selectedColor##;'>
+                    <span class='block u-d-t--color-1 u-d-t--main u-d-board-title'>Vraag {{$qkey + 1}}</span>
+                    <span class='block u-d-t--color-2 u-d-t--main u-d-board-subtitle'><span class='u-d-t--bold'>{{$question->question}}</span>
+                  </div>
+                </div>
+                <div class="float-right">
+                    <ul>
+                      @foreach ($question->answers->shuffle() as $akey => $answer)
+                        <li><input ng-model='user.state.answerstosend[{{$qkey}}].answer' id="radio-{{$qkey}}-{{$akey}}" value='{{$answer->answer}}' name="answers[{{$qkey}}]" type="radio" required><label class='u-d-t--color-2 u-d-board-subtitle' for="radio-{{$qkey}}-{{$akey}}">{{$answer->answer}}</label></li>
+                      @endforeach
+                    </ul>
+
                 </div>
               </div>
-              <div class="float-right">
-                  <ul>
-                    @foreach ($question->answers->shuffle() as $akey => $answer)
-                      <li><input ng-model='user.state.answerstosend[{{$qkey}}].answer' id="radio-{{$qkey}}-{{$akey}}" value='{{$answer->answer}}' name="answers[{{$qkey}}]" type="radio" required><label class='u-d-t--color-2 u-d-board-subtitle' for="radio-{{$qkey}}-{{$akey}}">{{$answer->answer}}</label></li>
-                    @endforeach
-                  </ul>
+            @endforeach
+            <button class='u-btn m-t-40' ng-disabled='exerciseUserForm.$invalid' type="submit" name="button">bevestig mijn antwoorden</button>
+          </div>
+
+        </form>
+        </div>
+      </div>
+    </div>
+  @elseif (session('successMessage'))
+    <div class="medium-8 large-10 xlarge-10 columns p-rel" data-equalizer-watch>
+      <div class="dashboard--full-h dashboard__board dashboard-item-animated dashboard-item-animated--2 slide-in-from-bottom">
+        <h1 class='text-center u-d-title u-d-t--main'> {{ session('successMessage') }} </h1>
+        <h2 class='text-center u-d-subtitle u-d-t--main u-d-t--color-2'>Je antwoorden werden opgestuurd naar de logopediste</h2>
+
+        {{-- <div class="dashboard__divider dashboard__divider--small  m-b-20 m-t-20"></div> --}}
+
+        <div class="row m-t-80">
+          <div class="large-10 large-centered columns">
+            <div class="row">
+              <div class="large-4 columns">
+                <div class="achievement">
+                  <div class="achievement-wrapper achievement-wrapper--big">
+                    <img src="../../img/achievement-locked.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="large-8 columns m-t-20">
+                <h3 class='u-d-board-title u-d-t--main u-d-t--color-1'>Benieuwd of je de volgende <span class='u-d-t--bold'>trofee</span> ontgrendeld hebt?</h3>
+                <span class='u-d-board-subtitle block u-d-t--color-2 u-d-t--main'>Ga zeker een kijkje nemen! Trofeeën zijn unieke stickers net zoals bij de logopedist. <br> Je speelt ze vrij door te oefenen! Leuk toch?</span>
+                <div class="dashboard__divider dashboard__divider--small  m-b-20 m-t-20"></div>
+                <span class='u-d-board-text block u-d-t--color-1 u-d-t--main'>Je oefening wordt <span class='u-d-t--bold'>overlopen met je logopediste</span> volgende sessie.</span>
 
               </div>
             </div>
-          @endforeach
-          <button class='u-btn m-t-40' ng-disabled='exerciseUserForm.$invalid' type="submit" name="button">bevestig mijn antwoorden</button>
-        </div>
+          </div>
 
-      </form>
+        </div>
+        <div class="row m-t-40">
+          <div class="large-4 small-centered columns">
+            <a href='{{ route('user.achievements')}}' target='_self'><button class='u-btn' h type="button" name="button">bekijk trofeeën</button></a>
+          </div>
+
+        </div>
       </div>
     </div>
 
+  @endif
 
-
-
-
-  </div>
 
 
 

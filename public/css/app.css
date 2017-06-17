@@ -12156,6 +12156,10 @@ footer .footer__links {
   position: relative;
 }
 
+.achievement .achievement-wrapper--big {
+  width: 80%;
+}
+
 .achievement .achievement-wrapper:before {
   content: " ";
   display: block;
