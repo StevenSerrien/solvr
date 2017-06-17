@@ -111,3 +111,28 @@
     }
   }
 }
+
+
+.u-btn {
+  display: inline-block;
+  margin-left: auto; margin-right: auto;
+  width: 100%;
+  font-size: 18px;
+  text-transform: lowercase;
+  font-family: $main-font;
+  font-weight: 800;
+  border-radius: 3px;
+  padding: 30px 10px;
+  cursor: pointer;
+  background: #f5f5f5;
+  color: #435062;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: lighten(#e7edf0, 5px);
+
+  }
+  &--greyed-out {
+    background: #e7edf0;
+    color: #435062;
+  }
+}

@@ -5,6 +5,7 @@ sl.controllers.controller('UserDashboardCtrl', function($scope, $rootScope, $loc
   var getUserColorschemeUrl = '/user/colorschemes/current';
   var changeColorscheme = '/user/colorschemes/change';
   var testUrl = "/test/test/test";
+  var checkCodeUrl = '/exercise/code/check';
 
 
   this.events = {
@@ -43,6 +44,19 @@ sl.controllers.controller('UserDashboardCtrl', function($scope, $rootScope, $loc
         self.state.selectedColor = response.colorscheme.hex;
       }, function errorCallback(response) {
 
+      });
+    },
+    checkIfCodeExists: function() {
+      service.post(checkCodeUrl, self.state.code).then(function successCallback(response) {
+        self.state.coderesponse = response;
+        // console.log(self.state.coderesponse.status);
+        if (self.state.coderesponse.status = 'error') {
+
+        }
+        // self.state.selectedColor = response.colorscheme.hex;
+      }, function errorCallback(response) {
+        self.state.coderesponse = response.data;
+        console.log(self.state.coderesponse);
       });
     },
   };

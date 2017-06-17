@@ -14,6 +14,20 @@
                     <input class='input-code' ng-model='user.state.code[{{$i}}].character' restrict="reject" mask="w" style='border-color: ##user.state.selectedColor##' type="text" name="" value="">
                   </div>
                 @endfor
+              </div>
+              <div class="row">
+                <div class="large-12 columns">
+                  <div class="response-container">
+                    <div class="error-block callout" data-closable ng-class="{'error-block--slide-in': user.state.coderesponse.status == 'error'}">
+                      <span class="error-block__message">##user.state.coderesponse.message##</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row m-t-40">
+                <div class="large-4 small-centered columns">
+                  <button class='u-btn' ng-click='user.handlers.checkIfCodeExists()' type="button" name="button">beginnen</button>
+                </div>
 
               </div>
             </div>

@@ -17,6 +17,7 @@ use App\Models\Question\Question;
 use App\Models\Answer\Answer;
 use App\Notifications\newExerciseCreatedForColleagues;
 
+
 class ExerciseController extends Controller
 {
   public function index() {
@@ -40,6 +41,39 @@ class ExerciseController extends Controller
     // )
     // ->with('posts')
     // ->get();
+
+  }
+
+  public function checkExerciseCode(Request $request) {
+    $codeArray = $request->all();
+
+    $codeString = '';
+    if (count($codeArray) < 4) {
+
+      $returnData = array(
+        'status' => 'error',
+        'message' => 'Oopsie, je moet een volledige code invullen. Kijk even na als je kan!',
+      );
+      return response()->json($returnData, 500);
+
+    }
+    if (count($codeArray) == 4) {
+      foreach ($codeArray as $key => $value) {
+        // $codeString = $value->character;
+        $newCharacter = $value['character'];
+        $codeString = $codeString . $newCharacter;
+
+      }
+      $exercise = Exercise::where('code', $codeString)->first();
+      if (!$exercise) {
+        $returnData = array(
+          'status' => 'error',
+          'message' => 'Oopsie, niets gevonden. Kijk de code na.',
+        );
+        return response()->json($returnData, 500);
+      }
+    }
+
 
   }
 
@@ -105,7 +139,7 @@ class ExerciseController extends Controller
       $newExercise->subcategory_id = $selectedSubCategoryID;
 
       // Create unique CODE to link with exercises
-      $newExercise->code = str_random(60);
+      $newExercise->code = str_random(4);
 
       $newExercise->save();
 

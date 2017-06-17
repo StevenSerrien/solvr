@@ -122,7 +122,7 @@ Route::group(['middleware' => 'web'], function () {
     // specialities
     Route::get('/specialities/getall', 'Speciality\SpecialityController@getAllSpecialities');
 
-
+    //
 
 
     // User login
@@ -144,6 +144,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/user/colorschemes/change', 'User\UserController@changeColorscheme');
     Route::get('/user/colorschemes/all', 'Colorscheme\ColorschemeController@getAllColorschemes');
     Route::get('/user/colorschemes/current', 'Colorscheme\ColorschemeController@getCurrentUserColorscheme');
+
+    Route::post('/exercise/code/check', 'Exercise\ExerciseController@checkExerciseCode');
+
+
 
 
 
