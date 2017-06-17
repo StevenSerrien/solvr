@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Colorscheme\Colorscheme;
 use App\Models\Category\Category;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Exercise\Exercise;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserController extends Controller
@@ -38,6 +39,34 @@ class UserController extends Controller
         return redirect(action('User\UserController@showExerciseCodePage', ['id' => $category->id, 'slug' => str_slug($category->name)]), 301);
       }
       return view('user.exercises.exercise-code');
+    }
+
+    public function showExerciseMakePage($code, $slug=null) {
+
+      $exercise = Exercise::where('code', $code)->first();
+
+
+      $questions = $exercise->questions;
+      $questions->load('answers');
+      $exerciseData =  $exercise->with(['subcategory' => function ($query) { $query->with('category'); }])->with('color')->first();
+
+      
+      try {
+        $exercise = Exercise::where('code', $code)->first();
+
+
+
+        // Load exercises categories
+      } catch (Exception $e) {
+        return redirect('/');
+      }
+
+      if ($slug !== str_slug($exercise->title)) {
+        return redirect(action('User\UserController@showExerciseMakePage', ['code' => $exercise->code, 'slug' => str_slug($exercise->title)]), 301);
+      }
+
+      return view('user.exercises.exercise-make')->with('exercise', $exerciseData)->with('questions', $questions);
+
     }
 
     public function showAchievementsPage() {

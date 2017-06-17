@@ -72,6 +72,14 @@ class ExerciseController extends Controller
         );
         return response()->json($returnData, 500);
       }
+      else {
+        $returnData = array(
+          'status' => 'success',
+          'message' => 'Oefening gevonden!',
+          'code' => $codeString,
+        );
+        return response()->json($returnData, 200);
+      }
     }
 
 

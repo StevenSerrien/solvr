@@ -136,7 +136,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dashboard/achievements', ['as' => 'user.achievements', 'uses' => 'User\UserController@showAchievementsPage']);
     Route::get('/dashboard/verbonden-met-logopedist', ['as' => 'user.connected', 'uses' => 'User\UserController@showConnectedPage']);
     Route::get('/dashboard/{id}/code-invoeren/{slug?}', ['as' => 'user.exercise.code.show', 'uses' => 'User\UserController@showExerciseCodePage']);
-
+    Route::get('/dashboard/oefening-maken/{code}/{slug?}', ['as' => 'user.exercise.make.show', 'uses' => 'User\UserController@showExerciseMakePage']);
 
 
 

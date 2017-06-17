@@ -1674,6 +1674,8 @@ sl.controllers.controller('UserDashboardCtrl', ["$scope", "$rootScope", "$locati
   var testUrl = "/test/test/test";
   var checkCodeUrl = '/exercise/code/check';
 
+  var exerciseUrl = '/dashboard/oefening-maken/{code}/{slug?}';
+
 
   this.events = {
     init: function() {
@@ -1717,8 +1719,8 @@ sl.controllers.controller('UserDashboardCtrl', ["$scope", "$rootScope", "$locati
       service.post(checkCodeUrl, self.state.code).then(function successCallback(response) {
         self.state.coderesponse = response;
         // console.log(self.state.coderesponse.status);
-        if (self.state.coderesponse.status = 'error') {
-
+        if (self.state.coderesponse.status = 'success') {
+          $window.location.href = '/dashboard/oefening-maken/' + response.code;
         }
         // self.state.selectedColor = response.colorscheme.hex;
       }, function errorCallback(response) {
@@ -1730,7 +1732,7 @@ sl.controllers.controller('UserDashboardCtrl', ["$scope", "$rootScope", "$locati
 
   $scope.$watchCollection('selectedColor', function() {
     console.log('hallooo');
-    changeColorscheme
+
   });
 
 

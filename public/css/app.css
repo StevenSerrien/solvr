@@ -12210,6 +12210,10 @@ footer .footer__links {
   border: none;
 }
 
+.u-d-t--lowercase {
+  text-transform: lowercase;
+}
+
 .u-d-t--color-1 {
   color: #435062;
 }
