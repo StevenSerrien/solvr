@@ -11841,7 +11841,7 @@ footer .footer__links {
 
 .progression-circle {
   margin-bottom: 30px;
-  width: 33%;
+  width: 60%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -12119,7 +12119,7 @@ footer .footer__links {
 .achievement .achievement-wrapper {
   margin: auto;
   display: block;
-  width: 70%;
+  width: 40%;
   overflow: hidden;
   position: relative;
 }
@@ -12677,7 +12677,8 @@ footer .footer__links {
 .p-container--bg-default-user {
   transition: background-color 0.5s ease-in-out;
   background-size: cover;
-  overflow: hidden;
+  padding: 10px 0 20px 0;
+  margin-bottom: 30px;
 }
 
 .p-container .p-item {

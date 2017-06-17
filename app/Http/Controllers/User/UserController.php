@@ -18,11 +18,17 @@ class UserController extends Controller
 
 
     public function index() {
+      $loggedUser = Auth::guard('web')->user();
+
       return view('user.dashboard');
     }
 
     public function showAchievementsPage() {
       return view('user.achievements');
+    }
+
+    public function showConnectedPage() {
+      return view('user.connected');
     }
 
     public function changeColorscheme(Request $request) {

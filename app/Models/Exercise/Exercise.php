@@ -33,4 +33,8 @@ class Exercise extends Model
   public function practice() {
     return $this->belongsTo('App\Models\Practice\Practice');
   }
+
+  public function users() {
+    return $this->belongsTo('App\Models\User');
+  }
 }

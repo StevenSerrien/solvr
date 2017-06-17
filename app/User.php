@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function colorscheme() {
       return $this->belongsTo('App\Models\Colorscheme\Colorscheme');
     }
+
+    public function exercises() {
+      return $this->belongsToMany('App\Models\Exercise\Exercise');
+    }
 }

@@ -25,7 +25,8 @@
   &--bg-default-user {
     transition: background-color 0.5s ease-in-out;
     background-size: cover;
-    overflow: hidden;
+    padding: 10px 0 20px 0;
+    margin-bottom: 30px;
   }
   .p-item {
     position: absolute;
