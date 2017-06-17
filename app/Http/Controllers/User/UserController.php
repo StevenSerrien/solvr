@@ -50,7 +50,6 @@ class UserController extends Controller
       $questions->load('answers');
       $exerciseData =  $exercise->with(['subcategory' => function ($query) { $query->with('category'); }])->with('color')->first();
 
-      
       try {
         $exercise = Exercise::where('code', $code)->first();
 

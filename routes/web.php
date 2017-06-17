@@ -138,6 +138,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dashboard/{id}/code-invoeren/{slug?}', ['as' => 'user.exercise.code.show', 'uses' => 'User\UserController@showExerciseCodePage']);
     Route::get('/dashboard/oefening-maken/{code}/{slug?}', ['as' => 'user.exercise.make.show', 'uses' => 'User\UserController@showExerciseMakePage']);
 
+    Route::post('/exercise/form/submit', ['as' => 'user.exercise.make.submit', 'uses' => 'Exercise\ExerciseController@submitExerciseForm']);
 
 
     Route::post('/test/test/test', 'Colorscheme\ColorschemeController@changeColorscheme');
@@ -146,6 +147,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/user/colorschemes/current', 'Colorscheme\ColorschemeController@getCurrentUserColorscheme');
 
     Route::post('/exercise/code/check', 'Exercise\ExerciseController@checkExerciseCode');
+
 
 
 
