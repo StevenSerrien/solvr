@@ -1731,6 +1731,7 @@ sl.controllers.controller('UserDashboardCtrl', ["$scope", "$rootScope", "$locati
     selectedColor: {},
     colorschemes: [],
     colortosend: [],
+    code: [],
     ngjsColorPicker: {
       options: {
         size: 30,

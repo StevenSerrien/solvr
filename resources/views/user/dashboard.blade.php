@@ -8,15 +8,14 @@
       <div class="row m-t-80">
         <div class="large-8 large-centered columns">
           <div class="row">
-            <div class="large-4 columns">
-              <a class='choice-card-href' href="#">Rekenen</a>
-            </div>
-            <div class="large-4 columns">
-              <a class='choice-card-href' href="#">Spelling</a>
-            </div>
-            <div class="large-4 columns">
-              <a class='choice-card-href' href="#">Taal</a>
-            </div>
+            @if (isset($categories) && count($categories) > 0)
+              @foreach ($categories as $category)
+                <div class="large-4 columns">
+                  <a class='choice-card-href' href="{{ route('user.exercise.code.show', ['id' => $category->id]) }}" target='_self'>{{$category->name}}</a>
+                </div>
+              @endforeach
+            @endif
+
           </div>
           <div class="row m-t-40">
             <div class="large-4 columns">

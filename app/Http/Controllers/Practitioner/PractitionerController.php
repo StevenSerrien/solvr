@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Practitioner\Practitioner;
 use App\Models\Practice\Practice;
+use App\Models\Category\Category;
 use App\User;
 
 class PractitionerController extends Controller
@@ -39,6 +40,8 @@ class PractitionerController extends Controller
       $linkedUsers = $practitioner->users()->get();
       return view('practitioner.clients')->with('linkedUsers', $linkedUsers)->with('users', $userswithoutPractitioner);
   }
+
+
 
   public function addClients($id) {
       $user = User::where('id', $id)->first();

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Colorscheme\Colorscheme;
+use App\Models\Category\Category;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserController extends Controller
 {
@@ -19,8 +21,23 @@ class UserController extends Controller
 
     public function index() {
       $loggedUser = Auth::guard('web')->user();
+      $categories = Category::all();
 
-      return view('user.dashboard');
+      return view('user.dashboard')->with('categories', $categories);
+    }
+
+    public function showExerciseCodePage($id, $slug=null) {
+
+      try {
+        $category = Category::with('subcategories')->findorFail($id);
+      } catch (Exception $e) {
+        return redirect('/');
+      }
+
+      if ($slug !== str_slug($category->name)) {
+        return redirect(action('User\UserController@showExerciseCodePage', ['id' => $category->id, 'slug' => str_slug($category->name)]), 301);
+      }
+      return view('user.exercises.exercise-code');
     }
 
     public function showAchievementsPage() {
