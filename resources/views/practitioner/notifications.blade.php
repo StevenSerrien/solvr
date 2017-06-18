@@ -38,6 +38,9 @@
                 @if ($notification->data['type'] == 'newExercise')
                   <i class='icon-puzzle'></i>
                 @endif
+                @if ($notification->data['type'] == 'exercise-made')
+                  <i class='icon-energy'></i>
+                @endif
 
               </div>
               <div class="content">

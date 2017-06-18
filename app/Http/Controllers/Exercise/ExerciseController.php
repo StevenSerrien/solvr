@@ -253,7 +253,7 @@ class ExerciseController extends Controller
 
 
     $exercise = Exercise::where('id', $exerciseid)->with(['subcategory' => function ($query) { $query->with('category'); }])->with(['questions' => function ($query) { $query->with('answers'); }])->first();
-    
+
 
     foreach ($exercise->questions as $key => $question) {
       $question->answerGiven = $answers[$key];

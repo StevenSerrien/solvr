@@ -31,7 +31,7 @@
 
     @if (!Auth::guard('practitioner')->user() && !Auth::guard('web')->check())
       <a href="{{ route('user.register.show') }}" target="_self"><span>registreren</span></a>
-      <a href="{{ route('practitioner.register.show') }}" target="_self"><span>registreren als logo</span></a>
+      <a href="{{ route('practitioner.login.show') }}" target="_self"><span>inloggen voor logopedist</span></a>
     @endif
 
 

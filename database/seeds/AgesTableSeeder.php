@@ -13,9 +13,9 @@ class AgesTableSeeder extends Seeder
     {
 
       $agesRanges = [
-           ['ageStart' => 1, 'ageEnd' => 4],
-           ['ageStart' => 5, 'ageEnd' => 7],
-           ['ageStart' => 7, 'ageEnd' => 11],
+           ['ageStart' => 4, 'ageEnd' => 6],
+           ['ageStart' => 7, 'ageEnd' => 9],
+           ['ageStart' => 10, 'ageEnd' => 11],
        ];
 
 

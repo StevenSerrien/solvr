@@ -73,7 +73,7 @@
               <div class="step-block">
                 <h3 class='step-block__title'>Een naam</h3>
                 @if ($category->name == 'Rekenen')
-                  <h4 class='step-block__subtitle'>Zoals: 'Breuken op het piratenschip'</h4>
+                  <h4 class='step-block__subtitle'>Zoals: 'Los de sommen op'</h4>
                 @elseif ($category->name == 'Spelling')
                   <h4 class='step-block__subtitle'>Zoals: 'Verlengingsregel met d of t'</h4>
                 @elseif ($category->name == 'Taal')
@@ -86,7 +86,7 @@
             <div class="large-8 columns">
               <div class="step-block">
                 <h3 class='step-block__title'>Een beschrijving</h3>
-                <h4 class='step-block__subtitle'>Dit kan bijvoorbeeld zijn: Maak een ja/nee-vraag om de persoonsvorm (PV) te vinden.</h4>
+                <h4 class='step-block__subtitle'>Help het kind met een beschrijving</h4>
                 <input class='input--stnrd' name='description'  type="text" ng-model='pexercise.state.datatosend.exercise.description' placeholder="Instructies voor het voltooien" ng-minlength="3" autocomplete="off" required >
 
               </div>
@@ -151,13 +151,10 @@
     </form>
   </div>
   <div class="row m-t-120">
-    <div class="large-4 columns">
+    <div class="large-6 columns">
       <a href="{{ URL::previous() }}" target='_self' ><button class='d-button d-button--greyed-out d-button--block' type="button" name="button">Annuleer</button></a>
     </div>
-    <div class="large-4 columns">
-      <button ng-click='pexercise.handlers.createExercise()' ng-disabled='exerciseCreateForm.$invalid || pexercise.state.datatosend.selectedColor == undefined' class='d-button d-button--default d-button--block' type="button" name="button">bewaar</button>
-    </div>
-    <div class="large-4 columns">
+    <div class="large-6 columns">
       <button ng-click='pexercise.handlers.createExercise()' ng-disabled='exerciseCreateForm.$invalid || pexercise.state.datatosend.selectedColor == undefined' class='d-button d-button--default d-button--block' type="button" name="button">publiceer</button>
     </div>
   </div>

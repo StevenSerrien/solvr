@@ -12,7 +12,7 @@ class SpecialitiesTableSeeder extends Seeder
     public function run()
     {
       DB::table('specialities')->insert(array(
-        'name' => 'ASS',
+        'name' => 'Stotteren',
       ));
       DB::table('specialities')->insert(array(
         'name' => 'Autisme',
@@ -22,6 +22,9 @@ class SpecialitiesTableSeeder extends Seeder
       ));
       DB::table('specialities')->insert(array(
         'name' => 'Dyscalculie',
+      ));
+      DB::table('specialities')->insert(array(
+        'name' => 'Taalontwikkeling',
       ));
     }
 }

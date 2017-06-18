@@ -13,13 +13,17 @@ class SubCategoriesTableSeeder extends Seeder
     {
 
       $subcategories = [
-           ['name' => 'Sommen', 'category_id' => 1],
-           ['name' => 'Breuken', 'category_id' => 1],
-           ['name' => 'Vermenigvuldigen', 'category_id' => 1],
+           ['name' => 'Hoofdrekenen', 'category_id' => 1],
+           ['name' => 'Metend Rekenen', 'category_id' => 1],
+           ['name' => 'Getallenkennis', 'category_id' => 1],
 
            ['name' => 'Verlengingsregel', 'category_id' => 2],
+           ['name' => 'Verenkelen en verdubbelen', 'category_id' => 2],
+           ['name' => 'Vervoegingen', 'category_id' => 2],
 
            ['name' => 'Taalbeschouwing', 'category_id' => 3],
+           ['name' => 'Voorzetsels', 'category_id' => 3],
+           ['name' => 'Voornaamwoorden', 'category_id' => 3],
        ];
 
 
