@@ -5,7 +5,7 @@ $(function(){
   .dropdown({
     allowAdditions: true
   });
-  console.log('bennedr');
+  
 
 
 });

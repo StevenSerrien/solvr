@@ -1,6 +1,6 @@
 $(function(){
   if ($("#typed")) {
-    console.log('typerkooe');
+    
     $("#typed").css("display", "inline-block");
 
     Typed.new("#typed", {

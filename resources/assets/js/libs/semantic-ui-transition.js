@@ -9,7 +9,7 @@
  */
 
 ;(function ($, window, document, undefined) {
-console.log('transition ingeladen');
+
 "use strict";
 
 window = (typeof window != 'undefined' && window.Math == Math)

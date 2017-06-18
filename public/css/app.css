@@ -11651,6 +11651,10 @@ footer {
   margin-top: 200px;
 }
 
+footer .icon::before {
+  content: "" !important;
+}
+
 footer .footer__left {
   position: relative;
   padding: 15px 0 15px 0;

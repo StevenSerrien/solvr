@@ -21,7 +21,7 @@
 		function init() {
 			initEvents();
 		}
-		console.log('hallo gij fking deb');
+		
 		function initEvents() {
 			openbtn.addEventListener( 'click', toggleMenu );
 

@@ -2,6 +2,12 @@ footer {
   // padding-left: 2.5rem;
   // padding-right: 2.5rem;
   // background-color: rgb(195, 195, 195);
+
+  .icon {
+    &::before {
+      content: "" !important;
+    }
+  }
   margin-top: 200px;
   .footer__left {
     position: relative;
@@ -16,6 +22,8 @@ footer {
     display: none;
   }
   .footer {
+
+
 
     &__social-media {
       padding: 15px 0;
