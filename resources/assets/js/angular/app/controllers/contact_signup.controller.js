@@ -59,7 +59,8 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
       self.state.currentTemplate = self.state.templates[0];
     },
     clearCurrentStorage: function() {
-      self.state.datatosend = '';
+      self.state.datatosend.practice = {};
+      self.state.datatosend.user = {};
       self.state.response = '';
     },
     postUserDataToServer: function() {
@@ -72,7 +73,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
         if (self.state.response.status == 'success') {
 
-          self.handlers.clearCurrentStorage();
+
           self.events.changeTemplate(self.state.currentTemplate.index + 1);
         }
 
@@ -148,6 +149,7 @@ sl.controllers.controller('ContactSignupCtrl', function($scope, $rootScope, $loc
 
   // listeners
   $rootScope.$on('$locationChangeSuccess', function() {
+    self.handlers.clearCurrentStorage();
     self.handlers.fillTemplates();
   });
 

@@ -1,22 +1,49 @@
 <form name='therapistPersonalSignupForm' class='form-block__inner' >
-  <div class="row">
-    <div class="large-12 columns">
+  <div ng-if="contact.user.practiceStatus == 'new'">
+    <div class="row">
+      <div class="large-12 columns">
 
-      <h2 class='t--semi-bold text-center'>Helemaal <span class='highlight highlight--color-1'>klaar</span> </h2>
-      <h3 class='t--regular t--lightest m-b-60 text-center'>Wij hebben uw aanvraag tot een account ontvangen</h3>
+        <h2 class='t--semi-bold text-center'>Helemaal <span class='highlight highlight--color-1'>klaar</span> </h2>
+        <h3 class='t--regular t--lightest m-b-60 text-center'>Jij en je praktijk zijn nu geregistreerd.</h3>
+      </div>
+    </div>
+    <div class="form-block__confirmation-block row">
+      <div class="large-8 large-centered columns">
+        <h4 class='t--semi-bold'>Leuk je er bij te hebben!</h4>
+        <p class='t--lightest'>Jij hebt een nieuwe praktijk aangemaakt en bent hier nu <span class='t--semi-bold'>beheerder van</span>.</p>
+        <p class='t--lightest'>Je kan onmiddelijk starten met het platform te gebruiken en oefeningen klaar te zetten <span class='t--semi-bold'>voor cliënten</span>. Log in via volgende link.</p>
+
+        <a class='text-center' href="/logopedist/login" target="_self"><button class='btn btn--frm btn--frm--color-2 btn--block m-t-20' type="button" name="button">inloggen</button></a>
+
+      </div>
+
+      <div class="large-6 columns">
+
+      </div>
     </div>
   </div>
-  <div class="form-block__confirmation-block row">
-    <div class=" large-6 columns">
-      <h4 class='t--semi-bold'>Leuk je er bij te hebben!</h4>
-      <p class='t--lightest'>Om te zorgen dat we <span class='t--semi-bold'>enkel logopedisten</span> toegang geven, moeten we wel eerst jouw gegevens even nakijken. Je ontvang een <span class='t--semi-bold'>email</span>, zodra je account is <span class='t--semi-bold'>goedgekeurd.</span></p>
+  <div ng-if="contact.user.practiceStatus == 'existing'">
+    <div class="row">
+      <div class="large-12 columns">
 
-      <a href="/" target="_self" class='btn btn--frm m-t-20'>home</a>
-      
+        <h2 class='t--semi-bold text-center'>Helemaal <span class='highlight highlight--color-1'>klaar</span> </h2>
+        <h3 class='t--regular t--lightest m-b-60 text-center'>Wij hebben uw aanvraag tot een account ontvangen</h3>
+      </div>
     </div>
+    <div class="form-block__confirmation-block row">
+      <div class="large-8 large-centered columns">
+        <h4 class='t--semi-bold'>Leuk dat je ook wil meedoen!</h4>
+        <p class='t--lightest'>De praktijk waar je wil registreren zal nu je aanvraag <span class='t--semi-bold'>nakijken</span>.</p>
+        <p class='t--lightest'>Zodra je aanvraag is goedgekeurd, zal je kunnen  <span class='t--semi-bold'>inloggen en meedoenn</span></p>
 
-    <div class="large-6 columns">
+        <a class='text-center' href="/" target="_self"><button class='btn btn--frm btn--frm--color-2 btn--block m-t-20' type="button" name="button">ok, bedankt</button></a>
 
+      </div>
+
+      <div class="large-6 columns">
+
+      </div>
     </div>
   </div>
+
 </form>

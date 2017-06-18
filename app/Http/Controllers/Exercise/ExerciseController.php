@@ -30,8 +30,8 @@ class ExerciseController extends Controller
 
     // $users = App\User::with(['posts' => function ($query) { $query->where('title', 'like', '%first%'); }])->get();
     $exercisesByPractitioner = Exercise::where('practitioner_id', $practitionerID)->with('practitioner')->with(['subcategory' => function ($query) { $query->with('category'); }])->with('questions')->with('color')->get();
-    $exercisesByColleagues = Exercise::where('practitioner_id', '!=', $practitionerID)->with('practitioner')->with(['practice' => function ($query) use ($practiceID) {$query->where('id', $practiceID); }])->get();
-
+    $exercisesByColleagues = Exercise::where('practitioner_id', '!=', $practitionerID)->where('practice_id', $practiceID)->with('practitioner')->get();
+    
 
     // return $exercises->get();
     return view('practitioner.exercises.main')->with('categories', $categories)->with('exercisesByPractitioner', $exercisesByPractitioner)->with('exercisesByColleagues', $exercisesByColleagues);

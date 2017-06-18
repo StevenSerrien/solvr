@@ -9,6 +9,7 @@ use App\Models\Practitioner\Practitioner;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use App\Notifications\newPractitionerRequest;
+use App\Notifications\newPractitionerAccountRequestReceived;
 
 class PractitionerRegisterController extends Controller
 {
@@ -131,9 +132,8 @@ class PractitionerRegisterController extends Controller
       $practice = $request->get('practice');
       $practitioner = $request->get('user');
 
-      // For notification -> Send practitioner notifiable
-      $notifiableAdminPractitioner = Practitioner::where('isAdmin', 1)->with('practice')->where('id', $existingPractice['id'])->first();
-      
+
+
 
       // If user has selected an existing practice to link with
       if ($existingPractice) {
@@ -154,6 +154,14 @@ class PractitionerRegisterController extends Controller
           return response()->json($returnData, 500);
         }
 
+
+        //  Testing
+
+        // return $practitioner;
+
+
+        // Testing
+
         $newPractitioner = new Practitioner();
 
         $newPractitioner->firstname = $practitioner['firstname'];
@@ -169,6 +177,11 @@ class PractitionerRegisterController extends Controller
 
         $practitionerSaved = $newPractitioner->save();
 
+
+
+
+        $notifiablyRequester = Practitioner::where('id', $newPractitioner->id)->first();
+
         if ($practitionerSaved) {
           $returnData = array(
             'status' => 'success',
@@ -178,6 +191,9 @@ class PractitionerRegisterController extends Controller
 
           // Notify adminPractitioner
           $requester = $practitioner;
+          $notifiableAdminPractitioner = Practitioner::where('practice_id', $existingPractice['id'])->where('isAdmin', 1)->first();
+
+          $notifiablyRequester->notify(new newPractitionerAccountRequestReceived($notifiablyRequester, $existingPractice));
           $notifiableAdminPractitioner->notify(new newPractitionerRequest($notifiableAdminPractitioner, $requester));
           return response()->json($returnData, 200);
         }
@@ -252,7 +268,7 @@ class PractitionerRegisterController extends Controller
 
           $newPractitioner->confirmation_code = str_random(30);
           $newPractitioner->IsConfirmed = 0;
-          $newPractitioner->IsAdmin = 0;
+          $newPractitioner->IsAdmin = 1;
 
           $practitionerSaved = $newPractitioner->save();
 
