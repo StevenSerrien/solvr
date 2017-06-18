@@ -10061,6 +10061,120 @@ select.ui.dropdown {
   }
 }
 
+.jumbotron--animated {
+  visibility: hidden;
+}
+
+.jumbotron--animated-1 {
+  -webkit-animation-delay: 0.7s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0.7s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 0.7s;
+  -o-animation-duration: 2s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 0.7s;
+  animation-duration: 2s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.jumbotron--animated-2 {
+  -webkit-animation-delay: 0.9s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0.9s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 0.9s;
+  -o-animation-duration: 2s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 0.9s;
+  animation-duration: 2s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.jumbotron--animated-3 {
+  -webkit-animation-delay: 0.13s;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0.13s;
+  -moz-animation-duration: 4s;
+  -moz-animation-name: slideInFromBottom;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 0.13s;
+  -o-animation-duration: 4s;
+  -o-animation-name: slideInFromBottom;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 0.13s;
+  animation-duration: 4s;
+  animation-name: slideInFromBottom;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
+.jumbotron--animated-v {
+  opacity: 0;
+  top: 20px;
+  -webkit-animation-delay: 0.4s;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-name: seq1;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-delay: 0.4s;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-name: seq1;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-timing-function: linear;
+  -o-animation-delay: 0.4s;
+  -o-animation-duration: 0.3s;
+  -o-animation-name: seq1;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-timing-function: linear;
+  animation-delay: 0.4s;
+  animation-duration: 0.3s;
+  animation-name: seq1;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-timing-function: linear;
+}
+
 /* Animations for dashboard */
 .dashboard-item-animated {
   visibility: hidden;
@@ -10163,6 +10277,7 @@ select.ui.dropdown {
 .s-container {
   padding-left: 35px !important;
   margin-left: 3.5rem !important;
+  margin-right: 3.5rem !important;
   position: relative;
 }
 
@@ -10373,7 +10488,6 @@ select.ui.dropdown {
 .jumbotron {
   padding: 9.375rem 1.875rem 3.125rem 0;
   min-height: 500px;
-  margin-right: 8.4375rem;
   position: relative;
 }
 
@@ -11321,6 +11435,10 @@ body,
   margin: auto;
 }
 
+.icon-card__image--about img {
+  height: 100%;
+}
+
 .icon-card__title, .icon-card__text {
   font-family: "Poppins";
   display: block;
@@ -11332,6 +11450,7 @@ body,
   margin-bottom: 15px;
   color: #65696c;
   font-weight: 600;
+  font-size: 1.3125rem;
 }
 
 .icon-card__text {

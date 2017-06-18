@@ -4,18 +4,19 @@
 <div ng-controller='SearchCtrl as search' ng-init='search.events.init()' class="">
 
 
-  <div class="jumbotron jumbotron--color-3 s-container">
+  <div class="jumbotron jumbotron--color-3 s-container jumbotron--animated-v">
 
     <div class="row f-row small-collapse">
       <div class="large-12 columns">
         <div class="jumbotron__content">
-          <h1>Ben je op <span class='highlight highlight--color-1'>zoek</span> <br>naar professionele</h1>
+          <h1 class='jumbotron--animated jumbotron--animated-1'>Ben je op <span class='highlight highlight--color-1'>zoek</span></h1>
+          <h1 class='jumbotron--animated jumbotron--animated-2'>naar professionele</h1>
 
         </div>
       </div>
     </div>
 
-    <span class='jumbotron__big'>hulp</span>
+    <span class='jumbotron__big jumbotron--animated jumbotron--animated-3'>hulp</span>
   </div>
 
 
@@ -43,13 +44,13 @@
           <div class="search__search-block">
             <div class="input-grp">
               <label class='main-label t--semi-bold ' for="">Vul jouw <span class='highlight'>adres</span> in</label>
-              <label class='sub-label t--lightest m-b-30' for="">Wij doen de rest</label>
+              <label class='sub-label t--lightest m-b-30' for="">Wij berekenen de afstand</label>
               <input id="autocomplete2" name='address' class='input--stnrd' type="text" ng-model='search.state.selectedAddress' placeholder="Vul je adres in" ng-init='search.googleHandlers.initAutocomplete()' autocomplete="off" required >
 
             </div>
             <div class="input-grp m-t-60">
               <label class='main-label t--semi-bold ' for="">Zoek je ook <span class='highlight'>specialisaties</span></label>
-              <label class='sub-label t--lightest m-b-30' for="">Wij doen de rest</label>
+              <label class='sub-label t--lightest m-b-30' for="">Je kan ze ook leeg laten</label>
               <so-dropdown-multiple class='cst-dropdown' name='specialities' ng-change='' ng-model="search.state.datatosend.selectedSpecialities" placeholder='Voeg specialiteiten toe' dropdown-items="search.state.specialities" required>
                 <option value='None'>None</option>
               </so-dropdown-multiple>

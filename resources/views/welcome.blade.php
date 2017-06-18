@@ -8,13 +8,13 @@
           <div class="p-lax-inner p-item__inner__item p-effect-1">
             <h1 id='typed' class='p-jumbo' style='color:white;'> </h1>
             <div id="subtyped-strings">
-              <p><a href="{{ route('about') }}">Dat oefen je vanaf nu hier.</a></p>
+              <p><a href="{{ route('about') }}" target='_self'>Dat oefen je vanaf nu hier.</a></p>
             </div>
             <p class="p-smallbo" style='color:white;'><span id='subtyped' class='underlined'></span></p>
           </div>
         </div>
       </div>
-      <a class='btn btn--ghst' href="{{ route('about') }}">lees meer</a>
+      <a class='btn btn--ghst' href="{{ route('about') }}" target='_self'>lees meer</a>
     </div>
   </section>
 @endsection

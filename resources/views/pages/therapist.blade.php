@@ -2,18 +2,19 @@
 
 @section('content')
 
-  <div class="jumbotron jumbotron--color-2 s-container">
+  <div class="jumbotron jumbotron--color-2 s-container jumbotron--animated-v">
 
     <div class="row f-row small-collapse">
       <div class="large-12 columns">
-        <div class="jumbotron__content">
-          <h1><span class='highlight highlight--color-2'>Logopedisten,</span><br>wij zijn er om te</h1>
+        <div class="jumbotron__content ">
+          <h1 class='jumbotron--animated jumbotron--animated-1'><span class='highlight highlight--color-2'>Logopedisten,</span><br></h1>
+          <h1 class='jumbotron--animated jumbotron--animated-2'>wij zijn er om te</h1>
 
         </div>
       </div>
     </div>
 
-    <span class='jumbotron__big'>helpen</span>
+    <span class='jumbotron__big jumbotron--animated jumbotron--animated-3'>helpen</span>
   </div>
 
   <div class="s-container s-container--no-p">
@@ -28,10 +29,10 @@
 
       <div class="row">
         <div class="large-6 columns">
-          <h2 class='t--semi-bold'>Jouw passe, gemakkelijker.</h2>
+          <h2 class='t--semi-bold'>Jouw passe, <span class='highlight highlight--color-1'>gemakkelijker</span>.</h2>
           <h3 class='t--regular t--lightest'>Blijf verbonden met cliëntjes</h3>
-          <p class='m-b-40'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eleifend, neque a malesuada condimentum, tellus dui ultricies augue, in ornare nisi arcu commodo eros. Vestibulum</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eleifend, neque a malesuada condimentum, tellus dui ultricies augue, in ornare nisi arcu commodo eros. Vestibulum</p>
+          <p class='m-b-40'>Soms moeite met cliënten thuis te laten oefenen op iets zoals sommen? Het internet staat vol met oefeningen die <span class='t--semi-bold'>niet meer werken</span> en bovendien <span class='t--semi-bold'>saai</span> zijn.</p>
+          <p>Met dit platform maak je je oefeningen zelf aan. Deze genereren een unieke code die je daarna meegeeft met je cliënt. Jij wordt op de hoogte gebracht van hun antwoorden en tegelijkertijd worden zij <span class='t--semi-bold'>beloond </span> door ons.</p>
         </div>
         <div class="large-6 columns">
           {{-- <h2>qdqzdqdd</h2> --}}
@@ -56,20 +57,20 @@
       <div class="row" data-equalizer data-equalize-on="medium">
         <div class="medium-6 large-4 columns m-t-40" data-equalizer-watch>
           <div class="icon-card icon-card--bounce-up">
-          <div class="icon-card__image">
+          <div class="icon-card__image icon-card__image--about">
               <img src="img/icon-world.svg" alt="">
           </div>
           <h3 class="icon-card__title">
             Zet je praktijk op de kaart
           </h3>
           <span class="icon-card__text">
-            Beperk je niet tot <br> pen en papier.
+            Wordt gevonden door <br>mensen met onze zoek-tool.
           </span>
         </div>
       </div>
         <div class="medium-6 large-4 columns m-t-40" data-equalizer-watch>
           <div class="icon-card icon-card--bounce-up">
-          <div class="icon-card__image">
+          <div class="icon-card__image icon-card__image--about">
               <img src="img/icon-reusework.svg" alt="">
           </div>
           <h3 class="icon-card__title">
@@ -85,11 +86,11 @@
         <div class="medium-12 large-4 columns m-t-40" data-equalizer-watch>
 
             <div class="icon-card icon-card--bounce-up">
-            <div class="icon-card__image">
+            <div class="icon-card__image icon-card__image--about">
                 <img src="img/icon-progress.svg" alt="">
             </div>
             <h3 class="icon-card__title">
-              Volg de progressie op
+              Volg de progressie <br>op
             </h3>
             <span class="icon-card__text">
               Terwijl cliëntjes oefeningen maken, bekijk jij hun progressie.
@@ -103,7 +104,7 @@
       <div class="section__header section__header--color-1">
         <div class="row f-row">
           <div class="large-12 columns">
-            <h1 class='section__headertitle'>Oke, teken het uit<br>voor de duidelijkheid.</h1>
+            <h1 class='section__headertitle'>Dat klinkt zeker<br>interessant.</h1>
           </div>
         </div>
       </div>
@@ -122,9 +123,9 @@
           </div>
           <div class="row f-row masonry__bot-row">
             <div class="masonry__text large-12 columns">
-              <h2 class='t--semi-bold'>Jouw passe, gemakkelijker.</h2>
-              <h3 class='t--regular t--lightest'>Blijf verbonden met cliëntjes</h3>
-              <p class='m-t-50'>Sed ut perspiciatis unde omnis iste natus error sit <span class='t--semi-bold'>voluptatem</span> accusantium doloremque laudantium, <span class='t--semi-bold'>voluptatem</span> aperiam, eaque ipsa quae ab illo <span class='t--semi-bold'>voluptatem</span>.</p>
+              <h2 class='t--semi-bold'>Registreren is makkelijk.</h2>
+              <h3 class='t--regular t--lightest'>In vier stappen kan je al beginnen!</h3>
+              <p class='m-t-50'>Wil je een <span class='t--semi-bold'>nieuwe</span> praktijk registreren of wil je je bij een <span class='t--semi-bold'>bestaande</span> praktijk voegen? <br> Volg de <span class='t--semi-bold'>link hieronder</span> om door te gaan en je te registreren. We beloven dat het niet veel moeite is.</p>
               <a class='btn btn--ghst btn--ghst--inv m-t-40' href="{{ route('practitioner.register.show')}}" target="_self">vraag account aan</a>
             </div>
           </div>

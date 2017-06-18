@@ -63,6 +63,11 @@
       display: block;
       margin: auto;
     }
+    &--about {
+      img {
+        height: 100%;
+      }
+    }
   }
   &__title, &__text {
     font-family: $main-font;
@@ -75,6 +80,7 @@
     margin-bottom: 15px;
     color: #65696c;
     font-weight: 600;
+    font-size: 1.3125rem;
   }
   &__text {
     font-weight: normal;

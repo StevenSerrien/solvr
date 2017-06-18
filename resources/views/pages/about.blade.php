@@ -2,18 +2,19 @@
 
 @section('content')
 
-  <div class="jumbotron jumbotron--color-1 s-container">
+  <div class="jumbotron jumbotron--color-1 s-container jumbotron--animated-v">
 
     <div class="row f-row small-collapse">
       <div class="large-12 columns">
         <div class="jumbotron__content">
-          <h1>Jij wil <span class='highlight highlight--color-1'>plezier</span> maken,<br>maar ook</h1>
+          <h1 class='jumbotron--animated jumbotron--animated-1'>Jij wil <span class='highlight highlight--color-1'>plezier</span> maken,</h1>
+          <h2 class='jumbotron--animated jumbotron--animated-2'>maar ook</h2>
 
         </div>
       </div>
     </div>
 
-    <span class='jumbotron__big'>bijleren</span>
+    <span class='jumbotron__big jumbotron--animated jumbotron--animated-3'>bijleren</span>
   </div>
 
 
@@ -39,10 +40,11 @@
             <div class="section__half--shapes">
 
             </div>
-            <h2 class='t--semi-bold'>Verken mee met ons</h2>
+            <h2 class='t--semi-bold'>Verken de mogelijkheden met ons</h2>
             <h3 class='t--regular t--lightest m-b-60'>Geraak niet verloren zoals <br> astronaut.</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+            <p>Heb je al vaak proberen thuis te oefenen op het internet? Dat lukt niet supergoed hé?</p>
+            <p>Vaak zijn websites verouderd of werken ze niet meer heel goed. Bij ons zorgt de logopediste voor een <span class='t--semi-bold'>4-cijferige code</span>.</p>
+            <p>Die kan je dan ingeven en wij zorgen voor de rest. Zo heb je altijd een oefening die perfect voor jou past!</p>
 
             <span class='line-highlight m-t-40'>rekenen, spelling en taal</span>
           </div>
@@ -72,7 +74,7 @@
         <div class="row" data-equalizer data-equalize-on="medium">
           <div class="medium-6 large-4 columns m-t-40" data-equalizer-watch>
             <div class="icon-card icon-card--bounce-up">
-              <div class="icon-card__image">
+              <div class="icon-card__image icon-card__image--about">
                 <img src="img/icon-laptop.svg" alt="">
               </div>
               <h3 class="icon-card__title">
@@ -85,7 +87,7 @@
           </div>
           <div class="medium-6 large-4 columns m-t-40" data-equalizer-watch>
             <div class="icon-card icon-card--bounce-up">
-              <div class="icon-card__image">
+              <div class="icon-card__image icon-card__image--about">
                 <img src="img/icon-achievement.svg" alt="">
               </div>
               <h3 class="icon-card__title">
@@ -101,7 +103,7 @@
           <div class="medium-12 large-4 columns m-t-40" data-equalizer-watch>
 
             <div class="icon-card icon-card--bounce-up">
-              <div class="icon-card__image">
+              <div class="icon-card__image icon-card__image--about">
                 <img src="img/icon-kid.svg" alt="">
               </div>
               <h3 class="icon-card__title">
@@ -120,7 +122,7 @@
       <div class="section__header section__header--color-1">
         <div class="row f-row">
           <div class="large-12 columns">
-            <h1 class='section__headertitle'>Oke, maar wat bieden nog <br> jullie meer?</h1>
+            <h1 class='section__headertitle'>Ik ben overtuigd!<br> Waar schrijf ik me in?</h1>
           </div>
         </div>
       </div>
@@ -128,10 +130,11 @@
     <div class="row medium-collapse" data-equalizer data-equalize-on="medium">
       <div class="cta-block clearfix">
         <div class="large-6 columns cta-block__content" data-equalizer-watch>
-          <h3 class='cta-block__title'>At vero eos et accusamus</h3>
-          <p class='cta-block__text'>laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit</p>
-          <a class='btn btn--ghst btn--ghst--inv cta-block__button' href="{{ route('about') }}">registreer mij</a>
-          <span class='cta-block__footer'>Bent u een logopediste?</span>
+          <h3 class='cta-block__title'>Jij en de logopedist</h3>
+          <p class='cta-block__text'>Jullie zijn een team samen! Dat weten wij. Je kan je alvast registreren, maar vergeet niet te vermelden dat je graag dit platform zou willen gebruiken hé!</p>
+          <p class='cta-block__text'>Als je logopedist ook geregistreerd is, kan zij oefeningen opstellen voor jou, waarna jij de via de code de oefening kan oplossen.</p>
+          <a class='btn btn--ghst btn--ghst--inv cta-block__button' href="{{ route('about') }}">registreer me</a>
+          <a href="{{ route('practitioner.register.show') }}" target='_self'><span class='cta-block__footer'>Bent u een logopediste?</span></a>
         </div>
         <div class="large-6 columns cta-block__illustration" data-equalizer-watch>
 
