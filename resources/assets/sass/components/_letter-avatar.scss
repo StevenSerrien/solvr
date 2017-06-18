@@ -1,0 +1,19 @@
+.letter-avatar {
+  display: block;
+  max-width: 100%;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  .letter {
+    position: absolute;
+    font-size: 60px;
+    font-family: $main-font;
+    color: #435062;
+    font-weight: normal;
+    top: 50%; left: 50%;
+    @include translate(-50%, -50%);
+
+  }
+}

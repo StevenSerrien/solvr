@@ -75,7 +75,9 @@ class UserController extends Controller
     }
 
     public function showConnectedPage() {
-      return view('user.connected');
+      $loggedUser = Auth::guard('web')->user();
+      $practice = $loggedUser->practitioner->practice;
+      return view('user.connected')->with('linkedPractitioner', $loggedUser->practitioner)->with('practice', $practice);
     }
 
     public function changeColorscheme(Request $request) {

@@ -12387,6 +12387,28 @@ footer .footer__links {
   }
 }
 
+.letter-avatar {
+  display: block;
+  max-width: 100%;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.letter-avatar .letter {
+  position: absolute;
+  font-size: 60px;
+  font-family: "Poppins";
+  color: #435062;
+  font-weight: normal;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .u-profile-card .u-color-picker {
   margin-top: 30px;
   display: block;
