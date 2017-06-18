@@ -9,6 +9,7 @@ use App\Models\Practitioner\Practitioner;
 use App\Models\Practice\Practice;
 use App\Models\Category\Category;
 use App\User;
+use App\Notifications\PractitionerAccepted;
 
 class PractitionerController extends Controller
 {
@@ -48,6 +49,8 @@ class PractitionerController extends Controller
       $practitionerid = Auth::guard('practitioner')->user()->id;
       $user->practitioner_id = $practitionerid;
       $user->save();
+
+
 
 
       if ($user->practitioner_id == $practitionerid) {
@@ -95,12 +98,16 @@ class PractitionerController extends Controller
       $code = 200;
     }
 
+
+
     $returnData = array(
       'status' => $status,
       'message' => $message,
       'error' => $error
     );
 
+
+    $practitioner->notify(new PractitionerAccepted($practitioner));
     return response()->json($returnData, $code);
 
 

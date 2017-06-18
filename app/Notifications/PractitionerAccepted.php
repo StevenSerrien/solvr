@@ -16,9 +16,9 @@ class PractitionerAccepted extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -41,10 +41,12 @@ class PractitionerAccepted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Hallo, '. )
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', route('practitioner.login.show'))
-                    ->line('Thank you for using our application!');
+                    ->subject('Je account werd geaccpteerd tot ' . $this->user->practice->name )
+                    ->line('Hallo, ' . $this->user->firstname)
+                    ->line('Jouw account werd goedgekeurd.')
+                    ->line('Je kan bijgevolgd nu inloggen op het platform met volgende link.')
+                    ->action('inloggen', route('practitioner.login.show'))
+                    ->line('Dankjewel voor het gebruik van onze applicatie!');
     }
 
     /**
