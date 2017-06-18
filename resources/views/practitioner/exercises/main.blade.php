@@ -65,7 +65,7 @@
                 </div>
                 <div class="float-right">
                   <div class="buttons">
-
+                      <span class='content__name d--text d-block'>{{ $exercise->code }}</span>
                   </div>
 
                 </div>
@@ -103,7 +103,9 @@
                   </div>
                 </div>
                 <div class="float-right">
-
+                  <div class="buttons">
+                    <span class='content__name d--text d-block'>{{ $exercise->code }}</span>
+                  </div>
 
                 </div>
               </div>

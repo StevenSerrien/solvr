@@ -7,7 +7,7 @@
     </div>
     <span class='profile-card__name'>{{ Auth::guard('practitioner')->user()->firstname }}</span>
     <span class='profile-card__function'>{{ Auth::guard('practitioner')->user()->practice->name }}</span>
-    <a class='profile-card__edit-profile'><i class='icon-pencil'></i>Profiel wijzigen</a>
+    {{-- <a class='profile-card__edit-profile'><i class='icon-pencil'></i>Profiel wijzigen</a> --}}
   </div>
   <span class='d-sidemenu__title'>Activiteiten</span>
   <ul class="d-sidemenu__stackedmnu vertical menu">

@@ -267,7 +267,7 @@ class PractitionerRegisterController extends Controller
           $newPractitioner->practice_id = $newPractice->id;
 
           $newPractitioner->confirmation_code = str_random(30);
-          $newPractitioner->IsConfirmed = 0;
+          $newPractitioner->IsConfirmed = 1;
           $newPractitioner->IsAdmin = 1;
 
           $practitionerSaved = $newPractitioner->save();

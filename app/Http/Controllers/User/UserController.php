@@ -43,18 +43,17 @@ class UserController extends Controller
 
     public function showExerciseMakePage($code, $slug=null) {
 
-      $exercise = Exercise::where('code', $code)->first();
 
 
-      $questions = $exercise->questions;
-      $questions->load('answers');
-      $exerciseData =  $exercise->with(['subcategory' => function ($query) { $query->with('category'); }])->with('color')->first();
+
+
 
       try {
-        $exercise = Exercise::where('code', $code)->first();
+        $exercise = Exercise::where('code', $code)->with('subcategory.category')->with('color')->first();
 
-
-
+        // return $exercise
+        $questions = $exercise->questions;
+        $questions->load('answers');
         // Load exercises categories
       } catch (Exception $e) {
         return redirect('/');
@@ -64,7 +63,7 @@ class UserController extends Controller
         return redirect(action('User\UserController@showExerciseMakePage', ['code' => $exercise->code, 'slug' => str_slug($exercise->title)]), 301);
       }
 
-      return view('user.exercises.exercise-make')->with('exercise', $exerciseData)->with('questions', $questions);
+      return view('user.exercises.exercise-make')->with('exercise', $exercise)->with('questions', $questions);
 
     }
 
@@ -76,8 +75,16 @@ class UserController extends Controller
 
     public function showConnectedPage() {
       $loggedUser = Auth::guard('web')->user();
-      $practice = $loggedUser->practitioner->practice;
-      return view('user.connected')->with('linkedPractitioner', $loggedUser->practitioner)->with('practice', $practice);
+
+
+      if (empty($loggedUser->practitioner_id)) {
+        return view('user.connected')->with('hasPractitioner', false);
+      }
+      else {
+        $practice = $loggedUser->practitioner->practice;
+        return view('user.connected')->with('linkedPractitioner', $loggedUser->practitioner)->with('practice', $practice)->with('hasPractitioner', true);
+      }
+
     }
 
     public function changeColorscheme(Request $request) {

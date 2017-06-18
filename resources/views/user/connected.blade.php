@@ -8,7 +8,7 @@
           <div class="row m-t-100">
 
 
-          @if (isset($linkedPractitioner) && isset($practice))
+          @if ($hasPractitioner)
             <div class="large-8 large-centered columns">
               <div class="row">
                 <div class="large-4 columns">
