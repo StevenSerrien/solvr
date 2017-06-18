@@ -1716,6 +1716,7 @@ sl.controllers.controller('UserDashboardCtrl', ["$scope", "$rootScope", "$locati
       });
     },
     checkIfCodeExists: function() {
+      self.state.coderesponse = '';
       service.post(checkCodeUrl, self.state.code).then(function successCallback(response) {
         self.state.coderesponse = response;
         // console.log(self.state.coderesponse.status);

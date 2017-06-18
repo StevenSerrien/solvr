@@ -49,6 +49,8 @@ class ExerciseController extends Controller
   public function checkExerciseCode(Request $request) {
     $codeArray = $request->all();
 
+    $user = Auth::guard('web')->user();
+
     $codeString = '';
     if (count($codeArray) < 4) {
 
@@ -67,6 +69,7 @@ class ExerciseController extends Controller
 
       }
       $exercise = Exercise::where('code', $codeString)->first();
+
       if (!$exercise) {
         $returnData = array(
           'status' => 'error',
@@ -75,12 +78,25 @@ class ExerciseController extends Controller
         return response()->json($returnData, 500);
       }
       else {
-        $returnData = array(
-          'status' => 'success',
-          'message' => 'Oefening gevonden!',
-          'code' => $codeString,
-        );
-        return response()->json($returnData, 200);
+
+        // Check if user already solved exercise
+        $alreadySolved = $user->exercises->contains($exercise->id);
+        if ($alreadySolved) {
+          $returnData = array(
+            'status' => 'error',
+            'message' => 'Oopsie, je hebt deze oefening al gemaakt. Je kan dezelfde oefening niet twee maal oplossen.',
+          );
+          return response()->json($returnData, 500);
+        }
+        else {
+          $returnData = array(
+            'status' => 'success',
+            'message' => 'Oefening gevonden!',
+            'code' => $codeString,
+          );
+          return response()->json($returnData, 200);
+        }
+
       }
     }
 
