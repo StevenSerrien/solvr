@@ -77,7 +77,7 @@
             Deel werk onder logopedisten
           </h3>
           <span class="icon-card__text">
-            Net zoals bij de logopediste, <br> maar dan online.
+            Jouw werk gaat niet verloren, <br> deel het met collega's.
           </span>
         </div>
 

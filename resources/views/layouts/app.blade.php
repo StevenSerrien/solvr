@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-
+    <link rel="shortcut icon" href="{{ url('img/favicon.ico') }}">
 
     <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/css/semantic.min.css'>
 
