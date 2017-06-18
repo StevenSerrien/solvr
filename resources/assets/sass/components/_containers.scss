@@ -1,0 +1,150 @@
+.c-container {
+  width: calc(100% - 110px);
+  margin: auto;
+  position: relative;
+  display: block;
+  padding: 0;
+}
+
+.g-container {
+  padding-left: rem-calc(56px) !important;
+  position: relative;
+}
+
+.s-container {
+  padding-left: 35px !important;
+  margin-left: rem-calc(56px) !important;
+  margin-right: rem-calc(56px) !important;
+  position: relative;
+  &--no-p {
+
+    padding-left: 0px !important;
+    margin-right: rem-calc(135px);
+  }
+  &--no-bg-color {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+}
+
+
+.full-width-container {
+  width: 100vw;
+  position: relative;
+  overflow: visible;
+  &--w-shapes-1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &::after {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      background: url('../../img/big-yellow-circle.svg') no-repeat center center;
+      background-size: contain;
+      width: 60%;
+      height: 70%;
+      right: -500px;
+      top: 50%;
+      @include translateY(-50%);
+    }
+    &::before {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      background: url('../../img/big-blue-circle.svg') no-repeat center center;
+      background-size: contain;
+      width: 30%;
+      height: 30%;
+      left: -150px;
+      top: 75%;
+      @include translateY(-75%);
+    }
+    div[class*='-container'] {
+      background-color: white;
+    }
+  }
+}
+
+
+.full-screen-container {
+  position: relative;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  height: calc(100vh - 88px);
+  overflow: hidden;
+  transition: background-position .5s ease-in-out;
+  background-size: 176.28111vw 143.24012vw;
+  background: url('../../img/colored-background-supersized.svg') no-repeat 20px;
+
+  &--w-centered-content {
+    padding: 10vh 0;
+  }
+  &.state-1 {
+    background-position: 20vw 40vh;
+  }
+  &.state-2 {
+    background-position: -30vw -30vh;
+  }
+  &.state-3 {
+    background-position: center center;
+  }
+}
+
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 88px);
+  top: 88px;
+  z-index: -1;
+  &--signup-clients {
+    background: url('../../img/user-signup-bg.svg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &--login-practitioners {
+    background: url('../../img/colored-background-supersized.svg') no-repeat;
+    background-size: 100vw 90vh;
+    background-position: center center;
+  }
+}
+.container {
+  &--signup-clients, &--login-practitioners {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    top: 50px;
+    .form-block {
+      &__inner {
+        padding: 7.5vh 10vh 5vh 10vh !important;
+      }
+    }
+  }
+
+  & ~ .bottom-right-button {
+    min-width: 110px;
+    height: 37px;
+    position: fixed;
+    z-index: 3;
+    bottom: 25px; right: 25px;
+    .btn-help {
+      font-family: $main-font;
+      font-weight: 600;
+      padding: 15px 20px;
+      border-radius: 4px;
+      margin-left: 4px;
+      color: #666;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 37px;
+      text-decoration: none;
+      background: hsla(0,0%,100%,.85);
+      &:hover {
+        background: #fff;
+        color: #404040;
+      }
+    }
+  }
+}

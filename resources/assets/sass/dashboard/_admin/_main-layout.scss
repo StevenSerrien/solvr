@@ -1,0 +1,58 @@
+html, body, .d-container, .content-wrap, .sidemenu-wrap  {
+  height: 100%;
+}
+
+.d-container {
+  position: relative;
+  min-height: 100%;
+  background-color: rgba(#f7f9fa, 0.72);
+  height: auto !important;
+}
+
+
+
+.sidemenu-wrap {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: calc(100vh);
+  z-index: 100;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  visibility: visible;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  box-shadow: 5px 0 50px rgba(0,0,0,0.05);
+  .d-sidemenu {
+    position: relative;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding: 87px 20px 50px 20px;
+  }
+}
+
+
+.d-container.show-menu {
+  .sidemenu-wrap {
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.d-sidemenu__btn {
+  z-index: 101;
+  position: absolute;
+  color: rgb(224, 224, 224);
+  font-weight: 600;
+  font-size: 1.4rem;
+  &:hover, &:focus {
+    color: darken(rgb(224, 224, 224), 10%) !important;
+  }
+  &--close {
+    top: 35px;
+    right: 20px;
+  }
+}

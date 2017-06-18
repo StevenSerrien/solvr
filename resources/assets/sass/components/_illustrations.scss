@@ -1,0 +1,34 @@
+.illustration {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  &.c-block {
+    display: block;
+    margin: auto;
+  }
+  &.menu {
+    background: url('../../img/icons/sidemenu-illustration-4.svg') no-repeat;
+  }
+}
+
+
+.sidemenu-illustration {
+  display: block;
+  width: 100%;
+  height: 75px;
+  background: url('../../img/icons/sidemenu-illustration-3.svg') center center no-repeat;
+  background-size: contain;
+}
+
+
+.icon {
+  width: 17.5px;
+  height: 17.5px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  &.i-heart {
+    background: url('../../img/icons/di-heart.svg') no-repeat;
+  }
+}

@@ -1,0 +1,101 @@
+.search {
+  font-size: 1.5rem;
+  &__search-block {
+    background: white;
+    position: relative;
+    box-shadow: 0 9px 20px 0 rgba(153, 170, 181, 0.1) !important;
+    padding: 50px 35px 35px 35px;
+
+    margin: auto;
+    display: block;
+    min-height: 400px;
+    font-size: 20px;
+    label {
+      &.main-label {
+        font-family: $main-font;
+        color: rgb(10, 10, 10);
+        font-size: 1em;
+        span {
+          position: relative;
+          &.highlight {
+            &::after {
+              z-index: -1;
+              position: absolute;
+              bottom: 7px;
+              left: -5px;
+              display: block;
+              width: calc(100% + 10px);
+              height: 15px;
+              background: #ffe07a;
+              content: '';
+            }
+          }
+        }
+      }
+      &.sub-label {
+        font-size: 0.8em;
+      }
+    }
+  }
+  &__map-block {
+
+  }
+  &__input-label {
+    font-size: 1em !important;
+
+    span {
+      position: relative;
+
+    }
+  }
+  &__input-sublabel {
+    font-size: 0.5em !important;
+  }
+}
+
+.angular-google-map-container {
+  min-height: 400px;
+  box-shadow: 0 9px 20px 0 rgba(153, 170, 181, 0.1) !important;
+  @include breakpoint(large) {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  img {
+    max-width: none !important;
+  }
+}
+
+  #map-canvas {
+    height: 600px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  #map-canvas img {
+
+  }
+
+.cst-map-window {
+  margin-left: 20px;
+
+  &__name {
+    display: block;
+    text-align: center;
+    font-family: $main-font;
+    font-weight: 800;
+    font-size: 16px;
+    color:rgb(69, 69, 69);
+  }
+  &__distance {
+    display: block;
+    text-align: center;
+    font-family: $main-font;
+    font-weight: 800;
+    font-size: 14px;
+    margin-top: 15px;
+    color:rgb(218, 218, 218);
+  }
+}

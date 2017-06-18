@@ -1,0 +1,169 @@
+.mixed-jumbo {
+  padding: rem-calc(75px 0px);
+  &__content {
+    position: relative;
+    z-index: 10;
+    @include headings {
+      font-size: rem-calc(72);
+      font-family: $main-font;
+    }
+  }
+  &__background {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    z-index: 5;
+    &--color-1 {
+      background-color: rgb(252, 170, 149);
+    }
+    &--color-2 {
+      background-color: #EDF6FE;
+    }
+  }
+
+
+  /*** Effects ***/
+  &--shaped-triangle {
+      &::after {
+        content: ' ';
+        position: absolute;
+
+        right: 0;
+        height: 75px;
+        width: 75px;
+        background: url('../../img/mixed-jumbo-shape-altie.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    &--shaped-circle {
+        &::after {
+          content: ' ';
+          position: absolute;
+
+          right: 0;
+          height: 75px;
+          width: 75px;
+          background: url('../../img/mixed-jumbo-shape-circle.svg') no-repeat;
+          background-size: contain;
+        }
+        margin-bottom: 325px;
+      }
+}
+
+.top-bar {
+  position: relative;
+  z-index: 10;
+}
+
+.jumbotron {
+  padding: rem-calc(150 30 50 0);
+  min-height: 500px;
+
+  position: relative;
+  &--w-img-1 {
+    background: url('../../img/lego.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  &--color-1 {
+    background-color: $brand-color-1;
+    &::before {
+      right: 0;
+      top: 25px;
+      content: ' ';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: url('../../img/shapes.svg') no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: -100px;
+      left: 0;
+      // background-color: #e37774;
+      z-index: 5;
+    }
+  }
+  &--color-2 {
+    background-color: $brand-color-3;
+    &::before {
+      right: 0;
+      top: 25px;
+      content: ' ';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: url('../../img/letters.svg') no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: -100px;
+      left: 0;
+      // background-color: #e37774;
+      z-index: 5;
+    }
+  }
+  &--color-3 {
+    background-color: $brand-color-2;
+    &::before {
+      right: 0;
+      top: 25px;
+      content: ' ';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: url('../../img/letters.svg') no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: -100px;
+      left: 0;
+      // background-color: #e37774;
+      z-index: 5;
+    }
+  }
+
+  &__content {
+    @include headings {
+      color: white;
+      font-family: $main-font;
+      font-weight: 600;
+      font-size: rem-calc(48px);
+    }
+  }
+  &__big {
+    position: absolute;
+    display: block;
+    line-height: 1;
+    text-transform: uppercase;
+    bottom: -40px;
+    color: white;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: rem-calc(170px);
+  }
+}
+
+.img-jumbo {
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  &--cometboi {
+    background: url('../../img/kid-with-comets.png') no-repeat center center;
+    background-size: cover;
+  }
+}

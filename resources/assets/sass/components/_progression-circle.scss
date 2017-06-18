@@ -1,0 +1,58 @@
+.single-chart {
+  width: 33%;
+  justify-content: space-around ;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #f9f9f9;
+  stroke-width: 2.8;
+}
+
+.percentage {
+  fill: #666;
+  font-family: $main-font;
+  color: rgb(241, 241, 241);
+  font-weight: 300;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+.progression-circle {
+  margin-bottom: 30px;
+  width: 60%;
+  display: block;
+  margin-left: auto; margin-right: auto;
+  max-width: 80%;
+  max-height: 250px;
+  .circle {
+    stroke: #4CC790;
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    // animation: progress 1s ease-out forwards;
+    // -moz-animation: progress 1s ease-out forwards;
+    // -webkit-animation: progress 1s ease-out forwards;
+    &--spelling {
+      stroke: rgb(219, 231, 254);
+    }
+    &--taal {
+      stroke: rgb(255, 240, 219);
+    }
+    &--rekenen {
+      stroke: rgb(255, 224, 230);
+    }
+  }
+}
+
+// @keyframes progress {
+//   0% {
+//     stroke-dasharray: 0 100;
+//   }
+// }
+
+// @include keyframes(progress) {
+//
+//   100% {
+//     stroke-dashoffset:  0;
+//   }
+// }

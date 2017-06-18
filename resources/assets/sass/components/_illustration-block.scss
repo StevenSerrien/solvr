@@ -1,0 +1,46 @@
+.illustration-block {
+  &__b-number {
+    font-family: $b-number-font;
+    font-size: rem-calc(80);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    color: #fce289;
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+  &__title {
+    font-family: $text-font;
+    font-weight: 700;
+    position: relative;
+    z-index: 10;
+
+    padding: rem-calc(20 35 0 35);
+  }
+  &__a-text {
+    margin-top: rem-calc(30);
+    font-family: $text-font;
+    font-weight: 500;
+    color: #636363;
+  }
+  &__text {
+    position: relative;
+    padding: rem-calc(35 0 35 0);
+  }
+  &__illustration {
+    display: block;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

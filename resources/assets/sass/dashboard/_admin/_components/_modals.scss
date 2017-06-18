@@ -1,0 +1,65 @@
+.reveal {
+  padding: 0px !important;
+}
+
+.modal {
+  &__header {
+    background: url('../../img/modal-bg.svg') no-repeat;
+    background-size: cover;
+    padding: 45px 10px;
+    color: $main-d-color;
+
+    .title {
+
+
+      font-size: 25px;
+      font-weight: 800;
+      position: relative;
+      &::after {
+        content: ' ';
+        position: absolute;
+        height: 5px;
+        width: 25px;
+        background-color: $brand-color-1;
+        left: 50%;
+        bottom: -10px;
+        @include translateX(-50%);
+      }
+    }
+  }
+  &__content {
+    padding: 40px;
+    p {
+      font-family: $main-font;
+      color: $d-font-color--1;
+
+      span {
+        color: $main-d-color;
+        font-weight: bolder;
+      }
+    }
+  }
+  &__buttons {
+    display: block;
+    width: auto;
+    button {
+      font-family: $main-font;
+      color: #FFFFFF;
+      font-weight: 800;
+      padding: 20px 30px;
+      display: block;
+      margin: auto;
+      &.confirm {
+        background-color: $brand-color-1;
+
+      }
+    }
+  }
+}
+
+.reveal {
+
+}
+body.is-reveal-open {
+
+}

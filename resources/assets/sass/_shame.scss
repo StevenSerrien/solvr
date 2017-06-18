@@ -1,0 +1,203 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+.top-bar {
+  padding-left: 2.5rem; padding-right: 2.5rem;
+}
+.p-container {
+  min-height: calc(100vh - 140px);
+  height: auto;
+  width: calc(100% - 110px);
+  margin: auto;
+  position: relative;
+  display: block;
+  padding: 0;
+  &--bg-contact {
+    background: url('../../img/contact_bg.svg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  &--bg-userauth {
+    background: url('../../img/user-signup-bg.svg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  &--bg-default-user {
+    transition: background-color 0.5s ease-in-out;
+    background-size: cover;
+    padding: 10px 0 20px 0;
+    margin-bottom: 30px;
+  }
+  .p-item {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+
+    .row {
+      height: 100%;
+    }
+    &__inner {
+      text-align: center;
+      cursor: default;
+      height: 100%;
+      position: relative;
+
+      &__item {
+        position: absolute;
+        width: 100%;
+        h1, h2, h3, h4, h5 {
+          font-size: 4.5rem;
+          font-family: $main-font;
+          font-weight: 600;
+        }
+      }
+    }
+    &--landing {
+      background: url('../../img/l-background-10.svg') no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      &::after {
+        content: ' ';
+        position: absolute;
+
+        right: 0;
+        bottom: -5px;
+        height: 200px;
+        width: 300px;
+        background: url('../../img/home-shapes.svg') no-repeat;
+        background-size: cover;
+      }
+      .btn {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+  }
+}
+
+.p-jumbo, .p-smallbo {
+  transition: all 0.2s;
+}
+
+.p-smallbo {
+  font-family: $text-font;
+}
+
+
+.typed-cursor {
+  display: none;
+}
+
+#typed {
+  min-height: 200px;
+}
+
+.underlined {
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    font-style: normal !important;
+  }
+}
+
+a {
+  &, &:focus, &:active, &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+}
+.brand-logo {
+  span {
+    font-family: $brand-font;
+    font-size: 3.2rem;
+  }
+}
+
+.footer__branding {
+  span {
+    font-family: $brand-font;
+    font-size: 2rem;
+    color: #373737;
+    line-height: 1;
+  }
+}
+
+
+span {
+  &.highlight {
+    position: relative;
+    z-index: 1;
+    &--color-1 {
+      &::after {
+        position: absolute;
+        z-index: -1;
+        bottom: 15px;
+        left: -5px;
+        display: block;
+        width: calc(100% + 10px);
+        height: 20px;
+        background: #ffe07a;
+        content: '';
+      }
+    }
+    &--color-2 {
+      &::after {
+        position: absolute;
+        z-index: -1;
+        bottom: 15px;
+        left: -5px;
+        display: block;
+        width: calc(100% + 10px);
+        height: 20px;
+        background: #3b6ecc;
+        content: '';
+      }
+    }
+  }
+
+  &.line-highlight {
+    display: inline-block;
+    position: relative;
+    font-family: $main-font;
+    color: rgb(195, 200, 208);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 300;
+    &::before {
+      display: inline-block;
+      content: ' ';
+      position: relative;
+      width: 50px;
+      height: 2px;
+      background-color: rgb(195, 200, 208);
+      bottom: 5px;
+      margin-right: 15px;
+    }
+  }
+}
+
+
+.other-auth-link {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-family: $secundary-font;
+  font-size: 14px;
+  color: rgb(228, 228, 228);
+  font-weight: normal;
+  text-decoration: underline;
+  &:hover {
+    color: darken(rgb(228, 228, 228), 5%);
+  }
+}

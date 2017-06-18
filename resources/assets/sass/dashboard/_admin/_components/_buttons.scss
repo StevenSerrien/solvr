@@ -1,0 +1,33 @@
+.d-button {
+  font-size: 18px;
+  text-transform: lowercase;
+  font-family: $main-font;
+  font-weight: 800;
+  border-radius: 3px;
+  padding: 30px 10px;
+  &--greyed-out {
+    background: darken(#f7f9fa, 5%);
+    color: #435062;
+    &:hover {
+      background: darken(#f7f9fa, 8%);
+      color: #435062;
+    }
+  }
+  &--default {
+    background-color: $brand-color-1;
+    color: white;
+    &:hover {
+      background: darken($brand-color-1, 10%);
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+  &[disabled*='disabled'] {
+    color: #e3e9ec;
+    background-color: #f7f9fa;
+    pointer-events: none;
+  }
+}

@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -47,11 +47,21 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+
+
+      $messages = [
+        'email.unique' => 'Dit emailadres bestaat al.',
+        'password.min' => 'Wachtwoord moet minstens 6 tekens zijn.'
+      ];
+
+      $rules = [
+        'firstname' => 'required|max:255',
+        'lastname' => 'required|max:255',
+        'email' => 'required|email|max:255|unique:users',
+        'password' => 'required|min:6',
+      ];
+
+      return Validator::make($data, $rules, $messages);
     }
 
     /**
@@ -62,10 +72,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
-            'name' => $data['name'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm() {
+      return view('auth.user.register');
     }
 }

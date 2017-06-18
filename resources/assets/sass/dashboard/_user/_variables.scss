@@ -1,0 +1,86 @@
+.u-profile-card {
+  .u-color-picker {
+    margin-top: 30px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    ngjs-color-picker ul {
+      display: inline-block;
+      margin: 0;
+    }
+    ngjs-color-picker li.selectedColor {
+      border: none;
+    }
+  }
+}
+
+$u-d-main-color: #435062;
+$u-d-secundary-color: #a1a7b0;
+$u-d-tertiary-color: #c9cbd0;
+
+$u-d-color-1: rgb(219, 231, 254);
+$u-d-color-2: rgb(255, 240, 219);
+$u-d-color-3: rgb(255, 224, 230);
+
+.u-d-t--lowercase {
+  text-transform: lowercase;
+}
+.u-d-t--color-1 {
+  color: $u-d-main-color;
+}
+.u-d-t--color-2 {
+  color: $u-d-secundary-color;
+}
+.u-d-t--color-2 {
+  color: $u-d-tertiary-color;
+}
+
+.block {
+  display: block;
+}
+
+.u-d-t--main {
+  font-family: $main-font;
+}
+
+.u-d-t--secundary {
+  font-family: $secundary-font;
+}
+
+.u-d-t--bold {
+  font-weight: 700;
+}
+
+.u-d-title {
+  font-size: 24px;
+  @include headings {
+    font-size: 24px;
+  }
+}
+.u-d-subtitle {
+  font-size: 21px;
+  @include headings {
+    font-size: 21px;
+  }
+}
+
+.u-d-board-title {
+  font-size: 20px;
+  @include headings {
+    font-size: 20px;
+  }
+}
+
+.u-d-board-subtitle {
+  font-size: 18px;
+  @include headings {
+    font-size: 18px;
+  }
+}
+
+.u-d-board-text {
+  font-size: 18px;
+  @include headings {
+    font-size: 18px;
+  }
+}

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname', 'lastname', 'email', 'password',
     ];
 
     /**
@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function colorscheme() {
+      return $this->belongsTo('App\Models\Colorscheme\Colorscheme');
+    }
+
+    public function exercises() {
+      return $this->belongsToMany('App\Models\Exercise\Exercise');
+    }
+
+    public function practitioner() {
+      return $this->belongsTo('App\Models\Practitioner\Practitioner');
+    }
 }

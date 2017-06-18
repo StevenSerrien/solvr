@@ -1,0 +1,58 @@
+// Variables
+@import "variables";
+
+@import "mixins";
+@import "utilities";
+
+@import "node_modules/foundation-sites/scss/foundation";
+@import "node_modules/angular-loading-bar/src/loading-bar";
+@import "settings";
+
+@include foundation-everything;
+
+@import "text";
+
+@import 'icons';
+
+@import "plugins/semantic-dropdown";
+
+@import "components/dropdown";
+
+// Libs
+// @import "plugins/semanticui";
+// Dashboard
+@import "shame";
+@import "components/animations";
+@import "components/button";
+@import "components/cards";
+
+
+
+
+@import "dashboard/_admin/main-layout";
+@import "dashboard/_admin/variables";
+
+
+@import "dashboard/_admin/_components/top-bar";
+@import "dashboard/_admin/_components/sidemenu";
+
+@import "dashboard/_admin/_components/step-blocks";
+@import "dashboard/_admin/_components/buttons";
+
+@import "dashboard/_admin/_components/dashboard";
+@import "dashboard/_admin/_components/modals";
+@import "dashboard/_admin/_components/notifications";
+@import "dashboard/_admin/_components/color-picker";
+
+
+span {
+  &.block {
+    display: block;
+  }
+  &.heavy {
+    font-weight: 800;
+  }
+  &.main-color {
+    color: rgb(89, 95, 111);
+  }
+}
