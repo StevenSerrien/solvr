@@ -69,7 +69,9 @@ class UserController extends Controller
     }
 
     public function showAchievementsPage() {
-      return view('user.achievements');
+      $user = Auth::guard('web')->user();
+      $amountOfExercises =  count($user->exercises);
+      return view('user.achievements')->with('exercisesCount', $amountOfExercises);
     }
 
     public function showConnectedPage() {
